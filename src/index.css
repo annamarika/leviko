@@ -1,0 +1,95 @@
+:root {
+  font-family: Blatant;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #0d0d0d;
+  background-color: #f2f2f2;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Blatant";
+  src: url("../public/fonts/Blatant.woff") format("woff");
+  src: url("../public/fonts/Blatant.woff2") format("woff2");
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: "Blatant-Bold";
+  src: url("../public/fonts/Blatant-Bold.woff") format("woff");
+  src: url("../public/fonts/Blatant-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 62px;
+}
+h2 {
+  font-size: 56px;
+}
+h3 {
+  font-size: 43px;
+}
+h4 {
+  font-size: 20px;
+}
+p {
+  font-size: 24px;
+}
+
+/* Styles for screens smaller than 545px (e.g., tablet) */
+@media screen and (max-width: 545px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+/* Styles for screens smaller than 390px (e.g., mobile) */
+@media screen and (max-width: 390px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #0d0d0d;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
