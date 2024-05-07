@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import image from "../../assets/images/person_plays_maestro.jpg";
 import { Link } from "react-router-dom";
+import { Button } from "../UI/Buttons/Button.styled";
 
 const HeroStartseite = () => {
   return (
@@ -66,47 +67,6 @@ export const HeadlineContainer = styled.div`
   }
 `;
 
-export const Button = styled.a`
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--leviko-blue);
-  border-radius: 15px;
-  color: var(--leviko-white);
-  padding-top: 12px;
-  padding-bottom: 12px;
-  width: 254px;
-  font-size: 24px;
-
-  /* Hover effect */
-  &:hover {
-    color: var(--leviko-black);
-    background-color: var(--leviko-green);
-  }
-
-  /* Focus effect */
-  &:focus {
-    outline: none;
-    box-shadow: 10px rgba(170, 254, 131, 0.5);
-  }
-
-  /* Active (click) effect */
-  &:active {
-    color: var(--leviko-white);
-    background-color: var(--leviko-black);
-    border-color: var(--leviko-black);
-  }
-
-  @media (max-width: 1024px) {
-    width: 181px;
-    font-size: 20px;
-  }
-
-  @media (max-width: 430px) {
-    width: 165px;
-    font-size: 18px;
-  }
-`;
-
 export const ImageContainer = styled.div`
   width: 70vw;
   height: auto;
@@ -123,14 +83,14 @@ export const ImageContainer = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  width: 100%; // Fill the width of the container
-  height: auto; // Maintain aspect ratio
-  min-width: 100%; // Ensure it at least fills the width
-  min-height: 100%; // Make sure the height is at least the container's height to avoid gaps
-  object-fit: cover; // Cover the container while maintaining aspect ratio
-  object-position: center; // Center the image to focus on the middle part
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
 
   @media (max-width: 430px) {
-    object-position: top 70%;
+    object-position: 70%;
   }
 `;

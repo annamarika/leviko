@@ -1,7 +1,7 @@
 // HeaderStyles.ts
 import styled from "styled-components";
 import LogoSVG from "../../assets/logo.svg?react";
-import ArrowSVG from "./ArrowSVG.tsx";
+import ArrowSVG from "./Buttons/ArrowSVG.tsx";
 
 interface MenuIconProps {
   $isOpen: boolean;

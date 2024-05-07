@@ -2,7 +2,7 @@
 import React from "react";
 
 interface ArrowSVGProps {
-  style?: React.CSSProperties; // Defines the type for style object
+  style?: React.CSSProperties;
 }
 
 const ArrowSVG: React.FC<ArrowSVGProps> = ({ style }) => (
