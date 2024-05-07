@@ -35,11 +35,12 @@ export const NavContainer = styled.div`
   margin-right: 160px;
   margin-left: 160px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     margin-right: 24px;
     margin-left: 24px;
   }
-  @media (max-width: 1200px) {
+
+  @media (max-width: 1024px) {
     margin-right: 24px;
     margin-left: 24px;
   }

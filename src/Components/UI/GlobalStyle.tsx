@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   /* Styles for screens smaller than 545px (e.g., tablet) */
-  @media screen and (max-width: 545px) {
+  @media screen and (max-width: 1024px) {
     h1 {
       font-size: 48px;
     }
@@ -74,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   /* Styles for screens smaller than 390px (e.g., mobile) */
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 430px) {
     h1 {
       font-size: 36px;
     }
