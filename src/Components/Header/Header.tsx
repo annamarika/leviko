@@ -1,6 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import useHeaderStore from "../../stores/useHeaderStore";
+import useHeaderStore from "../stores/useHeaderStore.tsx";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {

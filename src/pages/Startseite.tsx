@@ -12,8 +12,23 @@ import MireviWhite from "../assets/images/MIREVI_weiss.webp";
 import HSDWhite from "../assets/images/HSD_Marke_v1_HSD_weiss.png";
 import MireviBlack from "../assets/images/MIREVI.webp";
 import HSDBlack from "../assets/images/HSD_Marke_v1_HSD_Schw.png";
+import { useRef } from "react";
+import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
+import ParallaxSection from "../Components/UI/ParallaxSectionStyle";
 
 const Startseite = () => {
+  const refOne = useRef<HTMLDivElement>(null);
+  const refTwo = useRef<HTMLDivElement>(null);
+  const refThree = useRef<HTMLDivElement>(null);
+
+  useStickyScroll([refOne, refTwo, refThree], {
+    start: "top top",
+    endTrigger: (element) => `+=${element.offsetHeight}`,
+    pinSpacing: false,
+    onLeave: () => console.log("Leaving section"),
+    onEnterBack: () => console.log("Entering section from bottom"),
+  });
+
   return (
     <>
       <HeroStartseite
@@ -56,50 +71,77 @@ const Startseite = () => {
         button="zu ComPleTT"
         $objectPosition="30%"
       />
-      <Institutionen
-        imgSrc={ImageTablet}
-        imgAlt="tablet with sketch"
-        logoOneSrc={MireviWhite}
-        logoOneAlt="Mirevi Logo in White"
-        logoTwoSrc={HSDWhite}
-        logoTwoAlt="HSD Logo in White"
-        headline="Verbundkoordination Prof. Dr. Michael Oehler"
-        description="Universität Osnabrück
+      <ParallaxSection ref={refOne} className="sticky-section">
+        <Institutionen
+          imgSrc={ImageTablet}
+          imgAlt="tablet with sketch"
+          logoOneSrc={MireviWhite}
+          logoOneAlt="Mirevi Logo in White"
+          logoTwoSrc={HSDWhite}
+          logoTwoAlt="HSD Logo in White"
+          headline="Verbundkoordination Prof. Dr. Michael Oehler"
+          description="Universität Osnabrück
         Institut für Musikwissenschaft und Musikpädagogik
         Music Technology & Digital Musicology Lab (MTDML)"
-        linkTo="mailto:michael.oehler@uos.de"
-        button="E-Mail"
-        $objectPosition="30%"
-        $buttonVariant="secondary"
-      />
-      <InstitutionenWhite
-        imgSrc={ImageTablet}
-        imgAlt="tablet with sketch"
-        logoOneSrc={MireviBlack}
-        logoOneAlt="Mirevi Logo in White"
-        logoTwoSrc={HSDBlack}
-        logoTwoAlt="HSD Logo in White"
-        headline="Verbundpartner Prof. Dr. Philipp Ahner"
-        description="Staatliche Hochschule für Musik Trossingen
+          linkTo="mailto:michael.oehler@uos.de"
+          button="E-Mail"
+          $objectPosition="30%"
+          $buttonVariant="secondary"
+        />
+      </ParallaxSection>
+      <ParallaxSection ref={refTwo} className="sticky-section">
+        <InstitutionenWhite
+          imgSrc={ImageTablet}
+          imgAlt="tablet with sketch"
+          logoOneSrc={MireviBlack}
+          logoOneAlt="Mirevi Logo in White"
+          logoTwoSrc={HSDBlack}
+          logoTwoAlt="HSD Logo in White"
+          headline="Verbundpartner Prof. Dr. Philipp Ahner"
+          description="Staatliche Hochschule für Musik Trossingen
         Landeszentrum MUSIK–DESIGN–PERFORMANCE"
-        linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
-        button="E-Mail"
+          linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
+          button="E-Mail"
+          $objectPosition="30%"
+        />
+      </ParallaxSection>
+      <ParallaxSection ref={refThree} className="sticky-section">
+        <Institutionen
+          imgSrc={ImageTablet}
+          imgAlt="tablet with sketch"
+          logoOneSrc={MireviWhite}
+          logoOneAlt="Mirevi Logo in White"
+          logoTwoSrc={HSDWhite}
+          logoTwoAlt="HSD Logo in White"
+          headline="Verbundpartner Prof. Dr. Christian Geiger"
+          description="Hochschule Düsseldorf
+        MIREVI (Mixed Reality and Visualization)"
+          linkTo="mailto:michael.oehler@uos.de"
+          button="E-Mail"
+          $objectPosition="30%"
+          $buttonVariant="secondary"
+        />
+      </ParallaxSection>
+      <TextBild
+        imgSrc={ImageBrille}
+        imgAlt="person who plays maestro VR"
+        headline="VR glasses and controller"
+        description="Mit einem fundierten Ansatz analysieren wir Einsatzmöglichkeiten von
+        VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren
+        kontinuierlich unter Berücksichtigung der User Experience."
+        linkTo="/projekt"
+        button="Erfahre mehr"
         $objectPosition="30%"
       />
-      <Institutionen
+      <BildText
         imgSrc={ImageTablet}
         imgAlt="tablet with sketch"
-        logoOneSrc={MireviWhite}
-        logoOneAlt="Mirevi Logo in White"
-        logoTwoSrc={HSDWhite}
-        logoTwoAlt="HSD Logo in White"
-        headline="Verbundkoordination Prof. Dr. Christian Geiger"
-        description="Hochschule Düsseldorf
-        MIREVI (Mixed Reality and Visualization)"
-        linkTo="mailto:michael.oehler@uos.de"
-        button="E-Mail"
+        headline="ComPleTT: Lehrkräftefortbildung"
+        description="Im Zukunft kannst du unsere Lehr-Lern-Designs auf ComPleTT Moodle entdecken – der zentralen Kooperationsplattform für Lehrkräftefortbildung.
+        Als ein gemeinsames Angebot aller Bundesländer bietet ComPleTT eine vielseitige und umfassende Auswahl an Lehrinhalten für Lehrkräfte aus allen Bereichen."
+        linkTo="https://lms.complett.bildungsserver.de/"
+        button="zu ComPleTT"
         $objectPosition="30%"
-        $buttonVariant="secondary"
       />
     </>
   );

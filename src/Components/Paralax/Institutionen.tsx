@@ -16,6 +16,7 @@ interface InstitutionenProps {
   $objectPosition?: string;
   $buttonVariant?: "secondary";
 }
+
 interface StyledImageProps {
   $objectPosition?: string;
 }
@@ -119,7 +120,7 @@ export const HeadlineContainer = styled.div`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
 
   @media (max-width: 1024px) {
     gap: 24px;
