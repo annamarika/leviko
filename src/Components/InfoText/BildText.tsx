@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button } from "../UI/Buttons/Button.styled";
 
-interface HeroStartseiteProps {
+interface BildTextProps {
   imgSrc: string;
   imgAlt: string;
   headline: string;
@@ -16,7 +16,7 @@ interface StyledImageProps {
   $objectPosition?: string;
 }
 
-const HeroStartseite: React.FC<HeroStartseiteProps> = ({
+const BildText: React.FC<BildTextProps> = ({
   imgSrc,
   imgAlt,
   headline,
@@ -26,14 +26,7 @@ const HeroStartseite: React.FC<HeroStartseiteProps> = ({
   $objectPosition = "center",
 }) => {
   return (
-    <HeroStartseiteContainer>
-      <HeadlineContainer>
-        <h1>{headline}</h1>
-        <p>{description}</p>
-        <Button as={Link} to={linkTo}>
-          {button}
-        </Button>
-      </HeadlineContainer>
+    <BildTextContainer>
       <ImageContainer>
         <StyledImage
           src={imgSrc}
@@ -41,20 +34,27 @@ const HeroStartseite: React.FC<HeroStartseiteProps> = ({
           $objectPosition={$objectPosition}
         />
       </ImageContainer>
-    </HeroStartseiteContainer>
+      <HeadlineContainer>
+        <h3>{headline}</h3>
+        <p>{description}</p>
+        <Button as={Link} to={linkTo}>
+          {button}
+        </Button>
+      </HeadlineContainer>
+    </BildTextContainer>
   );
 };
 
-export default HeroStartseite;
+export default BildText;
 
-export const HeroStartseiteContainer = styled.div`
-  margin-top: 98px;
+export const BildTextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-right: 160px;
   margin-left: 160px;
-  padding-top: 100px;
+  margin-bottom: 100px;
+  gap: 33px;
 
   @media (max-width: 1330px) {
     margin-right: 24px;
@@ -62,35 +62,33 @@ export const HeroStartseiteContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    margin-top: 80px;
     margin-right: 24px;
     margin-left: 24px;
-    padding-top: 80px;
     gap: 24px;
+    margin-bottom: 80px;
   }
   @media (max-width: 430px) {
-    margin-top: 84px;
-    padding-top: 56px;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: start;
     gap: 0;
+    margin-bottom: 56px;
   }
 `;
 
 export const HeadlineContainer = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 28px;
-  width: 50%;
 
   @media (max-width: 1024px) {
     gap: 24px;
   }
 
   @media (max-width: 430px) {
+    width: 100%;
     gap: 20px;
     margin-bottom: 32px;
-    width: 100%;
   }
 `;
 
