@@ -69,6 +69,14 @@ export default Institutionen;
 
 export const ParalaxWrapper = styled.div`
   background-color: var(--leviko-blue);
+
+  @media (max-width: 430px) {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
 `;
 
 export const ParalaxContainer = styled.div`
@@ -94,10 +102,11 @@ export const ParalaxContainer = styled.div`
     margin-bottom: 80px;
   }
   @media (max-width: 430px) {
+    padding: 0 0;
     flex-direction: column;
     align-items: start;
     gap: 0;
-    margin-bottom: 56px;
+    margin-bottom: 0;
   }
 `;
 

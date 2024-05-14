@@ -15,18 +15,18 @@ import HSDBlack from "../assets/images/HSD_Marke_v1_HSD_Schw.png";
 import { useRef } from "react";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import ParallaxSection from "../Components/UI/ParallaxSectionStyle";
+import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
   const refTwo = useRef<HTMLDivElement>(null);
   const refThree = useRef<HTMLDivElement>(null);
+  const refFour = useRef<HTMLDivElement>(null);
 
-  useStickyScroll([refOne, refTwo, refThree], {
+  useStickyScroll([refOne, refTwo, refThree, refFour], {
     start: "top top",
     endTrigger: (element) => `+=${element.offsetHeight}`,
     pinSpacing: false,
-    onLeave: () => console.log("Leaving section"),
-    onEnterBack: () => console.log("Entering section from bottom"),
   });
 
   return (
@@ -120,6 +120,16 @@ const Startseite = () => {
           button="E-Mail"
           $objectPosition="30%"
           $buttonVariant="secondary"
+        />
+      </ParallaxSection>
+      <ParallaxSection ref={refFour} className="sticky-section">
+        <KontaktTeaser
+          headline="Lerne unser Team kennen!"
+          descriptionOne="Hinter der Verbundkoordination und den Verbundpartnern steckt ein starkes Team aus wissenschaftlichen MitarbeiterInnen."
+          descriptionTwo="Wir sind offen für Anregungen, Feedback und Kooperationsmöglichkeiten und freuen uns darauf, von dir zu hören!"
+          linkTo="/team"
+          button="Team"
+          $buttonVariant="tertiary"
         />
       </ParallaxSection>
       <TextBild

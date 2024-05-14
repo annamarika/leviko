@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  $buttonVariant?: "secondary";
+  $buttonVariant?: "secondary" | "tertiary";
 }
 
 export const Button = styled.a<ButtonProps>`
@@ -45,9 +45,8 @@ export const Button = styled.a<ButtonProps>`
     font-size: 18px;
   }
 
-  /* Variant styles */
+  /* Variant styles secondary */
   ${(props) => {
-    console.log("Variant in styled:", props.$buttonVariant); // Additional logging for debugging
     return (
       props.$buttonVariant === "secondary" &&
       css`
@@ -67,6 +66,39 @@ export const Button = styled.a<ButtonProps>`
         &:focus {
           outline: none;
           box-shadow: 10px rgba(170, 254, 131, 0.5);
+        }
+
+        /* Active (click) effect for default button */
+        &:active {
+          color: var(--leviko-white);
+          background-color: var(--leviko-black);
+          border-color: var(--leviko-black);
+        }
+      `
+    );
+  }}
+
+  /* Variant styles tertiary */
+  ${(props) => {
+    return (
+      props.$buttonVariant === "tertiary" &&
+      css`
+        background-color: transparent;
+        color: var(--leviko-blue);
+        border-color: var(--leviko-blue);
+        border: 3px solid;
+
+        /* Hover effect for default button */
+        &:hover {
+          background-color: var(--leviko-blue);
+          color: var(--leviko-white);
+          border-color: var(--leviko-blue);
+        }
+
+        /* Focus effect for default button */
+        &:focus {
+          outline: none;
+          box-shadow: 10px rgba(#182ec0, 0.5);
         }
 
         /* Active (click) effect for default button */

@@ -43,8 +43,8 @@ p {
   font-size: 24px;
 }
 
-/* Styles for screens smaller than 545px (e.g., tablet) */
-@media screen and (max-width: 545px) {
+/* Styles for screens smaller than 1024px (e.g., tablet) */
+@media screen and (max-width: 1024px) {
   h1 {
     font-size: 48px;
   }
@@ -62,8 +62,8 @@ p {
   }
 }
 
-/* Styles for screens smaller than 390px (e.g., mobile) */
-@media screen and (max-width: 390px) {
+/* Styles for screens smaller than 430px (e.g., mobile) */
+@media screen and (max-width: 430px) {
   h1 {
     font-size: 36px;
   }
