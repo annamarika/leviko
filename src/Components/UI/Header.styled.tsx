@@ -70,6 +70,7 @@ export const StyledLogoSVG = styled(LogoSVG)`
   max-height: none;
   width: 100%;
   height: auto;
+  color: var(--leviko-green);
 `;
 
 export const ButtonContainer = styled.div`

@@ -14,8 +14,10 @@ import MireviBlack from "../assets/images/MIREVI.webp";
 import HSDBlack from "../assets/images/HSD_Marke_v1_HSD_Schw.png";
 import { useRef } from "react";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
-import ParallaxSection from "../Components/UI/ParallaxSectionStyle";
+import ParallaxSection from "../Components/UI/ParallaxSection.styled";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
+import { Headline } from "../Components/UI/Headline.styled";
+import MarqueePraxispartner from "../Components/Banner/MarqueePraxispartner";
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -52,8 +54,8 @@ const Startseite = () => {
       />
       <TextBild
         imgSrc={ImageBrille}
-        imgAlt="person who plays maestro VR"
-        headline="VR glasses and controller"
+        imgAlt="VR glasses and controller"
+        headline="Neue Wege im Musikunterricht"
         description="Mit einem fundierten Ansatz analysieren wir Einsatzmöglichkeiten von
         VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren
         kontinuierlich unter Berücksichtigung der User Experience."
@@ -71,6 +73,7 @@ const Startseite = () => {
         button="zu ComPleTT"
         $objectPosition="30%"
       />
+      <Headline>Institutionen</Headline>
       <ParallaxSection ref={refOne} className="sticky-section">
         <Institutionen
           imgSrc={ImageTablet}
@@ -132,27 +135,8 @@ const Startseite = () => {
           $buttonVariant="tertiary"
         />
       </ParallaxSection>
-      <TextBild
-        imgSrc={ImageBrille}
-        imgAlt="person who plays maestro VR"
-        headline="VR glasses and controller"
-        description="Mit einem fundierten Ansatz analysieren wir Einsatzmöglichkeiten von
-        VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren
-        kontinuierlich unter Berücksichtigung der User Experience."
-        linkTo="/projekt"
-        button="Erfahre mehr"
-        $objectPosition="30%"
-      />
-      <BildText
-        imgSrc={ImageTablet}
-        imgAlt="tablet with sketch"
-        headline="ComPleTT: Lehrkräftefortbildung"
-        description="Im Zukunft kannst du unsere Lehr-Lern-Designs auf ComPleTT Moodle entdecken – der zentralen Kooperationsplattform für Lehrkräftefortbildung.
-        Als ein gemeinsames Angebot aller Bundesländer bietet ComPleTT eine vielseitige und umfassende Auswahl an Lehrinhalten für Lehrkräfte aus allen Bereichen."
-        linkTo="https://lms.complett.bildungsserver.de/"
-        button="zu ComPleTT"
-        $objectPosition="30%"
-      />
+      <Headline>Praxispartner</Headline>
+      <MarqueePraxispartner />
     </>
   );
 };

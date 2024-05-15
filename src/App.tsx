@@ -5,7 +5,7 @@ import ProjektPage from "./pages/ProjektPage";
 import TeamPage from "./pages/TeamPage";
 import ProgressBar from "../src/Components/Header/Progressbar.tsx";
 import Header from "./Components/Header/Header";
-import { useRef } from "react";
+import Footer from "./Components/Footer/Footer.tsx";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="/projekt" element={<ProjektPage />} />
         <Route path="/team" element={<TeamPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }
