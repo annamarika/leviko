@@ -1,12 +1,12 @@
-import { useEffect, RefObject } from "react";
+import { useLayoutEffect, RefObject } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 interface Options {
   start: string;
-  endTrigger?: (element: HTMLElement) => string; // Optional end trigger function
+  endTrigger?: (element: HTMLElement) => string;
   pinSpacing: boolean;
-  isLastSection?: boolean; // Indicator if it is the last section
+  isLastSection?: boolean;
   onLeave?: () => void;
   onEnterBack?: () => void;
 }
@@ -15,24 +15,26 @@ export function useStickyScroll(
   refs: RefObject<HTMLElement>[],
   options: Options
 ) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const triggers: ScrollTrigger[] = []; // Explicitly typing the array as ScrollTrigger[]
 
     refs.forEach((ref, index) => {
       if (ref.current) {
-        const element = ref.current; // Type assertion here
-        const isLast = index === refs.length - 1; // Check if the current section is the last one
+        const element = ref.current;
+        const isLast = index === refs.length - 1;
 
-        ScrollTrigger.create({
+        const trigger = ScrollTrigger.create({
           trigger: element,
-          start: "top top",
+          start: options.start,
           end: () => {
             if (isLast) {
-              return "bottom bottom"; // End when the bottom of the section hits the bottom of the viewport
+              return "bottom bottom";
             } else if (options.endTrigger) {
               return options.endTrigger(element);
             } else {
-              return `+=${element.scrollHeight}px`; // Default to extending by the scrollHeight of the section
+              return `+=${element.scrollHeight}px`;
             }
           },
           pin: true,
@@ -40,6 +42,8 @@ export function useStickyScroll(
           onLeave: options.onLeave,
           onEnterBack: options.onEnterBack,
         });
+
+        triggers.push(trigger); // Store the trigger for later cleanup
       }
     });
 
@@ -47,8 +51,8 @@ export function useStickyScroll(
     ScrollTrigger.refresh();
 
     return () => {
-      // Clean up the ScrollTriggers when the component unmounts
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      // Cleanup function to kill all ScrollTrigger instances when the component unmounts or dependencies change
+      triggers.forEach((trigger) => trigger.kill()); // Kill each individual trigger
     };
   }, [refs, options]); // Include dependencies as necessary
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface HeroProjektProps {
-  imgSrc: string;
+  $imgSrc?: string;
   imgAlt: string;
   headline: string;
   description: string;
@@ -11,12 +11,12 @@ interface HeroProjektProps {
 }
 
 interface ImageContainerProps {
-  imgSrc: string;
+  $imgSrc?: string;
   $objectPosition?: string;
 }
 
 const HeroProjekt: React.FC<HeroProjektProps> = ({
-  imgSrc,
+  $imgSrc,
   imgAlt,
   headline,
   $objectPosition = "center",
@@ -24,7 +24,7 @@ const HeroProjekt: React.FC<HeroProjektProps> = ({
   return (
     <>
       <ImageContainer
-        imgSrc={imgSrc}
+        $imgSrc={$imgSrc}
         $objectPosition={$objectPosition}
         aria-label={imgAlt}
       >
@@ -44,8 +44,9 @@ export const ImageContainer = styled.div<ImageContainerProps>`
   width: 100vw;
   height: 100vh;
   padding-top: 98px;
+  margin-bottom: 100px;
   overflow: hidden;
-  background-image: url(${(props) => props.imgSrc});
+  background-image: url(${(props) => props.$imgSrc});
   background-size: cover;
   background-position: ${(props) => props.$objectPosition || "center center"};
   background-repeat: no-repeat;
@@ -61,6 +62,13 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     mix-blend-mode: lighten;
     z-index: 1;
   }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 80px;
+  }
+  @media (max-width: 430px) {
+    margin-bottom: 56px;
+  }
 `;
 
 export const Headline = styled.h1`
@@ -75,6 +83,7 @@ export const Headline = styled.h1`
   }
 
   @media (max-width: 430px) {
+    margin: 0 20px;
     width: 100%;
   }
 `;

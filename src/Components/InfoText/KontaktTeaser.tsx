@@ -49,7 +49,7 @@ export const KontaktTeaserWrapper = styled.div`
   }
 
   @media (max-width: 430px) {
-    padding: 100px 0;
+    padding: 56px 0;
     height: 100vh;
   }
 `;

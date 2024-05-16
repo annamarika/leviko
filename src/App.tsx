@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ProgressBar />
+
       <Header />
       <Routes>
         <Route path="/" element={<Startseite />} />

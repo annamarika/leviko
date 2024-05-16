@@ -44,6 +44,10 @@ export const NavContainer = styled.div`
     margin-right: 24px;
     margin-left: 24px;
   }
+  @media (max-width: 430px) {
+    margin-right: 20px;
+    margin-right: 20px;
+  }
 `;
 
 export const LogoContainer = styled.a`
