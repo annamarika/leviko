@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   $buttonVariant?: "secondary" | "tertiary";
 }
 
-export const Button = styled.a<ButtonProps>`
+export const Button = styled(Link)<ButtonProps>`
   text-align: center;
   text-decoration: none;
+  display: block;
   background-color: var(--leviko-blue); // Default background
   border-radius: 15px;
   color: var(--leviko-white); // Default text color

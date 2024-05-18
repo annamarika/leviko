@@ -119,7 +119,7 @@ const Startseite = () => {
           headline="Verbundpartner Prof. Dr. Christian Geiger"
           description="Hochschule Düsseldorf
         MIREVI (Mixed Reality and Visualization)"
-          linkTo="mailto:michael.oehler@uos.de"
+          linkTo="mailto:geiger@hs-duesseldorf.de"
           button="E-Mail"
           $objectPosition="30%"
           $buttonVariant="secondary"

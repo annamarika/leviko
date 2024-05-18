@@ -98,7 +98,7 @@ const Header: React.FC = () => {
         <Overlay $isOpen={isMenuOpen}>
           <OverlayContainer>
             <OverlayContent>
-              <MenuItem as={Link} to="/">
+              <MenuItem as={Link} to="/" onClick={toggleMenu}>
                 Startseite
                 <ArrowContainer>
                   <StyledArrowSVG />
@@ -106,7 +106,7 @@ const Header: React.FC = () => {
               </MenuItem>
             </OverlayContent>
             <OverlayContent>
-              <MenuItem as={Link} to="/projekt">
+              <MenuItem as={Link} to="/projekt" onClick={toggleMenu}>
                 Projekt
                 <ArrowContainer>
                   <StyledArrowSVG />
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
               </MenuItem>
             </OverlayContent>
             <OverlayContent>
-              <MenuItem as={Link} to="/team">
+              <MenuItem as={Link} to="/team" onClick={toggleMenu}>
                 Team
                 <ArrowContainer>
                   <StyledArrowSVG />

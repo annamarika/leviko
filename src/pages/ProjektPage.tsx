@@ -7,6 +7,8 @@ import { Headline } from "../Components/UI/Headline.styled.tsx";
 import ParallaxSection from "../Components/UI/ParallaxSection.styled.tsx";
 import FraumitBrille from "../assets/images/frau_mit_VRBrille.webp";
 import Frauspielt from "../assets/images/frau_spielt_VRSpiel.webp";
+import Mannspielt from "../assets/images/Mann_mit_VRBrille.webp";
+import MannspieltZwei from "../assets/images/Mann_mit_VRBrille_und_roten_Pulli.webp";
 import { useRef } from "react";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import styled from "styled-components";
@@ -112,9 +114,7 @@ const ProjektPage = () => {
       <Headline>Das solltest du wissen!</Headline>
       <ParallaxSection ref={refOne} className="sticky-section">
         <ProjektInfoParallax
-          headline={
-            "Im Hier und Jetzt: Virtuelle Realität und Augmented Reality"
-          }
+          headline={"Im Hier und Jetzt: Virtuelle und Erweiterbare Realität"}
           imgAlt="Frau spielt eine VR Anwendung"
           imgSrc={Frauspielt}
           linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
@@ -139,7 +139,8 @@ const ProjektPage = () => {
         <ProjektInfoParallaxWhite
           headline={"VR/AR im musisch-kreativen Kontext"}
           imgAlt="Frau spielt eine VR Anwendung"
-          imgSrc={Frauspielt}
+          imgSrc={Mannspielt}
+          $objectPosition="center"
           linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
           button="Erfahre mehr"
           description={
@@ -161,7 +162,7 @@ const ProjektPage = () => {
         <ProjektInfoParallax
           headline={"Unsere Erwartungen für die Zukunft von VR/AR"}
           imgAlt="Frau spielt eine VR Anwendung"
-          imgSrc={Frauspielt}
+          imgSrc={MannspieltZwei}
           linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
           button="Erfahre mehr"
           $buttonVariant="secondary"

@@ -113,7 +113,7 @@ export const HeadlineContainer = styled.h3`
 
 export const ImageContainer = styled.div`
   width: 50%;
-  height: auto;
+  height: 25%;
   overflow: hidden;
 
   @media (max-width: 1024px) {

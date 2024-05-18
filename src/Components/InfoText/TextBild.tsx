@@ -28,7 +28,7 @@ const TextBild: React.FC<TextBildProps> = ({
     <BildTextContainer>
       <HeadlineContainer>
         <h3>{headline}</h3>
-        <p>{description} </p>
+        <PContainer>{description} </PContainer>
         <Button as={Link} to={linkTo}>
           {button}
         </Button>
@@ -48,7 +48,7 @@ export default TextBild;
 
 export const BildTextContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   margin-right: 160px;
   margin-left: 160px;
@@ -89,6 +89,10 @@ export const HeadlineContainer = styled.div`
     gap: 20px;
     margin-bottom: 32px;
   }
+`;
+
+export const PContainer = styled.p`
+  white-space: pre-line;
 `;
 
 export const ImageContainer = styled.div`

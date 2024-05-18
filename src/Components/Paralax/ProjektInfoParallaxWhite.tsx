@@ -27,6 +27,7 @@ const ProjektInfoParallaxWhite: React.FC<ProjektInfoParallaxProps> = ({
   $buttonVariant,
   description,
 }) => {
+  console.log("Object Position:", $objectPosition);
   return (
     <ParalaxWrapper>
       <ParalaxContainer>
@@ -114,10 +115,11 @@ export const HeadlineContainer = styled.h3`
 export const ImageContainer = styled.div`
   width: 50%;
   height: auto;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
+  display: block;
 
   @media (max-width: 1024px) {
-    height: auto;
   }
 
   @media (max-width: 430px) {
@@ -131,11 +133,7 @@ export const StyledImage = styled.img<StyledImageProps>`
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  object-position: center;
-
-  @media (max-width: 430px) {
-    object-position: ${(props) => props.$objectPosition || "30%"};
-  }
+  object-position: ${(props) => props.$objectPosition || "30%"};
 `;
 
 export const TextButtonContainer = styled.div`

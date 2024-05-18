@@ -5,6 +5,7 @@ export const Headline = styled.h2`
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
+  text-align: center;
 
   @media (max-width: 1025px) {
     margin-bottom: 80px;

@@ -108,8 +108,12 @@ export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 50%;
+  width: 70%;
   order: 3;
+
+  @media (max-width: 1024px) {
+    width: 40%;
+  }
 
   @media (max-width: 430px) {
     width: 100%;
