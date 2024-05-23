@@ -144,7 +144,7 @@ export const ButtonLogoContainer = styled.div`
   display: flex;
   gap: 80px;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
 
   @media (max-width: 1024px) {
     gap: 40px;

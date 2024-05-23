@@ -1,6 +1,6 @@
-import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
-import MireviBlack from "../../assets/images/MIREVI.webp";
-import FrauVRBrille from "../../assets/images/frau_mit_VRBrille.webp";
+import Leo from "../../assets/images/Leonard Bruns.webp";
+import Bene from "../../assets/images/Benedict Saurbier.webp";
+import OsnaLogo from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
 
 export const TeamOsnaData: Array<{
   id: string;
@@ -19,95 +19,100 @@ export const TeamOsnaData: Array<{
   $buttonVariant?: "secondary" | "tertiary";
 }> = [
   {
-    id: "Verbundkoordination Prof. Dr. Michael Oehler",
-    title: "Verbundkoordination Prof. Dr. Michael Oehler",
+    id: "Leonard_Bruns",
+    title: "Leonard Bruns",
     content: (
-      <p>
-        Michael Oehler ist Professor für Systematische Musikwissenschaft an der
-        Universität Osnabrück. Er leitet das Music Technology and Digital
-        Musicology Lab (MTDML) und ist Geschäftsführer der Forschungsstelle
-        Musik- und Medientechnologie (FMT). In den letzten Jahren war er an
-        bedeutenden Forschungsprojekten beteiligt, darunter NOSTRESS, PRESET und
-        CA/AXR. <br /> <br />
-        Als Mitglied verschiedener Fachgesellschaften wie der Gesellschaft für
-        Musikforschung (GfM) und der Deutschen Gesellschaft für Musikpsychologie
-        (DGM) trägt er aktiv zum musikwissenschaftlichen Diskurs bei.
-      </p>
+      <>
+        <p>
+          Ist wissenschaftlicher Mitarbeiter im music technology and digital
+          musicology lab (mtdml) an der Universität Osnabrück. Nach seinem
+          Lehramtsstudium in den Fächern Musik und Mathematik beendete er 2023
+          sein Referendariat mit dem 2. Staatsexamen.
+        </p>
+        <p>
+          Neben LEVIKO XR arbeitete Benedict Saurbier an weiteren Forschungs-
+          und Lehrprojekten mit, darunter der Virtual Organology, Musical
+          Interfaces und NOSTRESS. Darüber hinaus beschäftigte er sich in seinen
+          Abschlussarbeiten mit den Themenbereichen Schallquellen in der
+          virtuellen und erweiterten Realität sowie zu Mixed-Audio-Reality.
+        </p>
+      </>
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: MireviWhite,
-    logoTwo: MireviWhite,
-    altLogoOne: "Mirevi Logo",
-    altLogoTwo: "Mirevi Logo",
+    logoOne: OsnaLogo,
+    logoTwo: "",
+    altLogoOne: "Osnabrück Logo",
+    altLogoTwo: "",
     $objectPosition: "center",
-    imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
-    linkTo: "mailto:michael.oehler@uos.de",
+    imgAlt: "Profilbild Leonard Bruns",
+    imgSrc: Leo,
+    linkTo: "mailto:lebruns@uni-osnabrueck.de",
     button: "E-Mail",
     $buttonVariant: "secondary",
   },
   {
-    id: "Verbundpartner Prof. Dr. Philipp Ahner",
-    title: "Verbundpartner Prof. Dr. Philipp Ahner",
+    id: "Benedict_Saurbier",
+    title: "Benedict Saurbier",
     content: (
-      <p>
-        Im Rahmen des Projekts werden verschiedene Methodiken angewandt, um die
-        Projektziele zu erreichen <br /> <br />
-        Hierzu zählen unter anderem die Analyse und Identifikation möglicher
-        Einsatzgebiete von VR/AR im Musikunterricht mithilfe von etablierten
-        Modellen und Werkzeugen wie TPACK, SAMR, CAMIL sowie dem Modell nach
-        Kerres et al. <br /> <br /> Die Entwicklung der Prototypen und
-        Konzeption der VR/AR Lehr-Lern-Designs erfolgt in einem iterativen
-        Prozess, der sich an Design-Based Research und dem
-        S.P.E.C.I.A.L-Framework orientiert. Dabei wird kontinuierlich die User
-        Experience betrachtet und die Designs entsprechend angepasst.
-      </p>
+      <>
+        <p>
+          Ist wissenschaftlicher Mitarbeiter im music technology and digital
+          musicology lab (mtdml) an der Universität Osnabrück. Nach seinem
+          Lehramtsstudium in den Fächern Musik und Mathematik beendete er 2023
+          sein Referendariat mit dem 2. Staatsexamen.
+        </p>
+        <p>
+          Neben LEVIKO XR arbeitete Benedict Saurbier an weiteren Forschungs-
+          und Lehrprojekten mit, darunter der Virtual Organology, Musical
+          Interfaces und NOSTRESS. Darüber hinaus beschäftigte er sich in seinen
+          Abschlussarbeiten mit den Themenbereichen Schallquellen in der
+          virtuellen und erweiterten Realität sowie zu Mixed-Audio-Reality.
+        </p>
+      </>
     ),
     description:
-      "Staatliche Hochschule für Musik Trossingen Landeszentrum MUSIK–DESIGN–PERFORMANCE",
-    logoOne: MireviBlack,
-    logoTwo: MireviBlack,
-    altLogoOne: "Mirevi Logo",
-    altLogoTwo: "Mirevi Logo",
+      "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
+    logoOne: OsnaLogo,
+    logoTwo: "",
+    altLogoOne: "Osnabrück Logo",
+    altLogoTwo: "",
     $objectPosition: "center",
-    imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
-    linkTo: "mailto:p.ahner@doz.hfm-trossingen.de",
+    imgAlt: "Profilbild Benedict Saurbier",
+    imgSrc: Bene,
+    linkTo: "mailto:benedict.saurbier@uni-osnabrueck.de",
     button: "E-Mail",
   },
   {
-    id: "Verbundpartner Prof. Dr. Christian Geiger",
-    title: "Verbundpartner Prof. Dr. Christian Geiger",
+    id: "Tray_Minh_Voong",
+    title: "Tray Minh Voong",
     content: (
-      <p>
-        Seit November 2004 ist Christian Geiger Professor für Mixed Reality und
-        Visualisierung im Fachbereich Medien der HS Düsseldorf und arbeitet an
-        innovativen Mensch-Technik-Schnittstellen.
-        <br /> <br />
-        Mit seinem interdisziplinären Team und seinen Studentinnen und Studenten
-        geht es ihm besonders darum, neue Technologien nutzerzentriert, d. h.
-        für den Menschen zu entwickeln und den Transfer in die Praxis schon
-        frühzeitig zu unterstützen. <br /> <br />
-        Er leitet seit 2015 den Innovationshub, ein Forschungs- und
-        Entwicklungslabor nahe des Düsseldorfer Hauptbahnhofs wo Studierende mit
-        zwei mittelständischen Firmen gemeinsam an Digitalisierungsprojekten
-        arbeiten.
-        <br /> <br />
-        Informationen zu Forschung, Lehre und Transfer findet man unter
-        www.mirevi.de
-      </p>
+      <>
+        <p>
+          Tray Minh Voong ist nach seinem Abschluss im Master of Education für
+          die Fächer Biologie und Musik als wissenschaftlicher Mitarbeiter in
+          der Universität Osnabrück tätig und wirkte an unzähligen Projekten im
+          Bereich Musiktechnologie mit.
+        </p>
+        <p>
+          Zu den Forschungsschwerpunkten gehört die virtuelle Akustik in Virtual
+          Reality – Anwendungen und psychoakustische Wahrnehmungen im virtuellen
+          Raum. Er übernahm in dem Lehrprojekten ‚VILLA VR‘ und ‚Objektbasierte
+          Musikproduktionen (OBM)‘ die Leitung und war/ist in anderen Projekten
+          wie Virtual Organology und LEVIKO-XR tätig.
+        </p>
+      </>
     ),
     description:
-      "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
-    logoOne: MireviWhite,
-    logoTwo: MireviWhite,
-    altLogoOne: "Mirevi Logo",
-    altLogoTwo: "Mirevi Logo",
+      "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
+    logoOne: OsnaLogo,
+    logoTwo: "",
+    altLogoOne: "Osnabrück Logo",
+    altLogoTwo: "",
     $objectPosition: "center",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
-    linkTo: "mailto:geiger@hs-duesseldorf.de",
+    imgSrc: OsnaLogo,
+    linkTo: "mailto:tray.minh.voong@uni-osnabrueck.de",
     button: "E-Mail",
     $buttonVariant: "secondary",
   },

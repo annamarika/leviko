@@ -10,14 +10,16 @@ import ImageTablet from "../assets/images/Tablet_Zeichnung.webp";
 import ImageMaestro from "../assets/images/person_plays_maestro.jpg";
 import MireviWhite from "../assets/images/MIREVI_weiss.webp";
 import HSDWhite from "../assets/images/HSD_Marke_v1_HSD_weiss.png";
-import MireviBlack from "../assets/images/MIREVI.webp";
-import HSDBlack from "../assets/images/HSD_Marke_v1_HSD_Schw.png";
 import { useRef } from "react";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import ParallaxSection from "../Components/UI/ParallaxSection.styled";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
 import { Headline } from "../Components/UI/Headline.styled";
 import MarqueePraxispartner from "../Components/Banner/MarqueePraxispartner";
+import LogoOsna from "../assets/images/UOS-Logo_Grau_1C_v01.webp";
+import LogoTros from "../assets/images/hfm-trossingen-logo550x274.webp";
+import Chris from "../assets/images/CGEI.webp";
+import Phil from "../assets/images/Philipp Ahner.webp";
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -78,10 +80,10 @@ const Startseite = () => {
         <Institutionen
           imgSrc={ImageTablet}
           imgAlt="tablet with sketch"
-          logoOneSrc={MireviWhite}
-          logoOneAlt="Mirevi Logo in White"
-          logoTwoSrc={HSDWhite}
-          logoTwoAlt="HSD Logo in White"
+          logoOneSrc={LogoOsna}
+          logoOneAlt="Osnabrück Logo"
+          logoTwoSrc=""
+          logoTwoAlt=""
           headline="Verbundkoordination Prof. Dr. Michael Oehler"
           description="Universität Osnabrück
         Institut für Musikwissenschaft und Musikpädagogik
@@ -94,12 +96,12 @@ const Startseite = () => {
       </ParallaxSection>
       <ParallaxSection ref={refTwo} className="sticky-section">
         <InstitutionenWhite
-          imgSrc={ImageTablet}
+          imgSrc={Phil}
           imgAlt="tablet with sketch"
-          logoOneSrc={MireviBlack}
-          logoOneAlt="Mirevi Logo in White"
-          logoTwoSrc={HSDBlack}
-          logoTwoAlt="HSD Logo in White"
+          logoOneSrc={LogoTros}
+          logoOneAlt="Logo Osnabrück"
+          logoTwoSrc=""
+          logoTwoAlt=""
           headline="Verbundpartner Prof. Dr. Philipp Ahner"
           description="Staatliche Hochschule für Musik Trossingen
         Landeszentrum MUSIK–DESIGN–PERFORMANCE"
@@ -110,7 +112,7 @@ const Startseite = () => {
       </ParallaxSection>
       <ParallaxSection ref={refThree} className="sticky-section">
         <Institutionen
-          imgSrc={ImageTablet}
+          imgSrc={Chris}
           imgAlt="tablet with sketch"
           logoOneSrc={MireviWhite}
           logoOneAlt="Mirevi Logo in White"

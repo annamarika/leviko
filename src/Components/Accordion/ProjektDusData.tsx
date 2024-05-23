@@ -2,7 +2,9 @@ import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
 import MireviBlack from "../../assets/images/MIREVI.webp";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
 import HSDBlack from "../../assets/images/HSD_Marke_v1_HSD_Schw.png";
-import FrauVRBrille from "../../assets/images/frau_mit_VRBrille.webp";
+import Jochen from "../../assets/images/JOFE.webp";
+import Charlotte from "../../assets/images/CHTR.webp";
+import Anna from "../../assets/images/anna.webp";
 
 export const TeamDusData: Array<{
   id: string;
@@ -21,7 +23,7 @@ export const TeamDusData: Array<{
   $buttonVariant?: "secondary" | "tertiary";
 }> = [
   {
-    id: "Jochen Feitsch",
+    id: "Jochen_Feitsch",
     title: "Jochen Feitsch",
     content: (
       <p>
@@ -40,23 +42,23 @@ export const TeamDusData: Array<{
       "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
     logoOne: HSDWhite,
     logoTwo: MireviWhite,
-    altLogoOne: "Mirevi Logo",
+    altLogoOne: "HSD Logo",
     altLogoTwo: "Mirevi Logo",
     $objectPosition: "center",
-    imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
+    imgAlt: "Jochen Feitsch",
+    imgSrc: Jochen,
     linkTo: "mailto:jochen.feitsch@hs-duesseldorf.de",
     button: "E-Mail",
     $buttonVariant: "secondary",
   },
   {
-    id: "Anna Holtmann",
-    title: "UX/Ui Designerin Anna Holtmann",
+    id: "Anna_Holtmann",
+    title: "Anna Holtmann",
     content: (
       <p>
-        Anna Holtmann ist eine studierte Produktdesignerin und arbeitet seit
-        2022 bei Mirevi als UX/UI-Designerin und Frontend-Entwicklerin mit dem
-        Fokus auf Web XR. <br /> <br />
+        Anna Holtmann ist studierte Produktdesignerin und arbeitet seit 2022 bei
+        Mirevi als UX/UI-Designerin und Frontend-Entwicklerin mit dem Fokus auf
+        Web XR. <br /> <br />
         Schon während ihres Studiums spezialisierte sich Anna auf
         3D-Modellierung und 3D-Scan zur Anwendung für AR-Anwendungen. <br />
         <br />
@@ -72,13 +74,13 @@ export const TeamDusData: Array<{
     altLogoOne: "Mirevi Logo",
     altLogoTwo: "Mirevi Logo",
     $objectPosition: "center",
-    imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
+    imgAlt: "Anna Holtmann",
+    imgSrc: Anna,
     linkTo: "mailto:anna-maria.holtmann@hs-duesseldorf.de",
     button: "E-Mail",
   },
   {
-    id: "Charlotte Triebus",
+    id: "Charlotte_Triebus",
     title: "Charlotte Triebus",
     content: (
       <p>
@@ -103,11 +105,11 @@ export const TeamDusData: Array<{
       "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
     logoOne: HSDWhite,
     logoTwo: MireviWhite,
-    altLogoOne: "Mirevi Logo",
+    altLogoOne: "HSD Logo",
     altLogoTwo: "Mirevi Logo",
     $objectPosition: "center",
-    imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
+    imgAlt: "Charlotte Triebus",
+    imgSrc: Charlotte,
     linkTo: "mailto:chralotte.triebus@hs-duesseldorf.de",
     button: "E-Mail",
     $buttonVariant: "secondary",
