@@ -4,30 +4,27 @@ import styled from "styled-components";
 interface ParallaxSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
-  isSticky?: boolean;
 }
 
-const StyledParalaxSection = styled.div<{ isSticky?: boolean }>`
+const StyledParallaxSection = styled.div`
   width: 100%;
   z-index: 10;
   position: relative;
 
-  ${(props) =>
-    props.isSticky &&
-    `
-    position: -webkit-sticky;
+  &.sticky {
+    position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 0;
-  `}
+  }
 `;
 
 // Using forwardRef to allow ref forwarding
 const ParallaxSection = forwardRef<HTMLDivElement, ParallaxSectionProps>(
-  ({ children, isSticky, className }, ref) => {
+  ({ children, className }, ref) => {
     return (
-      <StyledParalaxSection ref={ref} isSticky={isSticky} className={className}>
+      <StyledParallaxSection ref={ref} className={className}>
         {children}
-      </StyledParalaxSection>
+      </StyledParallaxSection>
     );
   }
 );

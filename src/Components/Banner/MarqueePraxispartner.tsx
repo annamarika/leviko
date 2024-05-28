@@ -2,14 +2,31 @@ import Marquee from "react-fast-marquee";
 import styled from "styled-components";
 import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
+import lernenDigital from "../../assets/images/lernen-digital-Kompetenzverbund-negativ-RGB.webp";
+import bmbf from "../../assets/images/Gefordert_vom_BMBF.png";
+import euFunded from "../../assets/images/EN_FundedbytheEU_RGB_WHITE.webp";
+import logoTros from "../../assets/images/logo-hochschule-fuer-musik-trossingen.webp";
+import logoOsna from "../../assets/images/UOS-Logo_Schwarz.webp";
 
 const MarqueePraxispartner = () => {
   return (
     <>
       <MarqueeContainer>
         <Marquee gradient={false} speed={50} pauseOnHover={true}>
-          <ImageContainer href="https://www.hs-duesseldorf.de/">
-            <StyledImage src={MireviWhite} alt="MIREVI Logo" />
+          <ImageContainer href="https://lernen.digital/">
+            <StyledImage src={lernenDigital} alt="lernenDigital Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.bmbf.de/bmbf/de/home/home_node.html">
+            <StyledImage src={bmbf} alt="BMBF Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://european-union.europa.eu/index_en">
+            <StyledImage src={euFunded} alt="EU Funded Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.hfm-trossingen.de/">
+            <StyledImage src={logoTros} alt="Trossingen Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.musik.uni-osnabrueck.de/startseite.html">
+            <StyledImage src={logoOsna} alt="Osnabrück Logo" />
           </ImageContainer>
           <ImageContainer href="https://www.hs-duesseldorf.de/">
             <StyledImage src={HSDWhite} alt="MIREVI Logo" />
@@ -17,20 +34,26 @@ const MarqueePraxispartner = () => {
           <ImageContainer href="https://www.hs-duesseldorf.de/">
             <StyledImage src={MireviWhite} alt="MIREVI Logo" />
           </ImageContainer>
+          <ImageContainer href="https://lernen.digital/">
+            <StyledImage src={lernenDigital} alt="lernenDigital Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.bmbf.de/bmbf/de/home/home_node.html">
+            <StyledImage src={bmbf} alt="BMBF Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://european-union.europa.eu/index_en">
+            <StyledImage src={euFunded} alt="EU Funded Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.hfm-trossingen.de/">
+            <StyledImage src={logoTros} alt="Trossingen Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.musik.uni-osnabrueck.de/startseite.html">
+            <StyledImage src={logoOsna} alt="Osnabrück Logo" />
+          </ImageContainer>
           <ImageContainer href="https://www.hs-duesseldorf.de/">
             <StyledImage src={HSDWhite} alt="MIREVI Logo" />
           </ImageContainer>
           <ImageContainer href="https://www.hs-duesseldorf.de/">
             <StyledImage src={MireviWhite} alt="MIREVI Logo" />
-          </ImageContainer>
-          <ImageContainer href="https://www.hs-duesseldorf.de/">
-            <StyledImage src={HSDWhite} alt="MIREVI Logo" />
-          </ImageContainer>
-          <ImageContainer href="https://www.hs-duesseldorf.de/">
-            <StyledImage src={MireviWhite} alt="MIREVI Logo" />
-          </ImageContainer>
-          <ImageContainer href="https://www.hs-duesseldorf.de/">
-            <StyledImage src={HSDWhite} alt="MIREVI Logo" />
           </ImageContainer>
         </Marquee>
       </MarqueeContainer>

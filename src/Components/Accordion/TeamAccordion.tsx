@@ -18,7 +18,7 @@ interface StyledArrowProps {
 interface TeamAccordionProps {
   items: Array<{
     id: string;
-    title: string;
+    title: JSX.Element | string;
     description: string;
     logoOne: string;
     logoTwo: string;
@@ -65,7 +65,7 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
                   <ImageContainer>
                     <StyledImage src={item.logoOne} alt={item.altLogoOne} />
                   </ImageContainer>
-                  <ImageContainer>
+                  <ImageContainer $hide={item.logoTwo === ""}>
                     <StyledImage src={item.logoTwo} alt={item.altLogoTwo} />
                   </ImageContainer>
                 </LogoContainer>
@@ -228,7 +228,9 @@ export const StyledImage = styled.img`
   }
 `;
 
-export const ImageContainer = styled.div``;
+export const ImageContainer = styled.div<{ $hide?: boolean }>`
+  ${({ $hide }) => $hide && "display: none;"}
+`;
 
 const ArrowContainer = styled.div<StyledArrowProps>`
   display: flex;

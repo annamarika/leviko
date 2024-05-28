@@ -27,15 +27,18 @@ export const TeamDusData: Array<{
     title: "Jochen Feitsch",
     content: (
       <p>
-        Michael Oehler ist Professor für Systematische Musikwissenschaft an der
-        Universität Osnabrück. Er leitet das Music Technology and Digital
-        Musicology Lab (MTDML) und ist Geschäftsführer der Forschungsstelle
-        Musik- und Medientechnologie (FMT). In den letzten Jahren war er an
-        bedeutenden Forschungsprojekten beteiligt, darunter NOSTRESS, PRESET und
-        CA/AXR. <br /> <br />
-        Als Mitglied verschiedener Fachgesellschaften wie der Gesellschaft für
-        Musikforschung (GfM) und der Deutschen Gesellschaft für Musikpsychologie
-        (DGM) trägt er aktiv zum musikwissenschaftlichen Diskurs bei.
+        Jochen Feitsch ist wissenschaftlicher Mitarbeiter und Laborleiter im
+        Team MIREVI der Hochschule Düsseldorf. Er besitzt einen Master of
+        Science in Medieninformatik und lehrt unter anderem Mathematik 3 im
+        Bachelorstudiengang Medieninformatik. Zusätzlich betreut er
+        Studierendenprojekte, die sich vor allem mit medialen Inszenierungen
+        befassen. <br /> <br />
+        In seiner wissenschaftlichen Arbeit koordiniert er verschiedene
+        Forschungsprojekte des Teams und bringt umfangreiche Kenntnisse in den
+        Bereichen kreative Codierung, Motion Capturing und digitale Performance
+        ein. Seine Arbeit verbindet technologische Innovation mit künstlerischer
+        Kreativität, was sich in zahlreichen Projekten und Installationen
+        widerspiegelt.
       </p>
     ),
     description:

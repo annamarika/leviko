@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import MarqueeBanner from "../Components/Banner/MarqueeBanner";
 import HeroStartseite from "../Components/Hero/HeroStartseite";
 import BildText from "../Components/InfoText/BildText";
@@ -10,14 +12,12 @@ import ImageTablet from "../assets/images/Tablet_Zeichnung.webp";
 import ImageMaestro from "../assets/images/person_plays_maestro.jpg";
 import MireviWhite from "../assets/images/MIREVI_weiss.webp";
 import HSDWhite from "../assets/images/HSD_Marke_v1_HSD_weiss.png";
-import { useRef } from "react";
-import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import ParallaxSection from "../Components/UI/ParallaxSection.styled";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
 import { Headline } from "../Components/UI/Headline.styled";
 import MarqueePraxispartner from "../Components/Banner/MarqueePraxispartner";
-import LogoOsna from "../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import LogoTros from "../assets/images/hfm-trossingen-logo550x274.webp";
+import LogoOsnaBlack from "../assets/images/UOS-Logo_Schwarz.webp";
 import Chris from "../assets/images/CGEI.webp";
 import Phil from "../assets/images/Philipp Ahner.webp";
 
@@ -28,17 +28,20 @@ const Startseite = () => {
   const refFour = useRef<HTMLDivElement>(null);
 
   useStickyScroll([refOne, refTwo, refThree, refFour], {
-    start: "top top",
-    endTrigger: (element) => `+=${element.offsetHeight}`,
-    pinSpacing: false,
+    onEnter: (entry) => {
+      entry.target.classList.add("sticky");
+    },
+    onLeave: (entry) => {
+      entry.target.classList.remove("sticky");
+    },
   });
 
   return (
-    <>
+    <div>
       <HeroStartseite
         imgSrc={ImageMaestro}
-        imgAlt="person who plays maestro VR"
-        headline="Erschliesse neue Klangwelten"
+        imgAlt="Person playing maestro VR"
+        headline="Erkunde neue Klangwelten"
         description="LEVIKO XR: Digitale Innovation im Musikunterricht."
         linkTo="/projekt"
         button="Erfahre mehr"
@@ -47,7 +50,7 @@ const Startseite = () => {
       <MarqueeBanner />
       <BildText
         imgSrc={ImageFrau}
-        imgAlt="women who wears vr glasses"
+        imgAlt="Woman wearing VR glasses"
         headline="Unsere Ziele sind klar"
         description="Innovative VR/AR Lehr-Lern-Designs entwickeln, technische Möglichkeiten im Musikunterricht aufzeigen und eine breite Anwendung durch Partnerschaften sicherstellen. Begleite uns auf dem Weg zu einer bahnbrechenden musikalischen Bildung!"
         linkTo="/projekt"
@@ -58,19 +61,16 @@ const Startseite = () => {
         imgSrc={ImageBrille}
         imgAlt="VR glasses and controller"
         headline="Neue Wege im Musikunterricht"
-        description="Mit einem fundierten Ansatz analysieren wir Einsatzmöglichkeiten von
-        VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren
-        kontinuierlich unter Berücksichtigung der User Experience."
+        description="Mit einem fundierten Ansatz analysieren wir Einsatzmöglichkeiten von VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren kontinuierlich unter Berücksichtigung der User Experience."
         linkTo="/projekt"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
       <BildText
         imgSrc={ImageTablet}
-        imgAlt="tablet with sketch"
+        imgAlt="Tablet with sketch"
         headline="ComPleTT: Lehrkräftefortbildung"
-        description="Im Zukunft kannst du unsere Lehr-Lern-Designs auf ComPleTT Moodle entdecken – der zentralen Kooperationsplattform für Lehrkräftefortbildung.
-        Als ein gemeinsames Angebot aller Bundesländer bietet ComPleTT eine vielseitige und umfassende Auswahl an Lehrinhalten für Lehrkräfte aus allen Bereichen."
+        description="In the future, you can discover our teaching and learning designs on ComPleTT Moodle – the central cooperation platform for teacher training. As a joint offering of all federal states, ComPleTT offers a diverse and comprehensive range of teaching content for teachers from all areas."
         linkTo="https://lms.complett.bildungsserver.de/"
         button="zu ComPleTT"
         $objectPosition="30%"
@@ -79,15 +79,19 @@ const Startseite = () => {
       <ParallaxSection ref={refOne} className="sticky-section">
         <Institutionen
           imgSrc={ImageTablet}
-          imgAlt="tablet with sketch"
-          logoOneSrc={LogoOsna}
+          imgAlt="Tablet with sketch"
+          logoOneSrc={LogoOsnaBlack}
           logoOneAlt="Osnabrück Logo"
           logoTwoSrc=""
           logoTwoAlt=""
-          headline="Verbundkoordination Prof. Dr. Michael Oehler"
-          description="Universität Osnabrück
-        Institut für Musikwissenschaft und Musikpädagogik
-        Music Technology & Digital Musicology Lab (MTDML)"
+          headline={
+            <>
+              <span>Verbundkoordination</span>
+              <br />
+              <span>Prof. Dr. Michael Oehler</span>
+            </>
+          }
+          description="Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)"
           linkTo="mailto:michael.oehler@uos.de"
           button="E-Mail"
           $objectPosition="30%"
@@ -97,14 +101,19 @@ const Startseite = () => {
       <ParallaxSection ref={refTwo} className="sticky-section">
         <InstitutionenWhite
           imgSrc={Phil}
-          imgAlt="tablet with sketch"
+          imgAlt="Tablet with sketch"
           logoOneSrc={LogoTros}
-          logoOneAlt="Logo Osnabrück"
+          logoOneAlt="Logo Trossingen"
           logoTwoSrc=""
           logoTwoAlt=""
-          headline="Verbundpartner Prof. Dr. Philipp Ahner"
-          description="Staatliche Hochschule für Musik Trossingen
-        Landeszentrum MUSIK–DESIGN–PERFORMANCE"
+          headline={
+            <>
+              <span>Verbundpartner</span>
+              <br />
+              <span>Prof. Dr. Philipp Ahner</span>
+            </>
+          }
+          description="Staatliche Hochschule für Musik Trossingen Landeszentrum MUSIK–DESIGN–PERFORMANCE"
           linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
           button="E-Mail"
           $objectPosition="30%"
@@ -113,14 +122,19 @@ const Startseite = () => {
       <ParallaxSection ref={refThree} className="sticky-section">
         <Institutionen
           imgSrc={Chris}
-          imgAlt="tablet with sketch"
+          imgAlt="Chris"
           logoOneSrc={MireviWhite}
           logoOneAlt="Mirevi Logo in White"
           logoTwoSrc={HSDWhite}
           logoTwoAlt="HSD Logo in White"
-          headline="Verbundpartner Prof. Dr. Christian Geiger"
-          description="Hochschule Düsseldorf
-        MIREVI (Mixed Reality and Visualization)"
+          headline={
+            <>
+              <span>Verbundpartner</span>
+              <br />
+              <span>Prof. Dr. Christian Geiger</span>
+            </>
+          }
+          description="Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)"
           linkTo="mailto:geiger@hs-duesseldorf.de"
           button="E-Mail"
           $objectPosition="30%"
@@ -139,7 +153,8 @@ const Startseite = () => {
       </ParallaxSection>
       <Headline>Praxispartner</Headline>
       <MarqueePraxispartner />
-    </>
+    </div>
   );
 };
+
 export default Startseite;

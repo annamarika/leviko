@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     font-family: Blatant;
+    scroll-behavior: smooth;
   }
   
   * {
@@ -23,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     --leviko-blue: #182EC0;
     --leviko-green: #AAFE83;
   }
+
+
+
+
 
   @font-face {
     font-family: "Blatant";

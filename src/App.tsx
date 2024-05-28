@@ -6,17 +6,21 @@ import TeamPage from "./pages/TeamPage";
 import ProgressBar from "../src/Components/Header/Progressbar.tsx";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer.tsx";
+import Impressum from "./pages/Impressum.tsx";
+import ScrollToTop from "./Components/Header/ScrollToTop.ts";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-
+      <ProgressBar />
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Startseite />} />
         <Route path="/projekt" element={<ProjektPage />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/impressum" element={<Impressum />} />
       </Routes>
       <Footer />
     </>

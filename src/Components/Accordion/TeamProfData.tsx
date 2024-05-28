@@ -1,14 +1,14 @@
 import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
 import FrauVRBrille from "../../assets/images/frau_mit_VRBrille.webp";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
-import LogoOsna from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
+import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
 import LogoTros from "../../assets/images/hfm-trossingen-logo550x274.webp";
 import Chris from "../../assets/images/CGEI.webp";
 import Phil from "../../assets/images/Philipp Ahner.webp";
 
 export const TeamProfData: Array<{
   id: string;
-  title: string;
+  title: JSX.Element | string;
   description: string;
   logoOne: string;
   logoTwo: string;
@@ -24,7 +24,14 @@ export const TeamProfData: Array<{
 }> = [
   {
     id: "Verbundkoordination_Prof_Dr_Michael_Oehler",
-    title: "Verbundkoordination Prof. Dr. Michael Oehler",
+    title: (
+      <>
+        <span>
+          Verbundkoordination <br />
+          Prof. Dr. Michael Oehler
+        </span>
+      </>
+    ),
     content: (
       <>
         <p>
@@ -45,7 +52,7 @@ export const TeamProfData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: LogoOsna,
+    logoOne: LogoOsnaBlack,
     logoTwo: "",
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "",
@@ -58,7 +65,14 @@ export const TeamProfData: Array<{
   },
   {
     id: "Verbundpartner_Prof_Dr_Philipp_Ahner",
-    title: "Verbundpartner Prof. Dr. Philipp Ahner",
+    title: (
+      <>
+        <span>
+          Verbundpartner <br />
+          Prof. Dr. Philipp Ahner
+        </span>
+      </>
+    ),
     content: (
       <>
         <p>
@@ -90,7 +104,14 @@ export const TeamProfData: Array<{
   },
   {
     id: "Verbundpartner_Prof_Dr_Christian_Geiger",
-    title: "Verbundpartner Prof. Dr. Christian Geiger",
+    title: (
+      <>
+        <span>
+          Verbundpartner <br />
+          Prof. Dr. Christian Geiger
+        </span>
+      </>
+    ),
     content: (
       <>
         <p>

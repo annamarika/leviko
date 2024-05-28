@@ -62,10 +62,12 @@ export const KontaktTeaserContainer = styled.div`
   padding: 40px 96px;
   background-color: var(--leviko-green);
   color: var(--leviko-black);
+  min-height: 230px;
 
   @media (max-width: 1330px) {
     margin-right: 24px;
     margin-left: 24px;
+    min-height: none;
   }
 
   @media (max-width: 1024px) {
@@ -110,6 +112,7 @@ export const DescriptionContainer = styled.div`
   gap: 20px;
   width: 70%;
   order: 3;
+  _max-width: 700px;
 
   @media (max-width: 1024px) {
     width: 40%;

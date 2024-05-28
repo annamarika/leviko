@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LogoSVG from "../../assets/logo.svg?react";
-import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
+import BMBF from "../../assets/images/Gefordert_vom_BMBF.png";
+import EUFund from "../../assets/images/EN_FundedbytheEU_RGB_WHITE.webp";
+import lernenDigital from "../../assets/images/lernen-digital-Kompetenzverbund-negativ-RGB.webp";
 
 const Footer = () => {
   return (
@@ -11,11 +13,14 @@ const Footer = () => {
           <StyledLogoSVG />
         </LevikoContainer>
         <LogoContainer>
-          <ImageContainer href="https://www.hs-duesseldorf.de/">
-            <StyledImage src={MireviWhite} alt="MIREVI Logo" />
+          <ImageContainer href="https://lernen.digital/">
+            <StyledImage src={lernenDigital} alt="lernenDigital Logo" />
           </ImageContainer>
-          <ImageContainer href="https://www.hs-duesseldorf.de/">
-            <StyledImage src={MireviWhite} alt="MIREVI Logo" />
+          <ImageContainer href="https://www.bmbf.de/bmbf/de/home/home_node.html">
+            <StyledImage src={BMBF} alt="BMBF Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://european-union.europa.eu/index_en">
+            <StyledImage src={EUFund} alt="Funded by the EU Logo" />
           </ImageContainer>
         </LogoContainer>
       </ImageWrapper>
@@ -27,7 +32,7 @@ const Footer = () => {
           Kontakt
         </LinkContainer>
         <AdressContainer>
-          Neuer Graben/Schloss 49074 Osnabrück michael.oehler@uos.de
+          Neuer Graben/Schloss 49074 Osnabrück Deutschland
         </AdressContainer>
       </TextContainer>
     </FooterWrapper>
@@ -102,9 +107,11 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  flex-wrap: wrap;
 
   @media (max-width: 430px) {
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
 `;
 
@@ -154,3 +161,8 @@ export const AdressContainer = styled.p`
 `;
 
 export const ImageContainer = styled.a``;
+
+export const MireviLink = styled.a`
+  text-decoration: none;
+  color: var(--leviko-white);
+`;

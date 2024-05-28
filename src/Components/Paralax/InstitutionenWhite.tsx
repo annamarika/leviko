@@ -9,7 +9,7 @@ interface InstitutionenProps {
   logoOneAlt: string;
   logoTwoSrc: string;
   logoTwoAlt: string;
-  headline: string;
+  headline: JSX.Element | string;
   description: string;
   linkTo: string;
   button: string;
@@ -98,7 +98,6 @@ export const ParalaxContainer = styled.div`
     margin-right: 24px;
     margin-left: 24px;
     gap: 24px;
-    margin-bottom: 80px;
   }
   @media (max-width: 430px) {
     padding: 0 0;

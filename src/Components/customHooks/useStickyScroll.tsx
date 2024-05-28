@@ -1,58 +1,62 @@
-import { useLayoutEffect, RefObject } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect, RefObject } from "react";
 
 interface Options {
-  start: string;
-  endTrigger?: (element: HTMLElement) => string;
-  pinSpacing: boolean;
-  isLastSection?: boolean;
-  onLeave?: () => void;
-  onEnterBack?: () => void;
+  onEnter?: (entry: IntersectionObserverEntry) => void;
+  onLeave?: (entry: IntersectionObserverEntry) => void;
 }
 
 export function useStickyScroll(
   refs: RefObject<HTMLElement>[],
   options: Options
 ) {
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const triggers: ScrollTrigger[] = []; // Explicitly typing the array as ScrollTrigger[]
-
-    refs.forEach((ref, index) => {
-      if (ref.current) {
-        const element = ref.current;
-        const isLast = index === refs.length - 1;
-
-        const trigger = ScrollTrigger.create({
-          trigger: element,
-          start: options.start,
-          end: () => {
-            if (isLast) {
-              return "bottom bottom";
-            } else if (options.endTrigger) {
-              return options.endTrigger(element);
-            } else {
-              return `+=${element.scrollHeight}px`;
+  useEffect(() => {
+    const handleScroll = () => {
+      const lastRef = refs[refs.length - 1].current;
+      if (lastRef) {
+        const rect = lastRef.getBoundingClientRect();
+        if (rect.top <= 0) {
+          // Last element has reached the top, remove sticky from all elements
+          refs.forEach((ref) => {
+            if (ref.current) {
+              ref.current.classList.remove("sticky");
             }
-          },
-          pin: true,
-          pinSpacing: options.pinSpacing,
-          onLeave: options.onLeave,
-          onEnterBack: options.onEnterBack,
-        });
+          });
+        }
+      }
+    };
 
-        triggers.push(trigger); // Store the trigger for later cleanup
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && options.onEnter) {
+            options.onEnter(entry);
+          } else if (!entry.isIntersecting && options.onLeave) {
+            options.onLeave(entry);
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0,
+      }
+    );
+
+    refs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
       }
     });
 
-    // Refresh ScrollTrigger to ensure everything is calculated with final sizes after page is fully loaded
-    ScrollTrigger.refresh();
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Cleanup function to kill all ScrollTrigger instances when the component unmounts or dependencies change
-      triggers.forEach((trigger) => trigger.kill()); // Kill each individual trigger
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      refs.forEach((ref) => {
+        if (ref.current) {
+          ref.current.classList.remove("sticky");
+        }
+      });
     };
-  }, [refs, options]); // Include dependencies as necessary
+  }, [refs, options.onEnter, options.onLeave]);
 }

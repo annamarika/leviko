@@ -84,10 +84,14 @@ const ProjektPage = () => {
   const refThree = useRef<HTMLDivElement>(null);
 
   useStickyScroll([refOne, refTwo, refThree], {
-    start: "top top",
-    endTrigger: (element) => `+=${element.offsetHeight}`,
-    pinSpacing: false,
+    onEnter: (entry) => {
+      entry.target.classList.add("sticky");
+    },
+    onLeave: (entry) => {
+      entry.target.classList.remove("sticky");
+    },
   });
+
   return (
     <>
       <HeroProjekt
@@ -117,7 +121,7 @@ const ProjektPage = () => {
           headline={"Im Hier und Jetzt: Virtuelle und Erweiterbare Realität"}
           imgAlt="Frau spielt eine VR Anwendung"
           imgSrc={Frauspielt}
-          linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
+          linkTo="https://www.digitale-technologien.de/DT/Redaktion/DE/Standardartikel/Smarte-Datenwirtschaft-Technologien/SDW_Virtual-Reality_Augmented-Reality.html"
           button="Erfahre mehr"
           $buttonVariant="secondary"
           description={
@@ -141,7 +145,7 @@ const ProjektPage = () => {
           imgAlt="Frau spielt eine VR Anwendung"
           imgSrc={Mannspielt}
           $objectPosition="center"
-          linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
+          linkTo="https://www.uni-potsdam.de/ru/nachrichten/detail/2022-08-31-virtual-reality-im-musikunterricht-studierende-haben-vr-fuer-den-schuleinsatz-erprobt"
           button="Erfahre mehr"
           description={
             <p>
@@ -163,7 +167,7 @@ const ProjektPage = () => {
           headline={"Unsere Erwartungen für die Zukunft von VR/AR"}
           imgAlt="Frau spielt eine VR Anwendung"
           imgSrc={MannspieltZwei}
-          linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
+          linkTo="https://elearningindustry.com/all-inclusive-insights-on-the-metaverse-technology-and-its-future-potential"
           button="Erfahre mehr"
           $buttonVariant="secondary"
           description={

@@ -1,5 +1,6 @@
 import Team from "../assets/images/team.webp";
 import UniOsna from "../assets/images/Strobeck_Universitat_Osnabruck_Architekturfotos-7.webp";
+import UniTros from "../assets/images/hochschule_trossingen.webp";
 import HSD from "../assets/images/Campus-2022-DSC_6972_web.webp";
 import TeamAccordion from "../Components/Accordion/TeamAccordion.tsx";
 import HeroTeam from "../Components/Hero/HeroTeam.tsx";
@@ -26,18 +27,18 @@ const TeamPage = () => (
     <Headline>Wissenschaftliche MitarbeiterInnen</Headline>
     <BildText
       imgSrc={UniOsna}
-      imgAlt="Landeszentrum MUSIK–DESIGN–PERFORMANCE"
-      headline="Landeszentrum MUSIK–DESIGN–PERFORMANCE"
-      description="Die Staatliche Hochschule für Musik bietet ihren Studierenden den traditionellen Fächerkanon einer Musikhochschule. 
-      
-      Besondere Schwerpunkte bilden das Studium der Alten Musik sowie der Studiengang Musikdesign in Kooperation mit der Hochschule Furtwangen. Hier gestalten Studierende mit Hilfe neuer Medienformate Klänge der Zukunft und entwickeln neuartige Konzertformate – eine spannende Grundlage für den Aufbau des Landeszentrums MUSIK-DESIGN-PERFORMANCE."
+      imgAlt="Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik"
+      headline="Universität Osnabrück"
+      description="Die Universität Osnabrück ist eine öffentliche Universität in Osnabrück.
+
+      Sie besteht seit 1974 und ist in der heutigen Form aus einer Pädagogischen Hochschule, der Adolf-Reichwein-Hochschule, hervorgegangen, die seit 1953 ihren Sitz im Osnabrücker Schloss hatte."
       linkTo="https://www.musik.uni-osnabrueck.de/studieninteressierte/studienangebot/musikwissenschaft.html"
       button="Erfahre mehr"
       $objectPosition="30%"
     />
     <TeamAccordion items={TeamOsnaData} />
     <BildText
-      imgSrc={UniOsna}
+      imgSrc={UniTros}
       imgAlt="Staatliche Hochschule für Musik Trossingen"
       headline="Staatliche Hochschule für Musik Trossingen"
       description="Die Staatliche Hochschule für Musik bietet ihren Studierenden den traditionellen Fächerkanon einer Musikhochschule. Besondere Schwerpunkte bilden das Studium der Alten Musik sowie der Studiengang Musikdesign in Kooperation mit der Hochschule Furtwangen. 
@@ -45,7 +46,7 @@ const TeamPage = () => (
       Hier gestalten Studierende mit Hilfe neuer Medienformate Klänge der Zukunft und entwickeln neuartige Konzertformate – eine spannende Grundlage für den Aufbau des Landeszentrums MUSIK-DESIGN-PERFORMANCE."
       linkTo="https://www.hfm-trossingen.de/"
       button="Erfahre mehr"
-      $objectPosition="30%"
+      $objectPosition="90%"
     />
     <TeamAccordion items={TeamTrosData} />
     <BildText

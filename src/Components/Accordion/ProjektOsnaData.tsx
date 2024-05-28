@@ -1,6 +1,6 @@
 import Leo from "../../assets/images/Leonard Bruns.webp";
 import Bene from "../../assets/images/Benedict Saurbier.webp";
-import OsnaLogo from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
+import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
 
 export const TeamOsnaData: Array<{
   id: string;
@@ -40,7 +40,7 @@ export const TeamOsnaData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: OsnaLogo,
+    logoOne: LogoOsnaBlack,
     logoTwo: "",
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "",
@@ -73,7 +73,7 @@ export const TeamOsnaData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: OsnaLogo,
+    logoOne: LogoOsnaBlack,
     logoTwo: "",
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "",
@@ -105,13 +105,13 @@ export const TeamOsnaData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: OsnaLogo,
+    logoOne: LogoOsnaBlack,
     logoTwo: "",
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "",
     $objectPosition: "center",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: OsnaLogo,
+    imgSrc: LogoOsnaBlack,
     linkTo: "mailto:tray.minh.voong@uni-osnabrueck.de",
     button: "E-Mail",
     $buttonVariant: "secondary",
