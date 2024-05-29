@@ -61,7 +61,7 @@ export const ParalaxWrapper = styled.div`
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     padding: 20px 0;
   }
 `;

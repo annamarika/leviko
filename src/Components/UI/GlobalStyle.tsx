@@ -27,8 +27,6 @@ const GlobalStyle = createGlobalStyle`
 
 
 
-
-
   @font-face {
     font-family: "Blatant";
     src: url("../fonts/Blatant.woff") format("woff");

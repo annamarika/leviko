@@ -1,8 +1,8 @@
 import ProjektAccordion from "../Components/Accordion/ProjektAccordion.tsx";
 import HeroProjekt from "../Components/Hero/HeroProjekt.tsx";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser.tsx";
-import ProjektInfoParallax from "../Components/Paralax/ProjektInfoParallax.tsx";
-import ProjektInfoParallaxWhite from "../Components/Paralax/ProjektInfoParallaxWhite.tsx";
+import ProjektInfoParallax from "../Components/Parallax/ProjektInfoParallax.tsx";
+import ProjektInfoParallaxWhite from "../Components/Parallax/ProjektInfoParallaxWhite.tsx";
 import { Headline } from "../Components/UI/Headline.styled.tsx";
 import ParallaxSection from "../Components/UI/ParallaxSection.styled.tsx";
 import FraumitBrille from "../assets/images/frau_mit_VRBrille.webp";

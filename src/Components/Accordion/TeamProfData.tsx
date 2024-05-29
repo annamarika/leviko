@@ -1,5 +1,5 @@
 import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
-import FrauVRBrille from "../../assets/images/frau_mit_VRBrille.webp";
+import Michael from "../../assets/images/foto_oehler_uos.jpg";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
 import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
 import LogoTros from "../../assets/images/hfm-trossingen-logo550x274.webp";
@@ -35,18 +35,25 @@ export const TeamProfData: Array<{
     content: (
       <>
         <p>
-          Michael Oehler ist Professor für Systematische Musikwissenschaft an
-          der Universität Osnabrück. Er leitet das Music Technology and Digital
-          Musicology Lab (MTDML) und ist Geschäftsführer der Forschungsstelle
-          Musik- und Medientechnologie (FMT). In den letzten Jahren war er an
-          bedeutenden Forschungsprojekten beteiligt, darunter NOSTRESS, PRESET
-          und CA/AXR.
+          Michael Oehler ist seit 2017 Professor für Systematische
+          Musikwissenschaft mit dem Schwerpunkt Musik- und Medientechnologie am
+          Institut für Musikwissenschaft und Musikpädagogik (IMM) der
+          Universität Osnabrück. Zuvor war er Professor für Musikalische Akustik
+          an der Hochschule Düsseldorf sowie Professor für Musik- und
+          Medienmanagement an der Macromedia Hochschule Köln.
         </p>
         <p>
-          Als Mitglied verschiedener Fachgesellschaften wie der Gesellschaft für
-          Musikforschung (GfM) und der Deutschen Gesellschaft für
-          Musikpsychologie (DGM) trägt er aktiv zum musikwissenschaftlichen
-          Diskurs bei.
+          Er ist Geschäftsführer der Forschungsstelle Musik- und
+          Medientechnologie (FMT) sowie Leiter des Music Technology and Digital
+          Musicology Lab (MTDML) an der Universität Osnabrück
+          (mtdml.uni-osnabrueck.de).
+        </p>
+        <p>
+          Für die Deutsche Gesellschaft für Musikpsychologie (DGM) saß er 12
+          Jahre lang im Vorstand und war von 2014 bis 2021 ihr Präsident. Seine
+          Forschungsinteressen liegen im Bereich Musikalische Akustik,
+          Musikinformatik, Musiktechnologie, 3D Audio und
+          Wahrnehmungspsychologie. Er ist Verbundkoordinator von LEVIKO-XR.
         </p>
       </>
     ),
@@ -58,7 +65,7 @@ export const TeamProfData: Array<{
     altLogoTwo: "",
     $objectPosition: "center",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: FrauVRBrille,
+    imgSrc: Michael,
     linkTo: "mailto:michael.oehler@uos.de",
     button: "E-Mail",
     $buttonVariant: "secondary",

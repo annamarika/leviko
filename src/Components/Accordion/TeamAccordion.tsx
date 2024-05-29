@@ -71,7 +71,13 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
                 </LogoContainer>
               </HeadlineWrapper>
               <ArrowContainer $rotate={expanded === item.id}>
-                <StyledArrowSVG />
+                <StyledArrowSVG
+                  color={
+                    index % 2 !== 0
+                      ? "var(--leviko-black)"
+                      : "var(--leviko-white)"
+                  }
+                />
               </ArrowContainer>
             </AccordionButton>
           </AccordionHeading>
@@ -209,7 +215,8 @@ export const LogoContainer = styled.div`
   }
 
   @media (max-width: 430px) {
-    justify-content: space-around;
+    justify-content: start;
+    width: 100%;
   }
 `;
 
@@ -240,7 +247,7 @@ const ArrowContainer = styled.div<StyledArrowProps>`
   height: 44px;
   flex-shrink: 0;
 
-  transform: ${({ $rotate }) => ($rotate ? "rotate(270deg)" : "rotate(90deg)")};
+  transform: ${({ $rotate }) => ($rotate ? "rotate(180deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease;
 
   @media (max-width: 1024px) {

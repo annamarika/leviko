@@ -42,7 +42,13 @@ const ProjektAccordion: React.FC<ProjektAccordionProps> = ({ items }) => {
             <AccordionButton>
               {item.title}
               <ArrowContainer $rotate={expanded === item.id}>
-                <StyledArrowSVG />
+                <StyledArrowSVG
+                  color={
+                    index % 2 !== 0
+                      ? "var(--leviko-black)"
+                      : "var(--leviko-white)"
+                  }
+                />
               </ArrowContainer>
             </AccordionButton>
           </AccordionHeading>
@@ -129,7 +135,7 @@ const ArrowContainer = styled.div<StyledArrowProps>`
   width: 44px;
   height: 44px;
 
-  transform: ${({ $rotate }) => ($rotate ? "rotate(270deg)" : "rotate(90deg)")};
+  transform: ${({ $rotate }) => ($rotate ? "rotate(180deg)" : "rotate(0deg)")};
   transition: transform 0.3s ease;
 
   @media (max-width: 1024px) {

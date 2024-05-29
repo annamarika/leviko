@@ -4,8 +4,8 @@ import MarqueeBanner from "../Components/Banner/MarqueeBanner";
 import HeroStartseite from "../Components/Hero/HeroStartseite";
 import BildText from "../Components/InfoText/BildText";
 import TextBild from "../Components/InfoText/TextBild";
-import Institutionen from "../Components/Paralax/Institutionen";
-import InstitutionenWhite from "../Components/Paralax/InstitutionenWhite";
+import Institutionen from "../Components/Parallax/Institutionen";
+import InstitutionenWhite from "../Components/Parallax/InstitutionenWhite";
 import ImageFrau from "../assets/images/Frau_mit_Meta_Quest.webp";
 import ImageBrille from "../assets/images/Meta_Quest_Brille.webp";
 import ImageTablet from "../assets/images/Tablet_Zeichnung.webp";
@@ -20,6 +20,7 @@ import LogoTros from "../assets/images/hfm-trossingen-logo550x274.webp";
 import LogoOsnaBlack from "../assets/images/UOS-Logo_Schwarz.webp";
 import Chris from "../assets/images/CGEI.webp";
 import Phil from "../assets/images/Philipp Ahner.webp";
+import Michael from "../assets/images/foto_oehler_uos.jpg";
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -78,8 +79,8 @@ const Startseite = () => {
       <Headline>Institutionen</Headline>
       <ParallaxSection ref={refOne} className="sticky-section">
         <Institutionen
-          imgSrc={ImageTablet}
-          imgAlt="Tablet with sketch"
+          imgSrc={Michael}
+          imgAlt="Profilbild Michael Oehler"
           logoOneSrc={LogoOsnaBlack}
           logoOneAlt="Osnabrück Logo"
           logoTwoSrc=""
@@ -101,7 +102,7 @@ const Startseite = () => {
       <ParallaxSection ref={refTwo} className="sticky-section">
         <InstitutionenWhite
           imgSrc={Phil}
-          imgAlt="Tablet with sketch"
+          imgAlt="Profilbild Philipp Ahner"
           logoOneSrc={LogoTros}
           logoOneAlt="Logo Trossingen"
           logoTwoSrc=""
@@ -122,7 +123,7 @@ const Startseite = () => {
       <ParallaxSection ref={refThree} className="sticky-section">
         <Institutionen
           imgSrc={Chris}
-          imgAlt="Chris"
+          imgAlt="Profilbild Chris Geiger"
           logoOneSrc={MireviWhite}
           logoOneAlt="Mirevi Logo in White"
           logoTwoSrc={HSDWhite}

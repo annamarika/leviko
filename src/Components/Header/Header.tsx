@@ -101,7 +101,7 @@ const Header: React.FC = () => {
               <MenuItem as={Link} to="/" onClick={toggleMenu}>
                 Startseite
                 <ArrowContainer>
-                  <StyledArrowSVG />
+                  <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>
               </MenuItem>
             </OverlayContent>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
               <MenuItem as={Link} to="/projekt" onClick={toggleMenu}>
                 Projekt
                 <ArrowContainer>
-                  <StyledArrowSVG />
+                  <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>
               </MenuItem>
             </OverlayContent>
@@ -117,7 +117,7 @@ const Header: React.FC = () => {
               <MenuItem as={Link} to="/team" onClick={toggleMenu}>
                 Team
                 <ArrowContainer>
-                  <StyledArrowSVG />
+                  <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>
               </MenuItem>
             </OverlayContent>

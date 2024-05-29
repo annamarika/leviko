@@ -13,5 +13,6 @@ export const Headline = styled.h2`
 
   @media (max-width: 430px) {
     margin-bottom: 56px;
+    padding: 0 24px 0 24px;
   }
 `;

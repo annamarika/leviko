@@ -16,12 +16,11 @@ interface InstitutionenProps {
   $objectPosition?: string;
   $buttonVariant?: "secondary";
 }
-
 interface StyledImageProps {
   $objectPosition?: string;
 }
 
-const Institutionen: React.FC<InstitutionenProps> = ({
+const InstitutionenWhite: React.FC<InstitutionenProps> = ({
   imgSrc,
   imgAlt,
   logoOneSrc,
@@ -49,7 +48,11 @@ const Institutionen: React.FC<InstitutionenProps> = ({
             </Button>
             <LogoContainer>
               <StyledLogo src={logoOneSrc} alt={logoOneAlt} />
-              <StyledLogo src={logoTwoSrc} alt={logoTwoAlt} />
+              <StyledLogo
+                $hide={logoTwoSrc === ""}
+                src={logoTwoSrc}
+                alt={logoTwoAlt}
+              />
             </LogoContainer>
           </ButtonLogoContainer>
         </HeadlineContainer>
@@ -65,10 +68,10 @@ const Institutionen: React.FC<InstitutionenProps> = ({
   );
 };
 
-export default Institutionen;
+export default InstitutionenWhite;
 
 export const ParalaxWrapper = styled.div`
-  background-color: var(--leviko-blue);
+  background-color: var(--leviko-white);
 
   @media (max-width: 430px) {
     height: 100vh;
@@ -87,8 +90,8 @@ export const ParalaxContainer = styled.div`
   margin-left: 160px;
   padding: 50px 0;
   gap: 80px;
-  background-color: var(--leviko-blue);
-  color: var(--leviko-white);
+  background-color: var(--leviko-white);
+  color: var(--leviko-black);
 
   @media (max-width: 1330px) {
     margin-right: 24px;
@@ -143,7 +146,7 @@ export const ButtonLogoContainer = styled.div`
   display: flex;
   gap: 80px;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
 
   @media (max-width: 1024px) {
     gap: 40px;
@@ -173,8 +176,9 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const StyledLogo = styled.img`
+export const StyledLogo = styled.img<{ $hide?: boolean }>`
   width: 100px;
+  ${({ $hide }) => $hide && "display: none;"}
 
   @media (max-width: 1024px) {
     width: 80px;
