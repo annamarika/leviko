@@ -32,7 +32,7 @@ const TeamPage = () => (
       description="Die Universität Osnabrück ist eine öffentliche Universität in Osnabrück.
 
       Sie besteht seit 1974 und ist in der heutigen Form aus einer Pädagogischen Hochschule, der Adolf-Reichwein-Hochschule, hervorgegangen, die seit 1953 ihren Sitz im Osnabrücker Schloss hatte."
-      linkTo="https://www.musik.uni-osnabrueck.de/studieninteressierte/studienangebot/musikwissenschaft.html"
+      linkTo="https://www.mtdml.uni-osnabrueck.de/"
       button="Erfahre mehr"
       $objectPosition="30%"
     />
