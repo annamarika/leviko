@@ -20,9 +20,8 @@ const accordionData = [
     content: (
       <p>
         Das Hauptziel des Projekts "LEVIKO XR" ist es, zur Qualitätsentwicklung
-        der Lehrkräftefortbildung bezüglich digitaler Kompetenzen im Bereich
-        Musikunterricht durch Virtual Reality (VR) und Augmented Reality (AR)
-        beizutragen. <br /> <br />
+        der Lehrkräftefortbildung bezüglich digitaler Kompetenzen für das Fach Musik
+        im Bereich Extended Reality (XR) beitragen.<br /> <br />
         Dabei wird angestrebt, gut dokumentierte VR/AR Lehr-Lern-Designs für
         Musiklehrkräfte in allen Phasen der Lehrkräftebildung zu erstellen und
         zu validieren. Diese Designs sollen es Lehrkräften ermöglichen, die
@@ -38,10 +37,10 @@ const accordionData = [
   },
   {
     id: "methodiken",
-    title: "Methodiken",
+    title: "Methoden",
     content: (
       <p>
-        Im Rahmen des Projekts werden verschiedene Methodiken angewandt, um die
+        Im Rahmen des Projekts werden verschiedene Methoden angewandt, um die
         Projektziele zu erreichen <br /> <br />
         Hierzu zählen unter anderem die Analyse und Identifikation möglicher
         Einsatzgebiete von VR/AR im Musikunterricht mithilfe von etablierten
@@ -56,7 +55,7 @@ const accordionData = [
   },
   {
     id: "fortschritt",
-    title: "Fortschritt",
+    title: "Fortschritt", //Projektstand //Projektstatus //Projektfortschritt //Projektphase
     content: (
       <p>
         Aktuell befindet sich das Projekt "LEVIKO XR" in einer fortgeschrittenen
