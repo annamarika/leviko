@@ -53,7 +53,7 @@ const Startseite = () => {
         imgSrc={ImageFrau}
         imgAlt="Woman wearing VR glasses"
         headline="Unsere Ziele sind klar"
-        description="Innovative VR/AR Lehr-Lern-Designs entwickeln, technische Möglichkeiten im Musikunterricht aufzeigen und eine breite Anwendung durch Partnerschaften sicherstellen. Begleite uns auf dem Weg zu einer bahnbrechenden musikalischen Bildung!"
+        description="Innovative VR/AR Lehr-Lern-Designs entwickeln, technische Möglichkeiten im Musikunterricht aufzeigen und eine breite Anwendung durch Partnerschaften sicherstellen."
         linkTo="/projekt"
         button="Erfahre mehr"
         $objectPosition="30%"
@@ -62,7 +62,7 @@ const Startseite = () => {
         imgSrc={ImageBrille}
         imgAlt="VR glasses and controller"
         headline="Neue Wege im Musikunterricht"
-        description="Mit einem fundierten Ansatz analysieren wir Einsatzmöglichkeiten von VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren kontinuierlich unter Berücksichtigung der User Experience."
+        description="Wir analysieren Einsatzmöglichkeiten von VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren kontinuierlich unter Berücksichtigung der User Experience."
         linkTo="/projekt"
         button="Erfahre mehr"
         $objectPosition="30%"
@@ -71,7 +71,7 @@ const Startseite = () => {
         imgSrc={ImageTablet}
         imgAlt="Tablet with sketch"
         headline="ComPleTT: Lehrkräftefortbildung"
-        description="In the future, you can discover our teaching and learning designs on ComPleTT Moodle – the central cooperation platform for teacher training. As a joint offering of all federal states, ComPleTT offers a diverse and comprehensive range of teaching content for teachers from all areas."
+        description="Entdecken Sie in Zukunft unsere Lehr- und Lernkonzepte auf ComPleTT Moodle - der zentralen Kooperationsplattform für die Lehrerbildung. Als gemeinsames Angebot aller Bundesländer bietet ComPleTT ein vielfältiges und umfassendes Angebot an Lehrinhalten für Lehrerinnen und Lehrer aus allen Bereichen."
         linkTo="https://lms.complett.bildungsserver.de/"
         button="zu ComPleTT"
         $objectPosition="30%"
