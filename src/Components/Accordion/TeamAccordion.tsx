@@ -280,30 +280,22 @@ const AccordionPanel = styled.div`
 
 export const ProfilImageContainer = styled.div`
   width: 50%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   overflow: hidden;
-
-  @media (max-width: 1024px) {
-    aspect-ratio: 1/1;
-  }
 
   @media (max-width: 430px) {
     width: 100%;
-    aspect-ratio: 4/3;
   }
 `;
 
 export const ProfileStyledImage = styled.img<StyledImageProps>`
   width: 100%;
-  height: auto;
+  height: 300px;
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  object-position: center;
-
-  @media (max-width: 430px) {
-    object-position: ${(props) => props.$objectPosition || "30%"};
-  }
+  object-position: center
+    ${({ $objectPosition }) => $objectPosition || "center"};
 `;
 
 export const TextContainer = styled.div`

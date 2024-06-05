@@ -1,5 +1,6 @@
 import Leo from "../../assets/images/Leonard Bruns.webp";
 import Bene from "../../assets/images/Benedict Saurbier.webp";
+import Minh from "../../assets/images/minhvoong.webp";
 import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
 import MTDMLWhite from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
 import MTDMLBlack from "../../assets/images/MTDML Logo ohne Bildunterschrift 300px.webp";
@@ -112,9 +113,9 @@ export const TeamOsnaData: Array<{
     logoTwo: MTDMLWhite,
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "MTDML Logo",
-    $objectPosition: "center",
+    $objectPosition: "20%",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
-    imgSrc: LogoOsnaBlack,
+    imgSrc: Minh,
     linkTo: "mailto:tray.minh.voong@uni-osnabrueck.de",
     button: "E-Mail",
     $buttonVariant: "secondary",

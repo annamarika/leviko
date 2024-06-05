@@ -1,5 +1,5 @@
 import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
-import Michael from "../../assets/images/foto_oehler_uos.jpg";
+import Michael from "../../assets/images/foto_oehler_uos_neu.webp";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
 import MTDMLWhite from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
 import LogoOsnaGrau from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
@@ -64,7 +64,7 @@ export const TeamProfData: Array<{
     logoTwo: MTDMLWhite,
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "MTDML Logo",
-    $objectPosition: "center",
+    $objectPosition: "30%",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
     imgSrc: Michael,
     linkTo: "mailto:michael.oehler@uos.de",

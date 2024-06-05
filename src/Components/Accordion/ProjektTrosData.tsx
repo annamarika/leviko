@@ -1,4 +1,5 @@
 import Tobi from "../../assets/images/TobiasRotsch.webp";
+import Sandro from "../../assets/images/Sandro.webp";
 import LogoTros from "../../assets/images/hfm-trossingen-logo550x274.webp";
 import LogoTrosWhite from "../../assets/images/logo-hochschule-fuer-musik-trossingen.webp";
 
@@ -79,7 +80,7 @@ export const TeamTrosData: Array<{
     altLogoTwo: "",
     $objectPosition: "center",
     imgAlt: "Sandro Dalfovo",
-    imgSrc: Tobi,
+    imgSrc: Sandro,
     linkTo: "mailto:s.dalfovo@doz.hfm-trossingen.de",
     button: "E-Mail",
   },
