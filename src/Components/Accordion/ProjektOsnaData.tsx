@@ -1,6 +1,9 @@
 import Leo from "../../assets/images/Leonard Bruns.webp";
 import Bene from "../../assets/images/Benedict Saurbier.webp";
 import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
+import MTDMLWhite from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
+import MTDMLBlack from "../../assets/images/MTDML Logo ohne Bildunterschrift 300px.webp";
+import LogoOsnaGrau from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
 
 export const TeamOsnaData: Array<{
   id: string;
@@ -40,10 +43,10 @@ export const TeamOsnaData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: LogoOsnaBlack,
-    logoTwo: "",
+    logoOne: LogoOsnaGrau,
+    logoTwo: MTDMLWhite,
     altLogoOne: "Osnabrück Logo",
-    altLogoTwo: "",
+    altLogoTwo: "MTDML Logo",
     $objectPosition: "center",
     imgAlt: "Profilbild Leonard Bruns",
     imgSrc: Leo,
@@ -73,10 +76,10 @@ export const TeamOsnaData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: LogoOsnaBlack,
-    logoTwo: "",
+    logoOne: LogoOsnaGrau,
+    logoTwo: MTDMLBlack,
     altLogoOne: "Osnabrück Logo",
-    altLogoTwo: "",
+    altLogoTwo: "MTDML Logo",
     $objectPosition: "center",
     imgAlt: "Profilbild Benedict Saurbier",
     imgSrc: Bene,
@@ -105,10 +108,10 @@ export const TeamOsnaData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: LogoOsnaBlack,
-    logoTwo: "",
+    logoOne: LogoOsnaGrau,
+    logoTwo: MTDMLWhite,
     altLogoOne: "Osnabrück Logo",
-    altLogoTwo: "",
+    altLogoTwo: "MTDML Logo",
     $objectPosition: "center",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
     imgSrc: LogoOsnaBlack,

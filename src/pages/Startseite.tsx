@@ -17,7 +17,8 @@ import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
 import { Headline } from "../Components/UI/Headline.styled";
 import MarqueePraxispartner from "../Components/Banner/MarqueePraxispartner";
 import LogoTros from "../assets/images/hfm-trossingen-logo550x274.webp";
-import LogoOsnaBlack from "../assets/images/UOS-Logo_Schwarz.webp";
+import MTDMLWhite from "../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
+import LogoOsnaGrau from "../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import Chris from "../assets/images/CGEI.webp";
 import Phil from "../assets/images/Philipp Ahner.webp";
 import Michael from "../assets/images/foto_oehler_uos.jpg";
@@ -81,10 +82,10 @@ const Startseite = () => {
         <Institutionen
           imgSrc={Michael}
           imgAlt="Profilbild Michael Oehler"
-          logoOneSrc={LogoOsnaBlack}
+          logoOneSrc={LogoOsnaGrau}
           logoOneAlt="Osnabrück Logo"
-          logoTwoSrc=""
-          logoTwoAlt=""
+          logoTwoSrc={MTDMLWhite}
+          logoTwoAlt="MTDML Logo"
           headline={
             <>
               <span>Verbundkoordination</span>
@@ -97,6 +98,7 @@ const Startseite = () => {
           button="E-Mail"
           $objectPosition="30%"
           $buttonVariant="secondary"
+          $logoHeight="40px"
         />
       </ParallaxSection>
       <ParallaxSection ref={refTwo} className="sticky-section">
@@ -118,6 +120,7 @@ const Startseite = () => {
           linkTo="mailto:p.ahner@doz.hfm-trossingen.de"
           button="E-Mail"
           $objectPosition="30%"
+          $logoHeight="60px"
         />
       </ParallaxSection>
       <ParallaxSection ref={refThree} className="sticky-section">
@@ -140,6 +143,7 @@ const Startseite = () => {
           button="E-Mail"
           $objectPosition="30%"
           $buttonVariant="secondary"
+          $logoHeight="60px"
         />
       </ParallaxSection>
       <ParallaxSection ref={refFour} className="sticky-section">

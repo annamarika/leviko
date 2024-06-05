@@ -1,7 +1,8 @@
 import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
 import Michael from "../../assets/images/foto_oehler_uos.jpg";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
-import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
+import MTDMLWhite from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
+import LogoOsnaGrau from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import LogoTros from "../../assets/images/hfm-trossingen-logo550x274.webp";
 import Chris from "../../assets/images/CGEI.webp";
 import Phil from "../../assets/images/Philipp Ahner.webp";
@@ -59,10 +60,10 @@ export const TeamProfData: Array<{
     ),
     description:
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
-    logoOne: LogoOsnaBlack,
-    logoTwo: "",
+    logoOne: LogoOsnaGrau,
+    logoTwo: MTDMLWhite,
     altLogoOne: "Osnabrück Logo",
-    altLogoTwo: "",
+    altLogoTwo: "MTDML Logo",
     $objectPosition: "center",
     imgAlt: "Profilbild Prof. Dr. Michael Oehler",
     imgSrc: Michael,

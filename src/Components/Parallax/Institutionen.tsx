@@ -14,11 +14,17 @@ interface InstitutionenProps {
   linkTo: string;
   button: string;
   $objectPosition?: string;
+  $logoHeight?: string;
   $buttonVariant?: "secondary";
 }
 
 interface StyledImageProps {
   $objectPosition?: string;
+}
+
+interface StyledLogoProps {
+  $hide?: boolean;
+  $logoHeight?: string;
 }
 
 const Institutionen: React.FC<InstitutionenProps> = ({
@@ -34,6 +40,7 @@ const Institutionen: React.FC<InstitutionenProps> = ({
   button,
   $objectPosition = "center",
   $buttonVariant,
+  $logoHeight = "40px",
 }) => {
   return (
     <ParalaxWrapper>
@@ -48,11 +55,16 @@ const Institutionen: React.FC<InstitutionenProps> = ({
               {button}
             </Button>
             <LogoContainer>
-              <StyledLogo src={logoOneSrc} alt={logoOneAlt} />
+              <StyledLogo
+                src={logoOneSrc}
+                alt={logoOneAlt}
+                $logoHeight={$logoHeight}
+              />
               <StyledLogo
                 $hide={logoTwoSrc === ""}
                 src={logoTwoSrc}
                 alt={logoTwoAlt}
+                $logoHeight={$logoHeight}
               />
             </LogoContainer>
           </ButtonLogoContainer>
@@ -145,7 +157,7 @@ export const TextContainer = styled.div`
 
 export const ButtonLogoContainer = styled.div`
   display: flex;
-  gap: 80px;
+  gap: 32px;
   justify-content: flex-start;
   align-items: center;
 
@@ -177,12 +189,21 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const StyledLogo = styled.img<{ $hide?: boolean }>`
-  width: 100px;
+export const StyledLogo = styled.img<StyledLogoProps>`
+  width: auto;
+  height: ${({ $logoHeight }) => $logoHeight}; // Use the new prop
   ${({ $hide }) => $hide && "display: none;"}
 
   @media (max-width: 1024px) {
-    width: 80px;
+    width: auto;
+    height: ${({ $logoHeight }) =>
+      `calc(${$logoHeight} * 0.75)`}; // Adjust height for smaller screens
+  }
+
+  @media (max-width: 430px) {
+    width: auto;
+    height: ${({ $logoHeight }) =>
+      `calc(${$logoHeight} * 0.5)`}; // Adjust height for smaller screens
   }
 `;
 
