@@ -129,7 +129,7 @@ export const ImageContainer = styled.div`
 
 export const StyledImage = styled.img<StyledImageProps>`
   width: 100%;
-  height: auto;
+  height: 350px;
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;

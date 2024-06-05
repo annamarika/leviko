@@ -85,25 +85,7 @@ export const TeamDusData: Array<{
   {
     id: "Charlotte_Triebus",
     title: "Charlotte Triebus",
-    content: (
-      <p>
-        Seit November 2004 ist Christian Geiger Professor für Mixed Reality und
-        Visualisierung im Fachbereich Medien der HS Düsseldorf und arbeitet an
-        innovativen Mensch-Technik-Schnittstellen.
-        <br /> <br />
-        Mit seinem interdisziplinären Team und seinen Studentinnen und Studenten
-        geht es ihm besonders darum, neue Technologien nutzerzentriert, d. h.
-        für den Menschen zu entwickeln und den Transfer in die Praxis schon
-        frühzeitig zu unterstützen. <br /> <br />
-        Er leitet seit 2015 den Innovationshub, ein Forschungs- und
-        Entwicklungslabor nahe des Düsseldorfer Hauptbahnhofs wo Studierende mit
-        zwei mittelständischen Firmen gemeinsam an Digitalisierungsprojekten
-        arbeiten.
-        <br /> <br />
-        Informationen zu Forschung, Lehre und Transfer findet man unter
-        www.mirevi.de
-      </p>
-    ),
+    content: "",
     description:
       "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
     logoOne: HSDWhite,

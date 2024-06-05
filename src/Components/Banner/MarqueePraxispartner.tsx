@@ -6,7 +6,8 @@ import lernenDigital from "../../assets/images/lernen-digital-Kompetenzverbund-n
 import bmbf from "../../assets/images/Gefordert_vom_BMBF.png";
 import euFunded from "../../assets/images/EN_FundedbytheEU_RGB_WHITE.webp";
 import logoTros from "../../assets/images/logo-hochschule-fuer-musik-trossingen.webp";
-import logoOsna from "../../assets/images/UOS-Logo_Schwarz.webp";
+import logoOsna from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
+import MTMDL from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
 
 const MarqueePraxispartner = () => {
   return (
@@ -34,6 +35,9 @@ const MarqueePraxispartner = () => {
           <ImageContainer href="https://www.hs-duesseldorf.de/">
             <StyledImage src={MireviWhite} alt="MIREVI Logo" />
           </ImageContainer>
+          <ImageContainer href="https://www.mtdml.uni-osnabrueck.de/mtdml/mtdml.html">
+            <StyledImage src={MTMDL} alt="MTMDL Logo" />
+          </ImageContainer>
           <ImageContainer href="https://lernen.digital/">
             <StyledImage src={lernenDigital} alt="lernenDigital Logo" />
           </ImageContainer>
@@ -54,6 +58,9 @@ const MarqueePraxispartner = () => {
           </ImageContainer>
           <ImageContainer href="https://www.hs-duesseldorf.de/">
             <StyledImage src={MireviWhite} alt="MIREVI Logo" />
+          </ImageContainer>
+          <ImageContainer href="https://www.mtdml.uni-osnabrueck.de/mtdml/mtdml.html">
+            <StyledImage src={MTMDL} alt="MTMDL Logo" />
           </ImageContainer>
         </Marquee>
       </MarqueeContainer>

@@ -1,7 +1,6 @@
 import Leo from "../../assets/images/Leonard Bruns.webp";
 import Bene from "../../assets/images/Benedict Saurbier.webp";
 import Minh from "../../assets/images/minhvoong.webp";
-import LogoOsnaBlack from "../../assets/images/UOS-Logo_Schwarz.webp";
 import MTDMLWhite from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
 import MTDMLBlack from "../../assets/images/MTDML Logo ohne Bildunterschrift 300px.webp";
 import LogoOsnaGrau from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
