@@ -1,6 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 import useHeaderStore from "../stores/useHeaderStore.tsx";
+import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -11,6 +12,7 @@ import {
   ButtonContainer,
   ButtonContainerDisplay,
   HeaderButton,
+  HeaderDarkModeButton,
   MenuIcon,
   Overlay,
   OverlayContainer,
@@ -19,6 +21,7 @@ import {
   ArrowContainer,
   StyledArrowSVG,
 } from "../UI/Header.styled.tsx";
+
 
 const Header: React.FC = () => {
   const {
@@ -37,6 +40,12 @@ const Header: React.FC = () => {
     setLastScrollY: state.setLastScrollY,
   }));
 
+  const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
+    isDarkModeOn: state.isDarkModeOn,
+    toggleDarkMode: state.toggleDarkMode,
+  }));
+
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -49,7 +58,7 @@ const Header: React.FC = () => {
 
       setLastScrollY(currentScrollY);
     };
-
+    
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -68,6 +77,7 @@ const Header: React.FC = () => {
       document.body.style.overflow = "visible"; // Re-enable scrolling on component unmount
     };
   }, [isMenuOpen]);
+
 
   return (
     <>
@@ -90,6 +100,9 @@ const Header: React.FC = () => {
               <HeaderButton as={Link} to="/team">
                 Team
               </HeaderButton>
+              <HeaderDarkModeButton onClick={toggleDarkMode} >
+                DarkMode
+              </HeaderDarkModeButton>
             </ButtonContainerDisplay>
           </ButtonContainer>
         </NavContainer>

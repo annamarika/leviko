@@ -8,13 +8,16 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import ScrollToTop from "./Components/Header/ScrollToTop.ts";
+import useDarkModeStore from './Components/stores/useDarkModeStore.tsx';
 
-function App() {
+const App: React.FC = () => {
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle darkTheme={isDarkModeOn}/>
       <ProgressBar />
-      <Header />
+      <Header/>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Startseite />} />

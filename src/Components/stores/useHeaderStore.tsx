@@ -8,6 +8,7 @@ interface HeaderState {
   lastScrollY: number;
   setVisible: (visible: boolean) => void;
   setLastScrollY: (lastScrollY: number) => void;
+  
 }
 
 const useHeaderStore = create<HeaderState>((set) => ({

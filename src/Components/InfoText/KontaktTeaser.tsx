@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button as BaseButton } from "../UI/Buttons/Button.styled";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 interface KontaktTeaserProps {
   headline: string;
@@ -11,6 +12,10 @@ interface KontaktTeaserProps {
   $buttonVariant?: "tertiary";
 }
 
+interface ThemeProps {
+  darkTheme: boolean;
+}
+
 const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   headline,
   descriptionOne,
@@ -19,9 +24,12 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   button,
   $buttonVariant,
 }) => {
+
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
-    <KontaktTeaserWrapper>
-      <KontaktTeaserContainer>
+    <KontaktTeaserWrapper darkTheme={isDarkModeOn}>
+      <KontaktTeaserContainer darkTheme={isDarkModeOn}>
         <HeadlineContainer>{headline}</HeadlineContainer>
         <DescriptionContainer>
           <p>{descriptionOne}</p>
@@ -37,11 +45,11 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
 
 export default KontaktTeaser;
 
-export const KontaktTeaserWrapper = styled.div`
+export const KontaktTeaserWrapper = styled.div<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--leviko-white);
+  background-color: ${({ darkTheme }) => (darkTheme ? "black" : "var(--leviko-white)")};
   padding: 100px 0;
 
   @media (max-width: 1024px) {
@@ -54,7 +62,7 @@ export const KontaktTeaserWrapper = styled.div`
   }
 `;
 
-export const KontaktTeaserContainer = styled.div`
+export const KontaktTeaserContainer = styled.div<ThemeProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;

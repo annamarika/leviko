@@ -75,6 +75,7 @@ export const HeroStartseiteContainer = styled.div`
     align-items: start;
     gap: 0;
   }
+  
 `;
 
 export const HeadlineContainer = styled.div`

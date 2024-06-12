@@ -10,6 +10,7 @@ const StyledParallaxSection = styled.div`
   width: 100%;
   z-index: 10;
   position: relative;
+  background-color: black
 
   &.sticky {
     position: -webkit-sticky; /* For Safari */

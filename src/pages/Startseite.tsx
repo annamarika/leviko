@@ -22,12 +22,14 @@ import LogoOsnaGrau from "../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import Chris from "../assets/images/CGEI.webp";
 import Phil from "../assets/images/Philipp Ahner.webp";
 import Michael from "../assets/images/foto_oehler_uos.jpg";
+import { useState } from 'react';
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
   const refTwo = useRef<HTMLDivElement>(null);
   const refThree = useRef<HTMLDivElement>(null);
   const refFour = useRef<HTMLDivElement>(null);
+  const [darkTheme, setDarkTheme] = useState(true);
 
   useStickyScroll([refOne, refTwo, refThree, refFour], {
     onEnter: (entry) => {
