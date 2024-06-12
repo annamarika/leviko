@@ -73,7 +73,7 @@ export const StyledLogoSVG = styled(LogoSVG)`
   max-width: none;
   max-height: none;
   width: 100%;
-  height: auto;
+  height: 100%;
   color: var(--leviko-green);
 `;
 

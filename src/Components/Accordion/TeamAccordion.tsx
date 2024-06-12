@@ -166,6 +166,7 @@ const AccordionButton = styled(AccordionItemButton)`
 
 const HeadlineWrapper = styled.div`
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 
@@ -290,7 +291,7 @@ export const ProfilImageContainer = styled.div`
 
 export const ProfileStyledImage = styled.img<StyledImageProps>`
   width: 100%;
-  height: 300px;
+  aspect-ratio: 1/1;
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
