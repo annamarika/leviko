@@ -24,17 +24,18 @@ export const TeamOsnaData: Array<{
     content: (
       <>
         <p>
-          Ist wissenschaftlicher Mitarbeiter im music technology and digital
-          musicology lab (mtdml) an der Universität Osnabrück. Nach seinem
-          Lehramtsstudium in den Fächern Musik und Mathematik beendete er 2023
-          sein Referendariat mit dem 2. Staatsexamen.
+        Leonard Bruns studierte Musik/Musikwissenschaft und Anglistik an der
+        Universität Osnabrück und schloss sein Studium 2023 mit dem Master
+        of Education ab. 
         </p>
         <p>
-          Neben LEVIKO XR arbeitete Benedict Saurbier an weiteren Forschungs-
-          und Lehrprojekten mit, darunter der Virtual Organology, Musical
-          Interfaces und NOSTRESS. Darüber hinaus beschäftigte er sich in seinen
-          Abschlussarbeiten mit den Themenbereichen Schallquellen in der
-          virtuellen und erweiterten Realität sowie zu Mixed-Audio-Reality.
+        Sowohl in seiner Masterarbeit als auch während seiner Mitarbeit im
+        von der Stiftung Innovation in der Hochschullehre geförderten 
+        Lehrprojekt VILLA VR ("Vernetzte interaktive Lehr- und Lernumgebung
+        der apparativen Musikpraxis in Virtual Reality") beschäftigte er sich
+        mit virtuellen Lehr- und Lernumgebungen im Bereich der Musiktechnologie.
+        Seit 2023 ist er an der Universität Osnabrück wissenschaftlicher Mitarbeiter
+        im BMBF-Projekt "Lehrkräftebildung in virtuellen Kontexten" (LEVIKO-XR).
         </p>
       </>
     ),
