@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button as BaseButton } from "../UI/Buttons/Button.styled";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 interface KontaktTeaserProps {
   headline: string;
@@ -11,6 +12,10 @@ interface KontaktTeaserProps {
   $buttonVariant?: "tertiary";
 }
 
+interface DarkModeProps {
+  isDarkModeOn: boolean;
+}
+
 const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   headline,
   descriptionOne,
@@ -19,8 +24,11 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   button,
   $buttonVariant,
 }) => {
+
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
-    <KontaktTeaserWrapper>
+    <KontaktTeaserWrapper isDarkModeOn={isDarkModeOn}>
       <KontaktTeaserContainer>
         <HeadlineContainer>{headline}</HeadlineContainer>
         <DescriptionContainer>
@@ -37,12 +45,12 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
 
 export default KontaktTeaser;
 
-export const KontaktTeaserWrapper = styled.div`
+export const KontaktTeaserWrapper = styled.div<DarkModeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--leviko-white);
-  padding: 100px 0;
+background-color: ${({ isDarkModeOn }) =>
+    isDarkModeOn ? "black" : "var(--leviko-white)"};  padding: 100px 0;
 
   @media (max-width: 1024px) {
     padding: 80px 0;

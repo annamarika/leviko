@@ -1,5 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 
+import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 import useHeaderStore from "../stores/useHeaderStore.tsx";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -11,6 +12,7 @@ import {
   ButtonContainer,
   ButtonContainerDisplay,
   HeaderButton,
+  DarkModeToggle,
   MenuIcon,
   Overlay,
   OverlayContainer,
@@ -35,6 +37,11 @@ const Header: React.FC = () => {
     setVisible: state.setVisible,
     lastScrollY: state.lastScrollY,
     setLastScrollY: state.setLastScrollY,
+  }));
+
+  const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
+    isDarkModeOn: state.isDarkModeOn,
+    toggleDarkMode: state.toggleDarkMode,
   }));
 
   useEffect(() => {
@@ -91,8 +98,13 @@ const Header: React.FC = () => {
                 Team
               </HeaderButton>
             </ButtonContainerDisplay>
+            <DarkModeToggle onClick={toggleDarkMode} >
+                DarkMode
+            </DarkModeToggle>
           </ButtonContainer>
+          
         </NavContainer>
+        
       </HeaderContainer>
       {isMenuOpen && (
         <Overlay $isOpen={isMenuOpen}>

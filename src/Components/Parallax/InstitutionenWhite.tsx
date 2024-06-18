@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button } from "../UI/Buttons/Button.styled";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 interface InstitutionenProps {
   imgSrc: string;
@@ -24,6 +25,11 @@ interface StyledImageProps {
 interface StyledLogoProps {
   $hide?: boolean;
   $logoHeight?: string;
+
+}
+
+interface DarkModeProps {
+  isDarkModeOn: boolean;
 }
 
 const InstitutionenWhite: React.FC<InstitutionenProps> = ({
@@ -41,9 +47,12 @@ const InstitutionenWhite: React.FC<InstitutionenProps> = ({
   $buttonVariant,
   $logoHeight = "40px",
 }) => {
+
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
-    <ParalaxWrapper>
-      <ParalaxContainer>
+    <ParalaxWrapper isDarkModeOn={isDarkModeOn}>
+      <ParalaxContainer isDarkModeOn={isDarkModeOn}>
         <HeadlineContainer>
           <TextContainer>
             <h3>{headline}</h3>
@@ -82,8 +91,9 @@ const InstitutionenWhite: React.FC<InstitutionenProps> = ({
 
 export default InstitutionenWhite;
 
-export const ParalaxWrapper = styled.div`
-  background-color: var(--leviko-white);
+export const ParalaxWrapper = styled.div<DarkModeProps>`
+ background-color: ${({ isDarkModeOn }) =>
+    isDarkModeOn ? "black" : "var(--leviko-white)"};
 
   @media (max-width: 430px) {
     height: 100vh;
@@ -94,7 +104,7 @@ export const ParalaxWrapper = styled.div`
   }
 `;
 
-export const ParalaxContainer = styled.div`
+export const ParalaxContainer = styled.div<DarkModeProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,9 +112,12 @@ export const ParalaxContainer = styled.div`
   margin-left: 160px;
   padding: 50px 0;
   gap: 80px;
-  background-color: var(--leviko-white);
-  color: var(--leviko-black);
-
+  background-color: ${({ isDarkModeOn }) =>
+    isDarkModeOn ? "black" : "var(--leviko-white)"};
+  
+  color: ${({isDarkModeOn }) =>
+    isDarkModeOn ? "white" : "black"};
+  
   @media (max-width: 1330px) {
     margin-right: 24px;
     margin-left: 24px;

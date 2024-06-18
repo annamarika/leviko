@@ -9,6 +9,7 @@ import {
 import styled from "styled-components";
 import ArrowSVG from "../UI/Buttons/ArrowSVG.tsx";
 import useAccordionStore from "../stores/AccordionStore.tsx";
+import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 import { Button } from "../UI/Buttons/Button.styled";
 
 interface StyledArrowProps {
@@ -40,6 +41,7 @@ interface StyledImageProps {
 
 const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
   const { expanded, setExpanded } = useAccordionStore();
+  const { isDarkModeOn } = useDarkModeStore();
 
   const handleAccordionChange = (keys: string[]) => {
     const isExpanded = keys.length > 0 ? keys[0] : null;
@@ -53,6 +55,7 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
           key={item.id}
           uuid={item.id}
           $alternate={index % 2 !== 0}
+          isDarkModeOn={isDarkModeOn}
         >
           <AccordionHeading>
             <AccordionButton>
@@ -73,7 +76,7 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
               <ArrowContainer $rotate={expanded === item.id}>
                 <StyledArrowSVG
                   color={
-                    index % 2 !== 0
+                    index % 2 !== 0 && !isDarkModeOn
                       ? "var(--leviko-black)"
                       : "var(--leviko-white)"
                   }
@@ -127,7 +130,7 @@ const AccordionWrapper = styled(Accordion)`
   }
 `;
 
-const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean }>`
+const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkModeOn:boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -135,10 +138,14 @@ const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean }>`
   padding: 65px;
   border: solid 4px;
   border-color: var(--leviko-blue);
-  background-color: ${({ $alternate }) =>
-    $alternate ? "var(--leviko-white)" : "var(--leviko-blue)"};
-  color: ${({ $alternate }) =>
-    $alternate ? "var(--leviko-black)" : "var(--leviko-white)"};
+  background-color: ${({ $alternate, isDarkModeOn }) =>
+    isDarkModeOn && $alternate 
+  ? "black"
+  : $alternate 
+  ? "var(--leviko-white)" 
+  : "var(--leviko-blue)"};  
+  color: ${({ $alternate, isDarkModeOn }) =>
+    $alternate && !isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
   width: 100%;
   gap: 100px;
 

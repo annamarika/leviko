@@ -124,6 +124,40 @@ export const HeaderButton = styled.a`
   }
 `;
 
+export const DarkModeToggle = styled.a`
+  text-align: center;
+  background-color: var(--leviko-blue);
+  border: solid 4px;
+  border-radius: 30px;
+  border-color: var(--leviko-green);
+  color: var(--leviko-green);
+  margin-top:5px;
+  margin-left:30px;
+  padding: 8px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+
+  /* Hover effect */
+  &:hover {
+    color: var(--leviko-black);
+    background-color: var(--leviko-green);
+  }
+
+  /* Focus effect */
+  &:focus {
+    outline: none;
+    box-shadow: 10px rgba(170, 254, 131, 0.5);
+  }
+
+  /* Active (click) effect */
+  &:active {
+    color: var(--leviko-white);
+    background-color: var(--leviko-black);
+    border-color: var(--leviko-black);
+  }
+`;
+
 export const MenuIcon = styled.div<MenuIconProps>`
   width: 49px;
   height: 24px;

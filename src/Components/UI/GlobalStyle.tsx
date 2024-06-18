@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  darkTheme: boolean;
+}
+
+const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   html {
     font-size: 62.5%;
     font-family: Blatant;
@@ -14,8 +18,10 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {  
-    background-color: #F2F2F2;
     font-size: 1.5rem;
+    color: ${(props) => (props.darkTheme ? "white" : "black")};
+    background-color: ${(props) => (props.darkTheme ? "black" : "var(--leviko-white)")};
+  
   }
   
   :root {
