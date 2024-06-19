@@ -1,0 +1,104 @@
+import React from "react";
+import styled from "styled-components";
+import { ChangeEvent, useState } from "react";
+import useDarkModeStore from "../../stores/useDarkModeStore";
+import SunSVG from "./SunSVG";
+import MoonSVG from "./MoonSVG";
+
+const ToggleSwitchWrapper = styled.label`
+  margin-top:8px;
+  align-items: center;
+  gap: 10px;
+  margin-left:25px;
+  cursor: pointer;
+`;
+
+const Switch = styled.div`
+  position: relative;
+  width: 62px;
+  height: 32px;
+  background: var(--leviko-blue);
+  border-style: solid;
+  border-color: var(--leviko-green);
+  border-radius: 32px;
+  transition: 300ms all;
+
+  &:before {
+    transition: 300ms all;
+    content: "";
+    position: absolute;
+    width: 31px;
+    height: 29px;
+    border-radius: 35px;
+    top: 50%;
+    background: var(--leviko-green);
+    transform: translate(-1px, -50%);
+  }
+`;
+
+const Input = styled.input`
+  opacity: 0;
+  position: absolute;
+
+  &:checked + ${Switch} {
+
+    &:before {
+      transform: translate(27px, -50%);
+    }
+  }
+`;
+
+const SVGWrapper = styled.div`
+  padding-left:4px;
+  padding-top:3px;
+  align-items: center;
+  position:absolute;
+  display:flex;
+  gap: 10px;
+
+`;
+
+const StyledSunSVG = styled(SunSVG)`
+  transition: 300ms all;
+`;
+
+const StyledMoonSVG = styled(MoonSVG)`
+  
+  
+  transition: 300ms all;
+`;
+
+const ToggleSwitch = () => {
+    
+    const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
+        isDarkModeOn: state.isDarkModeOn,
+        toggleDarkMode: state.toggleDarkMode,
+      }));
+
+    return (
+        <>
+         <ToggleSwitchWrapper>
+            <Input checked={isDarkModeOn} type="checkbox" onChange={toggleDarkMode} />
+            <Switch>
+              <SVGWrapper>
+                <StyledSunSVG color={
+                    isDarkModeOn 
+                      ? "var(--leviko-green)"
+                      : "var(--leviko-blue)"
+                  } />
+                <StyledMoonSVG color={
+                    isDarkModeOn 
+                      ? "var(--leviko-blue)"
+                      : "var(--leviko-green)"
+                  } />
+              </SVGWrapper>
+            </Switch>
+        </ToggleSwitchWrapper>
+        </>
+    )
+}
+
+export default ToggleSwitch;
+
+// div übergeordnet center margin absolute
+// 

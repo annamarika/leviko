@@ -66,6 +66,8 @@ export const ParalaxWrapper = styled.div<DarkModeProps>`
 background-color: ${({ isDarkModeOn }) =>
     isDarkModeOn ? "black" : "var(--leviko-white)"};
 
+ transition: background-color 0.8s ease, color 0.3s ease;
+
   @media (max-width: 430px) {
     min-height: 100vh;
     display: flex;
@@ -85,7 +87,8 @@ export const ParalaxContainer = styled.div<DarkModeProps>`
   gap: 80px;
   background-color: ${({ isDarkModeOn }) =>
     isDarkModeOn ? "black" : "var(--leviko-white)"};
-  
+  transition: background-color 0.8s ease, color 0.3s ease;
+
   color: ${({isDarkModeOn }) =>
     isDarkModeOn ? "white" : "black"};
 

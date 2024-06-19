@@ -2,6 +2,8 @@
 
 import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 import useHeaderStore from "../stores/useHeaderStore.tsx";
+import ToggleSwitch from "../UI/Buttons/ToggleSwitch.tsx";
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -12,7 +14,6 @@ import {
   ButtonContainer,
   ButtonContainerDisplay,
   HeaderButton,
-  DarkModeToggle,
   MenuIcon,
   Overlay,
   OverlayContainer,
@@ -21,7 +22,6 @@ import {
   ArrowContainer,
   StyledArrowSVG,
 } from "../UI/Header.styled.tsx";
-
 const Header: React.FC = () => {
   const {
     isMenuOpen,
@@ -39,10 +39,10 @@ const Header: React.FC = () => {
     setLastScrollY: state.setLastScrollY,
   }));
 
-  const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
-    isDarkModeOn: state.isDarkModeOn,
-    toggleDarkMode: state.toggleDarkMode,
-  }));
+  // const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
+  //   isDarkModeOn: state.isDarkModeOn,
+  //   toggleDarkMode: state.toggleDarkMode,
+  // }));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,9 +98,7 @@ const Header: React.FC = () => {
                 Team
               </HeaderButton>
             </ButtonContainerDisplay>
-            <DarkModeToggle onClick={toggleDarkMode} >
-                DarkMode
-            </DarkModeToggle>
+            <ToggleSwitch />
           </ButtonContainer>
           
         </NavContainer>

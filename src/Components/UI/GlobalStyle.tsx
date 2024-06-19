@@ -21,7 +21,8 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     font-size: 1.5rem;
     color: ${(props) => (props.darkTheme ? "white" : "black")};
     background-color: ${(props) => (props.darkTheme ? "black" : "var(--leviko-white)")};
-  
+    transition: background-color 0.8s ease, color 0.3s ease;
+
   }
   
   :root {

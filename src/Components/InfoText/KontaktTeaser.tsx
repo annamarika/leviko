@@ -49,8 +49,9 @@ export const KontaktTeaserWrapper = styled.div<DarkModeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-background-color: ${({ isDarkModeOn }) =>
+  background-color: ${({ isDarkModeOn }) =>
     isDarkModeOn ? "black" : "var(--leviko-white)"};  padding: 100px 0;
+  transition: background-color 0.8s ease, color 0.3s ease;
 
   @media (max-width: 1024px) {
     padding: 80px 0;

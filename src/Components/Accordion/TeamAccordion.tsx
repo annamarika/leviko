@@ -144,6 +144,8 @@ const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkMo
   : $alternate 
   ? "var(--leviko-white)" 
   : "var(--leviko-blue)"};  
+  transition: background-color 0.8s ease, color 0.3s ease;
+
   color: ${({ $alternate, isDarkModeOn }) =>
     $alternate && !isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
   width: 100%;
