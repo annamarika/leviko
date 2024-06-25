@@ -16,9 +16,11 @@ import {
   OverlayContainer,
   OverlayContent,
   MenuItem,
+} from "../UI/Header.styled.tsx";
+import {
   ArrowContainer,
   StyledArrowSVG,
-} from "../UI/Header.styled.tsx";
+} from "../UI/Buttons/StyledArrowSVG.tsx";
 
 const Header: React.FC = () => {
   const {
@@ -81,8 +83,8 @@ const Header: React.FC = () => {
               <div className="line middle"></div>
             </MenuIcon>
             <ButtonContainerDisplay>
-              <HeaderButton as={Link} to="/">
-                Startseite
+              <HeaderButton as={Link} to="/forschung">
+                Forschung
               </HeaderButton>
               <HeaderButton as={Link} to="/projekt">
                 Projekt
