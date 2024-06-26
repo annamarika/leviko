@@ -47,12 +47,12 @@ const FroschungNav = () => {
             </ArrowContainerPublikationen>
           </NavPContainer>
         </NavContainer>
-        <h3>
+        <TextContainer>
           Unsere Forschung konzentriert sich auf eine Reihe zentraler Fragen,
           die den Einsatz von VR/AR im Musikunterricht betreffen. Dabei setzen
           wir auf eine vielfältige Methodik und nutzen bewährte Modelle aus der
           Bildungsforschung, um unseren Ansatz zu validieren und zu verfeinern.
-        </h3>
+        </TextContainer>
       </ForschungNavContainer>
     </>
   );
