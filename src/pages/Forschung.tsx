@@ -8,6 +8,9 @@ import { Headline } from "../Components/UI/Headline.styled";
 import FraumitBrille from "../assets/images/Frau_mit_Meta_Quest.webp";
 import ForschungsfragenWhite from "../Components/Parallax/ForschungsfragenWhite.tsx";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser.tsx";
+import MethodenIntro from "../Components/Methoden/MethodenIntro.tsx";
+import MethodenOutro from "../Components/Methoden/MethodenOutro.tsx";
+import DBRDiagramm from "../Components/Methoden/DBRDiagramm.tsx";
 
 const FroschungsPage = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -85,6 +88,46 @@ const FroschungsPage = () => {
         />
       </ParallaxSection>
       <Headline id="methoden"> Methoden</Headline>
+      <MethodenIntro
+        headline="Design-Based Research (DBR)"
+        description={
+          <>
+            <p>
+              Bei LEVIKO XR verfolgen wir einen Design-Based Research
+              (DBR)-Ansatz, eine methodische Innovation im Bereich der
+              angewandten Forschung.
+            </p>
+            <br />
+            <p>
+              Unser Ziel ist es, durch iteratives Design und stetige Reflexion
+              Bildungstechnologien zu entwickeln, die sowohl theoretisch
+              fundiert als auch praktisch erprobt sind.
+            </p>
+          </>
+        }
+      />
+      <DBRDiagramm
+        headline={"Requirement"}
+        description={
+          <>
+            <p>Anforderung</p>
+            <br />
+            <p>
+              Diese Phase beinhaltet die Identifizierung der Bildungsbedürfnisse
+              oder Probleme, die die Forschung adressieren möchte. Ziel ist es,
+              zu verstehen, was innerhalb eines spezifischen Bildungskontextes
+              verbessert oder innoviert werden muss.
+            </p>
+          </>
+        }
+      />
+      <MethodenOutro
+        description={
+          "Der DBR-Ansatz ermöglicht es uns, Innovationen zu entwickeln, die sowohl in der Theorie verankert als auch in der Praxis bewährt sind. Die enge Verbindung von Forschung und Praxis führt zu realen Verbesserungen in der Musikpädagogik und bereichert die wissenschaftliche Gemeinschaft mit wertvollen Erkenntnissen."
+        }
+        linkTo={""}
+        button={"Erfahre mehr"}
+      />
       <Headline id="modelle"> Modelle</Headline>
     </>
   );

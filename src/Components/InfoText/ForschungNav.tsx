@@ -13,7 +13,7 @@ const FroschungNav = () => {
     <>
       <ForschungNavContainer>
         <NavContainer>
-          <h3>Auf dieser Seite</h3>
+          <NavHeadline>Auf dieser Seite</NavHeadline>
           <NavPWrapper>
             <NavPContainer onClick={() => scrollToSection("forschungsfragen")}>
               <NavP>Forschungsfragen</NavP>
@@ -34,10 +34,10 @@ const FroschungNav = () => {
               </ArrowContainer>
             </NavPContainer>
           </NavPWrapper>
-          <p>
+          <PublikationsTeaser>
             Du willst mehr über den aktullen Stand erfahren? Dann besuche die
             folgende Seite.
-          </p>
+          </PublikationsTeaser>
           <NavPContainer>
             <NavP as={Link} to="/team">
               Publikationen
@@ -77,13 +77,13 @@ export const ForschungNavContainer = styled.div`
   @media (max-width: 1024px) {
     margin-right: 24px;
     margin-left: 24px;
-    gap: 24px;
+    gap: 32px;
     margin-bottom: 80px;
   }
   @media (max-width: 430px) {
     flex-direction: column;
     align-items: start;
-    gap: 0;
+    gap: 32px;
     margin-bottom: 56px;
   }
 `;
@@ -93,6 +93,16 @@ export const NavContainer = styled.div`
   flex-direction: column;
   gap: 32px;
   width: calc(33.33%);
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
+`;
+
+export const NavHeadline = styled.h3`
+  @media (max-width: 430px) {
+    font-size: 32px;
+  }
 `;
 
 export const NavPWrapper = styled.div`
@@ -108,6 +118,14 @@ export const NavPContainer = styled.div`
   text-decoration: none;
   width: calc(70%);
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
 `;
 
 export const NavP = styled.p`
@@ -117,6 +135,16 @@ export const NavP = styled.p`
 
   &:hover {
     color: var(--leviko-black);
+  }
+
+  @media (max-width: 430px) {
+    font-size: 20px;
+  }
+`;
+
+export const PublikationsTeaser = styled.p`
+  @media (max-width: 430px) {
+    font-size: 20px;
   }
 `;
 
@@ -163,4 +191,8 @@ const ArrowContainerPublikationen = styled.div`
 
 export const TextContainer = styled.h3`
   width: calc(66.66%);
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
 `;

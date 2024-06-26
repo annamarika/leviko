@@ -100,8 +100,8 @@ const Header: React.FC = () => {
         <Overlay $isOpen={isMenuOpen}>
           <OverlayContainer>
             <OverlayContent>
-              <MenuItem as={Link} to="/" onClick={toggleMenu}>
-                Startseite
+              <MenuItem as={Link} to="/forschung" onClick={toggleMenu}>
+                Forschung
                 <ArrowContainer>
                   <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>
