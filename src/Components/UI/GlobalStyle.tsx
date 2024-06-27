@@ -32,7 +32,12 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     --leviko-green: #AAFE83;
   }
 
-
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 20px 0; /* Space between the boxes */
+  }
 
   @font-face {
     font-family: "Blatant";
