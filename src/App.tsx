@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/Footer.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import ScrollToTop from "./Components/Header/ScrollToTop.ts";
 import useDarkModeStore from './Components/stores/useDarkModeStore.tsx';
+import BallEffect from "./BallEffect.tsx";
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
         <Route path="/impressum" element={<Impressum />} />
       </Routes>
       <Footer />
+      <BallEffect /> {/* Include the BallEffect component */}
+
     </>
   );
 }

@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    min-height: 95vh;
+  }
+  
+  h1 {
+    color: white;
+    font-size: 200px;
+    text-align: center;
+  }
+  
+  .ball {
+    width: 150px;
+    height: 150px;
+  
+    border-radius: 999px;
+    background-color: white;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate3d(-50%, -50%, 0);
+  
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
+  
