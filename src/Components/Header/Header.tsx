@@ -1,6 +1,5 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 import useHeaderStore from "../stores/useHeaderStore.tsx";
 import ToggleSwitch from "../UI/Buttons/ToggleSwitch.tsx";
 
@@ -38,11 +37,6 @@ const Header: React.FC = () => {
     lastScrollY: state.lastScrollY,
     setLastScrollY: state.setLastScrollY,
   }));
-
-  // const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
-  //   isDarkModeOn: state.isDarkModeOn,
-  //   toggleDarkMode: state.toggleDarkMode,
-  // }));
 
   useEffect(() => {
     const handleScroll = () => {

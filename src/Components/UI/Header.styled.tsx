@@ -18,7 +18,8 @@ interface HeaderContainerProps {
 export const HeaderContainer = styled.div<HeaderContainerProps>`
   background: var(--leviko-blue);
   width: 100vw;
-  position: fixed;
+  position: sticky;
+  // vorher position: fixed 
   left: 0;
   right: 0;
   padding-top: 24px;

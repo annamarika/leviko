@@ -5,6 +5,7 @@ import ProjektPage from "./pages/ProjektPage";
 import TeamPage from "./pages/TeamPage";
 import ProgressBar from "../src/Components/Header/Progressbar.tsx";
 import Header from "./Components/Header/Header";
+import IntroParallax from "./Components/Parallax/IntroParallax.tsx";
 import Footer from "./Components/Footer/Footer.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import ScrollToTop from "./Components/Header/ScrollToTop.ts";
@@ -19,6 +20,7 @@ function App() {
     <>
       <GlobalStyle darkTheme={isDarkModeOn}/>
       <ProgressBar />
+      <IntroParallax />
       <Header />
       <ScrollToTop />
       <Routes>
@@ -28,8 +30,7 @@ function App() {
         <Route path="/impressum" element={<Impressum />} />
       </Routes>
       <Footer />
-      <BallEffect /> {/* Include the BallEffect component */}
-
+      {isDarkModeOn && <BallEffect /> }
     </>
   );
 }
