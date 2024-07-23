@@ -126,13 +126,11 @@ export const HeaderButton = styled.a`
 `;
 
 export const DarkModeToggle = styled.a`
-  text-align: center;
   background-color: var(--leviko-blue);
   border: solid 4px;
   border-radius: 30px;
   border-color: var(--leviko-green);
   color: var(--leviko-green);
-  margin-top:5px;
   margin-left:30px;
   padding: 8px;
   width: 100px;
@@ -166,6 +164,7 @@ export const MenuIcon = styled.div<MenuIconProps>`
   position: relative;
   display: none;
   z-index: 100;
+  margin-top:10px;
 
   @media (max-width: 1024px) {
     display: block;
