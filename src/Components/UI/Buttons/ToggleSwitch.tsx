@@ -6,10 +6,9 @@ import SunSVG from "./SunSVG";
 import MoonSVG from "./MoonSVG";
 
 const ToggleSwitchWrapper = styled.label`
-  margin-top:8px;
+  margin-top: 9px;
   align-items: center;
-  gap: 10px;
-  margin-left:25px;
+  margin-left:20px;
   cursor: pointer;
 `;
 
@@ -43,14 +42,14 @@ const Input = styled.input`
   &:checked + ${Switch} {
 
     &:before {
-      transform: translate(27px, -50%);
+      transform: translate(29px, -50%);
     }
   }
 `;
 
 const SVGWrapper = styled.div`
-  padding-left:4px;
-  padding-top:3px;
+  padding-left:6px;
+  padding-top:4px;
   align-items: center;
   position:absolute;
   display:flex;
@@ -99,6 +98,3 @@ const ToggleSwitch = () => {
 }
 
 export default ToggleSwitch;
-
-// div übergeordnet center margin absolute
-// 
