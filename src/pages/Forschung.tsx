@@ -11,6 +11,7 @@ import KontaktTeaser from "../Components/InfoText/KontaktTeaser.tsx";
 import MethodenIntro from "../Components/Methoden/MethodenIntro.tsx";
 import MethodenOutro from "../Components/Methoden/MethodenOutro.tsx";
 import DBRDiagramm from "../Components/Methoden/DBRDiagramm.tsx";
+import TPACKDiagramm from "../Components/Methoden/TPACKDiagramm.tsx";
 
 const FroschungsPage = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -110,8 +111,6 @@ const FroschungsPage = () => {
         headline={"Requirement"}
         description={
           <>
-            <p>Anforderung</p>
-            <br />
             <p>
               Diese Phase beinhaltet die Identifizierung der Bildungsbedürfnisse
               oder Probleme, die die Forschung adressieren möchte. Ziel ist es,
@@ -128,7 +127,46 @@ const FroschungsPage = () => {
         linkTo={""}
         button={"Erfahre mehr"}
       />
+      <KontaktTeaser
+        headline="Interesse geweckt? Kontaktiere uns!"
+        descriptionOne="Hast du Fragen zum Projekt LEVIKO XR oder möchtest du mehr über unsere Arbeit erfahren?"
+        descriptionTwo="Wir sind offen für Anregungen, Feedback und Kooperationsmöglichkeiten und freuen uns darauf, von dir zu hören!"
+        linkTo="/team"
+        button="Team"
+        $buttonVariant="tertiary"
+      />
       <Headline id="modelle"> Modelle</Headline>
+      <MethodenIntro
+        headline="TPACK-Rahmenwerk"
+        description={
+          <>
+            <p>
+              Das Technological Pedagogical Content Knowledge (TPACK) ist ein
+              zentrales Modell in unserer Forschung, das die Komplexität des
+              Lehrens an der Schnittstelle von Technologie, Pädagogik und Inhalt
+              versteht und adressiert.
+            </p>
+            <br />
+            <p>
+              LEVIKO XR nutzt dieses Rahmenwerk, um eine harmonische Integration
+              von Musikpädagogik und digitaler Technologie zu erreichen.
+            </p>
+          </>
+        }
+      />
+      <TPACKDiagramm
+        headline={"TPACK"}
+        description={
+          <>
+            <p>Technologisches Pädagogisches Inhaltswissen</p>
+            <p>
+              Dies ist das zentrale Konzept des TPACK-Rahmenmodells und
+              beschreibt das optimale Zusammenspiel von Technologie (TK),
+              Pädagogik (PK) und Fachwissen (CK) in der Unterrichtspraxis.
+            </p>
+          </>
+        }
+      />
     </>
   );
 };
