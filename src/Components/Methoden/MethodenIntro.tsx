@@ -34,7 +34,7 @@ export default MethodenIntro;
 export const MethodenIntroContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   margin-right: 160px;
   margin-left: 160px;
   padding: 50px 0;
@@ -54,26 +54,43 @@ export const MethodenIntroContainer = styled.div`
     padding: 0 0;
     flex-direction: column;
     align-items: start;
-    gap: 0;
+    gap: 20px;
     margin-bottom: 0;
+    align-items: stretch;
   }
 `;
 
 export const CTAWrapper = styled.div`
   display: flex;
   align-items: center;
-  align-self: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
   background-color: var(--leviko-green);
   height: fit-content;
   padding: 35px 20px;
   flex-shrink: 0;
   gap: 10px;
   width: 352px;
+  margin-left: auto;
+
+  @media (max-width: 1330px) {
+    padding: 24px 20px;
+  }
+
+  @media (max-width: 430px) {
+    padding: 15px 10px;
+    gap: 20px;
+    width: fit-content;
+    align-self: flex-end;
+    margin-right: -24px;
+  }
 `;
 
 export const CTAText = styled.p`
   font-size: 16px;
+
+  @media (max-width: 430px) {
+    width: 210px;
+  }
 `;
 
 export const SVGWrapper = styled.div``;
@@ -82,24 +99,19 @@ export const SVGContainer = styled.div`
   position: relative;
 `;
 
+export const MiniArrowSVGWrapper = styled.div`
+  position: absolute;
+  top: 30%;
+  left: 50%;
+`;
+
 export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
   width: 31px;
   height: 34px;
 
   @media (max-width: 430px) {
     width: 20px;
-    height: auto;
-  }
-`;
-
-export const MiniArrowSVGWrapper = styled.div`
-  position: absolute;
-  top: 30%;
-  left: 50%;
-
-  @media (max-width: 430px) {
-    height: 10px;
-    width: 30px;
+    height: 21px;
   }
 `;
 
