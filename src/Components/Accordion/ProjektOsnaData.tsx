@@ -10,7 +10,9 @@ export const TeamOsnaData: Array<{
   title: string;
   description: string;
   logoOne: string;
+  logoOneDarkMode? : string;
   logoTwo: string;
+  logoTwoDarkMode? : string;
   altLogoOne: string;
   altLogoTwo: string;
   content: JSX.Element | string;
@@ -79,6 +81,7 @@ export const TeamOsnaData: Array<{
       "Universität Osnabrück Institut für Musikwissenschaft und Musikpädagogik Music Technology & Digital Musicology Lab (MTDML)",
     logoOne: LogoOsnaGrau,
     logoTwo: MTDMLBlack,
+    logoTwoDarkMode: MTDMLWhite,
     altLogoOne: "Osnabrück Logo",
     altLogoTwo: "MTDML Logo",
     $objectPosition: "center",

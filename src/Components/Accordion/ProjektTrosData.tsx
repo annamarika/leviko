@@ -8,7 +8,9 @@ export const TeamTrosData: Array<{
   title: string;
   description: string;
   logoOne: string;
+  logoOneDarkMode? : string;
   logoTwo: string;
+  logoTwoDarkMode? : string;
   altLogoOne: string;
   altLogoTwo: string;
   content: JSX.Element | string;
@@ -75,6 +77,7 @@ export const TeamTrosData: Array<{
     description:
       "Staatliche Hochschule für Musik Trossingen Landeszentrum MUSIK–DESIGN–PERFORMANCE",
     logoOne: LogoTros,
+    logoOneDarkMode: LogoTrosWhite,
     logoTwo: "",
     altLogoOne: "Trossingen Logo",
     altLogoTwo: "",

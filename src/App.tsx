@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/Footer.tsx";
 import Impressum from "./pages/Impressum.tsx";
 import ScrollToTop from "./Components/Header/ScrollToTop.ts";
 import useDarkModeStore from './Components/stores/useDarkModeStore.tsx';
+import BallEffect from "./Components/UI/BallEffect.tsx";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+      {isDarkModeOn && <BallEffect />}
       <GlobalStyle darkTheme={isDarkModeOn}/>
       <ProgressBar />
       <Header />

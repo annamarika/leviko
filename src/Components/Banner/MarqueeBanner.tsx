@@ -29,6 +29,8 @@ export const MarqueeContainer = styled.div`
   color: var(--leviko-green);
   padding: 30px 0;
   margin: 100px 0;
+  position: relative;
+  z-index: 80;
 
   @media (max-width: 1200px) {
     margin: 80px 0;

@@ -22,7 +22,9 @@ interface TeamAccordionProps {
     title: JSX.Element | string;
     description: string;
     logoOne: string;
+    logoOneDarkMode?: string,
     logoTwo: string;
+    logoTwoDarkMode? : string;
     altLogoOne: string;
     altLogoTwo: string;
     content: JSX.Element | string;
@@ -66,10 +68,10 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
                 </HeadlineContainer>
                 <LogoContainer>
                   <ImageContainer>
-                    <StyledImage src={item.logoOne} alt={item.altLogoOne} />
+                    <StyledImage src={isDarkModeOn && item.logoOneDarkMode ? item.logoOneDarkMode : item.logoOne} alt={item.altLogoOne} />
                   </ImageContainer>
                   <ImageContainer $hide={item.logoTwo === ""}>
-                    <StyledImage src={item.logoTwo} alt={item.altLogoTwo} />
+                    <StyledImage src={isDarkModeOn && item.logoTwoDarkMode ? item.logoTwoDarkMode : item.logoTwo} alt={item.altLogoTwo} />
                   </ImageContainer>
                 </LogoContainer>
               </HeadlineWrapper>
@@ -136,6 +138,7 @@ const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkMo
   justify-content: space-between;
   align-items: start;
   padding: 65px;
+  z-index: 50;
   border: solid 4px;
   border-color: var(--leviko-blue);
   background-color: ${({ $alternate, isDarkModeOn }) =>
