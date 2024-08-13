@@ -1,23 +1,30 @@
 import styled from "styled-components";
+import TPACKSVG from "../UI/SVG/TPACKsvg";
+import { useTPACKStore } from "../stores/useTPACKStore";
 
 interface TPACKDiagrammProps {
   headline: JSX.Element | string;
   description: JSX.Element | string;
 }
 
-const TPACKDiagramm: React.FC<TPACKDiagrammProps> = ({
-  headline,
-  description,
-}) => {
+const TPACKDiagramm: React.FC = () => {
+  const { headline, description } = useTPACKStore();
+
   return (
     <DiagrammWrapper>
+      <TPACKDiagrammWrapper>
+        <DiagrammContainer>
+          <TPACKSVG />
+        </DiagrammContainer>
+      </TPACKDiagrammWrapper>
       <InfoWrapper>
         <InfoContainer>
           <InfoTextWrapper>
             <InfoTextContainer>
-              <h3>{headline}</h3>
+              <h4>{headline}</h4>
               <div>{description}</div>
             </InfoTextContainer>
+            <VerticalText>mehr Information</VerticalText>
           </InfoTextWrapper>
         </InfoContainer>
       </InfoWrapper>
@@ -76,4 +83,30 @@ export const InfoTextContainer = styled.div`
   flex-direction: column;
   padding: 40px 20px 40px 64px;
   gap: 28px;
+`;
+
+export const VerticalText = styled.p`
+  font-size: 16px;
+  padding: 40px 10px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+
+  @media (max-width: 430px) {
+    padding: 10px 10px;
+  }
+`;
+
+export const TPACKDiagrammWrapper = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+`;
+
+export const DiagrammContainer = styled.div`
+  position: relative;
+  width: 100vw;
 `;

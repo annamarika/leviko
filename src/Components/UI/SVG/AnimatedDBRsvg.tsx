@@ -30,43 +30,72 @@ const AnimatedDBRSVG = () => {
             delay: index * 0.2,
             ease: "power2.out",
             scrollTrigger: {
-              trigger: ".DBRDiagrammWrapper", // Target the MethodenIntroContainer by ID
+              trigger: ".DBRDiagrammWrapper",
               start: "-300 top", // Adjust as needed
               end: "100 top",
               scrub: 0.5,
-              markers: true, // Remove this in production, it's for debugging
+              markers: true, // Remove this in production
             },
           }
         );
       });
     }
 
-    // Animate DiagrammBox components
-    const boxes = gsap.utils.toArray<HTMLElement>(".DiagrammBox");
+    // Responsive animation for DiagrammBox components
+    const mm = gsap.matchMedia();
 
-    boxes.forEach((box, index) => {
-      gsap.fromTo(
-        box,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 1.5,
-          delay: index * 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".DBRDiagrammWrapper",
-            start: "-200 top", // Adjust the start position as needed
-            end: "100 top",
-            scrub: 0.5,
-          },
+    mm.add(
+      {
+        // Define your breakpoints
+        isDesktop: "(min-width: 1024px)",
+        isTablet: "(min-width: 429px) and (max-width: 1023px)",
+        isMobile: "(max-width: 430px)",
+      },
+      (context) => {
+        if (!context.conditions) return;
+
+        let xStart: number;
+
+        // Set xStart based on screen size
+        if (context.conditions.isDesktop) {
+          xStart = 400; // Move more on larger screens
+        } else if (context.conditions.isTablet) {
+          xStart = -100; // Moderate move on tablet
+        } else if (context.conditions.isMobile) {
+          xStart = -300; // Smaller move on mobile
         }
-      );
-    });
+
+        const boxes = gsap.utils.toArray<HTMLElement>(".DiagrammBox");
+
+        boxes.forEach((box, index) => {
+          gsap.fromTo(
+            box,
+            { x: xStart, opacity: 0 }, // Start with the calculated x value
+            {
+              x: 0, // End at the original position
+              opacity: 1, // Keep full opacity throughout
+              duration: 1.5,
+              delay: index * 0.2,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: ".DBRDiagrammWrapper",
+                start: "-200 top", // Adjust the start position as needed
+                end: "100 top",
+                scrub: 0.5,
+              },
+            }
+          );
+        });
+      }
+    );
+
+    // Clean up GSAP instances on component unmount
+    return () => {
+      mm.revert();
+    };
   }, []);
 
   return <DBRSVG ref={svgRef} />;
 };
 
 export default AnimatedDBRSVG;
-
-// Continue with the rest of your component and styled-components code as previously defined

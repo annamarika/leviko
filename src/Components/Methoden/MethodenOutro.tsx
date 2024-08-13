@@ -48,7 +48,7 @@ export const MethodenIntroContainer = styled.div`
     padding: 0 0;
     flex-direction: column;
     align-items: start;
-    gap: 0;
+    gap: 24px;
     margin-bottom: 0;
   }
 `;

@@ -19,9 +19,8 @@ const FroschungsPage = () => {
   const refThree = useRef<HTMLDivElement>(null);
   const refFour = useRef<HTMLDivElement>(null);
   const refFive = useRef<HTMLDivElement>(null);
-  const refSix = useRef<HTMLDivElement>(null);
 
-  useStickyScroll([refOne, refTwo, refThree, refFour, refFive, refSix], {
+  useStickyScroll([refOne, refTwo, refThree, refFour, refFive], {
     onEnter: (entry) => {
       entry.target.classList.add("sticky");
     },
@@ -35,8 +34,8 @@ const FroschungsPage = () => {
       <HeroProjekt
         $imgSrc={FraumitBrille}
         imgAlt="person who plays maestro VR"
-        headline="Erkenntnisse gestalten: Die Forschung hinter LEVIKO XR "
-        description="Erkenntnisse gestalten: Die Forschung hinter LEVIKO XR "
+        headline="Erkenntnisse gestalten: Die Forschung hinter LEVIKO-XR "
+        description="Erkenntnisse gestalten: Die Forschung hinter LEVIKO-XR "
         linkTo="/projekt"
         button="Erfahre mehr"
         $objectPosition="center 20%"
@@ -46,39 +45,32 @@ const FroschungsPage = () => {
       <ParallaxSection ref={refOne} className="sticky-section">
         <Forschungsfragen
           headline={
-            "Wie kann die VR-/AR-Technologie effektiv in die Lehrkräftefortbildung im Fach Musik integriert werden?"
+            "Durch welche messbaren Faktoren unterscheiden sich Lehr-Lern-Umgebungen in XR von Nicht-XR-Umgebungen und wie lassen sie sich differenzieren?"
           }
         />
       </ParallaxSection>
       <ParallaxSection ref={refTwo} className="sticky-section">
         <ForschungsfragenWhite
           headline={
-            "Welche technischen und didaktischen Möglichkeiten bietet VR/AR im Musikunterricht, und wie können diese optimal genutzt werden?"
+            "Welche Lehr-Lern-Designs in verschiedenen Handlungsfeldern des Musikunterrichts sind aus didaktischer, (…), ethischer Sicht gut geeignet, und wie lassen sich diese dokumentieren und disseminieren?"
           }
         />
       </ParallaxSection>
       <ParallaxSection ref={refThree} className="sticky-section">
         <Forschungsfragen
           headline={
-            "Welche Auswirkungen hat der Einsatz von VR/AR auf das Lernverhalten und die Leistung der Schülerinnen und Schüler im Musikunterricht?"
+            "Wie können Grenzen und Potenziale des Einsatzes von XR Technologien im Musikunterricht aus didaktischer Perspektive eingeordnet werden?"
           }
         />
       </ParallaxSection>
       <ParallaxSection ref={refFour} className="sticky-section">
         <ForschungsfragenWhite
           headline={
-            "Wie können Lehr-Lern-Designs auf VR-/AR-Basis entwickelt werden, um den Musikunterricht interaktiver und faszinierender zu gestalten?"
+            "Wie gelingt ästhetische Erfahrung und der Aufbau musikalischer Kompetenzen in musikbezogenen VR/AR-Lehr-Lern-Umgebungen?"
           }
         />
       </ParallaxSection>
       <ParallaxSection ref={refFive} className="sticky-section">
-        <Forschungsfragen
-          headline={
-            "Welche Rolle spielen Modelle wie TPACK, SAMR und CAMIL bei der Gestaltung und Implementierung von VR/AR-Anwendungen im Musikunterricht?"
-          }
-        />
-      </ParallaxSection>
-      <ParallaxSection ref={refSix} className="sticky-section">
         <KontaktTeaser
           headline="Entdecke unsere Publikationen!"
           descriptionOne="Diese Forschungsfragen bilden das Fundament unserer Arbeit und führen uns auf unserem Weg zur Neugestaltung der musikalischen Bildung durch den Einsatz innovativer Technologien."
@@ -95,14 +87,13 @@ const FroschungsPage = () => {
           <>
             <p>
               Bei LEVIKO XR verfolgen wir einen Design-Based Research
-              (DBR)-Ansatz, eine methodische Innovation im Bereich der
-              angewandten Forschung.
+              (DBR)-Ansatz, im Bereich der angewandten Forschung.
             </p>
             <br />
             <p>
               Unser Ziel ist es, durch iteratives Design und stetige Reflexion
-              Bildungstechnologien zu entwickeln, die sowohl theoretisch
-              fundiert als auch praktisch erprobt sind.
+              Lehr-Lern-Designs zu entwickeln, die sowohl theoretisch fundiert
+              als auch praktisch erprobt sind.
             </p>
           </>
         }
@@ -153,20 +144,9 @@ const FroschungsPage = () => {
             </p>
           </>
         }
+        displayedSVG="tpack"
       />
-      <TPACKDiagramm
-        headline={"TPACK"}
-        description={
-          <>
-            <p>Technologisches Pädagogisches Inhaltswissen</p>
-            <p>
-              Dies ist das zentrale Konzept des TPACK-Rahmenmodells und
-              beschreibt das optimale Zusammenspiel von Technologie (TK),
-              Pädagogik (PK) und Fachwissen (CK) in der Unterrichtspraxis.
-            </p>
-          </>
-        }
-      />
+      <TPACKDiagramm />
     </>
   );
 };
