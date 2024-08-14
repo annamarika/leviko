@@ -22,9 +22,9 @@ interface TeamAccordionProps {
     title: JSX.Element | string;
     description: string;
     logoOne: string;
-    logoOneDarkMode?: string,
+    logoOneDarkMode?: string;
     logoTwo: string;
-    logoTwoDarkMode? : string;
+    logoTwoDarkMode?: string;
     altLogoOne: string;
     altLogoTwo: string;
     content: JSX.Element | string;
@@ -42,12 +42,12 @@ interface StyledImageProps {
 }
 
 const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
-  const { expanded, setExpanded } = useAccordionStore();
-  const { isDarkModeOn } = useDarkModeStore();
+  const { expanded, setExpanded } = useAccordionStore(); // Zustand store for accordion state
+  const { isDarkModeOn } = useDarkModeStore(); // Zustand store for dark mode state
 
   const handleAccordionChange = (keys: string[]) => {
     const isExpanded = keys.length > 0 ? keys[0] : null;
-    setExpanded(isExpanded);
+    setExpanded(isExpanded); // Handling accordion state change
   };
 
   return (
@@ -57,7 +57,7 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
           key={item.id}
           uuid={item.id}
           $alternate={index % 2 !== 0}
-          isDarkModeOn={isDarkModeOn}
+          $isDarkModeOn={isDarkModeOn}
         >
           <AccordionHeading>
             <AccordionButton>
@@ -68,10 +68,24 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
                 </HeadlineContainer>
                 <LogoContainer>
                   <ImageContainer>
-                    <StyledImage src={isDarkModeOn && item.logoOneDarkMode ? item.logoOneDarkMode : item.logoOne} alt={item.altLogoOne} />
+                    <StyledImage
+                      src={
+                        isDarkModeOn && item.logoOneDarkMode
+                          ? item.logoOneDarkMode
+                          : item.logoOne
+                      }
+                      alt={item.altLogoOne}
+                    />
                   </ImageContainer>
                   <ImageContainer $hide={item.logoTwo === ""}>
-                    <StyledImage src={isDarkModeOn && item.logoTwoDarkMode ? item.logoTwoDarkMode : item.logoTwo} alt={item.altLogoTwo} />
+                    <StyledImage
+                      src={
+                        isDarkModeOn && item.logoTwoDarkMode
+                          ? item.logoTwoDarkMode
+                          : item.logoTwo
+                      }
+                      alt={item.altLogoTwo}
+                    />
                   </ImageContainer>
                 </LogoContainer>
               </HeadlineWrapper>
@@ -113,6 +127,8 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
 
 export default TeamAccordion;
 
+// Styled components with $ prefix for props that should not be forwarded to the DOM
+
 const AccordionWrapper = styled(Accordion)`
   display: flex;
   flex-direction: column;
@@ -132,7 +148,10 @@ const AccordionWrapper = styled(Accordion)`
   }
 `;
 
-const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkModeOn:boolean }>`
+const AccordionContainer = styled(AccordionItem)<{
+  $alternate: boolean;
+  $isDarkModeOn: boolean;
+}>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,16 +160,18 @@ const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkMo
   z-index: 50;
   border: solid 4px;
   border-color: var(--leviko-blue);
-  background-color: ${({ $alternate, isDarkModeOn }) =>
-    isDarkModeOn && $alternate 
-  ? "black"
-  : $alternate 
-  ? "var(--leviko-white)" 
-  : "var(--leviko-blue)"};  
+  background-color: ${({ $alternate, $isDarkModeOn }) =>
+    $isDarkModeOn && $alternate
+      ? "var(--leviko-black)"
+      : $alternate
+      ? "var(--leviko-white)"
+      : "var(--leviko-blue)"};
   transition: background-color 0.8s ease, color 0.3s ease;
 
-  color: ${({ $alternate, isDarkModeOn }) =>
-    $alternate && !isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
+  color: ${({ $alternate, $isDarkModeOn }) =>
+    $alternate && !$isDarkModeOn
+      ? "var(--leviko-black)"
+      : "var(--leviko-white)"};
   width: 100%;
   gap: 100px;
 

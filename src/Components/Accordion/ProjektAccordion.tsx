@@ -39,7 +39,7 @@ const ProjektAccordion: React.FC<ProjektAccordionProps> = ({ items }) => {
           key={item.id}
           uuid={item.id}
           $alternate={index % 2 !== 0}
-          isDarkModeOn={isDarkModeOn}
+          $isDarkModeOn={isDarkModeOn}
         >
           <AccordionHeading>
             <AccordionButton>
@@ -82,7 +82,10 @@ const AccordionWrapper = styled(Accordion)`
   }
 `;
 
-const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkModeOn:boolean }>`
+const AccordionContainer = styled(AccordionItem)<{
+  $alternate: boolean;
+  $isDarkModeOn: boolean;
+}>`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -91,16 +94,18 @@ const AccordionContainer = styled(AccordionItem)<{ $alternate: boolean; isDarkMo
   border: solid 4px;
   z-index: 50;
   border-color: var(--leviko-blue);
-  background-color: ${({ $alternate, isDarkModeOn }) =>
-    isDarkModeOn && $alternate 
-    ? "black"
-    : $alternate 
-    ? "var(--leviko-white)" 
-    : "var(--leviko-blue)"};
+  background-color: ${({ $alternate, $isDarkModeOn }) =>
+    $isDarkModeOn && $alternate
+      ? "black"
+      : $alternate
+      ? "var(--leviko-white)"
+      : "var(--leviko-blue)"};
   transition: background-color 0.8s ease, color 0.3s ease;
 
-  color: ${({ $alternate, isDarkModeOn }) =>
-    $alternate && !isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
+  color: ${({ $alternate, $isDarkModeOn }) =>
+    $alternate && !$isDarkModeOn
+      ? "var(--leviko-black)"
+      : "var(--leviko-white)"};
   width: 100%;
   gap: 100px;
 

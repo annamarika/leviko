@@ -13,7 +13,7 @@ interface KontaktTeaserProps {
 }
 
 interface DarkModeProps {
-  isDarkModeOn: boolean;
+  $isDarkModeOn: boolean;
 }
 
 const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
@@ -24,11 +24,10 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   button,
   $buttonVariant,
 }) => {
-
   const { isDarkModeOn } = useDarkModeStore();
 
   return (
-    <KontaktTeaserWrapper isDarkModeOn={isDarkModeOn}>
+    <KontaktTeaserWrapper $isDarkModeOn={isDarkModeOn}>
       <KontaktTeaserContainer>
         <HeadlineContainer>{headline}</HeadlineContainer>
         <DescriptionContainer>
@@ -49,8 +48,9 @@ export const KontaktTeaserWrapper = styled.div<DarkModeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ isDarkModeOn }) =>
-    isDarkModeOn ? "black" : "var(--leviko-white)"};  padding: 100px 0;
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
+  padding: 100px 0;
   transition: background-color 0.8s ease, color 0.3s ease;
 
   @media (max-width: 1024px) {
@@ -73,7 +73,6 @@ export const KontaktTeaserContainer = styled.div`
   color: var(--leviko-black);
   min-height: 230px;
   z-index: 50;
-
 
   @media (max-width: 1330px) {
     margin-right: 24px;

@@ -20,6 +20,7 @@ import {
   MenuItem,
   ArrowContainer,
   StyledArrowSVG,
+  ButtonWrapper,
 } from "../UI/Header.styled.tsx";
 const Header: React.FC = () => {
   const {
@@ -78,9 +79,6 @@ const Header: React.FC = () => {
             <StyledLogoSVG />
           </LogoContainer>
           <ButtonContainer>
-            <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
-              <div className="line middle"></div>
-            </MenuIcon>
             <ButtonContainerDisplay>
               <HeaderButton as={Link} to="/">
                 Startseite
@@ -92,11 +90,14 @@ const Header: React.FC = () => {
                 Team
               </HeaderButton>
             </ButtonContainerDisplay>
-            <ToggleSwitch />
+            <ButtonWrapper>
+              <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
+                <div className="line middle"></div>
+              </MenuIcon>
+              <ToggleSwitch />
+            </ButtonWrapper>
           </ButtonContainer>
-          
         </NavContainer>
-        
       </HeaderContainer>
       {isMenuOpen && (
         <Overlay $isOpen={isMenuOpen}>

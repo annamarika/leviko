@@ -1,42 +1,69 @@
-// src/Components/BallEffect.tsx
-
-import React, { useEffect } from 'react';
-import './BallEffect.css';
+import React, { useEffect } from "react";
+import "./BallEffect.css";
 
 const BallEffect: React.FC = () => {
   useEffect(() => {
-    const cursor = document.querySelector('.ball') as HTMLElement;
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
 
-    let ballX = 0;
-    let ballY = 0;
+      if (screenWidth < 1024) {
+        // Remove the cursor effect if the screen is smaller than 1024px
+        const cursor = document.querySelector(".ball") as HTMLElement;
+        if (cursor) {
+          cursor.style.display = "none";
+        }
+        return;
+      }
 
-    let cursorX = 0;
-    let cursorY = 0;
+      const cursor = document.querySelector(".ball") as HTMLElement;
 
-    const speed = 0.2;
+      if (cursor) {
+        cursor.style.display = "block";
+      }
 
-    function animate() {
-      const distX = cursorX - ballX;
-      const distY = cursorY - ballY;
+      let ballX = 0;
+      let ballY = 0;
 
-      ballX += distX * speed;
-      ballY += distY * speed;
+      let cursorX = 0;
+      let cursorY = 0;
 
-      cursor.style.left = ballX + 'px';
-      cursor.style.top = ballY + 'px';
+      const speed = 0.2;
 
-      requestAnimationFrame(animate);
-    }
+      function animate() {
+        const distX = cursorX - ballX;
+        const distY = cursorY - ballY;
 
-    animate();
+        ballX += distX * speed;
+        ballY += distY * speed;
 
-    document.addEventListener('mousemove', function (event) {
+        cursor.style.left = ballX + "px";
+        cursor.style.top = ballY + "px";
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+
+      const mouseMoveHandler = (event: MouseEvent) => {
         cursorX = event.clientX + window.scrollX;
         cursorY = event.clientY + window.scrollY;
-    });
+      };
+
+      document.addEventListener("mousemove", mouseMoveHandler);
+
+      return () => {
+        document.removeEventListener("mousemove", mouseMoveHandler);
+      };
+    };
+
+    // Call handleResize initially
+    handleResize();
+
+    // Add a resize event listener to handle screen resizing
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      document.removeEventListener('mousemove', () => {});
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

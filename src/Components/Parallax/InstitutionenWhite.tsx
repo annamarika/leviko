@@ -25,11 +25,10 @@ interface StyledImageProps {
 interface StyledLogoProps {
   $hide?: boolean;
   $logoHeight?: string;
-
 }
 
 interface DarkModeProps {
-  isDarkModeOn: boolean;
+  $isDarkModeOn: boolean;
 }
 
 const InstitutionenWhite: React.FC<InstitutionenProps> = ({
@@ -47,12 +46,11 @@ const InstitutionenWhite: React.FC<InstitutionenProps> = ({
   $buttonVariant,
   $logoHeight = "40px",
 }) => {
-
   const { isDarkModeOn } = useDarkModeStore();
 
   return (
-    <ParalaxWrapper isDarkModeOn={isDarkModeOn}>
-      <ParalaxContainer isDarkModeOn={isDarkModeOn}>
+    <ParalaxWrapper $isDarkModeOn={isDarkModeOn}>
+      <ParalaxContainer $isDarkModeOn={isDarkModeOn}>
         <HeadlineContainer>
           <TextContainer>
             <h3>{headline}</h3>
@@ -92,11 +90,10 @@ const InstitutionenWhite: React.FC<InstitutionenProps> = ({
 export default InstitutionenWhite;
 
 export const ParalaxWrapper = styled.div<DarkModeProps>`
- background-color: ${({ isDarkModeOn }) =>
-    isDarkModeOn ? "black" : "var(--leviko-white)"};
-  
- transition: background-color 0.8s ease, color 0.3s ease;
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
 
+  transition: background-color 0.8s ease, color 0.3s ease;
 
   @media (max-width: 430px) {
     height: 100vh;
@@ -115,13 +112,13 @@ export const ParalaxContainer = styled.div<DarkModeProps>`
   margin-left: 160px;
   padding: 50px 0;
   gap: 80px;
-  background-color: ${({ isDarkModeOn }) =>
-    isDarkModeOn ? "black" : "var(--leviko-white)"};
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
   transition: background-color 0.8s ease, color 0.3s ease;
 
-  color: ${({isDarkModeOn }) =>
-    isDarkModeOn ? "white" : "black"};
-  
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"};
+
   @media (max-width: 1330px) {
     margin-right: 24px;
     margin-left: 24px;

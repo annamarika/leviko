@@ -19,7 +19,7 @@ export const HeaderContainer = styled.div<HeaderContainerProps>`
   background: var(--leviko-blue);
   width: 100vw;
   position: sticky;
-  // vorher position: fixed 
+  // vorher position: fixed
   left: 0;
   right: 0;
   padding-top: 24px;
@@ -83,6 +83,15 @@ export const ButtonContainer = styled.div`
   gap: 14px;
 `;
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: 1024px) {
+    flex-direction: row-reverse;
+  }
+`;
+
 export const ButtonContainerDisplay = styled.div`
   display: none;
 
@@ -131,7 +140,7 @@ export const DarkModeToggle = styled.a`
   border-radius: 30px;
   border-color: var(--leviko-green);
   color: var(--leviko-green);
-  margin-left:30px;
+  margin-left: 30px;
   padding: 8px;
   width: 100px;
   height: 40px;
@@ -164,7 +173,7 @@ export const MenuIcon = styled.div<MenuIconProps>`
   position: relative;
   display: none;
   z-index: 100;
-  margin-top:10px;
+  margin-top: 10px;
 
   @media (max-width: 1024px) {
     display: block;

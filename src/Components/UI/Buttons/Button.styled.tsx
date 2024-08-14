@@ -18,7 +18,11 @@ export const Button = styled(Link)<ButtonProps>`
   height: 100%;
   font-size: 24px;
   z-index: 50;
-  
+
+  @media (max-width: 1024px) {
+    z-index: 0;
+  }
+
   /* Hover effect for default button */
   &:hover {
     color: var(--leviko-black);

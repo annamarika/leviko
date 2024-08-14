@@ -1,15 +1,52 @@
-import React from "react";
 import styled from "styled-components";
-import { ChangeEvent, useState } from "react";
 import useDarkModeStore from "../../stores/useDarkModeStore";
 import SunSVG from "./SunSVG";
 import MoonSVG from "./MoonSVG";
 
+const ToggleSwitch = () => {
+  const { isDarkModeOn, toggleDarkMode } = useDarkModeStore((state) => ({
+    isDarkModeOn: state.isDarkModeOn,
+    toggleDarkMode: state.toggleDarkMode,
+  }));
+
+  return (
+    <>
+      <ToggleSwitchWrapper>
+        <Input
+          checked={isDarkModeOn}
+          type="checkbox"
+          onChange={toggleDarkMode}
+        />
+        <Switch>
+          <SVGWrapper>
+            <StyledSunSVG
+              color={
+                isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"
+              }
+            />
+            <StyledMoonSVG
+              color={
+                isDarkModeOn ? "var(--leviko-blue)" : "var(--leviko-green)"
+              }
+            />
+          </SVGWrapper>
+        </Switch>
+      </ToggleSwitchWrapper>
+    </>
+  );
+};
+
+export default ToggleSwitch;
+
 const ToggleSwitchWrapper = styled.label`
   margin-top: 9px;
   align-items: center;
-  margin-left:20px;
+  margin-left: 20px;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    margin-top: 6px;
+  }
 `;
 
 const Switch = styled.div`
@@ -40,7 +77,6 @@ const Input = styled.input`
   position: absolute;
 
   &:checked + ${Switch} {
-
     &:before {
       transform: translate(29px, -50%);
     }
@@ -48,13 +84,12 @@ const Input = styled.input`
 `;
 
 const SVGWrapper = styled.div`
-  padding-left:6px;
-  padding-top:4px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  position:absolute;
-  display:flex;
-  gap: 10px;
-
+  padding: 2px 4px;
+  position: relative;
+  z-index: 1;
 `;
 
 const StyledSunSVG = styled(SunSVG)`
@@ -62,39 +97,5 @@ const StyledSunSVG = styled(SunSVG)`
 `;
 
 const StyledMoonSVG = styled(MoonSVG)`
-  
-  
   transition: 300ms all;
 `;
-
-const ToggleSwitch = () => {
-    
-    const {isDarkModeOn,toggleDarkMode} = useDarkModeStore((state) => ({
-        isDarkModeOn: state.isDarkModeOn,
-        toggleDarkMode: state.toggleDarkMode,
-      }));
-
-    return (
-        <>
-         <ToggleSwitchWrapper>
-            <Input checked={isDarkModeOn} type="checkbox" onChange={toggleDarkMode} />
-            <Switch>
-              <SVGWrapper>
-                <StyledSunSVG color={
-                    isDarkModeOn 
-                      ? "var(--leviko-green)"
-                      : "var(--leviko-blue)"
-                  } />
-                <StyledMoonSVG color={
-                    isDarkModeOn 
-                      ? "var(--leviko-blue)"
-                      : "var(--leviko-green)"
-                  } />
-              </SVGWrapper>
-            </Switch>
-        </ToggleSwitchWrapper>
-        </>
-    )
-}
-
-export default ToggleSwitch;

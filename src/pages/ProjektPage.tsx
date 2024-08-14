@@ -20,8 +20,9 @@ const accordionData = [
     content: (
       <p>
         Das Hauptziel des Projekts "LEVIKO XR" ist es, zur Qualitätsentwicklung
-        der Lehrkräftefortbildung bezüglich digitaler Kompetenzen für das Fach Musik
-        im Bereich Extended Reality (XR) beitragen.<br /> <br />
+        der Lehrkräftefortbildung bezüglich digitaler Kompetenzen für das Fach
+        Musik im Bereich Extended Reality (XR) beitragen.
+        <br /> <br />
         Dabei wird angestrebt, gut dokumentierte VR/AR Lehr-Lern-Designs für
         Musiklehrkräfte in allen Phasen der Lehrkräftebildung zu erstellen und
         zu validieren. Diese Designs sollen es Lehrkräften ermöglichen, die
@@ -198,6 +199,8 @@ export const EmptyDiv = styled.div`
   background-color: var(--leviko-blue);
   width: 100%;
   height: 100px;
+  z-index: 50;
+  position: relative;
 
   @media (max-width: 1024px) {
     height: 80px;
