@@ -3,99 +3,78 @@ import useDarkModeStore from "../../stores/useDarkModeStore";
 import SunSVG from "./SunSVG";
 import MoonSVG from "./MoonSVG";
 
-const ToggleSwitch = () => {
-  const { isDarkModeOn, toggleDarkMode } = useDarkModeStore((state) => ({
-    isDarkModeOn: state.isDarkModeOn,
-    toggleDarkMode: state.toggleDarkMode,
-  }));
+const ToggleSwitch: React.FC = () => {
+  const { isDarkModeOn, toggleDarkMode } = useDarkModeStore();
 
   return (
-    <>
-      <ToggleSwitchWrapper>
-        <Input
-          checked={isDarkModeOn}
-          type="checkbox"
-          onChange={toggleDarkMode}
-        />
-        <Switch>
-          <SVGWrapper>
-            <StyledSunSVG
-              color={
-                isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"
-              }
-            />
-            <StyledMoonSVG
-              color={
-                isDarkModeOn ? "var(--leviko-blue)" : "var(--leviko-green)"
-              }
-            />
-          </SVGWrapper>
-        </Switch>
-      </ToggleSwitchWrapper>
-    </>
+    <ToggleWrapper onClick={toggleDarkMode} $isDarkModeOn={isDarkModeOn}>
+      <IconWrapper $position="left" $isDarkModeOn={isDarkModeOn}>
+        <SunSVG />
+      </IconWrapper>
+      <ToggleCircle $isDarkModeOn={isDarkModeOn} />
+      <IconWrapper $position="right" $isDarkModeOn={isDarkModeOn}>
+        <MoonSVG />
+      </IconWrapper>
+    </ToggleWrapper>
   );
 };
 
 export default ToggleSwitch;
 
-const ToggleSwitchWrapper = styled.label`
-  margin-top: 9px;
-  align-items: center;
-  margin-left: 20px;
-  cursor: pointer;
+interface ToggleProps {
+  $isDarkModeOn: boolean;
+}
 
-  @media (max-width: 1024px) {
-    margin-top: 6px;
-  }
-`;
+export const ToggleWrapper = styled.div<ToggleProps>`
+  width: 60px;
+  height: 30px;
 
-const Switch = styled.div`
-  position: relative;
-  width: 62px;
-  height: 32px;
-  background: var(--leviko-blue);
-  border-style: solid;
-  border-color: var(--leviko-green);
-  border-radius: 32px;
-  transition: 300ms all;
-
-  &:before {
-    transition: 300ms all;
-    content: "";
-    position: absolute;
-    width: 31px;
-    height: 29px;
-    border-radius: 35px;
-    top: 50%;
-    background: var(--leviko-green);
-    transform: translate(-1px, -50%);
-  }
-`;
-
-const Input = styled.input`
-  opacity: 0;
-  position: absolute;
-
-  &:checked + ${Switch} {
-    &:before {
-      transform: translate(29px, -50%);
-    }
-  }
-`;
-
-const SVGWrapper = styled.div`
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-blue)" : "var(--leviko-green)"};
+  border-radius: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2px 4px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 3px solid var(--leviko-green);
   position: relative;
+`;
+
+export const ToggleCircle = styled.div<ToggleProps>`
+  width: 27px;
+  height: 27px;
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"};
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -1px;
+  left: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "calc(100% - 26px)" : "-1px"};
+  transition: left 0.3s, background-color 0.3s;
+  z-index: 2;
+`;
+
+export const IconWrapper = styled.div<{
+  $position: "left" | "right";
+  $isDarkModeOn: boolean;
+}>`
+  position: absolute;
+  top: 57%;
+  ${({ $position }) => $position}: 5px;
+  transform: translateY(-50%);
   z-index: 1;
-`;
 
-const StyledSunSVG = styled(SunSVG)`
-  transition: 300ms all;
-`;
-
-const StyledMoonSVG = styled(MoonSVG)`
-  transition: 300ms all;
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: fill 0.3s;
+    color: ${({ $position }) =>
+      $position === "left"
+        ? "var(--leviko-green)" // Sun icon color
+        : "var(--leviko-blue)"}; // Moon icon color
+  }
 `;

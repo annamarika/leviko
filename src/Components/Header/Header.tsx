@@ -79,6 +79,12 @@ const Header: React.FC = () => {
             <StyledLogoSVG />
           </LogoContainer>
           <ButtonContainer>
+            <ButtonWrapper>
+              <ToggleSwitch />
+              <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
+                <div className="line middle"></div>
+              </MenuIcon>
+            </ButtonWrapper>
             <ButtonContainerDisplay>
               <HeaderButton as={Link} to="/">
                 Startseite
@@ -90,12 +96,6 @@ const Header: React.FC = () => {
                 Team
               </HeaderButton>
             </ButtonContainerDisplay>
-            <ButtonWrapper>
-              <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
-                <div className="line middle"></div>
-              </MenuIcon>
-              <ToggleSwitch />
-            </ButtonWrapper>
           </ButtonContainer>
         </NavContainer>
       </HeaderContainer>

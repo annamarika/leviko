@@ -80,16 +80,14 @@ export const StyledLogoSVG = styled(LogoSVG)`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  gap: 14px;
+  align-items: center;
+  gap: 30px;
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
+  align-items: center;
   gap: 30px;
-
-  @media (max-width: 1024px) {
-    flex-direction: row-reverse;
-  }
 `;
 
 export const ButtonContainerDisplay = styled.div`
@@ -173,7 +171,6 @@ export const MenuIcon = styled.div<MenuIconProps>`
   position: relative;
   display: none;
   z-index: 100;
-  margin-top: 10px;
 
   @media (max-width: 1024px) {
     display: block;
