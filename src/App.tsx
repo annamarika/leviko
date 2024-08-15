@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ProgressBar />
+
       <Header />
       <ScrollToTop />
       <Routes>

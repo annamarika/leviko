@@ -187,6 +187,7 @@ export const DiagrammWrapper = styled.div`
 export const DiagrammContainer = styled.div`
   position: relative;
   width: 100vw;
+  overflow: hidden;
 `;
 
 export const DiagrammBox = styled.div<DiagrammBoxProps>`

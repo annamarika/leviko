@@ -10,22 +10,22 @@ const TPACKSVG = forwardRef<SVGSVGElement>((props, ref: Ref<SVGSVGElement>) => {
       case "path1":
         selectPath(
           pathId,
-          "New Headline for Path 1",
-          "Description for Path 1."
+          "Technological Knowledge",
+          "Dies bezieht sich auf das Verständnis der Lehrkräfte über die Funktionsweise verschiedener Technologien, wie z.B. Software, Apps, und Hardware, und wie sie im Bildungskontext eingesetzt werden können."
         );
         break;
       case "path2":
         selectPath(
           pathId,
-          "New Headline for Path 2",
-          "Description for Path 2."
+          "Content Knowledge",
+          "Dies umfasst das Fachwissen der Lehrkräfte in ihrem jeweiligen Fachbereich, einschließlich der grundlegenden Konzepte, Theorien und Praktiken."
         );
         break;
       case "path3":
         selectPath(
           pathId,
-          "New Headline for Path 3",
-          "Description for Path 3."
+          "Pedagogical Knowledge",
+          "Hier geht es um das Verständnis der Lehrkräfte über pädagogische Prinzipien, Unterrichtsmethoden und -strategien, sowie ihre Fähigkeit, Lerninhalte effektiv zu vermitteln."
         );
         break;
       case "path4":
@@ -38,22 +38,22 @@ const TPACKSVG = forwardRef<SVGSVGElement>((props, ref: Ref<SVGSVGElement>) => {
       case "path5":
         selectPath(
           pathId,
-          "New Headline for Path 5",
-          "Description for Path 5."
+          "Pedagogical Content Knowledge",
+          "PCK beschreibt das Verständnis der Lehrkräfte darüber, wie sie ihr Fachwissen (Content Knowledge) effektiv vermitteln können, indem sie pädagogische Strategien und Methoden einsetzen."
         );
         break;
       case "path6":
         selectPath(
           pathId,
-          "New Headline for Path 6",
-          "Description for Path 6."
+          "Technological Content Knowledge",
+          "Hierbei handelt es sich um das Verständnis der Lehrkräfte darüber, wie Technologie genutzt werden kann, um das Fachwissen (Content Knowledge) besser zu vermitteln und zu verstehen."
         );
         break;
       case "path7":
         selectPath(
           pathId,
-          "New Headline for Path 7",
-          "Description for Path 7."
+          "Technological Pedagogical Knowledge",
+          "TPK beschreibt das Verständnis der Lehrkräfte darüber, wie Technologie spezifisch in den pädagogischen Kontext integriert werden kann, um effektives Lehren und Lernen zu fördern."
         );
         break;
       case "path8":
@@ -201,6 +201,18 @@ const TPACKSVG = forwardRef<SVGSVGElement>((props, ref: Ref<SVGSVGElement>) => {
         strokeWidth="3"
         strokeDasharray="6 6"
       />
+      <text
+        x="270"
+        y="520"
+        textAnchor="middle"
+        fill={selectedPath === "path8" ? "#0D0D0D" : "#0D0D0D"}
+        fontSize="16px"
+        fontFamily="Blatant"
+        onClick={() => handlePathClick("path7")}
+        style={{ cursor: "pointer" }}
+      >
+        Context
+      </text>
     </svg>
   );
 });
