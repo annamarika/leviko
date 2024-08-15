@@ -47,6 +47,8 @@ export const ToggleCircle = styled.div<ToggleProps>`
   background-color: ${({ $isDarkModeOn }) =>
     $isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"};
   border-radius: 50%;
+  border: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "" : "1px solid var(--leviko-green)"};
   display: flex;
   justify-content: center;
   align-items: center;
