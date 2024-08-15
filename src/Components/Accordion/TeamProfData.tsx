@@ -4,6 +4,8 @@ import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
 import MTDMLWhite from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
 import LogoOsnaGrau from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import LogoTros from "../../assets/images/hfm-trossingen-logo550x274.webp";
+import LogoTrosWithBackground from "../../assets/images/logo-hochschule-fuer-musik-trossingen.webp";
+
 import Chris from "../../assets/images/CGEI.webp";
 import Phil from "../../assets/images/Philipp Ahner.webp";
 
@@ -12,7 +14,9 @@ export const TeamProfData: Array<{
   title: JSX.Element | string;
   description: string;
   logoOne: string;
+  logoOneDarkMode?: string;
   logoTwo: string;
+  logoTwoDarkMode?: string;
   altLogoOne: string;
   altLogoTwo: string;
   content: JSX.Element | string;
@@ -101,6 +105,7 @@ export const TeamProfData: Array<{
     description:
       "Staatliche Hochschule für Musik Trossingen Landeszentrum MUSIK–DESIGN–PERFORMANCE",
     logoOne: LogoTros,
+    logoOneDarkMode: LogoTrosWithBackground,
     logoTwo: "",
     altLogoOne: "Trossingen Logo",
     altLogoTwo: "",

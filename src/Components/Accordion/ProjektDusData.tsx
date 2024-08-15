@@ -11,7 +11,9 @@ export const TeamDusData: Array<{
   title: string;
   description: string;
   logoOne: string;
+  logoOneDarkMode? : string;
   logoTwo: string;
+  logoTwoDarkMode?: string;
   altLogoOne: string;
   altLogoTwo: string;
   content: JSX.Element | string;
@@ -73,7 +75,9 @@ export const TeamDusData: Array<{
     description:
       "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
     logoOne: HSDBlack,
+    logoOneDarkMode: HSDWhite,
     logoTwo: MireviBlack,
+    logoTwoDarkMode: MireviWhite,
     altLogoOne: "Mirevi Logo",
     altLogoTwo: "Mirevi Logo",
     $objectPosition: "center",

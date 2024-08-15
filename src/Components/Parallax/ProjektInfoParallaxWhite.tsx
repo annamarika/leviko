@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button } from "../UI/Buttons/Button.styled";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 interface ProjektInfoParallaxProps {
   headline: string;
@@ -17,6 +18,10 @@ interface StyledImageProps {
   $objectPosition?: string;
 }
 
+interface DarkModeProps {
+  $isDarkModeOn: boolean;
+}
+
 const ProjektInfoParallaxWhite: React.FC<ProjektInfoParallaxProps> = ({
   headline,
   imgSrc,
@@ -27,10 +32,11 @@ const ProjektInfoParallaxWhite: React.FC<ProjektInfoParallaxProps> = ({
   $buttonVariant,
   description,
 }) => {
-  console.log("Object Position:", $objectPosition);
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
-    <ParalaxWrapper>
-      <ParalaxContainer>
+    <ParalaxWrapper $isDarkModeOn={isDarkModeOn}>
+      <ParalaxContainer $isDarkModeOn={isDarkModeOn}>
         <HeadlineContainer>{headline}</HeadlineContainer>
         <ImageTextContainer>
           <ImageContainer>
@@ -54,8 +60,11 @@ const ProjektInfoParallaxWhite: React.FC<ProjektInfoParallaxProps> = ({
 
 export default ProjektInfoParallaxWhite;
 
-export const ParalaxWrapper = styled.div`
-  background-color: var(--leviko-white);
+export const ParalaxWrapper = styled.div<DarkModeProps>`
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
+
+  transition: background-color 0.8s ease, color 0.3s ease;
 
   @media (max-width: 430px) {
     min-height: 100vh;
@@ -66,7 +75,7 @@ export const ParalaxWrapper = styled.div`
   }
 `;
 
-export const ParalaxContainer = styled.div`
+export const ParalaxContainer = styled.div<DarkModeProps>`
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -74,8 +83,12 @@ export const ParalaxContainer = styled.div`
   margin: 0 160px;
   padding: 100px 0;
   gap: 80px;
-  background-color: var(--leviko-white);
-  color: var(--leviko-black);
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
+  transition: background-color 0.8s ease, color 0.3s ease;
+
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"};
 
   @media (max-width: 1330px) {
     margin-right: 24px;

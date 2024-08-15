@@ -17,17 +17,21 @@ import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
 import { Headline } from "../Components/UI/Headline.styled";
 import MarqueePraxispartner from "../Components/Banner/MarqueePraxispartner";
 import LogoTros from "../assets/images/hfm-trossingen-logo550x274.webp";
+import LogoTrosWithBackground from "../assets/images/logo-hochschule-fuer-musik-trossingen.webp";
 import MTDMLWhite from "../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
 import LogoOsnaGrau from "../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import Chris from "../assets/images/CGEI.webp";
 import Phil from "../assets/images/Philipp Ahner.webp";
 import Michael from "../assets/images/foto_oehler_uos.jpg";
+import useDarkModeStore from '../Components/stores/useDarkModeStore';
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
   const refTwo = useRef<HTMLDivElement>(null);
   const refThree = useRef<HTMLDivElement>(null);
   const refFour = useRef<HTMLDivElement>(null);
+
+  const { isDarkModeOn } = useDarkModeStore();
 
   useStickyScroll([refOne, refTwo, refThree, refFour], {
     onEnter: (entry) => {
@@ -82,7 +86,7 @@ const Startseite = () => {
         <Institutionen
           imgSrc={Michael}
           imgAlt="Profilbild Michael Oehler"
-          logoOneSrc={LogoOsnaGrau}
+          logoOneSrc={LogoOsnaGrau }
           logoOneAlt="Osnabrück Logo"
           logoTwoSrc={MTDMLWhite}
           logoTwoAlt="MTDML Logo"
@@ -105,7 +109,7 @@ const Startseite = () => {
         <InstitutionenWhite
           imgSrc={Phil}
           imgAlt="Profilbild Philipp Ahner"
-          logoOneSrc={LogoTros}
+          logoOneSrc={!isDarkModeOn ? LogoTros : LogoTrosWithBackground }
           logoOneAlt="Logo Trossingen"
           logoTwoSrc=""
           logoTwoAlt=""

@@ -1,6 +1,8 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 import useHeaderStore from "../stores/useHeaderStore.tsx";
+import ToggleSwitch from "../UI/Buttons/ToggleSwitch.tsx";
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -18,8 +20,8 @@ import {
   MenuItem,
   ArrowContainer,
   StyledArrowSVG,
+  ButtonWrapper,
 } from "../UI/Header.styled.tsx";
-
 const Header: React.FC = () => {
   const {
     isMenuOpen,
@@ -77,9 +79,12 @@ const Header: React.FC = () => {
             <StyledLogoSVG />
           </LogoContainer>
           <ButtonContainer>
-            <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
-              <div className="line middle"></div>
-            </MenuIcon>
+            <ButtonWrapper>
+              <ToggleSwitch />
+              <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
+                <div className="line middle"></div>
+              </MenuIcon>
+            </ButtonWrapper>
             <ButtonContainerDisplay>
               <HeaderButton as={Link} to="/">
                 Startseite

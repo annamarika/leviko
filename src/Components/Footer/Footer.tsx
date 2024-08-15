@@ -48,6 +48,8 @@ export const FooterWrapper = styled.div`
   color: var(--leviko-white);
   width: 100vw;
   padding: 60px 160px;
+  position: relative;
+  z-index: 100;
 
   @media (max-width: 1330px) {
     padding: 60px 24px;

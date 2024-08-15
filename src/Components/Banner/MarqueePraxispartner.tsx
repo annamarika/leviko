@@ -78,6 +78,10 @@ export const MarqueeContainer = styled.div`
   background-color: var(--leviko-blue);
   padding: 30px 0;
   margin: 100px 0;
+  z-index: 100;
+  position: relative;
+
+
 
   @media (max-width: 1200px) {
     margin: 80px 0;

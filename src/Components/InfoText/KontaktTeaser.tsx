@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button as BaseButton } from "../UI/Buttons/Button.styled";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 interface KontaktTeaserProps {
   headline: string;
@@ -11,6 +12,10 @@ interface KontaktTeaserProps {
   $buttonVariant?: "tertiary";
 }
 
+interface DarkModeProps {
+  $isDarkModeOn: boolean;
+}
+
 const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   headline,
   descriptionOne,
@@ -19,8 +24,10 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
   button,
   $buttonVariant,
 }) => {
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
-    <KontaktTeaserWrapper>
+    <KontaktTeaserWrapper $isDarkModeOn={isDarkModeOn}>
       <KontaktTeaserContainer>
         <HeadlineContainer>{headline}</HeadlineContainer>
         <DescriptionContainer>
@@ -37,12 +44,14 @@ const KontaktTeaser: React.FC<KontaktTeaserProps> = ({
 
 export default KontaktTeaser;
 
-export const KontaktTeaserWrapper = styled.div`
+export const KontaktTeaserWrapper = styled.div<DarkModeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--leviko-white);
+  background-color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
   padding: 100px 0;
+  transition: background-color 0.8s ease, color 0.3s ease;
 
   @media (max-width: 1024px) {
     padding: 80px 0;
@@ -63,6 +72,7 @@ export const KontaktTeaserContainer = styled.div`
   background-color: var(--leviko-green);
   color: var(--leviko-black);
   min-height: 230px;
+  z-index: 50;
 
   @media (max-width: 1330px) {
     margin-right: 24px;

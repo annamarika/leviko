@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  darkTheme: boolean;
+}
+
+const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   html {
     font-size: 62.5%;
     font-family: Blatant;
@@ -14,8 +18,12 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {  
-    background-color: #F2F2F2;
     font-size: 1.5rem;
+    color: ${(props) => (props.darkTheme ? "white" : "black")};
+    background-color: ${(props) =>
+      props.darkTheme ? "var(--leviko-black)" : "var(--leviko-white)"};
+    transition: background-color 0.8s ease, color 0.3s ease;
+
   }
   
   :root {
@@ -25,7 +33,12 @@ const GlobalStyle = createGlobalStyle`
     --leviko-green: #AAFE83;
   }
 
-
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 20px 0; /* Space between the boxes */
+  }
 
   @font-face {
     font-family: "Blatant";

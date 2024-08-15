@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 
 interface HeroTeamProps {
   $imgSrc?: string;
@@ -13,6 +14,7 @@ interface HeroTeamProps {
 interface ImageContainerProps {
   $imgSrc?: string;
   $objectPosition?: string;
+  $isDarkModeOn: boolean;
 }
 
 const HeroTeam: React.FC<HeroTeamProps> = ({
@@ -21,14 +23,17 @@ const HeroTeam: React.FC<HeroTeamProps> = ({
   headline,
   $objectPosition = "center",
 }) => {
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
     <>
       <ImageContainer
         $imgSrc={$imgSrc}
         $objectPosition={$objectPosition}
         aria-label={imgAlt}
+        $isDarkModeOn={isDarkModeOn}
       >
-        <Headline>{headline}</Headline>
+        <Headline $isDarkModeOn={isDarkModeOn}>{headline}</Headline>
       </ImageContainer>
     </>
   );
@@ -58,8 +63,11 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.5);
-    mix-blend-mode: lighten;
+    background: ${(props) =>
+      props.$isDarkModeOn
+        ? "rgba(13, 13, 13, 0.5)"
+        : "rgba(255, 255, 255, 0.5)"};
+    mix-blend-mode: ${(props) => (props.$isDarkModeOn ? "darken" : "lighten")};
     z-index: 1;
   }
 
@@ -71,9 +79,10 @@ export const ImageContainer = styled.div<ImageContainerProps>`
   }
 `;
 
-export const Headline = styled.h1`
+export const Headline = styled.h1<ImageContainerProps>`
   z-index: 2;
-  color: var(--leviko-black);
+  color: ${(props) =>
+    props.$isDarkModeOn ? "var(--leviko-white)" : "lvar(--leviko-black)"};
   margin: 0 160px;
   width: 60%;
 

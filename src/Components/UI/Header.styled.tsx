@@ -18,7 +18,8 @@ interface HeaderContainerProps {
 export const HeaderContainer = styled.div<HeaderContainerProps>`
   background: var(--leviko-blue);
   width: 100vw;
-  position: fixed;
+  position: sticky;
+  // vorher position: fixed
   left: 0;
   right: 0;
   padding-top: 24px;
@@ -79,7 +80,14 @@ export const StyledLogoSVG = styled(LogoSVG)`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  gap: 14px;
+  align-items: center;
+  gap: 30px;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
 `;
 
 export const ButtonContainerDisplay = styled.div`
@@ -103,6 +111,38 @@ export const HeaderButton = styled.a`
   padding-bottom: 12px;
   width: 154px;
   font-size: 20px;
+
+  /* Hover effect */
+  &:hover {
+    color: var(--leviko-black);
+    background-color: var(--leviko-green);
+  }
+
+  /* Focus effect */
+  &:focus {
+    outline: none;
+    box-shadow: 10px rgba(170, 254, 131, 0.5);
+  }
+
+  /* Active (click) effect */
+  &:active {
+    color: var(--leviko-white);
+    background-color: var(--leviko-black);
+    border-color: var(--leviko-black);
+  }
+`;
+
+export const DarkModeToggle = styled.a`
+  background-color: var(--leviko-blue);
+  border: solid 4px;
+  border-radius: 30px;
+  border-color: var(--leviko-green);
+  color: var(--leviko-green);
+  margin-left: 30px;
+  padding: 8px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
 
   /* Hover effect */
   &:hover {
