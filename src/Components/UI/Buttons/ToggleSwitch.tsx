@@ -11,7 +11,9 @@ const ToggleSwitch: React.FC = () => {
       <IconWrapper $position="left" $isDarkModeOn={isDarkModeOn}>
         <SunSVG />
       </IconWrapper>
-      <ToggleCircle $isDarkModeOn={isDarkModeOn} />
+      <ToggleCircle $isDarkModeOn={isDarkModeOn}>
+        {isDarkModeOn ? <MoonSVG /> : <SunSVG />}
+      </ToggleCircle>
       <IconWrapper $position="right" $isDarkModeOn={isDarkModeOn}>
         <MoonSVG />
       </IconWrapper>
@@ -58,6 +60,14 @@ export const ToggleCircle = styled.div<ToggleProps>`
     $isDarkModeOn ? "calc(100% - 26px)" : "-1px"};
   transition: left 0.3s, background-color 0.3s;
   z-index: 2;
+
+  svg {
+    width: 19px;
+    height: 19px;
+    color: ${({ $isDarkModeOn }) =>
+      $isDarkModeOn ? "var(--leviko-blue)" : "var(--leviko-green)"};
+    transition: fill 0.3s;
+  }
 `;
 
 export const IconWrapper = styled.div<{
@@ -76,7 +86,7 @@ export const IconWrapper = styled.div<{
     transition: fill 0.3s;
     color: ${({ $position }) =>
       $position === "left"
-        ? "var(--leviko-green)" // Sun icon color
-        : "var(--leviko-blue)"}; // Moon icon color
+        ? "#BCC1E6" // Sun icon color
+        : "#708367"}; // Moon icon color
   }
 `;
