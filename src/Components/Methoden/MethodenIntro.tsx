@@ -76,10 +76,11 @@ export const CTAWrapper = styled.div`
   justify-content: flex-end;
   background-color: var(--leviko-green);
   height: fit-content;
-  padding: 35px 20px;
+  padding: 10px 20px;
   flex-shrink: 0;
   gap: 10px;
   width: 352px;
+  height: auto;
   margin-left: auto;
 
   @media (max-width: 1330px) {
@@ -92,6 +93,7 @@ export const CTAWrapper = styled.div`
     width: fit-content;
     align-self: flex-end;
     margin-right: -24px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -134,12 +136,14 @@ export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
 
 export const SVGBox = styled.div`
   background-color: var(--leviko-black);
+  margin: 30px 0;
   height: 20px;
   width: 60px;
 
   @media (max-width: 430px) {
     height: 10px;
     width: 30px;
+    margin: 0;
   }
 `;
 
@@ -149,6 +153,7 @@ export const StyledTpackSVG = styled(TpackSVGIcon)`
 
   @media (max-width: 430px) {
     width: 30px;
+    height: 30px;
   }
 `;
 

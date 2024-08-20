@@ -12,6 +12,7 @@ import MethodenIntro from "../Components/Methoden/MethodenIntro.tsx";
 import MethodenOutro from "../Components/Methoden/MethodenOutro.tsx";
 import DBRDiagramm from "../Components/Methoden/DBRDiagramm.tsx";
 import TPACKDiagramm from "../Components/Methoden/TPACKDiagramm.tsx";
+import SAMRDiagramm from "../Components/Methoden/SAMRDiagramm.tsx";
 
 const FroschungsPage = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -139,7 +140,7 @@ const FroschungsPage = () => {
             </p>
             <br />
             <p>
-              LEVIKO XR nutzt dieses Rahmenwerk, um eine harmonische Integration
+              LEVIKO-XR nutzt dieses Rahmenwerk, um eine harmonische Integration
               von Musikpädagogik und digitaler Technologie zu erreichen.
             </p>
           </>
@@ -147,6 +148,33 @@ const FroschungsPage = () => {
         displayedSVG="tpack"
       />
       <TPACKDiagramm />
+      <MethodenOutro
+        description={
+          "Das TPACK-Modell ermöglicht uns, die Wechselwirkungen zwischen technologischen, pädagogischen und inhaltlichen Aspekten im Musikunterricht präzise zu analysieren und zu optimieren. Durch die Anwendung dieses Rahmenwerks streben wir bei LEVIKO-XR danach, eine innovative und effektive Nutzung von VR/AR-Technologien zu gewährleisten, die sowohl die Lehrqualität als auch das Lernumfeld im Musikunterricht bereichert."
+        }
+        linkTo={""}
+        button={"Erfahre mehr"}
+      />
+      <MethodenIntro
+        headline="SAMR-Modell"
+        description={
+          <>
+            <p>
+              Das SAMR-Modell ist ein Rahmenkonzept, das von Dr. Ruben
+              Puentedura entwickelt wurde, um die Integration von Technologie in
+              den Unterricht zu beschreiben und zu bewerten.
+            </p>
+            <br />
+            <p>
+              LEVIKO-XR nutzt dieses Rahmenwerk, damit die Integration von
+              VR/AR-Anwendungen einen bedeutungsvollen Mehrwert für Lehrende und
+              Lernende bietet.
+            </p>
+          </>
+        }
+        displayedSVG="box"
+      />
+      <SAMRDiagramm />
     </>
   );
 };
