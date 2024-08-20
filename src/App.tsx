@@ -10,6 +10,7 @@ import Impressum from "./pages/Impressum.tsx";
 import ScrollToTop from "./Components/Header/ScrollToTop.ts";
 import useDarkModeStore from "./Components/stores/useDarkModeStore.tsx";
 import BallEffect from "./Components/UI/BallEffect.tsx";
+import ParallaxHero from "./Components/Parallax/ParallaxHero.tsx";
 
 function App() {
   const { isDarkModeOn } = useDarkModeStore();
@@ -22,7 +23,7 @@ function App() {
       <Header />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Startseite />} />
+        <Route path="/" element={<><ParallaxHero/><Startseite /></>} />
         <Route path="/projekt" element={<ProjektPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/impressum" element={<Impressum />} />
