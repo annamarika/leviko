@@ -175,6 +175,13 @@ const FroschungsPage = () => {
         displayedSVG="box"
       />
       <SAMRDiagramm />
+      <MethodenOutro
+        description={
+          "Das SAMR-Modell dient Lehrkräften als Werkzeug, um zu reflektieren, wie sie Technologie in ihren Unterricht integrieren, und um sicherzustellen, dass sie Technologie nicht nur als Ersatz für herkömmliche Methoden verwenden, sondern um wirklich transformative Lernerfahrungen zu schaffen."
+        }
+        linkTo={""}
+        button={"Erfahre mehr"}
+      />
     </>
   );
 };

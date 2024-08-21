@@ -49,6 +49,6 @@ export const MethodenIntroContainer = styled.div`
     flex-direction: column;
     align-items: start;
     gap: 24px;
-    margin-bottom: 0;
+    margin-bottom: 56px;
   }
 `;

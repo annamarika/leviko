@@ -20,7 +20,7 @@ const MethodenIntro: React.FC<MethodenIntroProps> = ({
   return (
     <MethodenIntroContainer className="DBRDiagrammWrapper">
       <h3>{headline}</h3>
-      <div>{description}</div>
+      <Description>{description}</Description>
       <CTAWrapper>
         <SVGWrapper>
           <SVGContainer>
@@ -48,7 +48,6 @@ export const MethodenIntroContainer = styled.div`
   margin-right: 160px;
   margin-left: 160px;
   padding: 50px 0;
-  gap: 80px;
 
   @media (max-width: 1330px) {
     margin-right: 24px;
@@ -58,15 +57,27 @@ export const MethodenIntroContainer = styled.div`
   @media (max-width: 1024px) {
     margin-right: 24px;
     margin-left: 24px;
-    gap: 24px;
   }
   @media (max-width: 430px) {
     padding: 0 0;
     flex-direction: column;
     align-items: start;
-    gap: 20px;
     margin-bottom: 0;
     align-items: stretch;
+  }
+`;
+
+export const Description = styled.div`
+  margin-top: 80px;
+  margin-bottom: 50px;
+
+  @media (max-width: 1024px) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 430px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 `;
 
