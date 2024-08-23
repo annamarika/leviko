@@ -8,11 +8,13 @@ import { Headline } from "../Components/UI/Headline.styled";
 import FraumitBrille from "../assets/images/Frau_mit_Meta_Quest.webp";
 import ForschungsfragenWhite from "../Components/Parallax/ForschungsfragenWhite.tsx";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser.tsx";
-import MethodenIntro from "../Components/Methoden/MethodenIntro.tsx";
-import MethodenOutro from "../Components/Methoden/MethodenOutro.tsx";
-import DBRDiagramm from "../Components/Methoden/DBRDiagramm.tsx";
-import TPACKDiagramm from "../Components/Methoden/TPACKDiagramm.tsx";
-import SAMRDiagramm from "../Components/Methoden/SAMRDiagramm.tsx";
+import MethodenIntro from "../Components/Diagramme/MethodenIntro.tsx";
+import MethodenOutro from "../Components/Diagramme/MethodenOutro.tsx";
+import DBRDiagramm from "../Components/Diagramme/DBRDiagramm.tsx";
+import TPACKDiagramm from "../Components/Diagramme/TPACKDiagramm.tsx";
+import SAMRDiagramm from "../Components/Diagramme/SAMRDiagramm.tsx";
+import CAMILDiagramm from "../Components/Diagramme/CAMILDiagramm.tsx";
+import DiagrammIntroText from "../Components/Diagramme/DiagrammIntroText.tsx";
 
 const FroschungsPage = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -178,6 +180,32 @@ const FroschungsPage = () => {
       <MethodenOutro
         description={
           "Das SAMR-Modell dient Lehrkräften als Werkzeug, um zu reflektieren, wie sie Technologie in ihren Unterricht integrieren, und um sicherzustellen, dass sie Technologie nicht nur als Ersatz für herkömmliche Methoden verwenden, sondern um wirklich transformative Lernerfahrungen zu schaffen."
+        }
+        linkTo={""}
+        button={"Erfahre mehr"}
+      />
+      <DiagrammIntroText
+        headline="CAMIL-Modell"
+        description={
+          <>
+            <p>
+              Das CAMIL-Modell ist ein Rahmenkonzept, das von Punya Mishra und
+              Matthew Koehler entwickelt wurde und sich auf die Integration von
+              Technologie in die Lehrerausbildung konzentriert.
+            </p>
+            <br />
+            <p>
+              Bei LEVIKO-XR nutzen wir dieses Modell, um sicherzustellen, dass
+              die Integration von VR/AR-Anwendungen einen bedeutungsvollen
+              Mehrwert für Lehrende und Lernende bietet.
+            </p>
+          </>
+        }
+      />
+      <CAMILDiagramm />
+      <MethodenOutro
+        description={
+          "Das CAMIL-Modell bietet Lehrkräften einen umfassenden Rahmen, um die Integration von Technologie in ihren Unterricht zu planen, zu gestalten und zu evaluieren, wobei der Fokus auf den Lernbedürfnissen der Schülerinnen und Schüler liegt."
         }
         linkTo={""}
         button={"Erfahre mehr"}

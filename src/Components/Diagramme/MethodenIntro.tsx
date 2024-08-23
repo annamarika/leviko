@@ -87,7 +87,7 @@ export const CTAWrapper = styled.div`
   justify-content: flex-end;
   background-color: var(--leviko-green);
   height: fit-content;
-  padding: 10px 20px;
+  padding: 20px;
   flex-shrink: 0;
   gap: 10px;
   width: 352px;
@@ -133,6 +133,12 @@ export const MiniArrowSVGWrapper = styled.div<MiniArrowSVGWrapperProps>`
     top: 50%;
     left: 60%;
   `}
+  ${(props) =>
+    props.$displayedSVG === "circle" &&
+    `
+    top: 50%;
+    left: 50%;
+  `}
 `;
 
 export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
@@ -147,14 +153,12 @@ export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
 
 export const SVGBox = styled.div`
   background-color: var(--leviko-black);
-  margin: 30px 0;
   height: 20px;
   width: 60px;
 
   @media (max-width: 430px) {
     height: 10px;
     width: 30px;
-    margin: 0;
   }
 `;
 
@@ -170,8 +174,8 @@ export const StyledTpackSVG = styled(TpackSVGIcon)`
 
 export const SVGCircle = styled.div`
   background-color: var(--leviko-black);
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 
   @media (max-width: 430px) {
