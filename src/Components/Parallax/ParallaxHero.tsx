@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
+import LogoSVG from "../../assets/logo.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,10 +21,10 @@ const ParallaxHero: React.FC = () => {
     let ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
       var tl = gsap.timeline({
-        defaults: { duration: 1 },
+        defaults: { duration: 1, ease:"power1.out" },
         scrollTrigger: {
           trigger: parallaxRef.current,
-          start: 'top top',
+          start: 'top 20%',
           end: '5000 bottom',
           scrub: true,
           pin: true,
@@ -33,9 +34,16 @@ const ParallaxHero: React.FC = () => {
         },
       });
       tl.to(
+        greenBack.current,
+        {
+          y: '+=200',
+        },
+        0
+      );
+      tl.to(
         greenMiddle.current,
         {
-          y: '+=80',
+          y: '+=100',
         },
         0
       );
@@ -56,14 +64,15 @@ const ParallaxHero: React.FC = () => {
       tl.to(
         greenFront.current,
         {
-          y: '+=50',
+          y: '+=80',
         },
         0
       );
       tl.to(
         text.current,
         {
-          y: '-=50',
+          y: '-=250',
+          opacity: 1,
         },
         0
       );
@@ -72,22 +81,17 @@ const ParallaxHero: React.FC = () => {
   }, []);
 
   return (
-    <ParallaxOuter>
-      <Parallax
-        ref={parallaxRef}
-        style={{
-          background: `linear-gradient(#0F2B9C, #673D7D ${background}%, #A74A67, #EDFC54)`,
-        }}
-      >
-        <Copy ref={text}>
-          <h1>LEVIKO</h1>
-        </Copy>
+    <ParallaxOuter style={{ background: `var(--leviko-blue)`,}}>
+      <Parallax ref={parallaxRef}>
+        
         <Mountain ref={greenBack} className="greenBack" src="/svg/levikosvgfive.svg" />
+        <Copy ref={text}>
+          <img src={LogoSVG} alt="LEVIKO Logo" />
+        </Copy>
         <Mountain ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" />
         <Mountain ref={lines} className="lines" src="/svg/levikosvgthree.svg" />
         <Mountain ref={musicnotes} className="musicnotes" src="/svg/levikosvgtwo.svg" />
         <Mountain ref={greenFront} className="greenFront" src="/svg/levikosvgone.svg" />
-        
       </Parallax>
     </ParallaxOuter>
   );
@@ -98,48 +102,53 @@ export default ParallaxHero;
 // Styled Components
 const ParallaxOuter = styled.div`
   overflow: hidden;
+  position: relative;
+  z-index: 90;
+  width: 100vw;
 `;
 
 const Parallax = styled.div`
   height: 100vh;
   position: relative;
-  z-index: 50;
 `;
 
 const Mountain = styled.img`
   position: absolute;
-  z-index: 3;
-  width: 100%;
+  width: 100vw;
   
   &.greenBack {
-    top: -30px;
+    top: -75px;
   }
   &.greenMiddle {
-    bottom: -30px;
+    top: 150px;
   }
   &.lines {
-    bottom: -10px;
+    bottom: -40px;
     left:20px;
   }
   &.musicnotes {
-    bottom: 0px;
+    bottom: -170px;
     left:10px;
   }
   &.greenFront {
-    bottom: 10px;
-  }
+    bottom: -5px;
+    opacity: 0.9;
+    }
 
 `;
 
 const Copy = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: white;
+  top:150px;
+  left:3%;
+  width: 100%; 
+  opacity: 0;
 
-  h1 {
-    font-size: 4rem;
+  img {
+    width: 350px;
+    height: 350px;
   }
 `;
