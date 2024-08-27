@@ -3,11 +3,14 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
 import LogoSVG from "../../assets/logo.svg";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ParallaxHero: React.FC = () => {
   const [background, setBackground] = useState(20);
+
+  const { isDarkModeOn } = useDarkModeStore();
 
   const parallaxRef = useRef(null);
   const lines = useRef(null);
@@ -21,13 +24,14 @@ const ParallaxHero: React.FC = () => {
     let ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
       var tl = gsap.timeline({
-        defaults: { duration: 1, ease:"power1.out" },
+        defaults: { duration: 1, ease:"power1.inOut" },
         scrollTrigger: {
           trigger: parallaxRef.current,
           start: 'top 20%',
-          end: '5000 bottom',
+          end: 'bottom -10%',
           scrub: true,
           pin: true,
+          markers: false,
           onUpdate: (self) => {
             setBackground(Math.ceil(self.progress * 100 + 20));
           },
@@ -57,22 +61,32 @@ const ParallaxHero: React.FC = () => {
       tl.to(
         musicnotes.current,
         {
-          y: '-=80',
+          y: '-=50',
         },
         0
       );
       tl.to(
         greenFront.current,
         {
-          y: '+=80',
+          y: '-=140',
         },
         0
       );
       tl.to(
         text.current,
         {
-          y: '-=250',
+          y: '-=550',
+          
+
+        },
+        0
+      );
+      tl.to(
+        text.current,
+        {
           opacity: 1,
+          duration: 0.3,
+
         },
         0
       );
@@ -81,17 +95,18 @@ const ParallaxHero: React.FC = () => {
   }, []);
 
   return (
-    <ParallaxOuter style={{ background: `var(--leviko-blue)`,}}>
+    <ParallaxOuter >
       <Parallax ref={parallaxRef}>
         
         <Mountain ref={greenBack} className="greenBack" src="/svg/levikosvgfive.svg" />
-        <Copy ref={text}>
-          <img src={LogoSVG} alt="LEVIKO Logo" />
-        </Copy>
+       
         <Mountain ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" />
+        <Copy ref={text}>
+          <img src="/svg/vrHead.svg" alt="LEVIKO Logo" />
+        </Copy>
         <Mountain ref={lines} className="lines" src="/svg/levikosvgthree.svg" />
-        <Mountain ref={musicnotes} className="musicnotes" src="/svg/levikosvgtwo.svg" />
-        <Mountain ref={greenFront} className="greenFront" src="/svg/levikosvgone.svg" />
+        {/* <Mountain ref={musicnotes} className="musicnotes" src="/svg/levikosvgtwo.svg" /> */}
+        <Mountain ref={greenFront} className="greenFront" src={isDarkModeOn ? "/svg/levikoSVGOneBlack.svg" : "/svg/levikosvgone.svg"} />
       </Parallax>
     </ParallaxOuter>
   );
@@ -105,6 +120,12 @@ const ParallaxOuter = styled.div`
   position: relative;
   z-index: 90;
   width: 100vw;
+  background: linear-gradient(
+    to bottom right, /* Direction of the gradient */
+    var(--leviko-blue),        /* Start color (dark blue) */
+    var(--leviko-blue),        /* Middle color (red) */
+    var(--leviko-white)         /* End color (yellow) */
+  );
 `;
 
 const Parallax = styled.div`
@@ -131,24 +152,23 @@ const Mountain = styled.img`
     left:10px;
   }
   &.greenFront {
-    bottom: -5px;
-    opacity: 0.9;
+    bottom: -300px;
     }
 
 `;
 
 const Copy = styled.div`
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   position: absolute;
-  top:150px;
+  top:450px;
   left:3%;
   width: 100%; 
   opacity: 0;
 
   img {
-    width: 350px;
-    height: 350px;
+    width: 550px;
+    height: 550px;
   }
 `;
