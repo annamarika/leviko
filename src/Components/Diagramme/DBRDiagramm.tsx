@@ -105,7 +105,7 @@ export default DBRDiagramm;
 
 export const DBRDiagrammWrapper = styled.div`
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 32px;
   margin-right: 160px;
   margin-left: 160px;
@@ -123,7 +123,7 @@ export const DBRDiagrammWrapper = styled.div`
   @media (max-width: 800px) {
     padding: 0 0;
     flex-direction: column-reverse;
-    align-items: start;
+    align-items: flex-start;
     gap: 24px;
     margin-bottom: 24px;
     margin-top: 20px;

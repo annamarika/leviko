@@ -16,7 +16,7 @@ const CAMILDiagramm: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024); // Adjust the value to your desired mobile breakpoint
+      setIsMobile(window.innerWidth <= 890); // Adjust the value to your desired mobile breakpoint
     };
 
     handleResize(); // Call once to set the initial state
@@ -303,7 +303,6 @@ export const InfoCTAWrapper = styled.div`
   }
 
   @media (max-width: 430px) {
-    flex-direction: column-reverse;
     gap: 0;
   }
 `;
@@ -339,8 +338,11 @@ export const VerticalText = styled.p`
   transform: rotate(180deg);
   align-self: start;
 
-  @media (max-width: 430px) {
+  @media (max-width: 890px) {
     padding: 10px 10px;
+  }
+
+  @media (max-width: 430px) {
   }
 `;
 

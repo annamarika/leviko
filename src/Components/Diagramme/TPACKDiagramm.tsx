@@ -48,9 +48,13 @@ export const DiagrammWrapper = styled.div`
     gap: 24px;
     margin-top: 0;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
   @media (max-width: 430px) {
     padding: 0 0;
-    flex-direction: column;
+
     align-items: start;
     gap: 24px;
     margin-bottom: 24px;
@@ -107,6 +111,10 @@ export const TPACKDiagrammWrapper = styled.div`
   justify-content: center;
 
   @media (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media (max-width: 430px) {
     width: 100%;
   }
 `;

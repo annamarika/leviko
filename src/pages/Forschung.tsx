@@ -15,6 +15,7 @@ import TPACKDiagramm from "../Components/Diagramme/TPACKDiagramm.tsx";
 import SAMRDiagramm from "../Components/Diagramme/SAMRDiagramm.tsx";
 import CAMILDiagramm from "../Components/Diagramme/CAMILDiagramm.tsx";
 import DiagrammIntroText from "../Components/Diagramme/DiagrammIntroText.tsx";
+import KerresDiagramm from "../Components/Diagramme/KerresDiagramm.tsx";
 
 const FroschungsPage = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -210,6 +211,26 @@ const FroschungsPage = () => {
         linkTo={""}
         button={"Erfahre mehr"}
       />
+      <DiagrammIntroText
+        headline="Rahmenmodell der Mediendidaktik (Kerres)"
+        description={
+          <>
+            <p>
+              Das Rahmenmodell der Mediendidaktik visualisiert das Erleben
+              visueller Informationen im Kontext des Lernens mit Virtual Reality
+              (VR) und Augmented Reality (AR).
+            </p>
+            <br />
+            <p>
+              Es zeigt die Beziehungen zwischen den technischen Merkmalen der
+              verwendeten Technologien, den subjektiven Erlebniselementen, den
+              kognitiven und emotionalen Lernprozessen sowie den daraus
+              resultierenden Lernergebnissen.
+            </p>
+          </>
+        }
+      />
+      <KerresDiagramm />
     </>
   );
 };
