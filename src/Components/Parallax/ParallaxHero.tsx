@@ -19,6 +19,7 @@ const ParallaxHero: React.FC = () => {
   const greenMiddle = useRef(null);
   const greenBack = useRef(null);
   const text = useRef(null);
+  const greenFrontDark = useRef(null); // New ref for dark mode SVG
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -73,6 +74,13 @@ const ParallaxHero: React.FC = () => {
         0
       );
       tl.to(
+        greenFrontDark.current,
+        {
+          y: '-=140',
+        },
+        0
+      );
+      tl.to(
         text.current,
         {
           top: '50px',
@@ -96,14 +104,24 @@ const ParallaxHero: React.FC = () => {
     <ParallaxOuter >
       <Parallax ref={parallaxRef}>
         
-        <Mountain ref={greenBack} className="greenBack" src="/svg/levikosvgfive.svg" />
+        <Mountain ref={greenBack} className="greenBack" src="/svg/TonspurBack.svg" />
         {/* <Mountain ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" /> */}
         {/* <Mountain ref={lines} className="lines" src="/svg/levikosvgthree.svg" /> */}
-        <Mountain ref={musicnotes} className="musicnotes" src="/svg/levikosvgtwo.svg" />
+        <Mountain ref={musicnotes} className="musicnotes" src="/svg/musicNotes.svg" />
         <Copy ref={text}>
           <img src="/svg/vrHead.svg" alt="LEVIKO Logo" />
         </Copy>
-        <Mountain ref={greenFront} className="greenFront" src={isDarkModeOn ? "/svg/levikoSVGOneBlack.svg" : "/svg/levikosvgone.svg"} />
+        {/* <Mountain ref={greenFront} className="greenFront" src={isDarkModeOn ? "/svg/TonspurFrontDarkMode.svg" : "/svg/TonspurFront.svg"} /> */}
+        <Mountain
+          ref={greenFront}
+          className={`greenFront ${isDarkModeOn ? 'hidden' : ''}`}
+          src="/svg/TonspurFront.svg"
+        />
+        <Mountain
+          ref={greenFrontDark}
+          className={`greenFront ${isDarkModeOn ? '' : 'hidden'}`}
+          src="/svg/TonspurFrontDarkMode.svg"
+        />       
       </Parallax>
     </ParallaxOuter>
   );
@@ -134,7 +152,9 @@ const Parallax = styled.div`
 const Mountain = styled.img`
   position: absolute;
   width: 100vw;
-  
+  transition: opacity 0.8s ease-in-out; 
+
+
   &.greenBack {
     top: -65px;
   }
@@ -150,8 +170,14 @@ const Mountain = styled.img`
     left:10px;
   }
   &.greenFront {
+    position: absolute;
     bottom: -250px;
-    }
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+  }
 
 `;
 
