@@ -75,9 +75,7 @@ const ParallaxHero: React.FC = () => {
       tl.to(
         text.current,
         {
-          y: '-=550',
-          
-
+          top: '50px',
         },
         0
       );
@@ -85,7 +83,7 @@ const ParallaxHero: React.FC = () => {
         text.current,
         {
           opacity: 1,
-          duration: 0.3,
+          duration: 1,
 
         },
         0
@@ -99,13 +97,12 @@ const ParallaxHero: React.FC = () => {
       <Parallax ref={parallaxRef}>
         
         <Mountain ref={greenBack} className="greenBack" src="/svg/levikosvgfive.svg" />
-       
-        <Mountain ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" />
+        {/* <Mountain ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" /> */}
+        {/* <Mountain ref={lines} className="lines" src="/svg/levikosvgthree.svg" /> */}
+        <Mountain ref={musicnotes} className="musicnotes" src="/svg/levikosvgtwo.svg" />
         <Copy ref={text}>
           <img src="/svg/vrHead.svg" alt="LEVIKO Logo" />
         </Copy>
-        <Mountain ref={lines} className="lines" src="/svg/levikosvgthree.svg" />
-        {/* <Mountain ref={musicnotes} className="musicnotes" src="/svg/levikosvgtwo.svg" /> */}
         <Mountain ref={greenFront} className="greenFront" src={isDarkModeOn ? "/svg/levikoSVGOneBlack.svg" : "/svg/levikosvgone.svg"} />
       </Parallax>
     </ParallaxOuter>
@@ -120,12 +117,13 @@ const ParallaxOuter = styled.div`
   position: relative;
   z-index: 90;
   width: 100vw;
-  background: linear-gradient(
-    to bottom right, /* Direction of the gradient */
-    var(--leviko-blue),        /* Start color (dark blue) */
-    var(--leviko-blue),        /* Middle color (red) */
-    var(--leviko-white)         /* End color (yellow) */
-  );
+  // background-color: var(--leviko-blue)
+  // background: linear-gradient(
+  //   to bottom right, /* Direction of the gradient */
+  //   var(--leviko-blue),        /* Start color (dark blue) */
+  //   var(--leviko-blue),        /* Middle color (red) */
+  //   var(--leviko-white)         /* End color (yellow) */
+  // );
 `;
 
 const Parallax = styled.div`
@@ -138,21 +136,21 @@ const Mountain = styled.img`
   width: 100vw;
   
   &.greenBack {
-    top: -75px;
+    top: -65px;
   }
   &.greenMiddle {
     top: 150px;
   }
   &.lines {
-    bottom: -40px;
+    bottom: 30px;
     left:20px;
   }
   &.musicnotes {
-    bottom: -170px;
+    bottom: -270px;
     left:10px;
   }
   &.greenFront {
-    bottom: -300px;
+    bottom: -250px;
     }
 
 `;
@@ -163,7 +161,7 @@ const Copy = styled.div`
   align-items: center;
   position: absolute;
   top:450px;
-  left:3%;
+  left:0%;
   width: 100%; 
   opacity: 0;
 
