@@ -27,7 +27,7 @@ const ParallaxHero: React.FC = () => {
       var tl = gsap.timeline({
         defaults: { duration: 1, ease:"power1.inOut" },
         scrollTrigger: {
-          trigger: parallaxRef.current,
+          trigger: parallaxRef.current, 
           start: 'top 20%',
           end: 'bottom -10%',
           scrub: true,
@@ -38,6 +38,10 @@ const ParallaxHero: React.FC = () => {
           },
         },
       });
+
+      // entweder y und x Werte mit += / -= anpassen
+      // oder bestimmte css attribute auf einen bestimmten Wert setzen
+      // wie zb bei text.current ... top: 50px , opacity: 1 ... 
       tl.to(
         greenBack.current,
         {
@@ -104,20 +108,28 @@ const ParallaxHero: React.FC = () => {
     <ParallaxOuter >
       <Parallax ref={parallaxRef}>
         
-        <Mountain ref={greenBack} className="greenBack" src="/svg/TonspurBack.svg" />
-        {/* <Mountain ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" /> */}
-        {/* <Mountain ref={lines} className="lines" src="/svg/levikosvgthree.svg" /> */}
-        <Mountain ref={musicnotes} className="musicnotes" src="/svg/musicNotes.svg" />
-        <Copy ref={text}>
+        <AudioTrack ref={greenBack} className="greenBack" src="/svg/TonspurBack.svg" />
+        {/* <AudioTrack ref={greenMiddle} className="greenMiddle" src="/svg/levikosvgfour.svg" /> */}
+        {/* <AudioTrack ref={lines} className="lines" src="/svg/levikosvgthree.svg" /> */}
+        <AudioTrack ref={musicnotes} className="musicnotes" src="/svg/musicNotes.svg" />
+        <VRHead ref={text}>
           <img src="/svg/vrHead.svg" alt="LEVIKO Logo" />
-        </Copy>
-        {/* <Mountain ref={greenFront} className="greenFront" src={isDarkModeOn ? "/svg/TonspurFrontDarkMode.svg" : "/svg/TonspurFront.svg"} /> */}
-        <Mountain
+        </VRHead>
+        
+        {/* 
+        je nachdem ob DarkMode an oder aus ist muss TonspurFront oder TonspurFrontDarkMode SVG angezeigt 
+        -> erster Ansatz war: 
+        <AudioTrack ref={greenFront} className="greenFront" src={isDarkModeOn ? "/svg/TonspurFrontDarkMode.svg" : "/svg/TonspurFront.svg"} /> 
+        aber da zwischen dem Wechseln des DarkModes eine Transition der background-color ist (in GlobalStyle.tsx), 
+        müsste auch das Wechseln zwischen diesen beiden svgs smoother sein.
+        Mit diesem Ansatz habe ich es getestet, da dann der Opacity Wert mit transition smooth gemacht werden kann (klappt noch nicht so richtig)
+        */}
+        <AudioTrack
           ref={greenFront}
           className={`greenFront ${isDarkModeOn ? 'hidden' : ''}`}
           src="/svg/TonspurFront.svg"
         />
-        <Mountain
+        <AudioTrack
           ref={greenFrontDark}
           className={`greenFront ${isDarkModeOn ? '' : 'hidden'}`}
           src="/svg/TonspurFrontDarkMode.svg"
@@ -132,7 +144,7 @@ export default ParallaxHero;
 // Styled Components
 const ParallaxOuter = styled.div`
   overflow: hidden;
-  position: relative;
+  position: relative; 
   z-index: 90;
   width: 100vw;
   // background-color: var(--leviko-blue)
@@ -149,14 +161,14 @@ const Parallax = styled.div`
   position: relative;
 `;
 
-const Mountain = styled.img`
+const AudioTrack = styled.img`
   position: absolute;
   width: 100vw;
   transition: opacity 0.8s ease-in-out; 
 
-
+  // Anfangswerte der SVGs (nach Klassen)
   &.greenBack {
-    top: -65px;
+    top: -30px;
   }
   &.greenMiddle {
     top: 150px;
@@ -181,7 +193,8 @@ const Mountain = styled.img`
 
 `;
 
-const Copy = styled.div`
+// Anfangswerte des Kopfes mit VRBrille
+const VRHead = styled.div`
   display: flex;  
   justify-content: center;
   align-items: center;
