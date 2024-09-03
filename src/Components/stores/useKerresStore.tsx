@@ -43,30 +43,30 @@ function getContentForBox(boxIndex: number): {
       return {
         title: "Technische Merkmale",
         content:
-          "Diese umfassen die Eigenschaften der eingesetzten Technologie, die die Darbietung und Interaktion mit visuellen Informationen beeinflussen:",
+          "Diese umfassen die Eigenschaften der eingesetzten Technologie, die die Darbietung und Interaktion mit visuellen Informationen beeinflussen.",
       };
     case 6:
       return {
         title: "Erlebniselemente",
         content:
-          "Diese beschreiben die subjektiven Wahrnehmungen und Erfahrungen der Nutzer:",
+          "Diese beschreiben die subjektiven Wahrnehmungen und Erfahrungen der Nutzer.",
       };
     case 15:
       return {
         title: "Lernprozesse",
         content:
-          "Diese Merkmale beschreiben die kognitiven und emotionalen Prozesse während des Lernens:",
+          "Diese Merkmale beschreiben die kognitiven und emotionalen Prozesse während des Lernens.",
       };
     case 24:
       return {
         title: "Lernergebnisse",
-        content: "Diese betreffen die Endresultate des Lernprozesses:",
+        content: "Diese betreffen die Endresultate des Lernprozesses.",
       };
     default:
       return {
         title: "Technische Merkmale",
         content:
-          "Diese umfassen die Eigenschaften der eingesetzten Technologie, die die Darbietung und Interaktion mit visuellen Informationen beeinflussen:",
+          "Diese umfassen die Eigenschaften der eingesetzten Technologie, die die Darbietung und Interaktion mit visuellen Informationen beeinflussen.",
       };
   }
 }

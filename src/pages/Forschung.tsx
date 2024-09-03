@@ -231,6 +231,13 @@ const FroschungsPage = () => {
         }
       />
       <KerresDiagramm />
+      <MethodenOutro
+        description={
+          "Diese Struktur bietet eine Grundlage, um gezielte Forschungsfragen zu den Implikationen des Immersionserlebens zu formulieren und die mediendidaktische Gestaltung von Lernumgebungen zu optimieren."
+        }
+        linkTo={""}
+        button={"Erfahre mehr"}
+      />
     </>
   );
 };
