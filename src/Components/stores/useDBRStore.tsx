@@ -12,8 +12,11 @@ interface DBRStoreState {
 }
 
 export const useDBRStore = create<DBRStoreState>((set) => ({
-  selectedBox: "Requirements",
-  selectBox: (boxName) => set({ selectedBox: boxName }),
+  selectedBox: "Requirements", // Default selection
+  selectBox: (boxName) => {
+    const key = boxName.replace(/-/g, ""); // Remove hyphens from box names
+    set({ selectedBox: key });
+  },
   contentMap: {
     Requirements: {
       headline: "Requirements",
@@ -71,7 +74,7 @@ export const useDBRStore = create<DBRStoreState>((set) => ({
         </p>
       ),
     },
-    ImplicationOfTheory: {
+    ImplicationofTheory: {
       headline: "Implication of Theory",
       description: (
         <p>

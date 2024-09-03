@@ -84,8 +84,8 @@ const FroschungsPage = () => {
           $buttonVariant="tertiary"
         />
       </ParallaxSection>
-      <Headline id="methoden"> Methoden</Headline>
-      <MethodenIntro
+      <Headline id="methoden"> Methode</Headline>
+      <DiagrammIntroText
         headline="Design-Based Research (DBR)"
         description={
           <>
@@ -102,19 +102,7 @@ const FroschungsPage = () => {
           </>
         }
       />
-      <DBRDiagramm
-        headline={"Requirement"}
-        description={
-          <>
-            <p>
-              Diese Phase beinhaltet die Identifizierung der Bildungsbedürfnisse
-              oder Probleme, die die Forschung adressieren möchte. Ziel ist es,
-              zu verstehen, was innerhalb eines spezifischen Bildungskontextes
-              verbessert oder innoviert werden muss.
-            </p>
-          </>
-        }
-      />
+      <DBRDiagramm />
       <MethodenOutro
         description={
           "Der DBR-Ansatz ermöglicht es uns, Innovationen zu entwickeln, die sowohl in der Theorie verankert als auch in der Praxis bewährt sind. Die enge Verbindung von Forschung und Praxis führt zu realen Verbesserungen in der Musikpädagogik und bereichert die wissenschaftliche Gemeinschaft mit wertvollen Erkenntnissen."

@@ -1,23 +1,31 @@
 import styled from "styled-components";
-import { useDBRStore } from "../stores/useDBRStore.tsx";
-import AnimatedDBRSVG from "../UI/SVG/AnimatedDBRsvg.tsx";
+import { useDBRStore } from "../stores/useDBRStore";
+import DBRSVG from "../UI/SVG/DBRsvg";
+import MiniArrowSVG from "../UI/Buttons/MiniArrowSVG.tsx";
+import React, { useState, useEffect } from "react";
 
-interface DBRDiagrammProps {
-  headline: JSX.Element | string;
-  description: JSX.Element | string;
-}
+const DBRDiagramm: React.FC = () => {
+  const { selectedBox, contentMap, selectBox } = useDBRStore();
 
-interface DiagrammBoxProps {
-  $top: string;
-  $left: string;
-  $isActive: boolean;
-}
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-const DBRDiagramm: React.FC<DBRDiagrammProps> = () => {
-  const { selectedBox, selectBox, contentMap } = useDBRStore();
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024); // Adjust the value to your desired mobile breakpoint
+    };
+
+    handleResize(); // Call once to set the initial state
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleCircleClick = (boxId: string) => {
+    selectBox(boxId);
+  };
 
   return (
-    <DBRDiagrammWrapper>
+    <DiagrammWrapper>
       <InfoWrapper>
         <InfoContainer>
           <InfoTextWrapper>
@@ -28,84 +36,70 @@ const DBRDiagramm: React.FC<DBRDiagrammProps> = () => {
             <VerticalText>mehr Information</VerticalText>
           </InfoTextWrapper>
         </InfoContainer>
+        {isMobile && (
+          <DiagrammContainer>
+            <DBRSVG />
+            <CircleContainer>
+              {[
+                "Requirements",
+                "Theory",
+                "Design",
+                "Implementation",
+                "Analysis",
+                "ImplicationofTheory",
+                "ReDesign",
+              ].map((boxId) =>
+                boxId === "ImplicationofTheory" ? (
+                  <Rectangle
+                    key={boxId}
+                    onClick={() => handleCircleClick(boxId)}
+                    $isSelected={selectedBox === boxId}
+                  >
+                    IOF
+                  </Rectangle>
+                ) : (
+                  <Circle
+                    key={boxId}
+                    onClick={() => handleCircleClick(boxId)}
+                    $isSelected={selectedBox === boxId}
+                    $isLast={boxId === "ReDesign"} // to apply specific styles for the last circle
+                  >
+                    {boxId === "ReDesign" ? "RE" : boxId[0]}
+                  </Circle>
+                )
+              )}
+            </CircleContainer>
+          </DiagrammContainer>
+        )}
+        <CTAWrapper>
+          <SVGWrapper>
+            <SVGContainer>
+              <MiniArrowSVGWrapper>
+                <StyledMiniArrowSVG />
+              </MiniArrowSVGWrapper>
+              <SVGCircle />
+            </SVGContainer>
+          </SVGWrapper>
+          <CTAText>
+            Klick auf die einzelnen Felder für mehr Information.
+          </CTAText>
+        </CTAWrapper>
       </InfoWrapper>
-      <DiagrammWrapper>
+      {!isMobile && (
         <DiagrammContainer>
-          <DiagrammBox
-            className="DiagrammBox"
-            $top="45%"
-            $left="0"
-            $isActive={selectedBox === "Requirements"}
-            onClick={() => selectBox("Requirements")}
-          >
-            Requirements
-          </DiagrammBox>
-          <DiagrammBox
-            className="DiagrammBox"
-            $top="15%"
-            $left="15%"
-            $isActive={selectedBox === "Design"}
-            onClick={() => selectBox("Design")}
-          >
-            Design
-          </DiagrammBox>
-          <DiagrammBox
-            className="DiagrammBox"
-            $top="-2%"
-            $left="0"
-            $isActive={selectedBox === "Theory"}
-            onClick={() => selectBox("Theory")}
-          >
-            Theory
-          </DiagrammBox>
-          <DiagrammBox
-            className="DiagrammBox"
-            $top="55%"
-            $left="20%"
-            $isActive={selectedBox === "Analysis"}
-            onClick={() => selectBox("Analysis")}
-          >
-            Analysis
-          </DiagrammBox>
-          <DiagrammBox
-            className="DiagrammBox"
-            $top="70%"
-            $left="35%"
-            $isActive={selectedBox === "Implementation"}
-            onClick={() => selectBox("Implementation")}
-          >
-            Implementation
-          </DiagrammBox>
-          <DiagrammBoxLight
-            className="DiagrammBox"
-            $top="70%"
-            $left="70%"
-            $isActive={selectedBox === "ReDesign"}
-            onClick={() => selectBox("ReDesign")}
-          >
-            Re-Design
-          </DiagrammBoxLight>
-          <DiagrammBoxGradient
-            className="DiagrammBox"
-            $top="-2%"
-            $left="45%"
-            $isActive={selectedBox === "ImplicationOfTheory"}
-            onClick={() => selectBox("ImplicationOfTheory")}
-          >
-            Implication of Theory
-          </DiagrammBoxGradient>
-          <StyledDBRSVG />
+          <DBRSVG />
         </DiagrammContainer>
-      </DiagrammWrapper>
-    </DBRDiagrammWrapper>
+      )}
+    </DiagrammWrapper>
   );
 };
 
 export default DBRDiagramm;
 
-export const DBRDiagrammWrapper = styled.div`
+export const DiagrammWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   gap: 32px;
   margin-right: 160px;
   margin-left: 160px;
@@ -120,21 +114,23 @@ export const DBRDiagrammWrapper = styled.div`
     margin-left: 24px;
     gap: 24px;
   }
-  @media (max-width: 800px) {
+
+  @media (max-width: 430px) {
     padding: 0 0;
-    flex-direction: column-reverse;
-    align-items: flex-start;
+    align-items: start;
     gap: 24px;
     margin-bottom: 24px;
-    margin-top: 20px;
   }
 `;
 
 export const InfoWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: start;
   gap: 32px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -174,130 +170,144 @@ export const VerticalText = styled.p`
   }
 `;
 
-export const DiagrammWrapper = styled.div`
-  width: 50%;
+export const DiagrammContainer = styled.div`
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
+  display: flex;
 
   @media (max-width: 800px) {
     width: 100%;
   }
+
+  @media (max-width: 430px) {
+    padding: 10px 10px;
+    flex-direction: column;
+    gap: 32px;
+  }
 `;
 
-export const DiagrammContainer = styled.div`
+export const CTAWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--leviko-green);
+  height: fit-content;
+  padding: 20px;
+  flex-shrink: 0;
+  gap: 10px;
+  width: 352px;
+  height: auto;
+  margin-left: auto;
+
+  @media (max-width: 1330px) {
+    padding: 24px 20px;
+  }
+
+  @media (max-width: 430px) {
+    padding: 15px 10px;
+    gap: 20px;
+    width: fit-content;
+    align-self: flex-end;
+    margin-right: -24px;
+  }
+`;
+
+export const SVGWrapper = styled.div``;
+
+export const SVGContainer = styled.div`
   position: relative;
-  width: 100vw;
-  overflow: hidden;
+`;
+export const MiniArrowSVGWrapper = styled.div`
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
 `;
 
-export const DiagrammBox = styled.div<DiagrammBoxProps>`
+export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
+  width: 31px;
+  height: 34px;
+
+  @media (max-width: 430px) {
+    width: 20px;
+    height: 21px;
+  }
+`;
+export const SVGCircle = styled.div`
+  background-color: var(--leviko-black);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+
+  @media (max-width: 430px) {
+    height: 25px;
+    width: 25px;
+  }
+`;
+
+export const CTAText = styled.p`
+  font-size: 16px;
+
+  @media (max-width: 430px) {
+    width: 210px;
+  }
+`;
+
+export const CircleContainer = styled.div`
+  display: none;
+
+  @media (max-width: 430px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+`;
+
+export const Circle = styled.div<{ $isSelected: boolean; $isLast?: boolean }>`
+  background-color: ${({ $isSelected, $isLast }) =>
+    $isLast && $isSelected
+      ? "#AAFE83" // Green when the last circle is selected
+      : $isLast
+      ? "#B4CEE6" // Default color for the last circle
+      : $isSelected
+      ? "#AAFE83" // Green for other selected circles
+      : "#182EC0"}; // Default color for other circles
+  color: ${({ $isSelected, $isLast }) =>
+    $isLast && $isSelected
+      ? "var(--leviko-black)"
+      : $isLast
+      ? "var(--leviko-black)"
+      : $isSelected
+      ? "#0D0D0D"
+      : "#F2F2F2"};
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) =>
-    props.$isActive ? "var(--leviko-green)" : "var(--leviko-blue)"};
-  color: ${(props) =>
-    props.$isActive ? "var(--leviko-black)" : "var(--leviko-white)"};
-  padding: 7px;
-  position: absolute;
-  top: ${(props) => props.$top};
-  left: ${(props) => props.$left};
-  font-size: 1.2rem;
+  font-family: Blatant, sans-serif;
+  font-size: 16px;
   cursor: pointer;
-
-  @media (max-width: 990px) {
-    font-size: 1rem;
-    padding: 6px;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 1.4rem;
-    padding: 7px;
-  }
-
-  @media (max-width: 580px) {
-    font-size: 1rem;
-    padding: 6px;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 0.8rem;
-    padding: 5px;
-  }
 `;
 
-export const DiagrammBoxLight = styled.div<DiagrammBoxProps>`
+export const Rectangle = styled.div<{ $isSelected: boolean }>`
+  background: ${({ $isSelected }) =>
+    $isSelected
+      ? "#AAFE83"
+      : "linear-gradient(90deg, #182EC0 0%, #B4CEE6 100%)"};
+  color: ${({ $isSelected }) => ($isSelected ? "#0D0D0D" : "#F2F2F2")};
+  height: 50px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) =>
-    props.$isActive ? "var(--leviko-green)" : "#b4cee6"};
-  color: ${(props) =>
-    props.$isActive ? "var(--leviko-black)" : "var(--leviko-black)"};
-  padding: 7px;
-  position: absolute;
-  top: ${(props) => props.$top};
-  left: ${(props) => props.$left};
-  font-size: 1.2rem;
-
-  @media (max-width: 990px) {
-    font-size: 1rem;
-    padding: 6px;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 1.4rem;
-    padding: 7px;
-  }
-
-  @media (max-width: 580px) {
-    font-size: 1rem;
-    padding: 6px;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 0.8rem;
-    padding: 5px;
-  }
-`;
-
-export const DiagrammBoxGradient = styled.div<DiagrammBoxProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${(props) =>
-    props.$isActive
-      ? "var(--leviko-green)"
-      : "linear-gradient(to right, #182ec0, #b4cee6)"};
-  color: ${(props) =>
-    props.$isActive ? "var(--leviko-black)" : "var(--leviko-white)"};
-  padding: 7px;
-  position: absolute;
-  top: ${(props) => props.$top};
-  left: ${(props) => props.$left};
-  font-size: 1.2rem;
-
-  @media (max-width: 990px) {
-    font-size: 1rem;
-    padding: 6px;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 1.4rem;
-    padding: 7px;
-  }
-
-  @media (max-width: 580px) {
-    font-size: 1rem;
-    padding: 6px;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 0.8rem;
-    padding: 5px;
-  }
-`;
-
-const StyledDBRSVG = styled(AnimatedDBRSVG)`
-  width: 100vw;
+  font-family: Blatant, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
 `;

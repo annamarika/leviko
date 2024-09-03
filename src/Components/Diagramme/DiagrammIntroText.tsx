@@ -25,7 +25,7 @@ export const MethodenIntroContainer = styled.div`
   align-items: flex-start;
   margin-right: 160px;
   margin-left: 160px;
-  padding: 50px 0;
+  padding-top: 50px;
 
   @media (max-width: 1330px) {
     margin-right: 24px;
@@ -35,6 +35,7 @@ export const MethodenIntroContainer = styled.div`
   @media (max-width: 1024px) {
     margin-right: 24px;
     margin-left: 24px;
+    padding-bottom: 24px;
   }
   @media (max-width: 430px) {
     padding: 0 0;
