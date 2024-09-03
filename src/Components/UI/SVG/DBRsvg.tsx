@@ -24,6 +24,8 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         width="340"
         height="60"
         fill="url(#paint0_linear_732_864)"
+        onClick={() => handleBoxClick("ImplicationofTheory")}
+        style={{ cursor: "pointer" }}
       />
       <path
         d="M634 300C661.5 319.333 716.5 374.2 716.5 439C716.5 520 647 571 584.5 571C522 571 454 522.5 454 439C454 355.5 545 309 584.5 287.5C624 266 711 236.5 834 236.5C957 236.5 1058 258 1107.5 272"
@@ -51,6 +53,7 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         r="56.5"
         fill={selectedBox === "Requirements" ? "#AAFE83" : "#182EC0"}
         onClick={() => handleBoxClick("Requirements")}
+        style={{ cursor: "pointer" }}
       />
       <text
         x="56.5"
@@ -71,6 +74,7 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         r="56.5"
         fill={selectedBox === "Design" ? "#AAFE83" : "#182EC0"}
         onClick={() => handleBoxClick("Design")}
+        style={{ cursor: "pointer" }}
       />
       <text
         x="425.5"
@@ -92,6 +96,7 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         r="56.5"
         fill={selectedBox === "Analysis" ? "#AAFE83" : "#182EC0"}
         onClick={() => handleBoxClick("Analysis")}
+        style={{ cursor: "pointer" }}
       />
       <text
         x="466.5"
@@ -113,6 +118,7 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         r="56.5"
         fill={selectedBox === "Implementation" ? "#AAFE83" : "#182EC0"}
         onClick={() => handleBoxClick("Implementation")}
+        style={{ cursor: "pointer" }}
       />
       <text
         x="697.5"
@@ -143,6 +149,7 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         r="56.5"
         fill={selectedBox === "ReDesign" ? "#AAFE83" : "#B4CEE6"}
         onClick={() => handleBoxClick("ReDesign")}
+        style={{ cursor: "pointer" }}
       />
       <text
         x="1257.5"
@@ -164,10 +171,11 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
         r="56.5"
         fill={selectedBox === "Theory" ? "#AAFE83" : "#182EC0"}
         onClick={() => handleBoxClick("Theory")}
+        style={{ cursor: "pointer" }}
       />
       <text
         x="67.5"
-        y="70"
+        y="75"
         textAnchor="middle"
         fill={selectedBox === "Theory" ? "#0D0D0D" : "#F2F2F2"}
         fontSize="60px"
@@ -189,17 +197,20 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
           gradientUnits="userSpaceOnUse"
           fill={selectedBox === "ImplicationofTheory" ? "#AAFE83" : "#182EC0"}
           onClick={() => handleBoxClick("ImplicationofTheory")}
+          style={{ cursor: "pointer" }}
         >
           <stop
             stopColor={
               selectedBox === "ImplicationofTheory" ? "#AAFE83" : "#182EC0"
             }
+            style={{ cursor: "pointer" }}
           />
           <stop
             offset="1"
             stopColor={
               selectedBox === "ImplicationofTheory" ? "#AAFE83" : "#B4CEE6"
             }
+            style={{ cursor: "pointer" }}
           />
         </linearGradient>
 
@@ -217,7 +228,7 @@ const DBRSVG = forwardRef((props, ref: Ref<SVGSVGElement>) => {
       </defs>
       <text
         x="1000"
-        y="110"
+        y="115"
         textAnchor="middle"
         fill={selectedBox === "ImplicationofTheory" ? "#0D0D0D" : "#F2F2F2"}
         fontSize="60px"

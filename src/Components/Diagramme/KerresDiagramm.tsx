@@ -613,6 +613,7 @@ export const InfoCTAWrapper = styled.div`
 export const InfoWrapper = styled.div`
   display: flex;
   background-color: var(--leviko-green);
+  width: 100%;
 
   @media (max-width: 430px) {
     margin-top: 20px;

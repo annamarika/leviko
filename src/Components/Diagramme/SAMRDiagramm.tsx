@@ -203,6 +203,7 @@ export const InfoContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  cursor: pointer;
 
   @media (max-width: 550px) {
     align-items: flex-start;
@@ -265,6 +266,7 @@ export const InfoBoxOne = styled.div<InfoBoxProps>`
   width: 780px;
   background-color: ${(props) =>
     props.$isClicked ? "var(--leviko-green)" : "var(--leviko-blue)"};
+  cursor: "pointer";
 
   @media (max-width: 1590px) {
     width: 750px;

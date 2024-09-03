@@ -49,21 +49,21 @@ const FroschungsPage = () => {
       <ParallaxSection ref={refOne} className="sticky-section">
         <Forschungsfragen
           headline={
-            "Durch welche messbaren Faktoren unterscheiden sich Lehr-Lern-Umgebungen in XR von Nicht-XR-Umgebungen und wie lassen sie sich differenzieren?"
+            "Durch welche messbaren Faktoren unterscheiden sich Lehr-Lern-Umgebungen in XR von Nicht-XR-Umgebungen und wie lassen sich diese differenzieren?"
           }
         />
       </ParallaxSection>
       <ParallaxSection ref={refTwo} className="sticky-section">
         <ForschungsfragenWhite
           headline={
-            "Welche Lehr-Lern-Designs in verschiedenen Handlungsfeldern des Musikunterrichts sind aus didaktischer, (…), ethischer Sicht gut geeignet, und wie lassen sich diese dokumentieren und disseminieren?"
+            "Welche Lehr-Lern-Designs in verschiedenen Handlungsfeldern des Musikunterrichts sind aus didaktischer, technologischer und ethischer Sicht geeignet? Wie lassen sich diese dokumentieren und disseminieren?"
           }
         />
       </ParallaxSection>
       <ParallaxSection ref={refThree} className="sticky-section">
         <Forschungsfragen
           headline={
-            "Wie können Grenzen und Potenziale des Einsatzes von XR Technologien im Musikunterricht aus didaktischer Perspektive eingeordnet werden?"
+            "Wie können die Grenzen und Potenziale des Einsatzes von XR-Technologien im Musikunterricht aus didaktischer Perspektive eingeordnet werden?"
           }
         />
       </ParallaxSection>
@@ -86,7 +86,7 @@ const FroschungsPage = () => {
       </ParallaxSection>
       <Headline id="methoden"> Methode</Headline>
       <DiagrammIntroText
-        headline="Design-Based Research (DBR)"
+        headline="Design-Based Research"
         description={
           <>
             <p>
@@ -95,9 +95,9 @@ const FroschungsPage = () => {
             </p>
             <br />
             <p>
-              Unser Ziel ist es, durch iteratives Design und stetige Reflexion
-              Lehr-Lern-Designs zu entwickeln, die sowohl theoretisch fundiert
-              als auch praktisch erprobt sind.
+              Unser Ziel ist es, durch iteratives Design und kontinuierliche
+              Reflexion Lehr-Lern-Designs zu entwickeln, die sowohl
+              wissenschaftlich? fundiert als auch praktisch erprobt sind.
             </p>
           </>
         }
@@ -147,19 +147,19 @@ const FroschungsPage = () => {
         button={"Erfahre mehr"}
       />
       <MethodenIntro
-        headline="SAMR-Modell"
+        headline="SAMR"
         description={
           <>
             <p>
-              Das SAMR-Modell ist ein Rahmenkonzept, das von Dr. Ruben
-              Puentedura entwickelt wurde, um die Integration von Technologie in
-              den Unterricht zu beschreiben und zu bewerten.
+              Das SAMR-Modell, entwickelt von Ruben Puentedura, dient als
+              Rahmenkonzept zur Beschreibung und Bewertung der Integration von
+              Technologie in den Unterricht.
             </p>
             <br />
             <p>
-              LEVIKO-XR nutzt dieses Rahmenwerk, damit die Integration von
-              VR/AR-Anwendungen einen bedeutungsvollen Mehrwert für Lehrende und
-              Lernende bietet.
+              Bei LEVIKO XR nutzen wir dieses Modell, um sicherzustellen, dass
+              die Integration von VR/AR-Anwendungen einen bedeutungsvollen
+              Mehrwert für Lehrende und Lernende bietet.
             </p>
           </>
         }
@@ -168,13 +168,13 @@ const FroschungsPage = () => {
       <SAMRDiagramm />
       <MethodenOutro
         description={
-          "Das SAMR-Modell dient Lehrkräften als Werkzeug, um zu reflektieren, wie sie Technologie in ihren Unterricht integrieren, und um sicherzustellen, dass sie Technologie nicht nur als Ersatz für herkömmliche Methoden verwenden, sondern um wirklich transformative Lernerfahrungen zu schaffen."
+          "Das SAMR-Modell dient Lehrkräften als Werkzeug, um zu reflektieren, wie sie Technologie in ihren Unterricht integrieren. Es hilft sicherzustellen, dass Technologie nicht nur als Ersatz für herkömmliche Methoden genutzt wird, sondern tatsächlich transformative Lernerfahrungen geschaffen werden."
         }
         linkTo={""}
         button={"Erfahre mehr"}
       />
       <DiagrammIntroText
-        headline="CAMIL-Modell"
+        headline="CAMIL"
         description={
           <>
             <p>
