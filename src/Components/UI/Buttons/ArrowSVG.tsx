@@ -11,7 +11,7 @@ const ArrowSVGInline: React.FC<ArrowSVGInlineProps> = ({ color }) => (
     width="63"
     height="35"
     viewBox="0 0 63 35"
-    fill="none"
+    fill={color}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path

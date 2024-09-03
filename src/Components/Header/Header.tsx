@@ -18,10 +18,12 @@ import {
   OverlayContainer,
   OverlayContent,
   MenuItem,
+} from "../UI/Header.styled.tsx";
+import {
   ArrowContainer,
   StyledArrowSVG,
-  ButtonWrapper,
-} from "../UI/Header.styled.tsx";
+} from "../UI/Buttons/StyledArrowSVG.tsx";
+
 const Header: React.FC = () => {
   const {
     isMenuOpen,
@@ -79,15 +81,14 @@ const Header: React.FC = () => {
             <StyledLogoSVG />
           </LogoContainer>
           <ButtonContainer>
-            <ButtonWrapper>
-              <ToggleSwitch />
-              <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
-                <div className="line middle"></div>
-              </MenuIcon>
-            </ButtonWrapper>
+            <ToggleSwitch />
+            <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
+              <div className="line middle"></div>
+            </MenuIcon>
+
             <ButtonContainerDisplay>
-              <HeaderButton as={Link} to="/">
-                Startseite
+              <HeaderButton as={Link} to="/forschung">
+                Forschung
               </HeaderButton>
               <HeaderButton as={Link} to="/projekt">
                 Projekt
@@ -103,8 +104,8 @@ const Header: React.FC = () => {
         <Overlay $isOpen={isMenuOpen}>
           <OverlayContainer>
             <OverlayContent>
-              <MenuItem as={Link} to="/" onClick={toggleMenu}>
-                Startseite
+              <MenuItem as={Link} to="/forschung" onClick={toggleMenu}>
+                Forschung
                 <ArrowContainer>
                   <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>
