@@ -42,7 +42,7 @@ const FroschungsPage = () => {
         description="Erkenntnisse gestalten: Die Forschung hinter LEVIKO-XR "
         linkTo="/projekt"
         button="Erfahre mehr"
-        $objectPosition="center 20%"
+        $objectPosition="center 70%"
       />
       <FroschungNav />
       <Headline id="forschungsfragen"> Forschungsfragen</Headline>

@@ -3,11 +3,16 @@ import { useDBRStore } from "../stores/useDBRStore";
 import DBRSVG from "../UI/SVG/DBRsvg";
 import MiniArrowSVG from "../UI/Buttons/MiniArrowSVG.tsx";
 import React, { useState, useEffect } from "react";
+import useDarkModeStore from "../stores/useDarkModeStore";
+
+interface DarkModeProps {
+  $isDarkModeOn: boolean;
+}
 
 const DBRDiagramm: React.FC = () => {
   const { selectedBox, contentMap, selectBox } = useDBRStore();
-
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const { isDarkModeOn } = useDarkModeStore();
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,7 +33,7 @@ const DBRDiagramm: React.FC = () => {
     <DiagrammWrapper>
       <InfoWrapper>
         <InfoContainer>
-          <InfoTextWrapper>
+          <InfoTextWrapper $isDarkModeOn={isDarkModeOn}>
             <InfoTextContainer>
               <h3>{contentMap[selectedBox].headline}</h3>
               <div>{contentMap[selectedBox].description}</div>
@@ -80,7 +85,7 @@ const DBRDiagramm: React.FC = () => {
               <SVGCircle />
             </SVGContainer>
           </SVGWrapper>
-          <CTAText>
+          <CTAText $isDarkModeOn={isDarkModeOn}>
             Klick auf die einzelnen Felder für mehr Information.
           </CTAText>
         </CTAWrapper>
@@ -138,10 +143,12 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const InfoTextWrapper = styled.div`
+export const InfoTextWrapper = styled.div<DarkModeProps>`
   display: flex;
   align-items: start;
   background-color: var(--leviko-green);
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-black)"};
 `;
 
 export const InfoTextContainer = styled.div`
@@ -247,8 +254,9 @@ export const SVGCircle = styled.div`
   }
 `;
 
-export const CTAText = styled.p`
+export const CTAText = styled.p<DarkModeProps>`
   font-size: 16px;
+  color: var(--leviko-black);
 
   @media (max-width: 430px) {
     width: 210px;

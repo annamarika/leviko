@@ -3,6 +3,7 @@ import MiniArrowSVG from "../UI/Buttons/MiniArrowSVG.tsx";
 import ArrowSVGInline from "../UI/Buttons/ArrowSVG";
 import { useKerresStore } from "../stores/useKerresStore.tsx";
 import React, { useState, useEffect } from "react";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 const KerresDiagramm: React.FC = () => {
   const {
@@ -56,6 +57,8 @@ const KerresDiagramm: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
     <DiagrammWrapper>
       <InfoCTAWrapper>
@@ -94,8 +97,8 @@ const KerresDiagramm: React.FC = () => {
                   {renderBoxTextContainer(
                     1,
                     3,
-                    "Darstellungsqualität / Auflösung",
-                    "Detailgenauigkeit und Klarheit der visuellen Präsentation."
+                    "Darstellungs&shy;qualität / Auflösung",
+                    "Detail&shy;genauigkeit und Klarheit der visuellen Präsentation."
                   )}
                   {renderBoxTextContainer(
                     1,
@@ -114,7 +117,11 @@ const KerresDiagramm: React.FC = () => {
             </BoxContainer>
 
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
 
             {/* Box 2 */}
@@ -186,7 +193,11 @@ const KerresDiagramm: React.FC = () => {
             </BoxContainer>
 
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
 
             {/* Box 3 */}
@@ -258,7 +269,11 @@ const KerresDiagramm: React.FC = () => {
             </BoxContainer>
 
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
 
             {/* Box 4 */}
@@ -319,7 +334,7 @@ const KerresDiagramm: React.FC = () => {
               <SVGWrapper>
                 <SVGContainer>
                   <StyledArrowSVGDown $expanded={!!visibleContainers[0]}>
-                    <ArrowSVGInline color="var(--leviko-white)" />
+                    <ArrowSVGInline color="var(--leviko-white" />
                   </StyledArrowSVGDown>
                 </SVGContainer>
               </SVGWrapper>
@@ -377,7 +392,11 @@ const KerresDiagramm: React.FC = () => {
           </BoxContainer>
 
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
 
           {/* Box 2 */}
@@ -449,7 +468,11 @@ const KerresDiagramm: React.FC = () => {
           </BoxContainer>
 
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
 
           {/* Box 3 */}
@@ -521,7 +544,11 @@ const KerresDiagramm: React.FC = () => {
           </BoxContainer>
 
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
 
           {/* Box 4 */}
@@ -614,6 +641,7 @@ export const InfoWrapper = styled.div`
   display: flex;
   background-color: var(--leviko-green);
   width: 100%;
+  color: var(--leviko-black);
 
   @media (max-width: 430px) {
     margin-top: 20px;
@@ -696,6 +724,7 @@ export const CTAWrapper = styled.div`
 
 export const CTAText = styled.p`
   font-size: 16px;
+  color: var(--leviko-black);
 
   @media (max-width: 430px) {
     width: 210px;
@@ -781,6 +810,8 @@ export const BoxTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 
   @media (max-width: 630px) {
     align-items: center;

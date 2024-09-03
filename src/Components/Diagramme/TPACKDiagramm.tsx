@@ -77,6 +77,7 @@ export const InfoTextWrapper = styled.div`
   display: flex;
   align-items: start;
   background-color: var(--leviko-green);
+  color: var(--leviko-black);
 `;
 
 export const InfoTextContainer = styled.div`

@@ -1,9 +1,11 @@
 // ArrowSVGInline.tsx
 import { forwardRef, Ref } from "react";
 import { useTPACKStore } from "../../stores/useTPACKStore";
+import useDarkModeStore from "../../stores/useDarkModeStore";
 
 const TPACKSVG = forwardRef<SVGSVGElement>((props, ref: Ref<SVGSVGElement>) => {
   const { selectedPath, selectPath } = useTPACKStore();
+  const { isDarkModeOn } = useDarkModeStore();
 
   const handlePathClick = (pathId: string) => {
     switch (pathId) {
@@ -212,7 +214,7 @@ const TPACKSVG = forwardRef<SVGSVGElement>((props, ref: Ref<SVGSVGElement>) => {
         x="270"
         y="520"
         textAnchor="middle"
-        fill={selectedPath === "path8" ? "#0D0D0D" : "#0D0D0D"}
+        fill={isDarkModeOn ? "var(--leviko-white)" : "#0D0D0D"}
         fontSize="16px"
         fontFamily="Blatant"
         onClick={() => handlePathClick("path7")}

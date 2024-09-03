@@ -110,6 +110,7 @@ export const CTAWrapper = styled.div`
 
 export const CTAText = styled.p`
   font-size: 16px;
+  color: var(--leviko-black);
 
   @media (max-width: 430px) {
     width: 210px;

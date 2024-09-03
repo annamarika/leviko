@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { useSAMRDStore } from "../stores/useSAMRDStore";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 const SAMRDiagramm: React.FC = () => {
   const { clickedId, setClickedId } = useSAMRDStore();
+  const { isDarkModeOn } = useDarkModeStore();
 
   const handleClick = (id: string) => {
     setClickedId(clickedId === id ? null : id);
@@ -14,9 +16,17 @@ const SAMRDiagramm: React.FC = () => {
         <InfoWrapper>
           {/* more InfoContainer1 */}
           <InfoContainer onClick={() => handleClick("container1")}>
-            <InfoLetter $isClicked={clickedId === "container1"}>S</InfoLetter>
+            <InfoLetter
+              $isDarkModeOn={isDarkModeOn}
+              $isClicked={clickedId === "container1"}
+            >
+              S
+            </InfoLetter>
             <InfoBoxContainer>
-              <InfoBoxHeadline $isClicked={clickedId === "container1"}>
+              <InfoBoxHeadline
+                $isDarkModeOn={isDarkModeOn}
+                $isClicked={clickedId === "container1"}
+              >
                 ubstitution
               </InfoBoxHeadline>
               <InfoBoxOne $isClicked={clickedId === "container1"}>
@@ -38,9 +48,17 @@ const SAMRDiagramm: React.FC = () => {
           </InfoContainer>
           {/* more InfoContainer2 */}
           <InfoContainer onClick={() => handleClick("container2")}>
-            <InfoLetter $isClicked={clickedId === "container2"}>A</InfoLetter>
+            <InfoLetter
+              $isDarkModeOn={isDarkModeOn}
+              $isClicked={clickedId === "container2"}
+            >
+              A
+            </InfoLetter>
             <InfoBoxContainer>
-              <InfoBoxHeadline $isClicked={clickedId === "container2"}>
+              <InfoBoxHeadline
+                $isDarkModeOn={isDarkModeOn}
+                $isClicked={clickedId === "container2"}
+              >
                 ugmentation
               </InfoBoxHeadline>
               <InfoBoxTwo $isClicked={clickedId === "container2"}>
@@ -62,9 +80,17 @@ const SAMRDiagramm: React.FC = () => {
           </InfoContainer>
           {/* more InfoContainer3 */}
           <InfoContainer onClick={() => handleClick("container3")}>
-            <InfoLetter $isClicked={clickedId === "container3"}>M</InfoLetter>
+            <InfoLetter
+              $isDarkModeOn={isDarkModeOn}
+              $isClicked={clickedId === "container3"}
+            >
+              M
+            </InfoLetter>
             <InfoBoxContainer>
-              <InfoBoxHeadline $isClicked={clickedId === "container3"}>
+              <InfoBoxHeadline
+                $isDarkModeOn={isDarkModeOn}
+                $isClicked={clickedId === "container3"}
+              >
                 odification
               </InfoBoxHeadline>
               <InfoBoxThree $isClicked={clickedId === "container3"}>
@@ -87,9 +113,17 @@ const SAMRDiagramm: React.FC = () => {
           </InfoContainer>
           {/* more InfoContainer4 */}
           <InfoContainer onClick={() => handleClick("container4")}>
-            <InfoLetter $isClicked={clickedId === "container4"}>R</InfoLetter>
+            <InfoLetter
+              $isDarkModeOn={isDarkModeOn}
+              $isClicked={clickedId === "container4"}
+            >
+              R
+            </InfoLetter>
             <InfoBoxContainer>
-              <InfoBoxHeadline $isClicked={clickedId === "container4"}>
+              <InfoBoxHeadline
+                $isDarkModeOn={isDarkModeOn}
+                $isClicked={clickedId === "container4"}
+              >
                 edefinition
               </InfoBoxHeadline>
               <InfoBoxFour $isClicked={clickedId === "container4"}>
@@ -216,12 +250,17 @@ export const InfoContainer = styled.div`
 
 interface InfoLetterProps {
   $isClicked: boolean;
+  $isDarkModeOn: boolean;
 }
 
 export const InfoLetter = styled.h1<InfoLetterProps>`
   font-size: 200px;
   color: ${(props) =>
-    props.$isClicked ? "var(--leviko-black)" : "var(--leviko-blue)"};
+    props.$isClicked
+      ? props.$isDarkModeOn
+        ? "var(--leviko-white)"
+        : "var(--leviko-black)"
+      : "var(--leviko-blue)"};
 
   @media (max-width: 1024px) {
     font-size: 180px;
@@ -246,11 +285,16 @@ export const InfoBoxContainer = styled.div`
 
 interface InfoBoxHeadlineProps {
   $isClicked: boolean;
+  $isDarkModeOn: boolean;
 }
 
 export const InfoBoxHeadline = styled.h2<InfoBoxHeadlineProps>`
   color: ${(props) =>
-    props.$isClicked ? "var(--leviko-black)" : "var(--leviko-blue)"};
+    props.$isClicked
+      ? props.$isDarkModeOn
+        ? "var(--leviko-white)"
+        : "var(--leviko-black)"
+      : "var(--leviko-blue)"};
 `;
 
 interface InfoBoxProps {
@@ -664,6 +708,7 @@ export const InfoBoxCTA = styled.p`
   align-self: flex-end;
   font-size: 16px;
   padding-right: 10px;
+  color: var(--leviko-black);
 
   @media (max-width: 550px) {
     padding-top: 10px;

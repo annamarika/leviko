@@ -310,6 +310,7 @@ export const InfoCTAWrapper = styled.div`
 export const InfoWrapper = styled.div`
   display: flex;
   background-color: var(--leviko-green);
+  color: var(--leviko-black);
 
   @media (max-width: 430px) {
     margin-top: 20px;
@@ -321,6 +322,7 @@ export const InfoTextContainer = styled.div`
   flex-direction: column;
   padding: 40px 20px 40px 64px;
   gap: 28px;
+  color: var(--leviko-black);
 
   @media (max-width: 1330px) {
     padding: 24px 20px 24px 64px;
@@ -375,6 +377,7 @@ export const CTAWrapper = styled.div`
 
 export const CTAText = styled.p`
   font-size: 16px;
+  color: var(--leviko-black);
 
   @media (max-width: 430px) {
     width: 210px;

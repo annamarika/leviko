@@ -10,7 +10,7 @@ const DiagrammIntroText: React.FC<MethodenIntroProps> = ({
   description,
 }) => {
   return (
-    <MethodenIntroContainer className="DBRDiagrammWrapper">
+    <MethodenIntroContainer>
       <h3>{headline}</h3>
       <Description>{description}</Description>
     </MethodenIntroContainer>

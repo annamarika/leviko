@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      {isDarkModeOn && <BallEffect />}
+      {isDarkModeOn}
       <GlobalStyle darkTheme={isDarkModeOn} />
 
       <Header />
