@@ -90,6 +90,9 @@ const Header: React.FC = () => {
               <HeaderButton as={Link} to="/forschung">
                 Forschung
               </HeaderButton>
+              <HeaderButton as={Link} to="/publikationen">
+                Publikationen
+              </HeaderButton>
               <HeaderButton as={Link} to="/projekt">
                 Projekt
               </HeaderButton>
@@ -106,6 +109,14 @@ const Header: React.FC = () => {
             <OverlayContent>
               <MenuItem as={Link} to="/forschung" onClick={toggleMenu}>
                 Forschung
+                <ArrowContainer>
+                  <StyledArrowSVG color="var(--leviko-green)" />
+                </ArrowContainer>
+              </MenuItem>
+            </OverlayContent>
+            <OverlayContent>
+              <MenuItem as={Link} to="/publikationen" onClick={toggleMenu}>
+                Publikationen
                 <ArrowContainer>
                   <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>
