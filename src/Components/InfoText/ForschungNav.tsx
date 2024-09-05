@@ -1,8 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ArrowSVG from "../UI/Buttons/ArrowSVG.tsx";
+import useDarkModeStore from "../stores/useDarkModeStore";
+
+interface DarkModeProps {
+  $isDarkModeOn: boolean;
+}
 
 const FroschungNav = () => {
+  const { isDarkModeOn } = useDarkModeStore();
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -16,21 +23,33 @@ const FroschungNav = () => {
           <NavHeadline>Auf dieser Seite</NavHeadline>
           <NavPWrapper>
             <NavPContainer onClick={() => scrollToSection("forschungsfragen")}>
-              <NavP>Forschungsfragen</NavP>
+              <NavP $isDarkModeOn={isDarkModeOn}>Forschungsfragen</NavP>
               <ArrowContainer>
-                <StyledArrowSVG color="var(--leviko-blue)" />
+                <StyledArrowSVG
+                  color={
+                    isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"
+                  }
+                />
               </ArrowContainer>
             </NavPContainer>
             <NavPContainer onClick={() => scrollToSection("methoden")}>
-              <NavP>Methoden</NavP>
+              <NavP $isDarkModeOn={isDarkModeOn}>Methode</NavP>
               <ArrowContainer>
-                <StyledArrowSVG color="var(--leviko-blue)" />
+                <StyledArrowSVG
+                  color={
+                    isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"
+                  }
+                />
               </ArrowContainer>
             </NavPContainer>
             <NavPContainer onClick={() => scrollToSection("modelle")}>
-              <NavP>Modelle</NavP>
+              <NavP $isDarkModeOn={isDarkModeOn}>Modelle</NavP>
               <ArrowContainer>
-                <StyledArrowSVG color="var(--leviko-blue)" />
+                <StyledArrowSVG
+                  color={
+                    isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"
+                  }
+                />
               </ArrowContainer>
             </NavPContainer>
           </NavPWrapper>
@@ -39,11 +58,15 @@ const FroschungNav = () => {
             folgende Seite.
           </PublikationsTeaser>
           <NavPContainer>
-            <NavP as={Link} to="/team">
+            <NavP $isDarkModeOn={isDarkModeOn} as={Link} to="/publikationen">
               Publikationen
             </NavP>
             <ArrowContainerPublikationen>
-              <StyledArrowSVG color="var(--leviko-blue)" />
+              <StyledArrowSVG
+                color={
+                  isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"
+                }
+              />
             </ArrowContainerPublikationen>
           </NavPContainer>
         </NavContainer>
@@ -128,13 +151,15 @@ export const NavPContainer = styled.div`
   }
 `;
 
-export const NavP = styled.p`
+export const NavP = styled.p<DarkModeProps>`
   font-size: 24px;
-  color: var(--leviko-blue);
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"};
   text-decoration: none;
 
   &:hover {
-    color: var(--leviko-black);
+    color: ${({ $isDarkModeOn }) =>
+      $isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"};
   }
 
   @media (max-width: 430px) {

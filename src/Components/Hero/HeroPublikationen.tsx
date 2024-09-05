@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import LupeSVG from "../UI/Buttons/LupeSVG";
 import usePublikationenStore from "../stores/usePublikationenStore";
+import useDarkModeStore from "../stores/useDarkModeStore";
+
+interface DarkModeProps {
+  $isDarkModeOn: boolean;
+}
 
 interface HeroPublikationenProps {
   headline: string;
@@ -16,6 +21,7 @@ const HeroPublikationen: React.FC<HeroPublikationenProps> = ({
   const searchValue = usePublikationenStore((state) => state.searchValue);
   const setSearchValue = usePublikationenStore((state) => state.setSearchValue);
   const setSelectedTag = usePublikationenStore((state) => state.setSelectedTag);
+  const { isDarkModeOn } = useDarkModeStore();
 
   // Filter the tags based on search input
   const filteredTags = allTags.filter((tag) =>
@@ -39,25 +45,36 @@ const HeroPublikationen: React.FC<HeroPublikationenProps> = ({
         <h1>{headline}</h1>
         <p>{description}</p>
       </HeadlineContainer>
-      <SearchBarContainer>
+      <SearchBarContainer $isDarkModeOn={isDarkModeOn}>
         <SearchInput
+          $isDarkModeOn={isDarkModeOn}
           type="text"
           value={searchValue}
           onChange={handleInputChange}
           placeholder="Suchbegriff..."
         />
-        <LupeSVG color="var(--leviko-blue)" />
+        <LupeSVG
+          color={isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"}
+        />
       </SearchBarContainer>
       <TagTextContainer>
-        <TagText>Wähle aus den vorgeschlagenen Tags aus:</TagText>
+        <TagText $isDarkModeOn={isDarkModeOn}>
+          Wähle aus den vorgeschlagenen Tags aus:
+        </TagText>
 
         {/* Show "Kein Tag gefunden" if searchValue exists but no tags are found */}
         {searchValue && filteredTags.length === 0 && (
-          <NoTagFound>Kein Tag gefunden</NoTagFound>
+          <NoTagFound $isDarkModeOn={isDarkModeOn}>
+            Kein Tag gefunden
+          </NoTagFound>
         )}
 
         {/* Show nothing if no searchValue is entered */}
-        {!searchValue && <NoTagFound>Kein Tag gefunden</NoTagFound>}
+        {!searchValue && (
+          <NoTagFound $isDarkModeOn={isDarkModeOn}>
+            Kein Tag gefunden
+          </NoTagFound>
+        )}
 
         {/* Display suggested tags if searchValue exists and filteredTags are found */}
         {searchValue && filteredTags.length > 0 && (
@@ -130,10 +147,14 @@ export const HeadlineContainer = styled.div`
   }
 `;
 
-const SearchBarContainer = styled.div`
+const SearchBarContainer = styled.div<DarkModeProps>`
   display: flex;
   align-items: center;
-  border: 3px solid var(--leviko-blue);
+  border: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn
+      ? "3px solid var(--leviko-green)"
+      : "3px solid var(--leviko-blue)"};
+
   border-radius: 50px;
   width: 50%;
   padding: 20px 20px;
@@ -147,17 +168,19 @@ const SearchBarContainer = styled.div`
   }
 `;
 
-const SearchInput = styled.input`
+const SearchInput = styled.input<DarkModeProps>`
   border: none;
   outline: none;
   flex-grow: 1;
   font-family: Blatant;
   font-size: 18px;
-  color: var(--leviko-blue);
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"};
   background-color: transparent;
 
   &::placeholder {
-    color: var(--leviko-blue);
+    color: ${({ $isDarkModeOn }) =>
+      $isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"};
   }
 
   &:focus::placeholder {
@@ -172,13 +195,18 @@ const TagTextContainer = styled.div`
   gap: 10px;
   margin-top: -30px;
 
+  @media (max-width: 1024px) {
+    margin-top: 0;
+  }
+
   @media (max-width: 430px) {
     margin-top: 20px;
   }
 `;
 
-const TagText = styled.p`
-  color: var(--leviko-blue);
+const TagText = styled.p<DarkModeProps>`
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-green)" : "var(--leviko-blue)"};
   font-size: 16px;
 `;
 
@@ -206,12 +234,16 @@ const TagSuggestion = styled.span`
 `;
 
 // New styled component for "No Tag Found" placeholder
-const NoTagFound = styled.span`
+const NoTagFound = styled.span<DarkModeProps>`
   padding: 8px 16px;
-  border: 2px solid var(--leviko-blue);
+  border: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn
+      ? "2px solid var(--leviko-green)"
+      : "2px solid var(--leviko-blue)"};
   border-radius: 50px;
   font-size: 14px;
-  color: var(--leviko-blue);
+  color: ${({ $isDarkModeOn }) =>
+    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-blue)"};
   background-color: var(--leviko-white);
   cursor: default;
   opacity: 0.6;

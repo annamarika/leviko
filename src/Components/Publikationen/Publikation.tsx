@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { ButtonPdf } from "../UI/Buttons/ButtonPdf.styled";
+import { Button } from "../UI/Buttons/Button.styled";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 interface PublikationProps {
   date: string;
@@ -13,7 +15,8 @@ interface PublikationProps {
   $buttonVariant?: "secondary" | "tertiary";
   description: JSX.Element | string;
   tags: string[];
-  isEven: boolean; // Neues Prop, um zu erkennen, ob die Publikation gerade oder ungerade ist
+  isEven: boolean;
+  isPdf?: boolean;
 }
 
 interface StyledImageProps {
@@ -32,10 +35,13 @@ const Publikation: React.FC<PublikationProps> = ({
   $buttonVariant,
   description,
   tags,
-  isEven, // Nehme die Information entgegen
+  isEven,
+  isPdf = true, // Default to true for PDF links
 }) => {
+  const { isDarkModeOn } = useDarkModeStore();
+
   return (
-    <ParalaxWrapper $isEven={isEven}>
+    <ParalaxWrapper $isDarkModeOn={isDarkModeOn} $isEven={isEven}>
       <ParalaxContainer>
         <ImageTextContainer $isEven={isEven}>
           <ImageContainer>
@@ -45,7 +51,7 @@ const Publikation: React.FC<PublikationProps> = ({
               $objectPosition={$objectPosition}
             />
           </ImageContainer>
-          <TextWrapper $isEven={isEven}>
+          <TextWrapper $isDarkModeOn={isDarkModeOn} $isEven={isEven}>
             <Date>{date}</Date>
             <TextContainer>
               <HeadlineContainer>{headline}</HeadlineContainer>
@@ -57,16 +63,28 @@ const Publikation: React.FC<PublikationProps> = ({
               </TagContainer>
               <div>{description}</div>
             </TextContainer>
-            <ButtonPdf
-              href={linkTo}
-              target="_blank"
-              rel="noopener noreferrer"
-              $buttonVariant={
-                !isEven ? undefined : $buttonVariant || "secondary"
-              }
-            >
-              {button}
-            </ButtonPdf>
+            {/* Conditional rendering of ButtonPdf or Button */}
+            {isPdf ? (
+              <ButtonPdf
+                href={linkTo}
+                target="_blank"
+                rel="noopener noreferrer"
+                $buttonVariant={
+                  !isEven ? undefined : $buttonVariant || "secondary"
+                }
+              >
+                {button}
+              </ButtonPdf>
+            ) : (
+              <Button
+                to={linkTo}
+                $buttonVariant={
+                  isEven ? $buttonVariant || "secondary" : undefined
+                }
+              >
+                {button}
+              </Button>
+            )}
           </TextWrapper>
         </ImageTextContainer>
       </ParalaxContainer>
@@ -78,9 +96,16 @@ export default Publikation;
 
 // Styled Components
 
-export const ParalaxWrapper = styled.div<{ $isEven: boolean }>`
-  background-color: ${({ $isEven }) =>
-    $isEven ? "var(--leviko-blue)" : "var(--leviko-white)"};
+export const ParalaxWrapper = styled.div<{
+  $isEven: boolean;
+  $isDarkModeOn: boolean;
+}>`
+  background-color: ${({ $isEven, $isDarkModeOn }) =>
+    $isEven
+      ? "var(--leviko-blue)"
+      : $isDarkModeOn
+      ? "var(--leviko-black)"
+      : "var(--leviko-white)"};
 
   @media (max-width: 430px) {
     min-height: 100vh;
@@ -138,14 +163,21 @@ export const ImageTextContainer = styled.div<{ $isEven: boolean }>`
   }
 `;
 
-export const TextWrapper = styled.div<{ $isEven: boolean }>`
+export const TextWrapper = styled.div<{
+  $isEven: boolean;
+  $isDarkModeOn: boolean;
+}>`
+  color: ${({ $isEven, $isDarkModeOn }) =>
+    $isEven
+      ? "var(--leviko-white)"
+      : $isDarkModeOn
+      ? "var(--leviko-white)"
+      : "var(--leviko-black)"};
   display: flex;
   flex-direction: column;
   gap: 100px;
   justify-content: start;
   align-items: start;
-  color: ${({ $isEven }) =>
-    $isEven ? "var(--leviko-white)" : "var(--leviko-black)"};
   width: 50%; /* Nimmt 50% des verfügbaren Platzes ein */
 
   @media (max-width: 1024px) {

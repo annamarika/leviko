@@ -5,10 +5,22 @@ import publikationData from "../Components/Publikationen/PublikationData";
 import usePublikationenStore from "../Components/stores/usePublikationenStore";
 import ParallaxSection from "../Components/UI/ParallaxSection.styled";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
+import MarqueeNews from "../Components/Banner/MarqueeNews";
+import { Headline } from "../Components/UI/Headline.styled";
 
 const PublikationenPage = () => {
   const searchValue = usePublikationenStore((state) => state.searchValue);
   const selectedTag = usePublikationenStore((state) => state.selectedTag);
+
+  // Hero section ref
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  // Erstelle Referenzen für alle Publikationen einmalig
+  const refs = useRef<RefObject<HTMLDivElement>[]>(
+    Array(publikationData.length)
+      .fill(null)
+      .map(() => useRef<HTMLDivElement>(null))
+  );
 
   // Alle verfügbaren Such-Tags extrahieren
   const allSearchTags = useMemo(() => {
@@ -24,7 +36,6 @@ const PublikationenPage = () => {
 
     return publikationData.filter((pub) => {
       const combinedTags = [...(pub.tags || []), ...(pub.searchTags || [])];
-      // Überprüfen, ob eines der Tags oder Such-Tags das eingegebene Tag enthält
       return (
         combinedTags.some((tag) =>
           tag.toLowerCase().includes(lowerSearchValue)
@@ -33,14 +44,8 @@ const PublikationenPage = () => {
     });
   }, [selectedTag, searchValue]);
 
-  // Referenzen und Sticky Scroll Hook
-  const heroRef = useRef<HTMLDivElement>(null); // Referenz für HeroPublikationen
-  const refs: RefObject<HTMLDivElement>[] = filteredPublikationen.map(() =>
-    useRef<HTMLDivElement>(null)
-  );
-
   // Verwende useStickyScroll für Hero und Publikationen
-  useStickyScroll([heroRef, ...refs], {
+  useStickyScroll([heroRef, ...refs.current], {
     onEnter: (entry) => {
       entry.target.classList.add("sticky");
     },
@@ -63,7 +68,7 @@ const PublikationenPage = () => {
       {/* Parallax-Effekt auf alle Publikationen */}
       {filteredPublikationen.map((pub, index) => (
         <ParallaxSection
-          ref={refs[index]} // Referenz für Parallax-Effekt
+          ref={refs.current[index]} // Verwende die statisch initialisierten Referenzen
           className="sticky-section"
           key={pub.id}
         >
@@ -82,6 +87,8 @@ const PublikationenPage = () => {
           />
         </ParallaxSection>
       ))}
+      <Headline>Newsticker</Headline>
+      <MarqueeNews />
     </>
   );
 };

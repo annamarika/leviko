@@ -8,9 +8,11 @@ import BrainSVG from "../UI/Buttons/BrainSVG.tsx";
 import VRSVG from "../UI/Buttons/VRSVG.tsx";
 import { useCAMILStore } from "../stores/useCAMILStore.tsx";
 import React, { useState, useEffect } from "react";
+import useDarkModeStore from "../stores/useDarkModeStore";
 
 const CAMILDiagramm: React.FC = () => {
   const { activeCircle, setActiveCircle, title, content } = useCAMILStore();
+  const { isDarkModeOn } = useDarkModeStore();
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -55,7 +57,11 @@ const CAMILDiagramm: React.FC = () => {
               <p>Content</p>
             </CircleContainer>
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
             {/* Circle 2 */}
             <CircleContainer>
@@ -76,7 +82,11 @@ const CAMILDiagramm: React.FC = () => {
               <p>Audience</p>
             </CircleContainer>
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
             {/* Circle 3 */}
             <CircleContainer>
@@ -97,7 +107,11 @@ const CAMILDiagramm: React.FC = () => {
               <p>Media</p>
             </CircleContainer>
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
             {/* Circle 4 */}
             <CircleContainer>
@@ -118,7 +132,11 @@ const CAMILDiagramm: React.FC = () => {
               <p>Implementation</p>
             </CircleContainer>
             <StyledArrowSVGInline>
-              <ArrowSVGInline color="var(--leviko-black)" />
+              <ArrowSVGInline
+                color={
+                  isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+                }
+              />
             </StyledArrowSVGInline>
             {/* Circle 5 */}
             <CircleContainer>
@@ -175,7 +193,11 @@ const CAMILDiagramm: React.FC = () => {
             <p>Content</p>
           </CircleContainer>
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
           {/* Circle 2 */}
           <CircleContainer>
@@ -196,7 +218,11 @@ const CAMILDiagramm: React.FC = () => {
             <p>Audience</p>
           </CircleContainer>
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
           {/* Circle 3 */}
           <CircleContainer>
@@ -217,7 +243,11 @@ const CAMILDiagramm: React.FC = () => {
             <p>Media</p>
           </CircleContainer>
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
           {/* Circle 4 */}
           <CircleContainer>
@@ -238,7 +268,11 @@ const CAMILDiagramm: React.FC = () => {
             <p>Implementation</p>
           </CircleContainer>
           <StyledArrowSVGInline>
-            <ArrowSVGInline color="var(--leviko-black)" />
+            <ArrowSVGInline
+              color={
+                isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"
+              }
+            />
           </StyledArrowSVGInline>
           {/* Circle 5 */}
           <CircleContainer>

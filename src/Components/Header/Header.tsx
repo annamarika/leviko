@@ -85,16 +85,15 @@ const Header: React.FC = () => {
             <MenuIcon onClick={toggleMenu} $isOpen={isMenuOpen}>
               <div className="line middle"></div>
             </MenuIcon>
-
             <ButtonContainerDisplay>
+              <HeaderButton as={Link} to="/projekt">
+                Projekt
+              </HeaderButton>
               <HeaderButton as={Link} to="/forschung">
                 Forschung
               </HeaderButton>
               <HeaderButton as={Link} to="/publikationen">
                 Publikationen
-              </HeaderButton>
-              <HeaderButton as={Link} to="/projekt">
-                Projekt
               </HeaderButton>
               <HeaderButton as={Link} to="/team">
                 Team
@@ -107,6 +106,14 @@ const Header: React.FC = () => {
         <Overlay $isOpen={isMenuOpen}>
           <OverlayContainer>
             <OverlayContent>
+              <MenuItem as={Link} to="/projekt" onClick={toggleMenu}>
+                Projekt
+                <ArrowContainer>
+                  <StyledArrowSVG color="var(--leviko-green)" />
+                </ArrowContainer>
+              </MenuItem>
+            </OverlayContent>
+            <OverlayContent>
               <MenuItem as={Link} to="/forschung" onClick={toggleMenu}>
                 Forschung
                 <ArrowContainer>
@@ -117,14 +124,6 @@ const Header: React.FC = () => {
             <OverlayContent>
               <MenuItem as={Link} to="/publikationen" onClick={toggleMenu}>
                 Publikationen
-                <ArrowContainer>
-                  <StyledArrowSVG color="var(--leviko-green)" />
-                </ArrowContainer>
-              </MenuItem>
-            </OverlayContent>
-            <OverlayContent>
-              <MenuItem as={Link} to="/projekt" onClick={toggleMenu}>
-                Projekt
                 <ArrowContainer>
                   <StyledArrowSVG color="var(--leviko-green)" />
                 </ArrowContainer>

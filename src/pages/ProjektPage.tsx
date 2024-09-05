@@ -199,7 +199,6 @@ export const EmptyDiv = styled.div`
   background-color: var(--leviko-blue);
   width: 100%;
   height: 100px;
-  z-index: 50;
   position: relative;
 
   @media (max-width: 1024px) {

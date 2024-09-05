@@ -49,7 +49,6 @@ export const FooterWrapper = styled.div`
   width: 100vw;
   padding: 60px 160px;
   position: relative;
-  z-index: 100;
 
   @media (max-width: 1330px) {
     padding: 60px 24px;
@@ -93,7 +92,6 @@ export const LevikoContainer = styled.a`
   text-decoration: none;
   width: 197px;
   height: 43px;
-  z-index: 100;
 
   @media (max-width: 1024px) {
     width: 178px;

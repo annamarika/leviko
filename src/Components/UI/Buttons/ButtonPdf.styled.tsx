@@ -16,11 +16,6 @@ export const ButtonPdf = styled.a<ButtonPdfProps>`
   width: 254px;
   height: 100%;
   font-size: 24px;
-  z-index: 50;
-
-  @media (max-width: 1024px) {
-    z-index: 0;
-  }
 
   &:hover {
     color: var(--leviko-black);

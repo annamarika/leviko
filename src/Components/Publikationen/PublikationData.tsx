@@ -1,5 +1,4 @@
 // data/publikationen.ts
-import Frauspielt from "../../assets/images/frau_spielt_VRSpiel.webp";
 import Kick_off from "../../assets/images/LEVIKO_Poster_Kickoff.webp";
 import poster_dublin from "../../assets/images/LEVIKO_poster_dublin.webp";
 
@@ -24,7 +23,13 @@ const publikationData: Array<{
     headline: "Lernen:digital Kick-offs",
     subHeadline: "Projekt-Pitch und Poster",
     tags: ["Poster", "Projekt-Pitch"],
-    searchTags: ["VR", "Projekt", "Technologie"],
+    searchTags: [
+      "Poster",
+      "Kick-Off",
+      "Kompetenzverbund lernen:digital",
+      "Pitch",
+      "2023",
+    ],
     imgSrc: Kick_off,
     imgAlt: "Vorschau Poster",
     linkTo: "/pdf/LEVIKO_Poster_Kickoff.pdf",
@@ -46,7 +51,7 @@ const publikationData: Array<{
     headline: "EAS Dublin 2024",
     subHeadline: "Poster",
     tags: ["Poster", "Konferenzbeitrag"],
-    searchTags: ["Poster", "Dublin", "European Association for Music"],
+    searchTags: ["Poster", "Dublin", "European Association for Music", "2024"],
     imgSrc: poster_dublin,
     imgAlt: "Vorschau Poster",
     linkTo: "/pdf/LEVIKO_Poster_Dublin.pdf",
