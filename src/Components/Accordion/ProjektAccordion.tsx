@@ -92,7 +92,6 @@ const AccordionContainer = styled(AccordionItem)<{
   align-items: start;
   padding: 65px;
   border: solid 4px;
-  z-index: 50;
   border-color: var(--leviko-blue);
   background-color: ${({ $alternate, $isDarkModeOn }) =>
     $isDarkModeOn && $alternate

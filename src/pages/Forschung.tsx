@@ -16,6 +16,7 @@ import SAMRDiagramm from "../Components/Diagramme/SAMRDiagramm.tsx";
 import CAMILDiagramm from "../Components/Diagramme/CAMILDiagramm.tsx";
 import DiagrammIntroText from "../Components/Diagramme/DiagrammIntroText.tsx";
 import KerresDiagramm from "../Components/Diagramme/KerresDiagramm.tsx";
+import MarqueeNews from "../Components/Banner/MarqueeNews.tsx";
 
 const FroschungsPage = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -79,7 +80,7 @@ const FroschungsPage = () => {
           headline="Entdecke unsere Publikationen!"
           descriptionOne="Diese Forschungsfragen bilden das Fundament unserer Arbeit und führen uns auf unserem Weg zur Neugestaltung der musikalischen Bildung durch den Einsatz innovativer Technologien."
           descriptionTwo="Wir laden dich ein, mehr über unsere Forschungsarbeit zu erfahren und sich gemeinsam mit uns auf diese spannende Reise zu begeben."
-          linkTo="/team"
+          linkTo="/publikationen"
           button="Publikationen"
           $buttonVariant="tertiary"
         />
@@ -110,14 +111,8 @@ const FroschungsPage = () => {
         linkTo={""}
         button={"Erfahre mehr"}
       />
-      <KontaktTeaser
-        headline="Interesse geweckt? Kontaktiere uns!"
-        descriptionOne="Hast du Fragen zum Projekt LEVIKO XR oder möchtest du mehr über unsere Arbeit erfahren?"
-        descriptionTwo="Wir sind offen für Anregungen, Feedback und Kooperationsmöglichkeiten und freuen uns darauf, von dir zu hören!"
-        linkTo="/team"
-        button="Team"
-        $buttonVariant="tertiary"
-      />
+      <Headline>Newsticker</Headline>
+      <MarqueeNews />
       <Headline id="modelle"> Modelle</Headline>
       <MethodenIntro
         headline="TPACK-Rahmenwerk"

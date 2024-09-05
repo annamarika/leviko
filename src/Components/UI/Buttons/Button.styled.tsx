@@ -17,7 +17,6 @@ export const Button = styled(Link)<ButtonProps>`
   width: 254px;
   height: 100%;
   font-size: 24px;
-  z-index: 50;
 
   @media (max-width: 1024px) {
     z-index: 0;

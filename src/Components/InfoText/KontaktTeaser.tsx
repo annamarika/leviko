@@ -72,7 +72,6 @@ export const KontaktTeaserContainer = styled.div`
   background-color: var(--leviko-green);
   color: var(--leviko-black);
   min-height: 230px;
-  z-index: 50;
 
   @media (max-width: 1330px) {
     margin-right: 24px;

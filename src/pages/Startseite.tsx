@@ -23,7 +23,7 @@ import LogoOsnaGrau from "../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import Chris from "../assets/images/CGEI.webp";
 import Phil from "../assets/images/Philipp Ahner.webp";
 import Michael from "../assets/images/foto_oehler_uos.jpg";
-import useDarkModeStore from '../Components/stores/useDarkModeStore';
+import useDarkModeStore from "../Components/stores/useDarkModeStore";
 
 const Startseite = () => {
   const refOne = useRef<HTMLDivElement>(null);
@@ -59,7 +59,7 @@ const Startseite = () => {
         imgAlt="Woman wearing VR glasses"
         headline="Unsere Ziele sind klar"
         description="Innovative VR/AR Lehr-Lern-Designs entwickeln, technische Möglichkeiten im Musikunterricht aufzeigen und eine breite Anwendung durch Partnerschaften sicherstellen."
-        linkTo="/projekt"
+        linkTo="/forschung"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
@@ -86,7 +86,7 @@ const Startseite = () => {
         <Institutionen
           imgSrc={Michael}
           imgAlt="Profilbild Michael Oehler"
-          logoOneSrc={LogoOsnaGrau }
+          logoOneSrc={LogoOsnaGrau}
           logoOneAlt="Osnabrück Logo"
           logoTwoSrc={MTDMLWhite}
           logoTwoAlt="MTDML Logo"
@@ -109,7 +109,7 @@ const Startseite = () => {
         <InstitutionenWhite
           imgSrc={Phil}
           imgAlt="Profilbild Philipp Ahner"
-          logoOneSrc={!isDarkModeOn ? LogoTros : LogoTrosWithBackground }
+          logoOneSrc={!isDarkModeOn ? LogoTros : LogoTrosWithBackground}
           logoOneAlt="Logo Trossingen"
           logoTwoSrc=""
           logoTwoAlt=""

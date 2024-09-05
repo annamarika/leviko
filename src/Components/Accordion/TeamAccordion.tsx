@@ -157,7 +157,6 @@ const AccordionContainer = styled(AccordionItem)<{
   justify-content: space-between;
   align-items: start;
   padding: 65px;
-  z-index: 50;
   border: solid 4px;
   border-color: var(--leviko-blue);
   background-color: ${({ $alternate, $isDarkModeOn }) =>
