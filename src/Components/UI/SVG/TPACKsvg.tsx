@@ -1,72 +1,11 @@
-// ArrowSVGInline.tsx
 import { forwardRef, Ref } from "react";
 import { useTPACKStore } from "../../stores/useTPACKStore";
 import useDarkModeStore from "../../stores/useDarkModeStore";
 
 const TPACKSVG = forwardRef<SVGSVGElement>((props, ref: Ref<SVGSVGElement>) => {
-  const { selectedPath, selectPath } = useTPACKStore();
+  const { selectedPath, handlePathClick } = useTPACKStore(); // handlePathClick vom Store verwenden
   const { isDarkModeOn } = useDarkModeStore();
 
-  const handlePathClick = (pathId: string) => {
-    switch (pathId) {
-      case "path1":
-        selectPath(
-          pathId,
-          "Technological Knowledge",
-          "Dies bezieht sich auf das Verständnis der Lehrkräfte über die Funktionsweise verschiedener Technologien, wie z.B. Software, Apps, und Hardware, und wie sie im Bildungskontext eingesetzt werden können."
-        );
-        break;
-      case "path2":
-        selectPath(
-          pathId,
-          "Content Knowledge",
-          "Dies umfasst das Fachwissen der Lehrkräfte in ihrem jeweiligen Fachbereich, einschließlich der grundlegenden Konzepte, Theorien und Praktiken."
-        );
-        break;
-      case "path3":
-        selectPath(
-          pathId,
-          "Pedagogical Knowledge",
-          "Hier geht es um das Verständnis der Lehrkräfte über pädagogische Prinzipien, Unterrichtsmethoden und -strategien, sowie ihre Fähigkeit, Lerninhalte effektiv zu vermitteln."
-        );
-        break;
-      case "path4":
-        selectPath(
-          pathId,
-          "Technologisches Pädagogisches Inhaltswissen",
-          "Dies ist das zentrale Konzept des TPACK-Rahmenmodells und beschreibt das optimale Zusammenspiel von Technologie (TK), Pädagogik (PK) und Fachwissen (CK) in der Unterrichtspraxis."
-        );
-        break;
-      case "path5":
-        selectPath(
-          pathId,
-          "Pedagogical Content Knowledge",
-          "PCK beschreibt das Verständnis der Lehrkräfte darüber, wie sie ihr Fachwissen (Content Knowledge) effektiv vermitteln können, indem sie pädagogische Strategien und Methoden einsetzen."
-        );
-        break;
-      case "path6":
-        selectPath(
-          pathId,
-          "Technological Content Knowledge",
-          "Hierbei handelt es sich um das Verständnis der Lehrkräfte darüber, wie Technologie genutzt werden kann, um das Fachwissen (Content Knowledge) besser zu vermitteln und zu verstehen."
-        );
-        break;
-      case "path7":
-        selectPath(
-          pathId,
-          "Technological Pedagogical Knowledge",
-          "TPK beschreibt das Verständnis der Lehrkräfte darüber, wie Technologie spezifisch in den pädagogischen Kontext integriert werden kann, um effektives Lehren und Lernen zu fördern."
-        );
-        break;
-      case "path8":
-        selectPath(
-          pathId,
-          "New Headline for Path 8",
-          "Description for Path 8."
-        );
-        break;
-    }
-  };
   return (
     <svg
       ref={ref}

@@ -2,7 +2,7 @@
 
 import useHeaderStore from "../stores/useHeaderStore.tsx";
 import ToggleSwitch from "../UI/Buttons/ToggleSwitch.tsx";
-
+import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -41,6 +41,8 @@ const Header: React.FC = () => {
     setLastScrollY: state.setLastScrollY,
   }));
 
+  const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -73,6 +75,9 @@ const Header: React.FC = () => {
     };
   }, [isMenuOpen]);
 
+  // Function to check if the current path matches the button link
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <>
       <HeaderContainer $visible={visible}>
@@ -86,16 +91,32 @@ const Header: React.FC = () => {
               <div className="line middle"></div>
             </MenuIcon>
             <ButtonContainerDisplay>
-              <HeaderButton as={Link} to="/projekt">
+              <HeaderButton
+                as={Link}
+                to="/projekt"
+                className={isActive("/projekt") ? "active" : ""}
+              >
                 Projekt
               </HeaderButton>
-              <HeaderButton as={Link} to="/forschung">
+              <HeaderButton
+                as={Link}
+                to="/forschung"
+                className={isActive("/forschung") ? "active" : ""}
+              >
                 Forschung
               </HeaderButton>
-              <HeaderButton as={Link} to="/publikationen">
+              <HeaderButton
+                as={Link}
+                to="/publikationen"
+                className={isActive("/publikationen") ? "active" : ""}
+              >
                 Publikationen
               </HeaderButton>
-              <HeaderButton as={Link} to="/team">
+              <HeaderButton
+                as={Link}
+                to="/team"
+                className={isActive("/team") ? "active" : ""}
+              >
                 Team
               </HeaderButton>
             </ButtonContainerDisplay>

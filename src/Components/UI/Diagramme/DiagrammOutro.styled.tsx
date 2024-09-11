@@ -1,30 +1,11 @@
+// MethodenOutro.styled.tsx
 import styled from "styled-components";
-import { Button } from "../UI/Buttons/Button.styled";
-import { Link } from "react-router-dom";
 
-interface MethodenOutroProps {
-  description: JSX.Element | string;
-  linkTo: string;
-  button: string;
-}
-
-const MethodenOutro: React.FC<MethodenOutroProps> = ({
-  description,
-  linkTo,
-  button,
-}) => {
-  return (
-    <MethodenIntroContainer>
-      <p>{description}</p>
-      <Button as={Link} to={linkTo}>
-        {button}
-      </Button>
-    </MethodenIntroContainer>
-  );
-};
-
-export default MethodenOutro;
-
+/**
+ * Container for the MethodenOutro component, which sets up
+ * the layout and spacing for the description and button.
+ * Responsive styles ensure proper alignment on different screen sizes.
+ */
 export const MethodenIntroContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,6 +25,7 @@ export const MethodenIntroContainer = styled.div`
     margin-left: 24px;
     gap: 24px;
   }
+
   @media (max-width: 430px) {
     padding: 0 0;
     flex-direction: column;

@@ -1,20 +1,25 @@
-import styled from "styled-components";
+import React from "react";
+import {
+  ParalaxWrapper,
+  ParalaxContainer,
+  HeadlineContainer,
+  TextContainer,
+} from "../UI/Parallax/ForschungsfragenWhite.styled.tsx";
 import useDarkModeStore from "../stores/useDarkModeStore";
 
+// Interface für die Props der Forschungsfragen-Komponente
 interface ForschungsfragenProps {
-  headline: JSX.Element | string;
+  headline: JSX.Element | string; // Überschrift, die als JSX oder String übergeben werden kann
 }
 
-interface DarkModeProps {
-  $isDarkModeOn: boolean;
-}
-
+// Funktionale Komponente für den Forschungsfragen-Bereich mit Unterstützung für Dark Mode
 const Forschungsfragen: React.FC<ForschungsfragenProps> = ({ headline }) => {
-  const { isDarkModeOn } = useDarkModeStore();
+  const { isDarkModeOn } = useDarkModeStore(); // Zustand für Dark Mode abrufen
 
   return (
     <ParalaxWrapper $isDarkModeOn={isDarkModeOn}>
       <ParalaxContainer $isDarkModeOn={isDarkModeOn}>
+        {/* Überschrift im Parallax-Bereich */}
         <HeadlineContainer>
           <TextContainer>
             <h3>{headline}</h3>
@@ -26,80 +31,3 @@ const Forschungsfragen: React.FC<ForschungsfragenProps> = ({ headline }) => {
 };
 
 export default Forschungsfragen;
-
-export const ParalaxWrapper = styled.div<DarkModeProps>`
-  background-color: ${({ $isDarkModeOn }) =>
-    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
-
-  @media (max-width: 430px) {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-  }
-`;
-
-export const ParalaxContainer = styled.div<DarkModeProps>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 160px;
-  margin-left: 160px;
-  padding: 50px 0;
-  gap: 80px;
-  background-color: ${({ $isDarkModeOn }) =>
-    $isDarkModeOn ? "var(--leviko-black)" : "var(--leviko-white)"};
-  transition: background-color 0.8s ease, color 0.3s ease;
-
-  color: ${({ $isDarkModeOn }) =>
-    $isDarkModeOn ? "var(--leviko-white)" : "var(--leviko-black)"};
-
-  @media (max-width: 1330px) {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-
-  @media (max-width: 1024px) {
-    margin-right: 24px;
-    margin-left: 24px;
-    gap: 24px;
-  }
-  @media (max-width: 430px) {
-    padding: 0 0;
-    flex-direction: column;
-    align-items: start;
-    gap: 0;
-    margin-bottom: 0;
-  }
-`;
-
-export const HeadlineContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-
-  @media (max-width: 1024px) {
-    gap: 38px;
-  }
-
-  @media (max-width: 430px) {
-    width: 100%;
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-`;
-
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
-  @media (max-width: 1024px) {
-    gap: 24px;
-  }
-
-  @media (max-width: 430px) {
-    gap: 20px;
-  }
-`;

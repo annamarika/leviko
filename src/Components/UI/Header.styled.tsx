@@ -129,6 +129,12 @@ export const HeaderButton = styled.a`
     background-color: var(--leviko-black);
     border-color: var(--leviko-black);
   }
+
+  /* Active page effect */
+  &.active {
+    color: var(--leviko-black);
+    background-color: var(--leviko-green);
+  }
 `;
 
 export const DarkModeToggle = styled.a`

@@ -3,7 +3,7 @@ import HeroPublikationen from "../Components/Hero/HeroPublikationen";
 import Publikation from "../Components/Publikationen/Publikation";
 import publikationData from "../Components/Publikationen/PublikationData";
 import usePublikationenStore from "../Components/stores/usePublikationenStore";
-import ParallaxSection from "../Components/UI/ParallaxSection.styled";
+import ParallaxSection from "../Components/UI/Parallax/ParallaxSection.styled";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import MarqueeNews from "../Components/Banner/MarqueeNews";
 import { Headline } from "../Components/UI/Headline.styled";

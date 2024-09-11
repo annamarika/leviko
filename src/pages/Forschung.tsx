@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
-import ParallaxSection from "../Components/UI/ParallaxSection.styled";
+import ParallaxSection from "../Components/UI/Parallax/ParallaxSection.styled.tsx";
 import Forschungsfragen from "../Components/Parallax/Forschungsfragen.tsx";
 import HeroProjekt from "../Components/Hero/HeroProjekt";
 import FroschungNav from "../Components/InfoText/ForschungNav";
@@ -8,8 +8,8 @@ import { Headline } from "../Components/UI/Headline.styled";
 import FraumitBrille from "../assets/images/Frau_mit_Meta_Quest.webp";
 import ForschungsfragenWhite from "../Components/Parallax/ForschungsfragenWhite.tsx";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser.tsx";
-import MethodenIntro from "../Components/Diagramme/MethodenIntro.tsx";
-import MethodenOutro from "../Components/Diagramme/MethodenOutro.tsx";
+import DiagrammIntro from "../Components/Diagramme/DiagrammIntro.tsx";
+import DiagrammOutro from "../Components/Diagramme/DiagrammOutro.tsx";
 import DBRDiagramm from "../Components/Diagramme/DBRDiagramm.tsx";
 import TPACKDiagramm from "../Components/Diagramme/TPACKDiagramm.tsx";
 import SAMRDiagramm from "../Components/Diagramme/SAMRDiagramm.tsx";
@@ -104,7 +104,7 @@ const FroschungsPage = () => {
         }
       />
       <DBRDiagramm />
-      <MethodenOutro
+      <DiagrammOutro
         description={
           "Der DBR-Ansatz ermöglicht es uns, Innovationen zu entwickeln, die sowohl in der Theorie verankert als auch in der Praxis bewährt sind. Die enge Verbindung von Forschung und Praxis führt zu realen Verbesserungen in der Musikpädagogik und bereichert die wissenschaftliche Gemeinschaft mit wertvollen Erkenntnissen."
         }
@@ -114,7 +114,7 @@ const FroschungsPage = () => {
       <Headline>Newsticker</Headline>
       <MarqueeNews />
       <Headline id="modelle"> Modelle</Headline>
-      <MethodenIntro
+      <DiagrammIntro
         headline="TPACK-Rahmenwerk"
         description={
           <>
@@ -134,14 +134,14 @@ const FroschungsPage = () => {
         displayedSVG="tpack"
       />
       <TPACKDiagramm />
-      <MethodenOutro
+      <DiagrammOutro
         description={
           "Das TPACK-Modell ermöglicht uns, die Wechselwirkungen zwischen technologischen, pädagogischen und inhaltlichen Aspekten im Musikunterricht präzise zu analysieren und zu optimieren. Durch die Anwendung dieses Rahmenwerks streben wir bei LEVIKO-XR danach, eine innovative und effektive Nutzung von VR/AR-Technologien zu gewährleisten, die sowohl die Lehrqualität als auch das Lernumfeld im Musikunterricht bereichert."
         }
         linkTo={""}
         button={"Erfahre mehr"}
       />
-      <MethodenIntro
+      <DiagrammIntro
         headline="SAMR"
         description={
           <>
@@ -161,7 +161,7 @@ const FroschungsPage = () => {
         displayedSVG="box"
       />
       <SAMRDiagramm />
-      <MethodenOutro
+      <DiagrammOutro
         description={
           "Das SAMR-Modell dient Lehrkräften als Werkzeug, um zu reflektieren, wie sie Technologie in ihren Unterricht integrieren. Es hilft sicherzustellen, dass Technologie nicht nur als Ersatz für herkömmliche Methoden genutzt wird, sondern tatsächlich transformative Lernerfahrungen geschaffen werden."
         }
@@ -187,7 +187,7 @@ const FroschungsPage = () => {
         }
       />
       <CAMILDiagramm />
-      <MethodenOutro
+      <DiagrammOutro
         description={
           "Das CAMIL-Modell bietet Lehrkräften einen umfassenden Rahmen, um die Integration von Technologie in ihren Unterricht zu planen, zu gestalten und zu evaluieren, wobei der Fokus auf den Lernbedürfnissen der Schülerinnen und Schüler liegt."
         }
@@ -214,7 +214,7 @@ const FroschungsPage = () => {
         }
       />
       <KerresDiagramm />
-      <MethodenOutro
+      <DiagrammOutro
         description={
           "Diese Struktur bietet eine Grundlage, um gezielte Forschungsfragen zu den Implikationen des Immersionserlebens zu formulieren und die mediendidaktische Gestaltung von Lernumgebungen zu optimieren."
         }

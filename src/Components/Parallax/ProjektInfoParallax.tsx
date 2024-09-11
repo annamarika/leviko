@@ -1,27 +1,34 @@
-import styled from "styled-components";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../UI/Buttons/Button.styled";
+import {
+  ParalaxWrapper,
+  ParalaxContainer,
+  HeadlineContainer,
+  ImageContainer,
+  StyledImage,
+  TextButtonContainer,
+  ImageTextContainer,
+} from "../UI/Parallax/ProjektInfoParallax.styled.tsx";
 
+// Interface für die Props der ProjektInfoParallax-Komponente
 interface ProjektInfoParallaxProps {
-  headline: string;
-  imgSrc: string;
-  imgAlt: string;
-  $objectPosition?: string;
-  linkTo: string;
-  button: string;
-  $buttonVariant?: "secondary";
-  description: JSX.Element | string;
+  headline: string; // Überschrift des Parallax-Bereichs
+  imgSrc: string; // Quelle des Bildes
+  imgAlt: string; // Alternativtext für das Bild
+  $objectPosition?: string; // Positionierung des Bildes
+  linkTo: string; // Ziel-Link des Buttons
+  button: string; // Text des Buttons
+  $buttonVariant?: "secondary"; // Button-Stil
+  description: JSX.Element | string; // Beschreibungstext oder JSX
 }
 
-interface StyledImageProps {
-  $objectPosition?: string;
-}
-
+// Funktionale Komponente für den Parallax-Bereich
 const ProjektInfoParallax: React.FC<ProjektInfoParallaxProps> = ({
   headline,
   imgSrc,
   imgAlt,
-  $objectPosition = "center",
+  $objectPosition = "center", // Standardposition des Bildes
   linkTo,
   button,
   $buttonVariant,
@@ -29,9 +36,14 @@ const ProjektInfoParallax: React.FC<ProjektInfoParallaxProps> = ({
 }) => {
   return (
     <ParalaxWrapper>
+      {/* Container für den gesamten Inhalt */}
       <ParalaxContainer>
+        {/* Überschrift */}
         <HeadlineContainer>{headline}</HeadlineContainer>
+
+        {/* Container für Bild und Text */}
         <ImageTextContainer>
+          {/* Bild */}
           <ImageContainer>
             <StyledImage
               src={imgSrc}
@@ -39,6 +51,8 @@ const ProjektInfoParallax: React.FC<ProjektInfoParallaxProps> = ({
               $objectPosition={$objectPosition}
             />
           </ImageContainer>
+
+          {/* Text und Button */}
           <TextButtonContainer>
             <div>{description}</div>
             <Button as={Link} to={linkTo} $buttonVariant={$buttonVariant}>
@@ -52,120 +66,3 @@ const ProjektInfoParallax: React.FC<ProjektInfoParallaxProps> = ({
 };
 
 export default ProjektInfoParallax;
-
-export const ParalaxWrapper = styled.div`
-  background-color: var(--leviko-blue);
-
-  @media (max-width: 430px) {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-  }
-`;
-
-export const ParalaxContainer = styled.div`
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 160px;
-  padding: 100px 0;
-  gap: 80px;
-  background-color: var(--leviko-blue);
-  color: var(--leviko-white);
-
-  @media (max-width: 1330px) {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-
-  @media (max-width: 1024px) {
-    margin-right: 24px;
-    margin-left: 24px;
-    padding: 80px 0;
-    gap: 80px;
-  }
-  @media (max-width: 430px) {
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 0;
-    gap: 32px;
-    padding: 0 0;
-  }
-`;
-
-export const HeadlineContainer = styled.h3`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  width: 50%;
-  @media (max-width: 1024px) {
-  }
-
-  @media (max-width: 430px) {
-    width: 100%;
-    gap: 20px;
-  }
-`;
-
-export const ImageContainer = styled.div`
-  width: 50%;
-  height: 25%;
-  overflow: hidden;
-
-  @media (max-width: 1024px) {
-    height: auto;
-  }
-
-  @media (max-width: 430px) {
-    width: 100%;
-  }
-`;
-
-export const StyledImage = styled.img<StyledImageProps>`
-  width: 100%;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: center;
-
-  @media (max-width: 430px) {
-    object-position: ${(props) => props.$objectPosition || "30%"};
-  }
-`;
-
-export const TextButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  align-items: start;
-  gap: 32px;
-
-  @media (max-width: 1024px) {
-    gap: 24px;
-  }
-
-  @media (max-width: 430px) {
-    gap: 20px;
-    width: 100%;
-  }
-`;
-
-export const ImageTextContainer = styled.div`
-  display: flex;
-  align-items: start;
-  gap: 32px;
-
-  @media (max-width: 1024px) {
-    gap: 24px;
-  }
-
-  @media (max-width: 430px) {
-    flex-direction: column;
-    gap: 20px;
-  }
-`;

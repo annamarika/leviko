@@ -1,10 +1,16 @@
-import styled from "styled-components";
+import React from "react";
+import {
+  MethodenIntroContainer,
+  Description,
+} from "../UI/Diagramme/DiagrammeIntroText.styled.tsx";
 
+// Interface für die Props der DiagrammIntroText-Komponente
 interface MethodenIntroProps {
-  headline: JSX.Element | string;
-  description: JSX.Element | string;
+  headline: JSX.Element | string; // Überschrift, die als JSX oder String übergeben werden kann
+  description: JSX.Element | string; // Beschreibungstext, der als JSX oder String übergeben werden kann
 }
 
+// Funktionale Komponente für das Methoden-Intro
 const DiagrammIntroText: React.FC<MethodenIntroProps> = ({
   headline,
   description,
@@ -18,44 +24,3 @@ const DiagrammIntroText: React.FC<MethodenIntroProps> = ({
 };
 
 export default DiagrammIntroText;
-
-export const MethodenIntroContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-right: 160px;
-  margin-left: 160px;
-  padding-top: 50px;
-
-  @media (max-width: 1330px) {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-
-  @media (max-width: 1024px) {
-    margin-right: 24px;
-    margin-left: 24px;
-    padding-bottom: 24px;
-  }
-  @media (max-width: 430px) {
-    padding: 0 0;
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 0;
-    align-items: stretch;
-  }
-`;
-
-export const Description = styled.div`
-  margin-top: 80px;
-  margin-bottom: 50px;
-
-  @media (max-width: 1024px) {
-    margin-top: 24px;
-    margin-bottom: 0px;
-  }
-  @media (max-width: 430px) {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-`;

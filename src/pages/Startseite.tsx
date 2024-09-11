@@ -12,7 +12,7 @@ import ImageTablet from "../assets/images/Tablet_Zeichnung.webp";
 import ImageMaestro from "../assets/images/person_plays_maestro.jpg";
 import MireviWhite from "../assets/images/MIREVI_weiss.webp";
 import HSDWhite from "../assets/images/HSD_Marke_v1_HSD_weiss.png";
-import ParallaxSection from "../Components/UI/ParallaxSection.styled";
+import ParallaxSection from "../Components/UI/Parallax/ParallaxSection.styled";
 import KontaktTeaser from "../Components/InfoText/KontaktTeaser";
 import { Headline } from "../Components/UI/Headline.styled";
 import MarqueePraxispartner from "../Components/Banner/MarqueePraxispartner";
@@ -59,7 +59,7 @@ const Startseite = () => {
         imgAlt="Woman wearing VR glasses"
         headline="Unsere Ziele sind klar"
         description="Innovative VR/AR Lehr-Lern-Designs entwickeln, technische Möglichkeiten im Musikunterricht aufzeigen und eine breite Anwendung durch Partnerschaften sicherstellen."
-        linkTo="/forschung"
+        linkTo="/projekt"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
@@ -68,7 +68,7 @@ const Startseite = () => {
         imgAlt="VR glasses and controller"
         headline="Neue Wege im Musikunterricht"
         description="Wir analysieren Einsatzmöglichkeiten von VR/AR im Musikunterricht, konzipieren Lehr-Lern-Designs und evaluieren kontinuierlich unter Berücksichtigung der User Experience."
-        linkTo="/projekt"
+        linkTo="/forschung"
         button="Erfahre mehr"
         $objectPosition="30%"
       />

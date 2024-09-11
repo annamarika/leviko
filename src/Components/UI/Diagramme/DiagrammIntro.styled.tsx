@@ -1,47 +1,12 @@
+// DiagrammIntro.styled.tsx
 import styled from "styled-components";
-import MiniArrowSVG from "../UI/Buttons/MiniArrowSVG.tsx";
-import TpackSVGIcon from "../UI/Buttons/TpackSVGIcon.tsx";
+import MiniArrowSVG from "../Buttons/MiniArrowSVG";
+import TpackSVGIcon from "../Buttons/TpackSVGIcon";
 
-interface MethodenIntroProps {
-  headline: JSX.Element | string;
-  description: JSX.Element | string;
-  displayedSVG?: "box" | "tpack" | "circle";
-}
-
-interface MiniArrowSVGWrapperProps {
-  $displayedSVG: "box" | "tpack" | "circle";
-}
-
-const MethodenIntro: React.FC<MethodenIntroProps> = ({
-  headline,
-  description,
-  displayedSVG = "box",
-}) => {
-  return (
-    <MethodenIntroContainer className="DBRDiagrammWrapper">
-      <h3>{headline}</h3>
-      <Description>{description}</Description>
-      <CTAWrapper>
-        <SVGWrapper>
-          <SVGContainer>
-            <MiniArrowSVGWrapper $displayedSVG={displayedSVG}>
-              <StyledMiniArrowSVG />
-            </MiniArrowSVGWrapper>
-            {/* Conditional rendering based on displayedSVG prop */}
-            {displayedSVG === "box" && <SVGBox />}
-            {displayedSVG === "tpack" && <StyledTpackSVG />}
-            {displayedSVG === "circle" && <SVGCircle />}
-          </SVGContainer>
-        </SVGWrapper>
-        <CTAText>Klick auf die einzelnen Felder für mehr Information.</CTAText>
-      </CTAWrapper>
-    </MethodenIntroContainer>
-  );
-};
-
-export default MethodenIntro;
-
-export const MethodenIntroContainer = styled.div`
+/**
+ * Container for the DiagrammIntro component, setting up margins, paddings, and layout.
+ */
+export const DiagrammIntroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -58,15 +23,18 @@ export const MethodenIntroContainer = styled.div`
     margin-right: 24px;
     margin-left: 24px;
   }
+
   @media (max-width: 430px) {
-    padding: 0 0;
+    padding: 0;
     flex-direction: column;
-    align-items: start;
     margin-bottom: 0;
     align-items: stretch;
   }
 `;
 
+/**
+ * Description section within the DiagrammIntro, managing top and bottom margins.
+ */
 export const Description = styled.div`
   margin-top: 80px;
   margin-bottom: 50px;
@@ -75,12 +43,16 @@ export const Description = styled.div`
     margin-top: 24px;
     margin-bottom: 24px;
   }
+
   @media (max-width: 430px) {
     margin-top: 20px;
     margin-bottom: 20px;
   }
 `;
 
+/**
+ * CTA Wrapper for aligning the SVG and text in the call-to-action section.
+ */
 export const CTAWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -88,10 +60,8 @@ export const CTAWrapper = styled.div`
   background-color: var(--leviko-green);
   height: fit-content;
   padding: 20px;
-  flex-shrink: 0;
   gap: 10px;
   width: 352px;
-  height: auto;
   margin-left: auto;
 
   @media (max-width: 1330px) {
@@ -102,12 +72,14 @@ export const CTAWrapper = styled.div`
     padding: 15px 10px;
     gap: 20px;
     width: fit-content;
-    align-self: flex-end;
     margin-right: -24px;
     margin-bottom: 20px;
   }
 `;
 
+/**
+ * Text displayed inside the call-to-action section.
+ */
 export const CTAText = styled.p`
   font-size: 16px;
   color: var(--leviko-black);
@@ -117,13 +89,24 @@ export const CTAText = styled.p`
   }
 `;
 
+/**
+ * Wrapper for the SVG content.
+ */
 export const SVGWrapper = styled.div``;
 
+/**
+ * Container for the SVG icons, with relative positioning for dynamic elements.
+ */
 export const SVGContainer = styled.div`
   position: relative;
 `;
 
-export const MiniArrowSVGWrapper = styled.div<MiniArrowSVGWrapperProps>`
+/**
+ * Wrapper for the MiniArrowSVG, its position changes depending on the displayedSVG prop.
+ */
+export const MiniArrowSVGWrapper = styled.div<{
+  $displayedSVG: "box" | "tpack" | "circle";
+}>`
   position: absolute;
   top: 30%;
   left: 50%;
@@ -142,6 +125,9 @@ export const MiniArrowSVGWrapper = styled.div<MiniArrowSVGWrapperProps>`
   `}
 `;
 
+/**
+ * Styles for the MiniArrowSVG element.
+ */
 export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
   width: 31px;
   height: 34px;
@@ -152,6 +138,9 @@ export const StyledMiniArrowSVG = styled(MiniArrowSVG)`
   }
 `;
 
+/**
+ * SVG box displayed when the "box" option is selected.
+ */
 export const SVGBox = styled.div`
   background-color: var(--leviko-black);
   height: 20px;
@@ -163,6 +152,9 @@ export const SVGBox = styled.div`
   }
 `;
 
+/**
+ * Styled TPACK icon displayed when the "tpack" option is selected.
+ */
 export const StyledTpackSVG = styled(TpackSVGIcon)`
   height: 57px;
   width: 54px;
@@ -173,6 +165,9 @@ export const StyledTpackSVG = styled(TpackSVGIcon)`
   }
 `;
 
+/**
+ * Circle SVG displayed when the "circle" option is selected.
+ */
 export const SVGCircle = styled.div`
   background-color: var(--leviko-black);
   height: 40px;

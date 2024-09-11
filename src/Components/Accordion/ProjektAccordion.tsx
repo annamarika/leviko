@@ -1,32 +1,31 @@
 import React from "react";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion";
-import styled from "styled-components";
-import ArrowSVG from "../UI/Buttons/ArrowSVG.tsx";
-import useAccordionStore from "../stores/AccordionStore.tsx";
+  AccordionWrapper,
+  AccordionContainer,
+  AccordionHeading,
+  AccordionButton,
+  StyledArrowSVG,
+  ArrowContainer,
+  AccordionPanel,
+} from "../UI/Accordion/ProjektAccordion.styled.tsx";
+import useAccordionStore from "../stores/useAccordionStore.tsx";
 import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 
-interface StyledArrowProps {
-  $rotate?: boolean;
-}
-
+// Interface für die Props der ProjektAccordion-Komponente
 interface ProjektAccordionProps {
   items: Array<{
-    id: string;
-    title: string;
-    content: JSX.Element | string;
+    id: string; // Eindeutige ID für jedes Akkordeon-Element
+    title: string; // Titel des Akkordeon-Elements
+    content: JSX.Element | string; // Inhalt des Akkordeon-Elements
   }>;
 }
 
+// Funktionale Komponente für das Projekt-Akkordeon
 const ProjektAccordion: React.FC<ProjektAccordionProps> = ({ items }) => {
-  const { expanded, setExpanded } = useAccordionStore();
-  const { isDarkModeOn } = useDarkModeStore();
+  const { expanded, setExpanded } = useAccordionStore(); // Akkordeon-Zustand verwalten
+  const { isDarkModeOn } = useDarkModeStore(); // Dark Mode Zustand abrufen
 
+  // Funktion, die den Zustand des Akkordeons verwaltet
   const handleAccordionChange = (keys: string[]) => {
     const isExpanded = keys.length > 0 ? keys[0] : null;
     setExpanded(isExpanded);
@@ -38,9 +37,10 @@ const ProjektAccordion: React.FC<ProjektAccordionProps> = ({ items }) => {
         <AccordionContainer
           key={item.id}
           uuid={item.id}
-          $alternate={index % 2 !== 0}
+          $alternate={index % 2 !== 0} // Jedes zweite Element erhält einen alternativen Stil
           $isDarkModeOn={isDarkModeOn}
         >
+          {/* Überschrift des Akkordeon-Elements */}
           <AccordionHeading>
             <AccordionButton>
               {item.title}
@@ -55,6 +55,8 @@ const ProjektAccordion: React.FC<ProjektAccordionProps> = ({ items }) => {
               </ArrowContainer>
             </AccordionButton>
           </AccordionHeading>
+
+          {/* Inhalt des Akkordeon-Elements */}
           <AccordionPanel>{item.content}</AccordionPanel>
         </AccordionContainer>
       ))}
@@ -63,103 +65,3 @@ const ProjektAccordion: React.FC<ProjektAccordionProps> = ({ items }) => {
 };
 
 export default ProjektAccordion;
-
-const AccordionWrapper = styled(Accordion)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 160px;
-
-  @media (max-width: 1330px) {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-
-  @media (max-width: 430px) {
-    margin-right: 20px;
-    margin-right: 20px;
-  }
-`;
-
-const AccordionContainer = styled(AccordionItem)<{
-  $alternate: boolean;
-  $isDarkModeOn: boolean;
-}>`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  padding: 65px;
-  border: solid 4px;
-  border-color: var(--leviko-blue);
-  background-color: ${({ $alternate, $isDarkModeOn }) =>
-    $isDarkModeOn && $alternate
-      ? "black"
-      : $alternate
-      ? "var(--leviko-white)"
-      : "var(--leviko-blue)"};
-  transition: background-color 0.8s ease, color 0.3s ease;
-
-  color: ${({ $alternate, $isDarkModeOn }) =>
-    $alternate && !$isDarkModeOn
-      ? "var(--leviko-black)"
-      : "var(--leviko-white)"};
-  width: 100%;
-  gap: 100px;
-
-  @media (max-width: 1024px) {
-    gap: 40px;
-    padding: 40px 24px;
-  }
-  @media (max-width: 430px) {
-    gap: 32px;
-    padding: 32px 24px;
-  }
-`;
-
-const AccordionHeading = styled(AccordionItemHeading)`
-  font-size: 43px;
-  width: 100%;
-
-  @media (max-width: 1024px) {
-    font-size: 30px;
-  }
-  @media (max-width: 430px) {
-    font-size: 20px;
-  }
-`;
-
-const AccordionButton = styled(AccordionItemButton)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const StyledArrowSVG = styled(ArrowSVG)`
-  &:hover {
-    color: var(--leviko-black);
-  }
-`;
-
-const ArrowContainer = styled.div<StyledArrowProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-
-  transform: ${({ $rotate }) => ($rotate ? "rotate(180deg)" : "rotate(0deg)")};
-  transition: transform 0.3s ease;
-
-  @media (max-width: 1024px) {
-    width: 40px;
-    height: 40px;
-  }
-  @media (max-width: 430px) {
-    width: 30px;
-    height: 30px;
-  }
-`;
-
-const AccordionPanel = styled(AccordionItemPanel)``;

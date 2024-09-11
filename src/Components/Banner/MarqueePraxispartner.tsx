@@ -1,5 +1,4 @@
 import Marquee from "react-fast-marquee";
-import styled from "styled-components";
 import MireviWhite from "../../assets/images/MIREVI_weiss.webp";
 import HSDWhite from "../../assets/images/HSD_Marke_v1_HSD_weiss.png";
 import lernenDigital from "../../assets/images/lernen-digital-Kompetenzverbund-negativ-RGB.webp";
@@ -8,12 +7,21 @@ import euFunded from "../../assets/images/EN_FundedbytheEU_RGB_WHITE.webp";
 import logoTros from "../../assets/images/logo-hochschule-fuer-musik-trossingen.webp";
 import logoOsna from "../../assets/images/UOS-Logo_Grau_1C_v01.webp";
 import MTMDL from "../../assets/images/MTDML Logo ohne Bildunterschrift invertiert 300px.webp";
+import {
+  MarqueeContainer,
+  ImageContainer,
+  StyledImage,
+  TextContainer,
+} from "../UI/Banner/MarqueePraxispartner.styled.tsx";
 
+// Komponente für den Marquee-Bereich der Praxispartnerlogos
 const MarqueePraxispartner = () => {
   return (
     <>
+      {/* Container für das Marquee */}
       <MarqueeContainer>
         <Marquee gradient={false} speed={50} pauseOnHover={true}>
+          {/* Jedes Logo mit entsprechendem Link */}
           <ImageContainer href="https://lernen.digital/">
             <StyledImage src={lernenDigital} alt="lernenDigital Logo" />
           </ImageContainer>
@@ -38,6 +46,8 @@ const MarqueePraxispartner = () => {
           <ImageContainer href="https://www.mtdml.uni-osnabrueck.de/mtdml/mtdml.html">
             <StyledImage src={MTMDL} alt="MTMDL Logo" />
           </ImageContainer>
+
+          {/* Logos werden für eine fließende Marquee-Erfahrung wiederholt */}
           <ImageContainer href="https://lernen.digital/">
             <StyledImage src={lernenDigital} alt="lernenDigital Logo" />
           </ImageContainer>
@@ -64,6 +74,8 @@ const MarqueePraxispartner = () => {
           </ImageContainer>
         </Marquee>
       </MarqueeContainer>
+
+      {/* Text unter dem Marquee */}
       <TextContainer>
         LEVIKO XR arbeitet mit Praxispartnern zusammen, die unsere Vision einer
         innovativen Musiklehrkräftefortbildung teilen.
@@ -73,63 +85,3 @@ const MarqueePraxispartner = () => {
 };
 
 export default MarqueePraxispartner;
-
-export const MarqueeContainer = styled.div`
-  background-color: var(--leviko-blue);
-  padding: 30px 0;
-  margin: 100px 0;
-  position: relative;
-
-  @media (max-width: 1200px) {
-    margin: 80px 0;
-    padding: 21px 0;
-  }
-
-  @media (max-width: 1024px) {
-    margin: 56px 0;
-    padding: 26px 0;
-  }
-`;
-
-export const MarqueeWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  gap: 20px;
-`;
-
-export const StyledImage = styled.img`
-  width: 160px;
-  height: auto;
-  margin: 0 20px;
-
-  @media (max-width: 1024px) {
-    width: 100px;
-  }
-
-  @media (max-width: 430px) {
-    width: 80px;
-  }
-`;
-
-export const ImageContainer = styled.a``;
-
-export const TextContainer = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 160px 100px 160px;
-
-  @media (max-width: 1200px) {
-    margin: 0 24px 100px 24px;
-  }
-
-  @media (max-width: 1024px) {
-    margin: 0 24px 80px 24px;
-  }
-
-  @media (max-width: 430px) {
-    margin: 0 24px 56px 24px;
-  }
-`;

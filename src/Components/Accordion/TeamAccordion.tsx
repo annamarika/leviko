@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -6,16 +5,36 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import styled from "styled-components";
-import ArrowSVG from "../UI/Buttons/ArrowSVG.tsx";
-import useAccordionStore from "../stores/AccordionStore.tsx";
+
+import React from "react";
+import {
+  AccordionWrapper,
+  AccordionContainer,
+  AccordionHeading,
+  AccordionButton,
+  HeadlineWrapper,
+  HeadlineContainer,
+  LogoContainer,
+  ImageContainer,
+  StyledImage,
+  ArrowContainer,
+  StyledArrowSVG,
+  AccordionPanel,
+  ProfilImageContainer,
+  ProfileStyledImage,
+  TextContainer,
+  ButtonContainer,
+} from "../UI/Accordion/TeamAccordion.styled.tsx";
+import useAccordionStore from "../stores/useAccordionStore.tsx";
 import useDarkModeStore from "../stores/useDarkModeStore.tsx";
 import { Button } from "../UI/Buttons/Button.styled";
 
-interface StyledArrowProps {
-  $rotate?: boolean;
-}
-
+/**
+ * TeamAccordion component.
+ * Displays an accordion with team member details.
+ *
+ * @param {Array} items - Array of accordion items, each with title, description, logos, and content.
+ */
 interface TeamAccordionProps {
   items: Array<{
     id: string;
@@ -37,17 +56,14 @@ interface TeamAccordionProps {
   }>;
 }
 
-interface StyledImageProps {
-  $objectPosition?: string;
-}
-
 const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
   const { expanded, setExpanded } = useAccordionStore(); // Zustand store for accordion state
   const { isDarkModeOn } = useDarkModeStore(); // Zustand store for dark mode state
 
+  // Handle accordion state change
   const handleAccordionChange = (keys: string[]) => {
     const isExpanded = keys.length > 0 ? keys[0] : null;
-    setExpanded(isExpanded); // Handling accordion state change
+    setExpanded(isExpanded);
   };
 
   return (
@@ -126,227 +142,3 @@ const TeamAccordion: React.FC<TeamAccordionProps> = ({ items }) => {
 };
 
 export default TeamAccordion;
-
-// Styled components with $ prefix for props that should not be forwarded to the DOM
-
-const AccordionWrapper = styled(Accordion)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 160px 100px 160px;
-
-  @media (max-width: 1330px) {
-    margin: 0 24px 100px 24px;
-  }
-
-  @media (max-width: 1024px) {
-    margin: 0 24px 80px 24px;
-  }
-  @media (max-width: 430px) {
-    margin: 0 20px 56px 20px;
-  }
-`;
-
-const AccordionContainer = styled(AccordionItem)<{
-  $alternate: boolean;
-  $isDarkModeOn: boolean;
-}>`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-  padding: 65px;
-  border: solid 4px;
-  border-color: var(--leviko-blue);
-  background-color: ${({ $alternate, $isDarkModeOn }) =>
-    $isDarkModeOn && $alternate
-      ? "var(--leviko-black)"
-      : $alternate
-      ? "var(--leviko-white)"
-      : "var(--leviko-blue)"};
-  transition: background-color 0.8s ease, color 0.3s ease;
-
-  color: ${({ $alternate, $isDarkModeOn }) =>
-    $alternate && !$isDarkModeOn
-      ? "var(--leviko-black)"
-      : "var(--leviko-white)"};
-  width: 100%;
-  gap: 100px;
-
-  @media (max-width: 1024px) {
-    gap: 40px;
-    padding: 40px 24px;
-  }
-  @media (max-width: 430px) {
-    gap: 32px;
-    padding: 32px 24px;
-  }
-`;
-
-const AccordionButton = styled(AccordionItemButton)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 430px) {
-    gap: 20px;
-    flex-direction: row;
-    align-items: center;
-  }
-`;
-
-const HeadlineWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 430px) {
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-  }
-`;
-
-const HeadlineContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 43px;
-  align-items: start;
-  width: 50%;
-
-  @media (max-width: 430px) {
-    width: 100%;
-    gap: 20px;
-  }
-`;
-
-const AccordionHeading = styled(AccordionItemHeading)`
-  font-size: 43px;
-  width: 100%;
-
-  @media (max-width: 1024px) {
-    font-size: 30px;
-  }
-  @media (max-width: 430px) {
-    font-size: 20px;
-  }
-`;
-
-export const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 43px;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 1024px) {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  @media (max-width: 430px) {
-    justify-content: start;
-    width: 100%;
-  }
-`;
-
-export const StyledImage = styled.img`
-  width: 154px;
-  height: auto;
-  margin: 0 20px;
-
-  @media (max-width: 1024px) {
-    width: 100px;
-  }
-
-  @media (max-width: 430px) {
-    width: 60px;
-    margin: 0 20px 0 0;
-  }
-`;
-
-export const ImageContainer = styled.div<{ $hide?: boolean }>`
-  ${({ $hide }) => $hide && "display: none;"}
-`;
-
-const ArrowContainer = styled.div<StyledArrowProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-
-  transform: ${({ $rotate }) => ($rotate ? "rotate(180deg)" : "rotate(0deg)")};
-  transition: transform 0.3s ease;
-
-  @media (max-width: 1024px) {
-    width: 40px;
-    height: 40px;
-  }
-  @media (max-width: 430px) {
-    width: 30px;
-    height: 30px;
-  }
-`;
-
-const StyledArrowSVG = styled(ArrowSVG)`
-  width: 100%;
-
-  &:hover {
-    color: var(--leviko-black);
-  }
-`;
-
-const AccordionPanel = styled.div`
-  display: flex;
-  align-items: start;
-  gap: 20px;
-
-  @media (max-width: 430px) {
-    flex-direction: column;
-  }
-`;
-
-export const ProfilImageContainer = styled.div`
-  width: 50%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-
-  @media (max-width: 430px) {
-    width: 100%;
-  }
-`;
-
-export const ProfileStyledImage = styled.img<StyledImageProps>`
-  width: 100%;
-  aspect-ratio: 1/1;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: center
-    ${({ $objectPosition }) => $objectPosition || "center"};
-`;
-
-export const TextContainer = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-
-  @media (max-width: 1024px) {
-  }
-
-  @media (max-width: 430px) {
-    width: 100%;
-  }
-`;
-
-export const ButtonContainer = styled.div`
-  height: auto;
-  width: auto;
-`;

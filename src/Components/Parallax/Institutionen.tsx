@@ -1,32 +1,37 @@
-import styled from "styled-components";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../UI/Buttons/Button.styled";
+import {
+  ParalaxWrapper,
+  ParalaxContainer,
+  HeadlineContainer,
+  TextContainer,
+  ButtonLogoContainer,
+  LogoContainer,
+  StyledLogo,
+  ImageContainer,
+  StyledImage,
+} from "../UI/Parallax/Institutionen.styled.tsx";
 
+// Interface für die Props der Institutionen-Komponente
+// Hier definieren wir die Eigenschaften, die die Komponente benötigt
 interface InstitutionenProps {
-  imgSrc: string;
-  imgAlt: string;
-  logoOneSrc: string;
-  logoOneAlt: string;
-  logoTwoSrc: string;
-  logoTwoAlt: string;
-  headline: JSX.Element | string;
-  description: string;
-  linkTo: string;
-  button: string;
-  $objectPosition?: string;
-  $logoHeight?: string;
-  $buttonVariant?: "secondary";
+  imgSrc: string; // Quelle des Hauptbildes
+  imgAlt: string; // Alternativer Text für das Hauptbild
+  logoOneSrc: string; // Quelle des ersten Logos
+  logoOneAlt: string; // Alternativer Text für das erste Logo
+  logoTwoSrc: string; // Quelle des zweiten Logos
+  logoTwoAlt: string; // Alternativer Text für das zweite Logo
+  headline: JSX.Element | string; // Überschrift (kann ein JSX-Element oder Text sein)
+  description: string; // Beschreibungstext
+  linkTo: string; // Ziel-Link, zu dem der Button führt
+  button: string; // Text auf dem Button
+  $objectPosition?: string; // Optionale Prop für die Position des Hauptbildes
+  $logoHeight?: string; // Optionale Prop für die Höhe der Logos
+  $buttonVariant?: "secondary"; // Optionale Prop für den Button-Stil
 }
 
-interface StyledImageProps {
-  $objectPosition?: string;
-}
-
-interface StyledLogoProps {
-  $hide?: boolean;
-  $logoHeight?: string;
-}
-
+// Funktionale Komponente, die das Bild, die Überschrift, die Beschreibung, Logos und einen Button anzeigt
 const Institutionen: React.FC<InstitutionenProps> = ({
   imgSrc,
   imgAlt,
@@ -38,17 +43,18 @@ const Institutionen: React.FC<InstitutionenProps> = ({
   description,
   linkTo,
   button,
-  $objectPosition = "center",
+  $objectPosition = "center", // Standardposition des Bildes
   $buttonVariant,
-  $logoHeight = "40px",
+  $logoHeight = "40px", // Standardhöhe der Logos
 }) => {
   return (
     <ParalaxWrapper>
       <ParalaxContainer>
+        {/* Textbereich mit Überschrift, Beschreibung, Button und Logos */}
         <HeadlineContainer>
           <TextContainer>
-            <h3>{headline}</h3>
-            <p>{description}</p>
+            <h3>{headline}</h3> {/* Überschrift */}
+            <p>{description}</p> {/* Beschreibung */}
           </TextContainer>
           <ButtonLogoContainer>
             <Button as={Link} to={linkTo} $buttonVariant={$buttonVariant}>
@@ -58,22 +64,24 @@ const Institutionen: React.FC<InstitutionenProps> = ({
               <StyledLogo
                 src={logoOneSrc}
                 alt={logoOneAlt}
-                $logoHeight={$logoHeight}
+                $logoHeight={$logoHeight} // Höhe des ersten Logos
               />
               <StyledLogo
-                $hide={logoTwoSrc === ""}
+                $hide={logoTwoSrc === ""} // Verstecke zweites Logo, wenn die Quelle leer ist
                 src={logoTwoSrc}
                 alt={logoTwoAlt}
-                $logoHeight={$logoHeight}
+                $logoHeight={$logoHeight} // Höhe des zweiten Logos
               />
             </LogoContainer>
           </ButtonLogoContainer>
         </HeadlineContainer>
+
+        {/* Bildbereich */}
         <ImageContainer>
           <StyledImage
             src={imgSrc}
             alt={imgAlt}
-            $objectPosition={$objectPosition}
+            $objectPosition={$objectPosition} // Position des Bildes
           />
         </ImageContainer>
       </ParalaxContainer>
@@ -82,149 +90,3 @@ const Institutionen: React.FC<InstitutionenProps> = ({
 };
 
 export default Institutionen;
-
-export const ParalaxWrapper = styled.div`
-  background-color: var(--leviko-blue);
-
-  @media (max-width: 430px) {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-  }
-`;
-
-export const ParalaxContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 160px;
-  margin-left: 160px;
-  padding: 50px 0;
-  gap: 80px;
-  background-color: var(--leviko-blue);
-  color: var(--leviko-white);
-
-  @media (max-width: 1330px) {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-
-  @media (max-width: 1024px) {
-    margin-right: 24px;
-    margin-left: 24px;
-    gap: 24px;
-  }
-  @media (max-width: 430px) {
-    padding: 0 0;
-    flex-direction: column;
-    align-items: start;
-    gap: 0;
-    margin-bottom: 0;
-  }
-`;
-
-export const HeadlineContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-
-  @media (max-width: 1024px) {
-    gap: 38px;
-  }
-
-  @media (max-width: 430px) {
-    width: 100%;
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-`;
-
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
-  @media (max-width: 1024px) {
-    gap: 24px;
-  }
-
-  @media (max-width: 430px) {
-    gap: 20px;
-  }
-`;
-
-export const ButtonLogoContainer = styled.div`
-  display: flex;
-  gap: 32px;
-  justify-content: flex-start;
-  align-items: center;
-
-  @media (max-width: 1024px) {
-    gap: 40px;
-  }
-
-  @media (max-width: 430px) {
-    flex-direction: column-reverse;
-    gap: 32px;
-    align-items: flex-start;
-  }
-`;
-
-export const LogoContainer = styled.div`
-  display: flex;
-  align-content: space-between;
-  justify-content: space-between;
-  gap: 32px;
-
-  @media (max-width: 1024px) {
-    flex-direction: row;
-  }
-
-  @media (max-width: 430px) {
-    align-content: center;
-    justify-content: start;
-    gap: 15px;
-  }
-`;
-
-export const StyledLogo = styled.img<StyledLogoProps>`
-  width: auto;
-  height: ${({ $logoHeight }) => $logoHeight}; // Use the new prop
-  ${({ $hide }) => $hide && "display: none;"}
-
-  @media (max-width: 1024px) {
-    width: auto;
-    height: ${({ $logoHeight }) =>
-      `calc(${$logoHeight} * 0.75)`}; // Adjust height for smaller screens
-  }
-
-  @media (max-width: 430px) {
-    width: auto;
-    height: ${({ $logoHeight }) =>
-      `calc(${$logoHeight} * 0.5)`}; // Adjust height for smaller screens
-  }
-`;
-
-export const ImageContainer = styled.div`
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  aspect-ratio: 1;
-
-  @media (max-width: 1024px) {
-  }
-
-  @media (max-width: 430px) {
-    width: 100%;
-    max-width: 100%;
-  }
-`;
-
-export const StyledImage = styled.img<StyledImageProps>`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-`;
