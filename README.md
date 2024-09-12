@@ -114,7 +114,7 @@ beschriebenen Komponenten.
 Im weiteren Verlauf wird auf die einzelnen Seiten eingegangen und wie
 die Components auf den Seiten integriert sind.
 
--   [Startseite](https://github.com/annamarika/leviko/edit/main/README.md#startseite)
+-   [Startseite](#startseite)
 
 -   [[Projekt]{.underline}](\l)
 
