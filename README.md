@@ -567,7 +567,7 @@ Inhalt zu ändern. Die Logos werden in einem fortlaufenden Marquee
 animiert und wiederholen sich, um einen nahtlosen Scroll-Effekt zu
 gewährleisten.
 
-# Projekt Seite
+# Projekt
 
 Die **Projektseite** besteht aus verschiedenen Hauptkomponenten, die zur
 Struktur und Gestaltung der Seite beitragen. Jede Komponente hat eine
@@ -771,7 +771,7 @@ Die **ProjektInfoParallaxWhite**-Komponente ist wie die
 **ProjektInfoParallax**-Komponente aufgebaut nur mit weißer
 Hintergrundfarbe.
 
-# Forschungsseite
+# Forschung
 
 Die Forschungsseite besteht aus verschiedenen Hauptkomponenten, die zur
 Struktur und Gestaltung der Seite beitragen. Jede Komponente hat eine
@@ -1453,7 +1453,7 @@ Die Inhalte der **KerresDiagramm**-Komponente können im Zustand-Store
 deren Inhalte, welche dynamisch durch die Interaktion des Nutzers
 angezeigt werden.
 
-## PublikationenPage
+## Publikationen
 
 Die Publikationen-Seite ist eine zentrale Anlaufstelle für die neuesten
 Forschungsarbeiten und Publikationen des LEVIKO-XR-Projekts. Sie
