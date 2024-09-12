@@ -116,13 +116,13 @@ die Components auf den Seiten integriert sind.
 
 -   [Startseite](#startseite)
 
--   [[Projekt]{.underline}](\l)
+-   [Projekt](#projekt)
 
--   [[Forschung]{.underline}](\l)
+-   [Forschung](#forschung)
 
--   [[Publikationen]{.underline}](\l)
+-   [Publikationen](#publikationen)
 
--   [[TeamPage]{.underline}](\l)
+-   [TeamPage](#teampage)
 
 ## Startseite
 
@@ -133,23 +133,23 @@ Gestaltung der Startseite bei.
 
 - [HeroStartseite](#herostartseite)
 
--   [[MarqueeBanner]{.underline}](\l)
+-   [MarqueeBanner](#marqueebanner)
 
--   [[BildText]{.underline}](\l)
+-   [BildText](#bildtext)
 
--   [[TextBild]{.underline}](\l)
+-   [TextBild](#textbild)
 
--   [[Headline]{.underline}](\l)
+-   [Headline](#headline)
 
--   [[ParallaxSection]{.underline}](\l)
+-   [ParallaxSection](#parallaxsection)
 
--   [[Institutionen]{.underline}](\l)
+-   [Institutionen](#institutionen)
 
--   [[InstitutionenWhite]{.underline}](\l)
+-   [InstitutionenWhite](#InstitutionenWhite)
 
--   [[KontaktTeaser]{.underline}](\l)
+-   [KontaktTeaser](#kontaktteaser)
 
--   [[MarqueePraxispartner]{.underline}](\l)
+-   [MarqueePraxispartner](#marqueepraxispartner)
 
 ## HeroStartseite
 
@@ -168,7 +168,7 @@ Call-to-Action-Button angezeigt werden. Diese Komponente ist besonders
 flexibel, da sie über verschiedene Props gesteuert wird, die Inhalte und
 Ausrichtung dynamisch anpassen.
 
-Anpassbare Props:
+**Anpassbare Props:**\
 
 -   **imgSrc**: Der Pfad zum Bild, das im Hero-Bereich angezeigt wird.
     In diesem Fall verweist es auf ImageMaestro.
@@ -200,7 +200,7 @@ Datei, in der die Komponente eingebunden ist (der Startseite).
 Änderungen an den Werten der Props (wie Texten, Bildern und Links)
 spiegeln sich direkt in der Darstellung auf der Webseite wider.
 
-Marquee Banner
+## Marquee Banner
 
 **Pfad:**\
 /Components/Hero/MarqueeBanner.tsx
@@ -217,7 +217,7 @@ ermöglicht. Sie kann flexibel angepasst werden, indem verschiedene
 Optionen über die Props von **react-fast-marquee** gesteuert werden, wie
 Geschwindigkeit, Hover-Pause und der Einsatz von Gradienten.
 
-Verwendete Bibliothek:
+**Verwendete Bibliothek:**\
 
 **react-fast-marquee**: Diese Bibliothek wird verwendet, um den
 Marquee-Effekt zu erzeugen. Im Gegensatz zu traditionellen
@@ -227,7 +227,7 @@ Geschwindigkeit oder vielen Inhalten. Sie ermöglicht zudem erweiterte
 Funktionen wie das Pausieren des Scrollens beim Hover oder das
 Ausschalten von Gradienten.
 
-Anpassbare Props von react-fast-marquee:
+**Anpassbare Props von react-fast-marquee:**\
 
 -   **gradient** (boolean): Steuert, ob ein Gradient-Effekt am Anfang
     und Ende des Marquees angezeigt wird. Standardmäßig ist dies
@@ -260,16 +260,12 @@ das Hinzufügen eines Gradient-Effekts.
     werden. Hier kannst du beliebige Texte hinzufügen, die innerhalb des
     Marquees wiederholt werden sollen.
 
-    -   Beispiel:jsx\
-        \<h3\>Extended Reality -- Lehrerbildung in virtuellen
-        Kontexten\</h3\>
-
 -   **Logoanpassung:**\
     Die Logos, die im Marquee angezeigt werden, können im
     **LogoContainer** und **StyledLogoSVG** angepasst oder durch andere
     SVG-Elemente oder Bilder ersetzt werden.
 
-BildText
+## BildText
 
 **Pfad:**\
 /Components/InfoText/BildText.tsx
@@ -285,7 +281,7 @@ hervorragend, um Inhalte auf der Webseite in einem klar strukturierten
 Layout zu präsentieren. Die Position des Bildes sowie der Text und der
 Button können dynamisch durch Props gesteuert werden.
 
-**Anpassbare Props:**
+**Anpassbare Props:**\
 
 -   **imgSrc** (string): Der Pfad zur Bilddatei, die im Bildbereich der
     Komponente angezeigt wird.
@@ -314,7 +310,7 @@ sich in der Datei, in der die Komponente verwendet wird, auf der
 Startseite. Änderungen an den Werten der Props (wie Bildquelle, Texte
 und Links) beeinflussen die Darstellung dynamisch.
 
-TextBild
+## TextBild
 
 **Pfad:**\
 /Components/InfoText/TextBild.tsx
@@ -326,7 +322,7 @@ TextBild
 Die **TextBild**-Komponente ist wie die **BildText**-Komponente
 aufgebaut nur Seitenverkehrt.
 
-Headline
+## Headline
 
 **Pfad:**\
 /Components/UI/Headline.styled.tsx
@@ -338,7 +334,7 @@ formatierte Überschriften an verschiedenen Stellen der Webseite
 anzuzeigen. Die Komponente ist so gestaltet, dass sie sich an
 unterschiedliche Bildschirmgrößen anpasst und responsiv ist.
 
-ParallaxSection
+## ParallaxSection
 
 **Styled-Component Pfad:**\
 /Components/UI/Parallax/ParallaxSection.styled.tsx
@@ -369,14 +365,14 @@ angezeigt. Die Sticky-Eigenschaft der ParallaxSection sorgt dafür, dass
 der Inhalt beim Scrollen der Seite an einer festen Position bleibt, bis
 der Benutzer weit genug gescrollt hat.
 
-**forwardRef:**
+### **forwardRef:**
 
 Durch die Verwendung von **forwardRef** wird der Referenzknoten an die
 Komponente weitergeleitet. Dies ist hilfreich, um die Komponente in
 Verbindung mit anderen Funktionen wie dem **useStickyScroll**-Hook zu
 verwenden, der den Sticky-Status überwacht.
 
-useStickyScroll Hook
+### **useStickyScroll Hook**\
 
 **Beschreibung:**\
 Der Custom Hook **useStickyScroll** ist dafür verantwortlich, den
@@ -389,7 +385,7 @@ Dieser Hook wird verwendet, um mehrere **ParallaxSection**-Komponenten
 zu überwachen, sodass sie beim Scrollen am oberen Rand des Bildschirms
 fixiert bleiben.
 
-Institutionen
+## Institutionen
 
 **Pfad:**\
 /Components/Parallax/Institutionen.tsx
@@ -461,7 +457,7 @@ Datei, in der die Komponente eingebunden ist (der Startseite).
 Änderungen an den Werten der Props (wie Texten, Bildern und Links)
 spiegeln sich direkt in der Darstellung auf der Webseite wider.
 
-InstitutionenWhite
+## InstitutionenWhite
 
 **Pfad:**\
 /Components/Parallax/InstitutionenWhite.tsx
@@ -473,7 +469,7 @@ InstitutionenWhite
 Die **InstitutionenWhite**-Komponente ist wie die
 **Institutionen**-Komponente aufgebaut nur mit weißer Hintergrundfarbe.
 
-KontaktTeaser
+## KontaktTeaser
 
 **Pfad:**\
 /Components/InfoText/KontaktTeaser.tsx
@@ -489,7 +485,7 @@ Kontaktformular oder einer anderen Seite mit Kontaktinformationen zu
 führen. Sie unterstützt optional auch den Dark Mode, der über den
 Zustand der Anwendung gesteuert wird.
 
-Props:
+**Props:**\
 
 -   **headline** (string): Die Überschrift, die in der Komponente
     angezeigt wird.
@@ -515,7 +511,7 @@ Datei, in der die Komponente eingebunden ist (zb. der Startseite).
 Änderungen an den Werten der Props (wie Texten und Links) spiegeln sich
 direkt in der Darstellung auf der Webseite wider.
 
-MarqueePraxispartner
+## MarqueePraxispartner
 
 **Pfad:**\
 /Components/Banner/MarqueePraxispartner.tsx
@@ -571,7 +567,7 @@ Inhalt zu ändern. Die Logos werden in einem fortlaufenden Marquee
 animiert und wiederholen sich, um einen nahtlosen Scroll-Effekt zu
 gewährleisten.
 
-Projekt Seite
+# Projekt Seite
 
 Die **Projektseite** besteht aus verschiedenen Hauptkomponenten, die zur
 Struktur und Gestaltung der Seite beitragen. Jede Komponente hat eine
@@ -580,21 +576,21 @@ Projekts „LEVIKO-XR\" zu kommunizieren.
 
 Verwendete Hauptkomponenten:
 
--   [[HeroProjekt]{.underline}](\l)
+-   [HeroProjekt](#heroprojekt)
 
--   [[ProjektAccordion]{.underline}](\l)
+-   [ProjektAccordion](#projektaccordion)
 
--   [[KontaktTeaser]{.underline}](\l)
+-   [KontaktTeaser](#kontaktteaser)
 
-    [[Headline]{.underline}](\l)
+-   [Headline](#headline)
 
-    [[ParallaxSection]{.underline}](\l)
+-   [ParallaxSection](#parallaxsection)
 
--   [[ProjektInfoParallax]{.underline}](\l)
+-   [ProjektInfoParallax](#projektinfoparallax)
 
--   [[ProjektInfoParallaxWhite]{.underline}](\l)
+-   [ProjektInfoParallaxWhite](#projektinfoparallaxwhite)
 
-HeroProjekt
+## HeroProjekt
 
 **Pfad:**\
 /Components/Hero/HeroProjekt.tsx
@@ -640,7 +636,7 @@ Beschreibung und den Button. Diese Anpassungen werden in der Datei
 vorgenommen, in der die Komponente aufgerufen wird -\> zb.
 ProjektPage.tsx.
 
-ProjektAccordion
+## ProjektAccordion
 
 **Pfad:**\
 /Components/Accordion/ProjektAccordion.tsx
@@ -696,20 +692,7 @@ ProjektAccordionData.tsx \<- modifiziert werden. Jede Akkordeon-Sektion
 wird über dieses Array definiert und kann einfach um neue Einträge
 erweitert oder bestehende Einträge können geändert werden.
 
-Verwendete Components
-
-**Beschreibung:**
-
-Die folgenden 3 Components wurden bereits auf der Startseite
-dokumentiert.
-
-[[KontaktTeaser]{.underline}](\l)
-
-[[Headline]{.underline}](\l)
-
-[[ParallaxSection]{.underline}](\l)
-
-ProjektInfoParallax
+## ProjektInfoParallax
 
 **Pfad:**\
 /Components/Parallax/ProjektInfoParallax.tsx
@@ -775,7 +758,7 @@ direkt in der Darstellung auf der Webseite reflektiert werden. Diese
 Anpassungen werden in der Datei vorgenommen, in der die Komponente
 aufgerufen wird -\> Projekt.tsx.
 
-ProjektInfoParallaxWhite
+## ProjektInfoParallaxWhite
 
 **Pfad:**\
 /Components/Parallax/ProjektInfoParallaxWhite.tsx
@@ -788,7 +771,7 @@ Die **ProjektInfoParallaxWhite**-Komponente ist wie die
 **ProjektInfoParallax**-Komponente aufgebaut nur mit weißer
 Hintergrundfarbe.
 
-Forschungsseite
+# Forschungsseite
 
 Die Forschungsseite besteht aus verschiedenen Hauptkomponenten, die zur
 Struktur und Gestaltung der Seite beitragen. Jede Komponente hat eine
@@ -801,39 +784,39 @@ DiagrammIntro an und endet mit DiagrammOutro.
 
 Verwendete Hauptkomponenten:
 
--   [[HeroProjekt]{.underline}](\l)
+-   [HeroProjekt](#heroprojekt)
 
--   [[ForschungNav]{.underline}](\l)
+-   [ForschungNav](#forschungnav)
 
--   [[Headline]{.underline}](\l)
+-   [Headline](#headline)
 
--   [[ParallaxSection]{.underline}](\l)
+-   [ParallaxSection](#parallaxSection)
 
--   [[Forschungsfragen]{.underline}](\l)
+-   [Forschungsfragen](#forschungsfragen)
 
--   [[ForschungsfragenWhite]{.underline}](\l)
+-   [ForschungsfragenWhite](#forschungsfragenwhite)
 
--   [[KontaktTeaser]{.underline}](\l)
+-   [KontaktTeaser](#kontaktteaser)
 
-    [[MarqueeNews]{.underline}](\l)
+-   [MarqueeNews](#marqueenews)
 
--   [[DiagrammIntroText]{.underline}](\l)
+-   [DiagrammIntroText](#diagrammintrotext)
 
-    [[DiagrammIntro]{.underline}](\l)
+-   [DiagrammIntro](#diagrammintro)
 
--   [[DiagrammOutro]{.underline}](\l)
+-   [DiagrammOutro](#diagrammoutro)
 
--   [[DBRDiagramm]{.underline}](\l)
+-   [DBRDiagramm](#dbrdiagramm)
 
--   [[TPACKDiagramm]{.underline}](\l)
+-   [TPACKDiagramm](#tpackdiagramm)
 
--   [[SAMRDiagramm]{.underline}](\l)
+-   [SAMRDiagramm](#samrdiagramm)
 
--   [[CAMILDiagramm]{.underline}](\l)
+-   [CAMILDiagramm](#camildiagramm)
 
--   [[KerresDiagramm]{.underline}](\l)
+-   [KerresDiagramm](#kerresdiagramm)
 
-ForschungNav
+## ForschungNav
 
 **Pfad:**\
 /Components/InfoText/ForschungNav.tsx
@@ -887,7 +870,7 @@ werden. Die Navigationspunkte (z.B. **Forschungsfragen**, **Methode**,
 auf der Seite. Zusätzlich kann der Publikationsteaser und der
 Call-to-Action-Link an die Bedürfnisse des Projekts angepasst werden.
 
-Forschungsfragen
+## Forschungsfragen
 
 **Pfad:**\
 /Components/Parallax/Forschungsfragen.tsx
@@ -918,7 +901,7 @@ Die Inhalte der **Forschungsfragen**-Komponente können durch die
 werden in der Datei vorgenommen, in der die Komponente aufgerufen wird
 -\> Forschung.tsx.
 
-ForschungsfragenWhite
+## ForschungsfragenWhite
 
 **Pfad:**\
 /Components/Parallax/ForschungsfragenWhite.tsx
@@ -931,7 +914,7 @@ Die **ForschungsfragenWhite**-Komponente ist wie die
 **Forschungsfragen**-Komponente aufgebaut nur mit weißer
 Hintergrundfarbe.
 
-MarqueeNews
+## MarqueeNews
 
 **Pfad:**
 
@@ -987,7 +970,7 @@ ihre jeweiligen URLs zu definieren. Das untere Textfeld im TextContainer
 ist ebenfalls frei anpassbar und bietet eine zusätzliche Möglichkeit,
 Informationen über die Teilnahme an den Events hinzuzufügen.
 
-DiagrammIntroText
+## DiagrammIntroText
 
 **Pfad:**\
 /Components/Diagramme/DiagrammIntroText.tsx
@@ -1024,7 +1007,7 @@ mit HTML-Formatierungen darzustellen. Diese Anpassungen werden in der
 Datei vorgenommen, in der die Komponente aufgerufen wird -\>
 Forschung.tsx.
 
-DiagrammIntro
+## DiagrammIntro
 
 **Pfad:**
 
@@ -1081,7 +1064,7 @@ Diagrammtyp kann über das displayedSVG-Prop gesteuert werden, wodurch
 verschiedene SVG-Elemente wie Boxen, Kreise oder das TPACK-Diagramm
 gerendert werden können.
 
-DiagrammOutro
+## DiagrammOutro
 
 **Pfad:**
 
@@ -1128,7 +1111,7 @@ einfachen Text oder auch komplexere Inhalte mit HTML-Elementen umfassen.
 Der Button kann durch das Setzen eines anderen linkTo-Werts an eine
 beliebige Seite weiterleiten.
 
-DBRDiagramm
+## DBRDiagramm
 
 **Pfad:**\
 /Components/Diagramme/DBRDiagramm.tsx
@@ -1168,7 +1151,7 @@ Es gibt keine direkten Props, die an die **DBRDiagramm**-Komponente
 übergeben werden. Stattdessen erfolgt die Anpassung über den Zustand
 Store und die **DBRSVG**-Komponente.
 
-Funktionalitäten:
+## Funktionalitäten:
 
 -   **selectedBox (string)**: Diese Variable im Zustand speichert die
     aktuell ausgewählte Phase des DBR-Prozesses. Durch Klicken auf die
@@ -1189,7 +1172,7 @@ kann für jede Phase des Diagramms die Überschrift und die Beschreibung
 angepasst werden. Der Inhalt wird über die **contentMap** im Zustand
 Store verwaltet.
 
-TPACKDiagramm
+## TPACKDiagramm
 
 **Pfad:**\
 /Components/Diagramme/TPACKDiagramm.tsx
@@ -1259,7 +1242,7 @@ Um die angezeigten Inhalte zu ändern, kann man im Zustand Store (in der
 Datei useTPACKStore.tsx) die entsprechenden headline- und
 description-Texte für jeden Pfad anpassen.
 
-SAMRDiagramm
+## SAMRDiagramm
 
 **Pfad:**\
 /Components/Diagramme/SAMRDiagramm.tsx
@@ -1326,7 +1309,7 @@ Um den Text oder die Titel der SAMR-Stufen zu ändern, kann der
 Entwickler die entsprechenden Einträge im content-Array im Zustand-Store
 modifizieren.
 
-CAMILDiagramm
+## CAMILDiagramm
 
 **Pfad:**\
 /Components/Diagramme/CAMILDiagramm.tsx
@@ -1400,7 +1383,7 @@ useCAMILStore-Zustand-Store angepasst werden. Dieser Store enthält die
 Logik, um basierend auf dem ausgewählten Kreis (activeCircle) die
 richtigen Informationen anzuzeigen.
 
-KerresDiagramm
+## KerresDiagramm
 
 **Pfad:**\
 /Components/Diagramme/KerresDiagramm.tsx
@@ -1470,7 +1453,7 @@ Die Inhalte der **KerresDiagramm**-Komponente können im Zustand-Store
 deren Inhalte, welche dynamisch durch die Interaktion des Nutzers
 angezeigt werden.
 
-PublikationenPage
+## PublikationenPage
 
 Die Publikationen-Seite ist eine zentrale Anlaufstelle für die neuesten
 Forschungsarbeiten und Publikationen des LEVIKO-XR-Projekts. Sie
@@ -1480,17 +1463,17 @@ suchen.
 
 **Verwendete Hauptkomponenten:**
 
--   [[HeroPublikationen]{.underline}](\l)
+-   [HeroPublikationen](#heropublikationen)
 
--   [[Publikation]{.underline}](\l)
+-   [Publikation](#publikation)
 
--   [[ParallaxSection]{.underline}](\l)
+-   [ParallaxSection](#parallaxsection)
 
--   [[MarqueeNews]{.underline}](\l)
+-   [MarqueeNews](#marqueenews)
 
--   [[Headline]{.underline}](\l)
+-   [Headline](#headline)
 
-HeroPublikationen
+## HeroPublikationen
 
 **Pfad:**\
 /Components/Hero/HeroPublikationen.tsx
@@ -1565,7 +1548,7 @@ Beschreibung, können durch die entsprechenden Props angepasst werden.
 Die Tags werden automatisch aus dem Store bezogen und basierend auf den
 Suchbegriffen oder ausgewählten Tags gefiltert.
 
-Publikation
+## Publikation
 
 **Pfad:**\
 /Components/Publikationen/Publikation.tsx
@@ -1685,7 +1668,7 @@ geändert werden. Es ist auch möglich, zusätzliche Tags oder
 Beschreibungen hinzuzufügen, um den Benutzer umfassend über die
 Publikation zu informieren.
 
-TeamPage
+# TeamPage
 
 Die TeamPage bietet eine umfassende Vorstellung des Teams hinter dem
 LEVIKO XR-Projekt. Sie präsentiert die Professoren und
@@ -1700,15 +1683,15 @@ erfahren.
 
 **Verwendete Hauptkomponenten:**
 
--   [[HeroTeam]{.underline}](\l)
+-   [HeroTeam](#heroteam)
 
--   [[TeamAccordion]{.underline}](\l)
+-   [TeamAccordion](#teamaccordion)
 
--   [[BildText]{.underline}](\l)
+-   [BildText](#bildtext)
 
--   [[Headline]{.underline}](\l)
+-   [Headline](#headline)
 
-HeroTeam
+## HeroTeam
 
 **Pfad:**\
 /Components/Hero/HeroTeam.tsx
@@ -1757,7 +1740,7 @@ verändert werden:
     werden automatisch auf Grundlage des aktivierten Dark Modes
     gesteuert.
 
-TeamAccordion
+## TeamAccordion
 
 **Pfad:**\
 /Components/Accordion/TeamAccordion.tsx
