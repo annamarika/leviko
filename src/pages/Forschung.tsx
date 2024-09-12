@@ -108,7 +108,7 @@ const FroschungsPage = () => {
         description={
           "Der DBR-Ansatz ermöglicht es uns, Innovationen zu entwickeln, die sowohl in der Theorie verankert als auch in der Praxis bewährt sind. Die enge Verbindung von Forschung und Praxis führt zu realen Verbesserungen in der Musikpädagogik und bereichert die wissenschaftliche Gemeinschaft mit wertvollen Erkenntnissen."
         }
-        linkTo={""}
+        linkTo={"https://de.wikipedia.org/wiki/Design-based_Research"}
         button={"Erfahre mehr"}
       />
       <Headline>Newsticker</Headline>
@@ -138,7 +138,9 @@ const FroschungsPage = () => {
         description={
           "Das TPACK-Modell ermöglicht uns, die Wechselwirkungen zwischen technologischen, pädagogischen und inhaltlichen Aspekten im Musikunterricht präzise zu analysieren und zu optimieren. Durch die Anwendung dieses Rahmenwerks streben wir bei LEVIKO-XR danach, eine innovative und effektive Nutzung von VR/AR-Technologien zu gewährleisten, die sowohl die Lehrqualität als auch das Lernumfeld im Musikunterricht bereichert."
         }
-        linkTo={""}
+        linkTo={
+          "https://faq-online-lernen.de/knowledge-base/was-ist-das-tpack-modell-und-was-laesst-sich-daraus-fuer-zeitgemaesses-online-lernen-ableiten/"
+        }
         button={"Erfahre mehr"}
       />
       <DiagrammIntro
@@ -165,7 +167,9 @@ const FroschungsPage = () => {
         description={
           "Das SAMR-Modell dient Lehrkräften als Werkzeug, um zu reflektieren, wie sie Technologie in ihren Unterricht integrieren. Es hilft sicherzustellen, dass Technologie nicht nur als Ersatz für herkömmliche Methoden genutzt wird, sondern tatsächlich transformative Lernerfahrungen geschaffen werden."
         }
-        linkTo={""}
+        linkTo={
+          "https://www.bildung.digital/artikel/den-mehrwert-digitaler-medien-erkennen#:~:text=Das%20SAMR%2DModell%20beschreibt%2C%20wie,digitale%20Medien%20verbessert%20werden%20kann."
+        }
         button={"Erfahre mehr"}
       />
       <DiagrammIntroText
@@ -191,7 +195,7 @@ const FroschungsPage = () => {
         description={
           "Das CAMIL-Modell bietet Lehrkräften einen umfassenden Rahmen, um die Integration von Technologie in ihren Unterricht zu planen, zu gestalten und zu evaluieren, wobei der Fokus auf den Lernbedürfnissen der Schülerinnen und Schüler liegt."
         }
-        linkTo={""}
+        linkTo={"https://link.springer.com/article/10.1007/s10648-020-09586-2"}
         button={"Erfahre mehr"}
       />
       <DiagrammIntroText
@@ -218,7 +222,9 @@ const FroschungsPage = () => {
         description={
           "Diese Struktur bietet eine Grundlage, um gezielte Forschungsfragen zu den Implikationen des Immersionserlebens zu formulieren und die mediendidaktische Gestaltung von Lernumgebungen zu optimieren."
         }
-        linkTo={""}
+        linkTo={
+          "https://www.researchgate.net/publication/362651599_Mediendidaktik"
+        }
         button={"Erfahre mehr"}
       />
     </>
