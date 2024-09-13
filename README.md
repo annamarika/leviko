@@ -1,5 +1,5 @@
 ### Repository klonen:
-git clone https://github.com/benutzername/repo-name.git
+git clone https://github.com/benutzername/leviko.git
 
 ### In das Verzeichnis wechseln:
 cd repo-name
