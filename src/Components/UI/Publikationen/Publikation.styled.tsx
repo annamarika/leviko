@@ -27,7 +27,7 @@ export const ParalaxContainer = styled.div`
   align-items: start;
   justify-content: space-between;
   margin: 0 160px;
-  padding: 100px 0;
+  padding: 50px 0;
   gap: 80px;
   color: var(--leviko-white);
 
@@ -83,7 +83,7 @@ export const TextWrapper = styled.div<{
       : "var(--leviko-black)"};
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
   justify-content: start;
   align-items: start;
   width: 50%;

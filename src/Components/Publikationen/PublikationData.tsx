@@ -54,7 +54,8 @@ const publikationData: Array<{
     searchTags: ["Poster", "Dublin", "European Association for Music", "2024"],
     imgSrc: poster_dublin,
     imgAlt: "Vorschau Poster",
-    linkTo: "/pdf/LEVIKO_Poster_Dublin.pdf",
+    linkTo:
+      "https://www.researchgate.net/publication/381310972_Virtual_and_Augmented_Reality_in_the_classroom_The_Project_LEVIKO-XR#fullTextFileContent:~:text=View%20full--,text,-Similar%20research",
     button: "Dublin Poster",
     $buttonVariant: "secondary",
     description: (

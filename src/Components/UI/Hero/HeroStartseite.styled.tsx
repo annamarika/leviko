@@ -28,7 +28,7 @@ export const HeroStartseiteContainer = styled.div`
     gap: 24px;
   }
   @media (max-width: 430px) {
-    margin-top: 84px;
+    margin-top: 0px;
     padding-top: 56px;
     flex-direction: column;
     align-items: start;
