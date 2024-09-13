@@ -1,13 +1,13 @@
-###Repository klonen:
+### Repository klonen:
 git clone https://github.com/benutzername/repo-name.git
 
-###In das Verzeichnis wechseln:
+### In das Verzeichnis wechseln:
 cd repo-name
 
-###Dependencies installieren:
+### Dependencies installieren:
 npm install
 
-###Development-Server starten:
+### Development-Server starten:
 npm run dev
 
 ### Produktions-Build erstellen:
