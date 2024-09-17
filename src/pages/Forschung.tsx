@@ -98,7 +98,7 @@ const FroschungsPage = () => {
             <p>
               Unser Ziel ist es, durch iteratives Design und kontinuierliche
               Reflexion Lehr-Lern-Designs zu entwickeln, die sowohl
-              wissenschaftlich? fundiert als auch praktisch erprobt sind.
+              wissenschaftlich fundiert als auch praktisch erprobt sind.
             </p>
           </>
         }
