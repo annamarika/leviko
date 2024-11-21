@@ -1,6 +1,7 @@
 // data/publikationen.ts
 import Kick_off from "../../assets/images/LEVIKO_Poster_Kickoff.webp";
 import poster_dublin from "../../assets/images/LEVIKO_poster_dublin.webp";
+import paper_ieee_24 from "../../assets/images/LEVIKO_Paper_IEEE_24.webp";
 
 // Definiere den Typ für deine Publikationen-Daten
 const publikationData: Array<{
@@ -64,6 +65,27 @@ const publikationData: Array<{
         Music”.
         <br /> <br />
         Das entstandene Poster kann hier runtergeladen werden.
+      </p>
+    ),
+  },
+  {
+    id: 3,
+    date: "September 2024",
+    headline: "2024 IEEE 5th International Symposium on the Internet of Sounds (IS2)",
+    subHeadline: "Conference Paper",
+    tags: ["Paper", "Konferenzbeitrag"],
+    searchTags: ["Paper", "IEEE", "Internet of Sounds", "IS2", "Conference", "2024"],
+    imgSrc: paper_ieee_24,
+    imgAlt: "Vorschau Paper",
+    linkTo:
+	  "https://www.researchgate.net/publication/384713983_Presence_and_Flow_in_Virtual_and_Mixed_Realities_for_Music-Related_Educational_Settings",
+    button: "IEEE Paper",
+    $buttonVariant: "secondary",
+    description: (
+      <p>
+        Paper-Einreichung für das 5. Symposium über das "Internet of Sounds" der IEEE.
+        <br /> <br />
+        Das entstandene Conference Paper kann hier runtergeladen werden.
       </p>
     ),
   },
