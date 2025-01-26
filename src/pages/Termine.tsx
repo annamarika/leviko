@@ -9,16 +9,13 @@ import ImageMapSA from "../assets/images/map_sa.webp";
 import ImageMapNS from "../assets/images/map_nisa.webp";
 import ImageMapHS from "../assets/images/map_hs.webp";
 import ImageManWithHMD from "../assets/images/Mann_mit_VRBrille_und_roten_Pulli.webp";
-import { Headline } from "../Components/UI/Headline.styled";
-import useDarkModeStore from "../Components/stores/useDarkModeStore";
+
 
 const TerminPage = () => {
-  /* const refOne = useRef<HTMLDivElement>(null);
+  const refOne = useRef<HTMLDivElement>(null);
   const refTwo = useRef<HTMLDivElement>(null);
   const refThree = useRef<HTMLDivElement>(null);
   const refFour = useRef<HTMLDivElement>(null);
-
-  const { isDarkModeOn } = useDarkModeStore();
 
   useStickyScroll([refOne, refTwo, refThree, refFour], {
     onEnter: (entry) => {
@@ -27,7 +24,7 @@ const TerminPage = () => {
     onLeave: (entry) => {
       entry.target.classList.remove("sticky");
     },
-  }); */
+  }); 
 
   return (
     <div>
