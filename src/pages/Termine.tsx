@@ -71,9 +71,29 @@ const TerminPage = () => {
         imgSrc={ImageMapSA}
         imgAlt="Map of Germany, state of Saxony highlited"
         headline="Landesmusikakademie Sachsen"
-		date="05.09. - 07.09.2025"
+		date="06.09. - 07.09.2025"
         description="Informationen folgen"
         linkTo=""
+        button="Erfahre mehr"
+        $objectPosition="30%"
+      />
+	  <TerminBildText
+        imgSrc={ImageMapNRW}
+        imgAlt="Map of Germany, state of North Rhine-Westphalia highlited"
+        headline="Landesmusikakademie NRW"
+		date="27.09.2025"
+        description="Vertiefungstag: Virtual Reality im Musikunterricht - Impulsworkshop für alle interessierten Lehrkräfte"
+        linkTo=""
+        button="Erfahre mehr"
+        $objectPosition="30%"
+      />
+	  <TerminTextBild
+        imgSrc={ImageMapBW}
+        imgAlt="Map of Germany, state of Baden-Württemberg highlited"
+        headline="Bundesakademie für musikalische Jugendbildung Trossingen"
+		date="10.10. - 12.10.2025"
+        description="Musik in Extended Reality"
+        linkTo="https://www.bundesakademie-trossingen.de/weiterbildungen/musik-medien/details/musik-in-extended-reality"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
