@@ -26,7 +26,7 @@ const MarqueeBanner = () => {
           <div></div>
 
           {/* Text, der im Marquee angezeigt wird */}
-          <h3>Extended Reality – Lehrerbildung in virtuellen Kontexten</h3>
+          <h3>Extended Reality – Lehrkräftebildung in virtuellen Kontexten</h3>
 
           {/* Container für das SVG-Logo */}
           <LogoContainer>
@@ -34,7 +34,7 @@ const MarqueeBanner = () => {
           </LogoContainer>
 
           {/* Wiederholter Text im Marquee */}
-          <h3>Extended Reality – Lehrerbildung in virtuellen Kontexten</h3>
+          <h3>Extended Reality – Lehrkräftebildung in virtuellen Kontexten</h3>
 
           {/* Wiederholtes SVG-Logo */}
           <LogoContainer>
