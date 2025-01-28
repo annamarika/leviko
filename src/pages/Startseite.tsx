@@ -75,10 +75,10 @@ const Startseite = () => {
       <BildText
         imgSrc={ImageTablet}
         imgAlt="Tablet with sketch"
-        headline="ComPleTT: Lehrkräftefortbildung"
-        description="Entdecken Sie in Zukunft unsere Lehr- und Lernkonzepte auf ComPleTT Moodle - der zentralen Kooperationsplattform für die Lehrerbildung. Als gemeinsames Angebot aller Bundesländer bietet ComPleTT ein vielfältiges und umfassendes Angebot an Lehrinhalten für Lehrerinnen und Lehrer aus allen Bereichen."
-        linkTo="https://lms.complett.bildungsserver.de/"
-        button="zu ComPleTT"
+        headline="Lehrkräftefortbildungen"
+        description="Das Team von LEVIKO XR bietet Workshops und Fortbildungen in ganz Deutschland an. Wir freuen uns, dich an einem der Termine kennenzulernen."
+        linkTo="/termine"
+        button="Kommende Veranstaltungen"
         $objectPosition="30%"
       />
       <Headline>Institutionen</Headline>

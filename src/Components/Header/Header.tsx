@@ -98,6 +98,13 @@ const Header: React.FC = () => {
               >
                 Projekt
               </HeaderButton>
+			  <HeaderButton
+                as={Link}
+                to="/termine"
+                className={isActive("/termine") ? "active" : ""}
+              >
+                Termine
+              </HeaderButton>
               <HeaderButton
                 as={Link}
                 to="/forschung"
