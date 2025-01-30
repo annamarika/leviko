@@ -5,13 +5,14 @@ import HSDBlack from "../../assets/images/HSD_Marke_v1_HSD_Schw.png";
 import Jochen from "../../assets/images/JOFE.webp";
 import Charlotte from "../../assets/images/CHTR.webp";
 import Anna from "../../assets/images/anna.webp";
+import Julia from "../../assets/images/Julia.webp";
 
 export const TeamDusData: Array<{
   id: string;
   title: string;
   description: string;
   logoOne: string;
-  logoOneDarkMode? : string;
+  logoOneDarkMode?: string;
   logoTwo: string;
   logoTwoDarkMode?: string;
   altLogoOne: string;
@@ -87,13 +88,43 @@ export const TeamDusData: Array<{
     button: "E-Mail",
   },
   {
+    id: "Julia_Lueckhof",
+    title: "Julia Lückhof",
+    content: (
+      <p>
+        Julia Lückhof ist wissenschaftliche Mitarbeiterin bei MIREVI (Mixed
+        Reality and Visualization) an der Hochschule Düsseldorf und studiert an
+        selbiger im Masterstudiengang Medieninformatik. <br /> <br />
+        Neben LEVIKO XR arbeitet sie bei MIREVI an weiteren Forschungsprojekten
+        mit Bezug auf VR und Medialen Inszenierungen wie Rokit, Akzente und
+        diversen Studienprojekten. Außerdem gestaltet sie Workshops für VR. In
+        ihrem Forschungsfokus erarbeitet sie das Thema Projection Mapping und
+        geht dabei sowohl auf technische, als auch auf gestalterische
+        Herausforderungen ein.
+      </p>
+    ),
+    description:
+      "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
+    logoOne: HSDWhite,
+    logoTwo: MireviWhite,
+    altLogoOne: "Mirevi Logo",
+    altLogoTwo: "Mirevi Logo",
+    $objectPosition: "center",
+    imgAlt: "Julia Lückhof",
+    imgSrc: Julia,
+    linkTo: "mailto:julia.lueckhof@hs-duesseldorf.de",
+    button: "E-Mail",
+  },
+  {
     id: "Charlotte_Triebus",
     title: "Charlotte Triebus",
     content: "",
     description:
       "Hochschule Düsseldorf MIREVI (Mixed Reality and Visualization)",
-    logoOne: HSDWhite,
-    logoTwo: MireviWhite,
+    logoOne: HSDBlack,
+    logoOneDarkMode: HSDWhite,
+    logoTwo: MireviBlack,
+    logoTwoDarkMode: MireviWhite,
     altLogoOne: "HSD Logo",
     altLogoTwo: "Mirevi Logo",
     $objectPosition: "center",
