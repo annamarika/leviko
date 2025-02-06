@@ -114,6 +114,7 @@ export const TeamDusData: Array<{
     imgSrc: Julia,
     linkTo: "mailto:julia.lueckhof@hs-duesseldorf.de",
     button: "E-Mail",
+	$buttonVariant: "secondary",
   },
   {
     id: "Charlotte_Triebus",
