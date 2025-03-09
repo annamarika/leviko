@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import { useStickyScroll } from "../Components/customHooks/useStickyScroll";
 import HeroProjekt from "../Components/Hero/HeroProjekt.tsx";
+import { Headline } from "../Components/UI/Headline.styled.tsx";
 import TerminBildText from "../Components/InfoText/TerminBildText";
 import TerminTextBild from "../Components/InfoText/TerminTextBild";
+import TextPastDates from "../Components/InfoText/TextPastDates";
 import ImageMapNRW from "../assets/images/map_nrw.webp";
 import ImageMapBW from "../assets/images/map_bw.webp";
 import ImageMapSA from "../assets/images/map_sa.webp";
@@ -36,16 +38,6 @@ const TerminPage = () => {
         linkTo="/termine"
         button="Erfahre mehr"
         $objectPosition="center 20%"
-      />
-      <TerminBildText
-        imgSrc={ImageMapNRW}
-        imgAlt="Map of Germany, state of North Rhine-Westphalia highlited"
-        headline="Landesmusikakademie NRW"
-		date="28.02. - 01.03.2025"
-        description="Virtual Reality im Musikunterricht - Impulsworkshop für alle interessierten Lehrkräfte"
-        linkTo="https://lma-nrw.de//termindaten/2764/"
-        button="Erfahre mehr"
-        $objectPosition="30%"
       />
       <TerminTextBild
         imgSrc={ImageMapBW}
@@ -107,7 +99,16 @@ const TerminPage = () => {
         button="Erfahre mehr"
         $objectPosition="30%"
       />
-    </div>
+	  <Headline>Vergangene Fortbildungen</Headline>
+	  <TextPastDates
+        date="19.11.2024"
+        headline="Virtual Reality im Musikunterricht - Zentrum für Schulqualität und Lehrerbildung Baden-Württemberg, Stuttgart"
+      />
+	  <TextPastDates
+        date="28.02. - 01.03.2025"
+        headline="Virtual Reality im Musikunterricht - Impulsworkshop für alle interessierten Lehrkräfte - Landesmusikakademie NRW, Heek"
+      />
+	</div>
   );
 };
 
