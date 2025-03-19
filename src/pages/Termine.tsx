@@ -45,7 +45,7 @@ const TerminPage = () => {
         headline="Ateliertage HfM Trossingen"
 		date="28.04.2025"
         description="Workshops im Nachmittagsbereich"
-        linkTo="https://www.hfm-trossingen.de/"
+        linkTo="https://www.hfm-trossingen.de/hochschule/landeszentrum/ateliertage-2025"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
