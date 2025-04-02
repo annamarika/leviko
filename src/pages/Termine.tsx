@@ -54,8 +54,8 @@ const TerminPage = () => {
         imgAlt="Map of Germany, state of Hesse highlited"
         headline="Landesmusikakademie Hessen"
 		date="29.08. - 31.08.2025"
-        description="Informationen folgen"
-        linkTo=""
+        description="Virtual Reality im Musikunterricht - Innovative Fortbildung für Musiklehrkräfte und alle Interessierten"
+        linkTo="https://www.landesmusikakademie-hessen.de/kurse/details/virtual-reality-im-musikunterricht-5344"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
@@ -74,8 +74,8 @@ const TerminPage = () => {
         imgAlt="Map of Germany, state of North Rhine-Westphalia highlited"
         headline="Landesmusikakademie NRW"
 		date="27.09.2025"
-        description="Vertiefungstag: Virtual Reality im Musikunterricht - Impulsworkshop für alle interessierten Lehrkräfte"
-        linkTo=""
+        description="Virtual Reality im Musikunterricht - Tagesworkshop für alle interessierten Lehrkräfte"
+        linkTo="https://lma-nrw.de/termindaten/2845/virtual-reality-im-musikunterricht-tagesworkshop-fuer-alle-interessierten-lehrkraefte/"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
