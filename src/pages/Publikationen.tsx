@@ -5,8 +5,8 @@ import publikationData from "../Components/Publikationen/PublikationData";
 import usePublikationenStore from "../Components/stores/usePublikationenStore";
 import ParallaxSection from "../Components/UI/Parallax/ParallaxSection.styled";
 import { useStickyScroll } from "../Components/customHooks/useStickyScrollHeight";
-import MarqueeNews from "../Components/Banner/MarqueeNews";
-import { Headline } from "../Components/UI/Headline.styled";
+{/* import MarqueeNews from "../Components/Banner/MarqueeNews"; */}
+{/* import { Headline } from "../Components/UI/Headline.styled"; */}
 
 const PublikationenPage = () => {
   const searchValue = usePublikationenStore((state) => state.searchValue);
@@ -87,8 +87,8 @@ const PublikationenPage = () => {
           />
         </ParallaxSection>
       ))}
-      <Headline>Newsticker</Headline>
-      <MarqueeNews />
+      {/* <Headline>Newsticker</Headline> */}
+      {/* <MarqueeNews /> */}
     </>
   );
 };
