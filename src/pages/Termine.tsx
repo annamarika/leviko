@@ -39,16 +39,6 @@ const TerminPage = () => {
         button="Erfahre mehr"
         $objectPosition="center 20%"
       />
-      <TerminTextBild
-        imgSrc={ImageMapBW}
-        imgAlt="Map of Germany, state of Baden-Württemberg highlited"
-        headline="Ateliertage HfM Trossingen"
-		date="28.04.2025"
-        description="Workshops im Nachmittagsbereich"
-        linkTo="https://www.hfm-trossingen.de/hochschule/landeszentrum/ateliertage-2025"
-        button="Erfahre mehr"
-        $objectPosition="30%"
-      />
       <TerminBildText
         imgSrc={ImageMapHS}
         imgAlt="Map of Germany, state of Hesse highlited"
@@ -107,6 +97,10 @@ const TerminPage = () => {
 	  <TextPastDates
         date="28.02. - 01.03.2025"
         headline="Virtual Reality im Musikunterricht - Impulsworkshop für alle interessierten Lehrkräfte - Landesmusikakademie NRW, Heek"
+      />
+	  <TextPastDates
+        date="28.04.2025"
+        headline="Workshops bei den Ateliertagen der Staatlichen Hochschule für Musik Trossingen"
       />
 	</div>
   );
