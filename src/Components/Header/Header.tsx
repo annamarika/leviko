@@ -141,6 +141,14 @@ const Header: React.FC = () => {
                 </ArrowContainer>
               </MenuItem>
             </OverlayContent>
+			<OverlayContent>
+              <MenuItem as={Link} to="/termine" onClick={toggleMenu}>
+                Termine
+                <ArrowContainer>
+                  <StyledArrowSVG color="var(--leviko-green)" />
+                </ArrowContainer>
+              </MenuItem>
+            </OverlayContent>
             <OverlayContent>
               <MenuItem as={Link} to="/forschung" onClick={toggleMenu}>
                 Forschung
