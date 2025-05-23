@@ -10,8 +10,8 @@ import { MethodenIntroContainer } from "../UI/Diagramme/DiagrammOutro.styled.tsx
  */
 interface DiagrammOutroProps {
   description: JSX.Element | string;
-  linkTo: string;
-  button: string;
+  linkTo?: string;
+  button?: string;
 }
 
 const DiagrammOutro: React.FC<DiagrammOutroProps> = ({
@@ -23,10 +23,12 @@ const DiagrammOutro: React.FC<DiagrammOutroProps> = ({
     <MethodenIntroContainer>
       {/* Display the description content */}
       <p>{description}</p>
-      {/* Button that navigates to the linkTo destination */}
-      <Button as={Link} to={linkTo}>
-        {button}
-      </Button>
+      {/* Button that navigates to the linkTo destination, only visible when link is not empty */}
+      {linkTo && button && (
+        <Button as={Link} to={linkTo}>
+          {button}
+        </Button>
+      )}
     </MethodenIntroContainer>
   );
 };

@@ -108,8 +108,6 @@ const FroschungsPage = () => {
         description={
           "Der DBR-Ansatz ermöglicht es uns, Innovationen zu entwickeln, die sowohl in der Theorie verankert als auch in der Praxis bewährt sind. Die enge Verbindung von Forschung und Praxis führt zu realen Verbesserungen in der Musikpädagogik und bereichert die wissenschaftliche Gemeinschaft mit wertvollen Erkenntnissen."
         }
-        linkTo={"https://de.wikipedia.org/wiki/Design-based_Research"}
-        button={"Erfahre mehr"}
       />
       <Headline>Newsticker</Headline>
       <MarqueeNews />
