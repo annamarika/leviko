@@ -3,6 +3,8 @@ import Kick_off from "../../assets/images/LEVIKO_Poster_Kickoff.webp";
 import poster_dublin from "../../assets/images/LEVIKO_poster_dublin.webp";
 import paper_ieee_24 from "../../assets/images/LEVIKO_Paper_IEEE_24.webp";
 import poster_ampf_24 from "../../assets/images/LEVIKO_poster_ampf_24.webp";
+import paper_ieee_25 from "../../assets/images/LEVIKO_fulltext_not_published.webp";
+import poster_eas_25 from "../../assets/images/LEVIKO_poster_eas_25.webp";
 
 // Definiere den Typ für deine Publikationen-Daten
 const publikationData: Array<{
@@ -43,7 +45,7 @@ const publikationData: Array<{
         vorgestellt. Mit dem Raum “Meet the Kompetenzzentren” gab es die
         Möglichkeit einer interaktiven Posterausstellung.
         <br /> <br />
-        Das entstandene Poster kann hier runtergeladen werden.
+        Das entstandene Poster kann hier heruntergeladen werden.
       </p>
     ),
   },
@@ -65,7 +67,7 @@ const publikationData: Array<{
         Poster Einreichung für die 31. Konferenz der “European Association for
         Music”.
         <br /> <br />
-        Das entstandene Poster kann hier runtergeladen werden.
+        Das entstandene Poster kann hier heruntergeladen werden.
       </p>
     ),
   },
@@ -87,7 +89,7 @@ const publikationData: Array<{
         Poster für die Jahrestagung Arbeitskreis Musikpädagogische Forschung 2024 mit dem Thema "Untersuchung der (sozialen) Präsenz in der kollaborativen VR-Musikanwendung
 		PatchWorld in Bezug auf die Verwendung im schulischen Kontext"
         <br /> <br />
-        Das Poster kann hier runtergeladen werden.
+        Das Poster kann hier heruntergeladen werden.
       </p>
     ),
   },
@@ -108,7 +110,49 @@ const publikationData: Array<{
       <p>
         Paper-Einreichung für das 5. Symposium über das "Internet of Sounds" der IEEE mit dem Thema "Presence and Flow in Virtual and Mixed Realities for Music-Related Educational Settings".
         <br /> <br />
-        Das entstandene Conference Paper kann hier runtergeladen werden.
+        Das entstandene Conference Paper kann hier heruntergeladen werden.
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    date: "März 2025",
+    headline: "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+    subHeadline: "Conference Paper",
+    tags: ["Paper", "Konferenzbeitrag"],
+    searchTags: ["Paper", "IEEE", "Virtual Reality", "Workshop", "Conference", "2025", "VRW"],
+    imgSrc: paper_ieee_25,
+    imgAlt: "Volltext noch nicht veröffentlicht",
+    linkTo:
+	  "https://www.researchgate.net/publication/391126615_Impact_of_Spatial_and_Communication_Environments_on_Collaborative_Music-Making_in_Virtual_Reality_Insights_for_Music_Education",
+    button: "IEEE Paper",
+    $buttonVariant: "secondary",
+    description: (
+      <p>
+        Paper-Einreichung für den IEEE VR Workshop "Sonic Interaction in Virtual Environments" 2025.
+        <br /> <br />
+        Der Volltext des Papers ist noch nicht veröffentlicht. Sie können es in der IEEE-Datenbank finden.
+      </p>
+    ),
+  },
+  {
+    id: 6,
+    date: "Juni 2025",
+    headline: "2025 Learning Designs for Music Lessons in Extended Reality (XR)",
+    subHeadline: "Conference Poster",
+    tags: ["Poster", "Konferenzbeitrag"],
+    searchTags: ["Poster", "EAS", "Extended Reality", "Music", "Conference", "2025"],
+    imgSrc: poster_eas_25,
+    imgAlt: "EAS Poster",
+    linkTo:
+	  "https://www.researchgate.net/publication/392323746_Learning_Designs_for_Music_Lessons_in_Extended_Reality_XR",
+    button: "EAS Poster",
+    $buttonVariant: "secondary",
+    description: (
+      <p>
+        Poster-Einreichung für die EAS Conference 2025.
+        <br /> <br />
+        Das entstandene Conference-Poster kann hier heruntergeladen werden.
       </p>
     ),
   },
