@@ -3,8 +3,8 @@ import Kick_off from "../../assets/images/LEVIKO_Poster_Kickoff.webp";
 import poster_dublin from "../../assets/images/LEVIKO_poster_dublin.webp";
 import paper_ieee_24 from "../../assets/images/LEVIKO_Paper_IEEE_24.webp";
 import poster_ampf_24 from "../../assets/images/LEVIKO_poster_ampf_24.webp";
-import paper_ieee_25 from "../../assets/images/LEVIKO_fulltext_not_published.webp";
 import poster_eas_25 from "../../assets/images/LEVIKO_poster_eas_25.webp";
+import paper_ieee_25 from "../../assets/images/LEVIKO_Paper_IEEE_25.webp";
 
 // Definiere den Typ für deine Publikationen-Daten
 const publikationData: Array<{
@@ -131,7 +131,7 @@ const publikationData: Array<{
       <p>
         Paper-Einreichung für den IEEE VR Workshop "Sonic Interaction in Virtual Environments" 2025.
         <br /> <br />
-        Der Volltext des Papers ist noch nicht veröffentlicht. Sie können es in der IEEE-Datenbank finden.
+        Der Volltext des Papers kann hier heruntergeladen werden.
       </p>
     ),
   },
