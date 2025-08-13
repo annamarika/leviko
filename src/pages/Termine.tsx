@@ -54,8 +54,8 @@ const TerminPage = () => {
         imgAlt="Map of Germany, state of Saxony highlited"
         headline="Landesmusikakademie Sachsen"
 		date="06.09. - 07.09.2025"
-        description="Informationen folgen"
-        linkTo=""
+        description="Virtual Reality im Musikunterricht - Ein Impulsworkshop des Projektes LEVIKO-XR für alle interessierten Lehrkräfte"
+        linkTo="https://www.lma-sachsen.de/kurse/kurse-details/workshop-virtual-reality-2025/"
         button="Erfahre mehr"
         $objectPosition="30%"
       />
