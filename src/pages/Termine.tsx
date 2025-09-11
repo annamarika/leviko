@@ -39,26 +39,6 @@ const TerminPage = () => {
         button="Erfahre mehr"
         $objectPosition="center 20%"
       />
-      <TerminBildText
-        imgSrc={ImageMapHS}
-        imgAlt="Map of Germany, state of Hesse highlited"
-        headline="Landesmusikakademie Hessen"
-		date="29.08. - 31.08.2025"
-        description="Virtual Reality im Musikunterricht - Innovative Fortbildung für Musiklehrkräfte und alle Interessierten"
-        linkTo="https://www.landesmusikakademie-hessen.de/kurse/details/virtual-reality-im-musikunterricht-5344"
-        button="Erfahre mehr"
-        $objectPosition="30%"
-      />
-	  <TerminTextBild
-        imgSrc={ImageMapSA}
-        imgAlt="Map of Germany, state of Saxony highlited"
-        headline="Landesmusikakademie Sachsen"
-		date="06.09. - 07.09.2025"
-        description="Virtual Reality im Musikunterricht - Ein Impulsworkshop des Projektes LEVIKO-XR für alle interessierten Lehrkräfte"
-        linkTo="https://www.lma-sachsen.de/kurse/kurse-details/workshop-virtual-reality-2025/"
-        button="Erfahre mehr"
-        $objectPosition="30%"
-      />
 	  <TerminBildText
         imgSrc={ImageMapNRW}
         imgAlt="Map of Germany, state of North Rhine-Westphalia highlited"
@@ -89,7 +69,15 @@ const TerminPage = () => {
         button="Erfahre mehr"
         $objectPosition="30%"
       />
-	  <Headline>Vergangene Fortbildungen</Headline>
+	  <Headline>Bisher angebotene Fortbildungen</Headline>
+	  <TextPastDates
+        date="29.08. - 31.08.2025"
+        headline="Virtual Reality im Musikunterricht - Landesmusikakademie Hessen"
+      />
+	  <TextPastDates
+        date="06.09. - 07.09.2025"
+        headline="Virtual Reality im Musikunterricht - Landesmusikakademie Sachsen"
+      />
 	  <TextPastDates
         date="19.11.2024"
         headline="Virtual Reality im Musikunterricht - Zentrum für Schulqualität und Lehrerbildung Baden-Württemberg, Stuttgart"
