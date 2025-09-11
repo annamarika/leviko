@@ -7,9 +7,7 @@ import TerminTextBild from "../Components/InfoText/TerminTextBild";
 import TextPastDates from "../Components/InfoText/TextPastDates";
 import ImageMapNRW from "../assets/images/map_nrw.webp";
 import ImageMapBW from "../assets/images/map_bw.webp";
-import ImageMapSA from "../assets/images/map_sa.webp";
 import ImageMapNS from "../assets/images/map_nisa.webp";
-import ImageMapHS from "../assets/images/map_hs.webp";
 import ImageManWithHMD from "../assets/images/Mann_mit_VRBrille_und_roten_Pulli.webp";
 
 
