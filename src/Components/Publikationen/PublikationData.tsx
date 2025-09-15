@@ -5,6 +5,7 @@ import paper_ieee_24 from "../../assets/images/LEVIKO_Paper_IEEE_24.webp";
 import poster_ampf_24 from "../../assets/images/LEVIKO_poster_ampf_24.webp";
 import poster_eas_25 from "../../assets/images/LEVIKO_poster_eas_25.webp";
 import paper_ieee_25 from "../../assets/images/LEVIKO_Paper_IEEE_25.webp";
+import poster_dgm_25 from "../../assets/images/LEVIKO_Poster_DGM_25.webp";
 
 // Definiere den Typ für deine Publikationen-Daten
 const publikationData: Array<{
@@ -151,6 +152,27 @@ const publikationData: Array<{
     description: (
       <p>
         Poster-Einreichung für die EAS Conference 2025.
+        <br /> <br />
+        Das entstandene Conference-Poster kann hier heruntergeladen werden.
+      </p>
+    ),
+  },
+  {
+    id: 7,
+    date: "September 2025",
+    headline: "2025 Design-Based Research zu Extended-Reality-Lehr-Lern-Designs: Kollaboratives Musizieren, Mixed-Reality-Konzerte und VR-Rhythmusspiele",
+    subHeadline: "Conference Poster",
+    tags: ["Poster", "Konferenzbeitrag"],
+    searchTags: ["Poster", "DGM", "Extended Reality", "Music", "Conference", "2025"],
+    imgSrc: poster_dgm_25,
+    imgAlt: "DGM Poster",
+    linkTo:
+	  "https://www.researchgate.net/publication/395409938_Design-Based_Research_zu_Extended-Reality-Lehr-Lern-Designs_Kollaboratives_Musizieren_Mixed-Reality-Konzerte_und_VR-Rhythmusspiele",
+    button: "DGM Poster",
+    $buttonVariant: "secondary",
+    description: (
+      <p>
+        Poster-Einreichung für die 41. Jahrestagung der DGM „Psychologie des Musizierens“ (2025).
         <br /> <br />
         Das entstandene Conference-Poster kann hier heruntergeladen werden.
       </p>
