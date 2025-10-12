@@ -6,7 +6,6 @@ import TerminBildText from "../Components/InfoText/TerminBildText";
 import TerminTextBild from "../Components/InfoText/TerminTextBild";
 import TextPastDates from "../Components/InfoText/TextPastDates";
 import ImageMapNRW from "../assets/images/map_nrw.webp";
-import ImageMapBW from "../assets/images/map_bw.webp";
 import ImageMapNS from "../assets/images/map_nisa.webp";
 import ImageManWithHMD from "../assets/images/Mann_mit_VRBrille_und_roten_Pulli.webp";
 
@@ -38,36 +37,34 @@ const TerminPage = () => {
         $objectPosition="center 20%"
       />
 	  <TerminBildText
-        imgSrc={ImageMapNRW}
-        imgAlt="Map of Germany, state of North Rhine-Westphalia highlited"
-        headline="Landesmusikakademie NRW"
-		date="27.09.2025"
-        description="Virtual Reality im Musikunterricht - Tagesworkshop für alle interessierten Lehrkräfte"
-        linkTo="https://lma-nrw.de/termindaten/2845/virtual-reality-im-musikunterricht-tagesworkshop-fuer-alle-interessierten-lehrkraefte/"
-        button="Erfahre mehr"
-        $objectPosition="30%"
-      />
-	  <TerminTextBild
-        imgSrc={ImageMapBW}
-        imgAlt="Map of Germany, state of Baden-Württemberg highlited"
-        headline="Bundesakademie für musikalische Jugendbildung Trossingen"
-		date="10.10. - 12.10.2025"
-        description="Musik in Extended Reality"
-        linkTo="https://www.bundesakademie-trossingen.de/weiterbildungen/musik-medien/details/musik-in-extended-reality"
-        button="Erfahre mehr"
-        $objectPosition="30%"
-      />
-	  <TerminBildText
         imgSrc={ImageMapNS}
         imgAlt="Map of Germany, state of Lower Saxony highlited"
         headline="Bildungsportal Niedersachsen, Kompetenzzentrum Oldenburg"
 		date="13.11. - 14.11.2025"
         description="Informationen folgen"
+        linkTo="https://uol.de/ofz/kursinfo?nummer=40685"
+        button="Erfahre mehr"
+        $objectPosition="30%"
+      />
+	  <TerminTextBild
+        imgSrc={ImageMapNRW}
+        imgAlt="Map of Germany, state of North Rhine-Westphalia highlited"
+        headline="ZfsL Düsseldorf"
+		date="20.11.2025"
+        description="Virtual Reality im Musikunterricht"
         linkTo=""
         button="Erfahre mehr"
         $objectPosition="30%"
       />
 	  <Headline>Bisher angebotene Fortbildungen</Headline>
+	  <TextPastDates
+        date="10.10. - 12.10.2025"
+        headline="Musik in Extended Reality - Bundesakademie für musikalische Jugendbildung Trossingen"
+      />
+	  <TextPastDates
+        date="27.09.2025"
+        headline="Virtual Reality im Musikunterricht - Landesmusikakademie NRW"
+      />
 	  <TextPastDates
         date="29.08. - 31.08.2025"
         headline="Virtual Reality im Musikunterricht - Landesmusikakademie Hessen"
