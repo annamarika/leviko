@@ -24,21 +24,14 @@ const MarqueeNews = () => {
             <LogoContainer>
               <StyledLogoSVG />
             </LogoContainer>
-            <LinkContainer href="https://ampf.info/c/jahrestagung/">
-              Jahrestagung des AMPF 20. - 22. September 2024{" "}
+            <LinkContainer href="">
+              Symposium in Osnabrück - Februar 2026 - weitere Informationen folgen
             </LinkContainer>
-            <LogoContainer>
+			<LogoContainer>
               <StyledLogoSVG />
             </LogoContainer>
-            <LinkContainer href="https://www.ieee.de/event/2024-2nd-international-conference-on-integrated-systems-in-medical-technologies-september-25-september-26/">
-              IEEE Konferenz in Erlangen vom 25. - 26. September 2024
-            </LinkContainer>
-            <LogoContainer>
-              <StyledLogoSVG />
-            </LogoContainer>
-            <LinkContainer href="https://lernen.digital/veranstaltungen/tagung-digitale-transformation-fuer-schule-und-lehrkraeftebildung-gestalten/">
-              Tagung Potsdam: Digitale Transformation für Schule und
-              Lehrkräftebildung gestalten 30. - 2. October 2024
+            <LinkContainer href="https://internetofsounds2025.ieee-is2.org/">
+              IEEE International Symposium on the Internet of Sounds - 29.–31. Oktober 2025 - L’Aquila, Italy
             </LinkContainer>
           </MarqueeWrapper>
         </Marquee>
