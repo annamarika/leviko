@@ -186,18 +186,18 @@ const publikationData: Array<{
     headline: "2025 Comparing Singing Lessons in Mixed Reality, Video, and In-Person",
     subHeadline: "Conference Paper",
     tags: ["Poster", "Konferenzbeitrag"],
-    searchTags: ["Poster", "IEEE", "Extended Reality", "Music", "Conference", "2025"],
+    searchTags: ["Poster", "Paper", "IEEE", "Extended Reality", "Music", "Conference", "2025"],
     imgSrc: paper_ieee_25_2,
     imgAlt: "IEEE Poster",
     linkTo:
-	  "https://www.researchgate.net/publication/397096638_Comparing_Singing_Lessons_in_Mixed_Reality_Video_and_In-Person",
+	  "https://www.researchgate.net/publication/397096970_Comparing_Singing_Lessons_in_Mixed_Reality_Video_and_In-Person",
     button: "IEEE Paper",
     $buttonVariant: "secondary",
     description: (
       <p>
-        Poster-Einreichung für das IEEE International Symposium on the Internet of Sounds (2025).
+        Poster-Einreichung für das 6. IEEE International Symposium on the Internet of Sounds (2025).
         <br /> <br />
-        Das zugehörige Paper kann hier als Preprint heruntergeladen werden.
+        Das zugehörige Paper kann hier heruntergeladen werden.
       </p>
     ),
   },
