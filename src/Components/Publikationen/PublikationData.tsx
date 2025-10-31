@@ -5,6 +5,7 @@ import paper_ieee_24 from "../../assets/images/LEVIKO_Paper_IEEE_24.webp";
 import poster_ampf_24 from "../../assets/images/LEVIKO_poster_ampf_24.webp";
 import poster_eas_25 from "../../assets/images/LEVIKO_poster_eas_25.webp";
 import paper_ieee_25 from "../../assets/images/LEVIKO_Paper_IEEE_25.webp";
+import paper_ieee_25_2 from "../../assets/images/LEVIKO_Paper_IEEE_25_2.webp";
 import poster_dgm_25 from "../../assets/images/LEVIKO_Poster_DGM_25.webp";
 
 // Definiere den Typ für deine Publikationen-Daten
@@ -175,6 +176,28 @@ const publikationData: Array<{
         Poster-Einreichung für die 41. Jahrestagung der DGM „Psychologie des Musizierens“ (2025).
         <br /> <br />
         Das entstandene Conference-Poster kann hier heruntergeladen werden.
+      </p>
+    ),
+  },
+  
+  {
+    id: 8,
+    date: "Oktober 2025",
+    headline: "2025 Comparing Singing Lessons in Mixed Reality, Video, and In-Person",
+    subHeadline: "Conference Paper",
+    tags: ["Poster", "Konferenzbeitrag"],
+    searchTags: ["Poster", "IEEE", "Extended Reality", "Music", "Conference", "2025"],
+    imgSrc: paper_ieee_25_2,
+    imgAlt: "IEEE Poster",
+    linkTo:
+	  "https://www.researchgate.net/publication/397096638_Comparing_Singing_Lessons_in_Mixed_Reality_Video_and_In-Person",
+    button: "IEEE Paper",
+    $buttonVariant: "secondary",
+    description: (
+      <p>
+        Poster-Einreichung für das IEEE International Symposium on the Internet of Sounds (2025).
+        <br /> <br />
+        Das zugehörige Paper kann hier als Preprint heruntergeladen werden.
       </p>
     ),
   },
