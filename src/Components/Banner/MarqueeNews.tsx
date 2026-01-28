@@ -24,14 +24,14 @@ const MarqueeNews = () => {
             <LogoContainer>
               <StyledLogoSVG />
             </LogoContainer>
-            <LinkContainer href="">
-              Symposium in Osnabrück - Februar 2026 - weitere Informationen folgen
+            <LinkContainer href="https://lernen.digital/wissen-und-formate/publikationen/?article=ca959770-f846-11f0-a14c-9eac6ef72815">
+              Ab sofort frei zugänglich: Unsere Handreichung für Lehrkräfte
             </LinkContainer>
 			<LogoContainer>
               <StyledLogoSVG />
             </LogoContainer>
-            <LinkContainer href="https://internetofsounds2025.ieee-is2.org/">
-              IEEE International Symposium on the Internet of Sounds - 29.–31. Oktober 2025 - L’Aquila, Italy
+            <LinkContainer href="https://lernen.digital/wissen-und-formate/publikationen/?article=ca959770-f846-11f0-a14c-9eac6ef72815">
+              Ab sofort frei zugänglich: Unsere Handreichung für Lehrkräfte
             </LinkContainer>
           </MarqueeWrapper>
         </Marquee>
